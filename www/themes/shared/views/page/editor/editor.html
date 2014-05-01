@@ -1,0 +1,259 @@
+<button type="button" class="close alpha80" data-dismiss="modal" aria-hidden="true" style="margin: 20px 20px 0 0">&times;</button>
+<!-- 主題內容開始 -->
+<div class="matter" style="padding:50px;">
+    <div class="row"  sytle="padding:0px; margin:0px;">
+    <!-- 左側內容開始 -->
+    <div class="col-md-3 col-xs-12 left-Con leftMenu">
+<!--         <div id="geoSearch" style="display:none; z-index:100;">
+          <div class="input-group" style="margin-bottom:20px">
+              <input type="text" class="form-control" name="address" placeholder="請輸入地址" onchange="<%=ctrl%>.searchLoc();">
+              <span class="input-group-addon"><i class="icon-search"></i></span>
+          </div>
+
+          <div class="input-group" style="margin-bottom:20px">
+              <input type="text" class="form-control" name=latlng placeholder="請輸入經緯度" onchange="<%=ctrl%>.searchLoc();">
+              <span class="input-group-addon" onclick="<%=ctrl%>.searchLoc()"><i class="icon-search"></i></span>
+          </div>
+        </div> -->
+        <div class="Box-group">
+            <div class="Box-heading">
+              <a class="Box-toggle" data-toggle="collapse" data-parent="#pgEditImgClps" href="#Box1">地理位置</a>
+            </div>
+            <div id="Box1" class="Box-body collapse in">
+              <div class="Box-inner" id="geoList">
+                <div class="Box-List" id="confirmed_addr"></div>
+                <span id="confirmed_lat"></span>,
+                <span id="confirmed_lng"></span>
+              </div>
+              <div class="Box-footer">
+                  <a href="#"><i id="showGeoMenu" class="icon-align-justify"></i></a>
+                  <a href="#" data-toggle="modal" data-target="#geoModal" onclick="<%=ctrl%>.showAddCnt('<%=bi.query.ngID%>', 'undefined');"><i class="icon-plus"></i></a>
+              </div>
+            </div>
+        </div>
+
+        <div id="geoMenu" ctrl="<%=ctrl%>" style="display:none; z-index:100;">
+          <div class="input-group" style="margin-bottom:20px">
+            <span class="input-group-addon">地址</i></span>
+            <input type="text" class="form-control" name="address" placeholder="請輸入地址" onchange="<%=ctrl%>.searchLoc();">
+            <span class="input-group-addon" onclick="<%=ctrl%>.searchLoc()"><i class="icon-search"></i></span>
+          </div>
+          <div class="input-group" style="margin-bottom:20px">
+            <span class="input-group-addon">經度</i></span>
+            <input type="text" class="form-control" name="geoLat" placeholder="請輸入經度">
+          </div>
+          <div class="input-group" style="margin-bottom:20px">
+            <span class="input-group-addon">緯度</i></span>
+            <input type="text" class="form-control" name="geoLng" placeholder="請輸入緯度">
+          </div>
+          <div class="input-group" style="margin-bottom:20px">
+            <span class="input-group-addon">標題</i></span>
+            <input type="text" class="form-control" name="geoTitle">
+          </div>
+          <div class="input-group" style="margin-bottom:20px">
+            <span class="input-group-addon"><input type="checkbox" name="isPri"></span>
+            <input type="text" class="form-control" value="私人記錄" disabled>
+            <span class="input-group-addon">儲存</span>
+          </div>
+        </div>
+        <div class="Box-group">
+            <div class="Box-heading">
+              <a class="Box-toggle">文章圖檔</a>
+            </div>
+            <div id="Box2" class="Box-body">
+              <div class="Box-inner">
+                <div class="Box-List" id="picList"></div>
+              </div>
+              <div class="Box-footer">
+                  <a id="addPic" href="#"><i class="icon-plus"></i></a>
+                  <a id="delPic" href="#"><i class="icon-minus" onclick="<%=ctrl%>.delCnt(3);"></i></a>
+                  <a href="#"><i class="icon-arrow-right"></i></a>
+              </div>
+            </div>
+        </div>
+        <div class="Box-group">
+            <div class="Box-heading">
+              <a class="Box-toggle">附加檔</a>
+            </div>
+            <div id="Box3" class="Box-body">
+              <div class="Box-inner">
+                <div class="Box-List" id="attList"></div>
+              </div>
+              <div class="Box-footer">
+                  <a id="addAtt" href="#"><i class="icon-plus"></i></a>
+                  <a href="#"><i class="icon-minus"></i></a>
+                  <a href="#"><i class="icon-arrow-right"></i></a>
+              </div>
+            </div>
+        </div>
+<!--         <div class="Box-bu">
+          <a href="#" type="button" class="bu maR5" title="地理位置">
+            <i class="icon-map-marker"></i>
+          </a>
+          <a href="#" type="button" class="bu" title="附加檔案">
+            <i class="icon-paperclip"></i>
+          </a>
+        </div> -->
+        <div style="display:none">
+          <form role="form" id="uploader" name="uploader" action="" enctype="multipart/form-data" method="POST">
+            <input type="hidden" name="nType" value="3" >
+            <input type="hidden" name="hasCA" value="1" >
+            <input type="file" name="aaa" multiple="multiple" class="form-control"><br>
+  <!--           <input type="button" name="submit" class="btn btn-green" value="Upload"> -->
+  <!--           <button type="submit" class="btn btn-green" value="Upload">上傳</button> -->
+          </form>
+        </div>
+    </div>
+    <!-- 左側內容結束 -->
+
+    <!-- 右側內容開始 -->
+    <div class="col-md-9 col-xs-12 rightMenu">
+      <div class="rightCon">
+        <form class="form-horizontal" role="form">
+            <div class="row">
+                <!-- 左側開始 -->
+                <div class="col-md-1 col-xs-2 col-Left leftMenu">
+                    <div class="img" title="文章頭像" alt="文章頭像">文章頭像</div>
+                    <div class="form-group">
+                        <button id="addIcon" type="button" class="btn btn-default btn-sm wc60 maT5" style="margin-bottom:-10px;">上傳</button>
+                    </div>
+                </div>
+                <!-- 左側結束 -->
+
+                <!-- 右側開始 -->
+                <div class="col-md-10 col-xs-10 col-Right rightMenu">
+                  <div class="form-group" id="ng" ca="<%=bi.query.ca%>" appCode="<%=bi.query.appCode%>" rs="<%=bi.query.rs%>" ng="<%=bi.query.ngID%>">
+                    <label class="col-md-1 col-xs-2 control-label rightLabel">標題</label>
+                    <div class="col-md-10 col-xs-10">
+                      <input type="text" class="form-control" name="title" placeholder="標題">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-md-1 col-xs-2 control-label rightLabel">引文</label>
+                    <div class="col-md-10 col-xs-10">
+                      <input type="text" class="form-control" name="summary" placeholder="引文">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-md-1 col-xs-2 control-label"></label>
+                    <div class="col-md-5 col-xs-5">
+                      <div class="checkbox">
+                        <label>
+<!--                           <input type="checkbox">將這篇文章置頂 -->
+                          <input type="checkbox" name="isPublic" val="1">將這篇文章公開
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-xs-5">
+                      <select name="locID" class="form-control" onchange="<%=ctrl%>.setLocale()">
+                          <option value="1" >English</option>
+                          <option value="2" selected>繁體中文</option>
+                          <option value="3" >简体中文</option>
+                      </select>
+                    </div>
+                    <div class="col-md-7 col-xs-hidden "></div>
+                  </div>
+                </div><!-- 右側結束 -->
+            </div><!-- row結束 -->
+
+          <!-- 下半部開始 -->
+          <div class="row" style="margin-left:10px">
+            <div class="form-group">
+              <div class="col-md-12 col-xs-12">
+
+              <!-- TESTING -->
+              <textarea class="cleditor" name="body_cnt" id="body_cnt" style="width:500px;height:350px;"></textarea>
+              <!-- TESTING -->
+
+              <div class="col-md-12 col-xs-12 maT20">
+                <div class="pull-left fs08 fcGC paT5" id="mdTime"></div>
+                <div class="btn-group btn-group-sm pull-right">
+                  <button id="richText" type="button" class="btn btn-default">預覽</button>
+                  <button id="source" type="button" class="btn btn-default">原始碼</button>
+                  <button type="button" class="btn btn-green" onclick="<%=ctrl%>.save();" id="save">
+                    <% if (bi.query.ngID) { %>
+                      儲存
+                    <% } else { %>
+                      新增
+                    <% } %></button>
+                </div>
+              </div>
+          </div><!-- form-group結束 -->
+        </div><!-- row下半部結束 -->
+
+      </form><!-- form結束 -->
+     </div><!-- rightCon結束 -->
+    </div><!-- 右側內容結束 -->
+  </div><!-- row結束 -->
+</div><!-- matter主題內容結束 -->
+
+<!-- 彈跳視窗開始 -->
+<div class="modal fade modalstyle" id="geoModal" tabindex="-1" role="dialog" data-backdrop="false" aria-labelledby="geoModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="addGeoCnt modal-content">
+    </div>
+  </div>
+</div>
+<!-- 彈跳視窗結束 -->
+<script>
+$(document).ready(function () {
+  $('#source').bind({
+    click: function() {
+      $('.cleditorButton[title="Show Source"]').click();
+    }
+  });
+  $('#richText').bind({
+    click: function() {
+      $('.cleditorButton[title="Show Rich Text"]').click();
+    }
+  });
+  $('#showGeoMenu').click(function() {
+    $('#geoMenu').slideToggle();
+  });
+  $('#uploader').submit(function(e) {
+    e.preventDefault();
+    $.ajax({
+        url: '/<%=bi.query.ca%>/<%=bi.query.appCode%>/<%=bi.query.rs%>/attach/<%=bi.query.ngID%>',
+        type: 'POST',
+        data: new FormData(this),
+        processData: false,
+        contentType: false
+    }).done(function() {
+        alert('上傳成功');
+        <%= ctrl %>.receiver($('input[name="nType"]').val());
+        $('input[name="aaa"]').val('');
+    });
+  });
+  $('#addIcon').click(function() {
+    $('input[name="nType"]').val(1)
+    $('input[name="aaa"]').click();
+  });
+  $('#addAtt').click(function() {
+    $('input[name="nType"]').val(2)
+    $('input[name="aaa"]').click();
+  });
+  $('#addPic').click(function() {
+    $('input[name="nType"]').val(3)
+    $('input[name="aaa"]').click();
+  });
+  $('input[name="aaa"]').change(function() {
+    // var yn = $('input[name="aaa"]').val();
+    // if (yn === '') return alert('請選擇檔案');
+    $('#uploader').submit();
+  });
+
+  setTimeout(function() {
+    $.cleditor.defaultOptions.height = 400;
+    $('#body_cnt').cleditor({
+
+
+      controls:     // controls to add to the toolbar
+                    "bold italic underline strikethrough | font size " +
+                    "style | color highlight | bullets numbering | outdent " +
+                    "indent | alignleft center alignright justify | " +
+                    "rule image link unlink | source",
+
+    });
+  }, 300);
+});
+</script>

@@ -1,0 +1,40 @@
+{
+  "name": "coServ",
+  "version": "0.1.0",
+  "description": "Block-based, cross-origin web server.",
+  "main": "coServ.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified! Configure in package.json\" && exit 1"
+  },
+  "repository": "",
+  "keywords": [
+    "Node.js",
+    "COIMOTION",
+    "coServ"
+  ],
+  "author": {
+    "name": "Ben Lue, Gocharm Inc."
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "nodemailer": "~0.6.0",
+    "moment": "~2.5.1",
+    "validator": "~3.5.1",
+    "xml2js": "~0.4.2",
+    "static-favicon": "~1.0.2",
+    "cookie-parser": "~1.0.1",
+    "body-parser": "~1.0.2",
+    "connect-multiparty": "~1.0.3",
+    "connect": "~3.0.0-rc.1",
+    "morgan": "~1.0.0",
+    "serve-static": "~1.1.0"
+  },
+  "readme": "\n\n# cimw\n\n\n\n## Usage\n\n\n\n## Developing\n\n\n\n### Tools\n\nCreated with [Nodeclipse](https://github.com/Nodeclipse/nodeclipse-1)\n ([Eclipse Marketplace](http://marketplace.eclipse.org/content/nodeclipse), [site](http://www.nodeclipse.org))   \n\nNodeclipse is free open-source project that grows with your contributions.\n",
+  "_id": "coServ@0.1.0",
+  "dist": {
+    "shasum": "65eb90d502539f73d147aba8fec8211da9f59dae"
+  },
+  "_resolved": "coServ-0.9.tar.gz",
+  "_from": "coServ-0.9.tar.gz"
+}

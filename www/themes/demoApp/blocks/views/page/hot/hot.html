@@ -1,0 +1,13 @@
+<div class="hotList"> 
+	<% if (value.list.length > 0) { %>
+		<ul>
+		<% value.list.forEach(function(item) { %>
+				<li><%= item.title %></li>
+		<% }); %>
+		</ul>
+	<% } else  { %>
+		<div>No pages.</div>
+	<% } %>
+	
+</div>
+       

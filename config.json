@@ -1,0 +1,7 @@
+{
+	"apiEngine": {
+		"host": "coimapi.net",
+		"port": 80,
+		"method": "POST"
+	}
+}

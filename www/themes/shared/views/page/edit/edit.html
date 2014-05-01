@@ -1,0 +1,44 @@
+<%
+	var  locID = value.locID || ctx.locID;
+%>
+<div <% if (!locID) { %> style="visibility:hidden;"<% } %>>
+	<%=ph.selLocale%>
+	<select name="locID" onchange="<%=ctrl%>.setLocale();">
+		<option value="1" <%if (locID=='1') {%>selected<%}%>>English</option>
+		<option value="2" <%if (locID=='2') {%>selected<%}%>>繁體中文</option>
+		<option value="3" <%if (locID=='3') {%>selected<%}%>>简体中文</option>
+	</select>
+</div>
+
+<%=ph.title%>
+<div>
+	<input type="text" name="title" value="<% if(value.title) html+=value.title;%>" style="width:500px;"/>
+</div>
+引文：
+<div>
+	<textarea name="summary" style="width:500px;"><% if(value.title) html+=value.summary;%></textarea>
+</div>
+<%=ph.body%>
+<div>
+	<textarea name="body" style="width:500px;height:350px;"><% if(value.title) html+=value.body;%></textarea>
+</div>
+<div>是否公開: <input type="checkbox" name="isPublic" value="1" <% if(value.isPublic) {%> checked <%}%> >公開</div>
+<div>
+<% if (value && value.ngID) { %>
+	<button onclick="<%=ctrl%>.save('<%=value.ngID%>');">儲存</button>
+<% } else { %>
+	<button onclick="<%=ctrl%>.create();">新增</button>
+<% } %>
+</div>
+
+<!--  以下為測試用 -->
+<% if (value && value.ngID) { %>
+<!-- 
+<form action="/<%=value.rs%>/upload/<%=value.ngID%>" enctype="multipart/form-data" method="POST">
+	<input type="hidden" name="locID" value="<%=locID%>" >
+	<input type="hidden" name="nType" value="3" >
+	<input type="file" name="upload" multiple="multiple"><br>
+	<input type="submit" value="Upload">
+</form>
+ -->
+<% } %>

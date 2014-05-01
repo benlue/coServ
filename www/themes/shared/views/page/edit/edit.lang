@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phrases>
+	<ph id="selLocale">
+		<en>Choose Language:</en>
+		<zh>選擇語系：</zh>
+	</ph>
+	<ph id="title">
+		<en>Title:</en>
+		<zh>標題：</zh>
+	</ph>
+	<ph id="body">
+		<en>Contents:</en>
+		<zh>內文：</zh>
+	</ph>
+</phrases>
