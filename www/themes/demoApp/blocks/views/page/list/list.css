@@ -1,3 +1,6 @@
 /* Add any styles you want... */
 .pageList{
+  font-size: 2em;
+  background-color: rgb(52, 174, 214);
+  padding:100px;
 }
