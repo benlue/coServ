@@ -17,9 +17,13 @@ coServ is created in the view of the "internet of servers" paradigm. Servers cro
 
 + A EJS-like template engine to compose HTML, Javascript and CSS (yes, you can apply templates on JS and CSS files).
 
-+ Automatically pulling data from the COIMOTION API engine. Using 'modules' to access contents from other websites or data sources.
++ Automatically pulling data from the COIMOTION API engine.
 
-+ Hosting multiple web sites on a single coServ server. It's extremely easy.
++ Using 'modules' to access contents from other websites or data sources.
+
++ Multi-lingual support with language resource bundles.
+
++ Hosting multiple web sites on a single coServ server. It's extremely easy to do so.
 
 ## Install
 npm install coserv

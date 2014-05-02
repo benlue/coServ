@@ -1,14 +1,17 @@
 {
-  "name": "coServ",
-  "version": "0.8.0",
+  "name": "coserv",
+  "version": "0.8.2",
   "description": "Block-based, cross-origin web server.",
   "engines": "0.10.21",
   "main": "coServ.js",
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coimotion/coServ.git"
+    },
   "keywords": [
     "Node.js",
     "COIMOTION",
-    "coServ"
+    "coserv"
   ],
   "author": {
     "name": "Ben Lue, Gocharm Inc."

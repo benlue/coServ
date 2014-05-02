@@ -1,3 +1,7 @@
 /.DS_Store
 /node_modules
+<<<<<<< HEAD
 /npm-debug.log
+=======
+/www/sites.json
+>>>>>>> 18c1fa898793c415f1b67ea7860529cfcb7da199
