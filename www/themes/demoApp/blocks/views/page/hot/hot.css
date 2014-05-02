@@ -1,3 +1,9 @@
 /* Add any styles you want... */
 .hotList{
+  font-size: 2em;
+  background-color: rgb(255, 142, 102);
+  padding: 100px;
+}
+.hotList li {
+  margin-top: 0.3em;
 }
