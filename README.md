@@ -1,4 +1,3 @@
-
 # coServ
 
 coServ is a tidy web server implemented in Node.js. It is intended to be a server facade which could draw data or contents from multiple sources. Mesh up content from multiple sources can be done easily.
@@ -80,3 +79,7 @@ Each block has its own built-in variables which could be helpful in content gene
 + viewPath: the directory where all view files (HTML, Javascript, CSS, include file and language resource bundle) of this block reside.
 
 #### 4. Examples
+(To be completed)
+
+### Block Modules
+(To be completed)
