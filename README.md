@@ -1,10 +1,9 @@
 
-
 # coServ
 
 coServ is a tidy web server implemented in Node.js. It is intended to be a server facade which could draw data or contents from multiple sources. Mesh up content from multiple sources can be done easily.
 
-coServ can be used to build tiny websites with a few static pages or extremely complicated web applications. coServ help developers to decouple contents with presentations by a EJS-like template engine. HTML, Javascript and CSS files can all run through the template engine. Web front end designers can write much more flexible codes and easily reuse them repeatedly.
+coServ can be used to build tiny websites with a few static pages or extremely complicated web applications. coServ helps developers to decouple contents from presentations by a EJS-like template engine. HTML, Javascript and CSS files can all run through the template engine. Web front end designers can write much more flexible codes and easily reuse them repeatedly.
 
 coServ is created in the view of the "internet of servers" paradigm. Servers crossing domains can interact with each other and co-produce contents that can best service their users. coServ is also created to help web site builders to leverage the COIMOTION API services.
 
@@ -51,5 +50,33 @@ Learning from examples can always save us lots of time. If you want to start bui
 ### The Template Engine
 #### 1. Syntax
 To include directives or Javascript code, use
-	<% your javascript code or coServ directives htere %>
-	
+>	<% your javascript code or coServ directives htere %>
+
+To access values of variables, do this:
+>    <% variable %>
+
+So in terms of syntax, it's very much like EJS.
+    
+#### 2. Directives
+You can do more than embedding Javascript code in a template. You can also use built-in directives in a template. Below are built-in diretives supported by coServ:
++ **includeCss()**: Search for included CSS files which can be specified in page template, regions or blocks, and list those CSS files in the format of &lt;link rel=...&gt; on a HTML page. This directive should only be used in the page template.
+
++ **includeJs()**: Search for included js files which can be specified in page template, regions or blocks, and list those js files in the format of &lt;script type="text/javascript" source="..."&gt;&lt;/script&gt; on a HTML page. This directive should only be used in the page template. 
+
++ **css()**:  Lump sum all the CSS rules which have been specified in page template, regions and blcoks. This directive should only be used in the page tempate.
+
++ **js()**:  Lump sum all the Javascript code snippets which have been specified in page template, regions and blcoks. This directive, too, should only be used in the page tempate.
+
++ **region(region_path)**: Include a region. A region is like a container which can have its own style decorations and include other regions or blocks. With this directive you can reuse existing regions. 'region_path' points to the directory where all files defining a region (HTML, js, css, include file and language resource bundle) are located. If 'region_path' is a relative path (starts with ./), it will be relative to the directory where the region() directive is called. Otherwise, it will refer to a 'shared' region which will be located in the 'www/themes/shared/views' directory.
+
++ **block(blockName, option)**: Invoke a block. Unlike regions, blocks is not a container but a content-view generator. Blocks are defined in the 'www/themes/[Your_Website_Code]/blocks' directory. 'blockName' specifies which block will be invoked.
+ 
+#### 3. Block Variables
+Each block has its own built-in variables which could be helpful in content generation:
++ uri: URI of the block.
++ query: query parameters fed to this block.
++ intPath: similar to 'uri', but the 'id' portion has been removed.
++ service: if the block relies on a COIMOTION API service to provide data, this variable shows what API service is used.
++ viewPath: the directory where all view files (HTML, Javascript, CSS, include file and language resource bundle) of this block reside.
+
+#### 4. Examples
