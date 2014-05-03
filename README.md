@@ -37,7 +37,8 @@ npm install coserv
 3. If you have assigned a domain name to this server, you can modify the 'www/sites.json' file to allow coServ to recognize the designated domain. Replace '127.0.0.1' with the domain name of your website.
 
 4. Try http://127.0.0.1:8080 (or http://www.yourdomain.com if you've modified the sites.json file) on your browser. If everything works fine, you should see the index page.
-
+  
+  
 ## Build Your Own Site
 Learning from examples can always save us lots of time. If you want to start building your own site, here are a few steps that we recommand:
 
@@ -46,3 +47,9 @@ Learning from examples can always save us lots of time. If you want to start bui
 2. Now everything thing under the 'foo' directory produces the look and feel of the'foo' website. The siteURI.json file manifests valid URLs of this website. The layoutMap.json file specifies what page layout should be used for various URLs. The 'layout' directory include all page layouts of a website (a website can have multiple page layouts and which layout should be used is specified in the 'layoutMap.json' file).
 
 3. You should also modify the 'www/sites.json' file to assign an IP (or domain) to your newly created website.
+
+### The Template Engine
+#### 1. Syntax
+To include directives or Javascript code, use
+	<% your javascript code or coServ directives htere %>
+	
