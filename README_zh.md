@@ -47,7 +47,7 @@ npm install coserv
 #### 1. 語法
 要引用coServ指令或Javascript程式碼，可以用：
 
-    <% your javascript code or coServ directives htere %>
+    <% your javascript code or coServ directives here %>
 
 要取得變數的值，則使用：
 
