@@ -32,7 +32,7 @@ npm install coserv
 
 3. 如果你要指定網域給 server，那麼只需修改 'www/sites.json' 這個檔。把裡面的 IP 網址 127.0.0.1 改成你所要的網域即可（當然你要先取得網域，並將 DNS 指向 coServ 所在的位置）。
 
-4. 試著在網路瀏覽器上輸入 http://127.0.0.1:8080（如果你已指定了網域，那就改用 http://www.yourDomain.com）。如果設定都正確，你就會看到預設的首頁。
+4. 試著在網路瀏覽器上輸入' http://127.0.0.1:808'0（如果你已指定了網域，那就改用 'http://www.yourDomain.com'）。如果設定都正確，你就會看到預設的首頁。
 
 ## 建立自己的網站
 從範例開始改大概是最快的方法。假設你用下載內容中的 'demoApp'做基礎，以下說明所需的步驟：
@@ -46,10 +46,12 @@ npm install coserv
 ### 樣板引擎
 #### 1. 語法
 要引用coServ指令或Javascript程式碼，可以用：
->    <% your javascript code or coServ directives htere %>
+
+    <% your javascript code or coServ directives htere %>
 
 要取得變數的值，則使用：
->    <%= variable %>
+
+    <%= variable %>
 
 所以在語法上，基本上和 EJS 這個樣板引擎是相同的。
 
@@ -58,9 +60,9 @@ npm install coserv
 
 + **includeCss()**: 這個指令會找出頁型、區域和區塊中所引用的 CSS 檔，並加以輸出。這個指令應該只用在頁型中，用來列出所有的 CSS 檔，如<link rel=...>
 
-+ **includeJs()**: 這個指令會找出頁型、區域和區塊中所引用的 js 檔，並加以輸出。這個指令應該只用在頁型中，用來列出所有的 js 檔，如<script type="text/javascript" source="..."></script>
++ **includeJs()**: 這個指令會找出頁型、區域和區塊中所引用的 js 檔，並加以輸出。這個指令應該只用在頁型中，用來列出所有的 js 檔，如 <script type="text/javascript" source="..."></script>
 
-+ **css()**: 這個指令會把頁型、區域和區塊中所有的 CSS 規則整合起來，並加以輸出。這個指令應該只用在頁型中用來輸出<head><style>...</style></head>的內容。
++ **css()**: 這個指令會把頁型、區域和區塊中所有的 CSS 規則整合起來，並加以輸出。這個指令應該只用在頁型中用來輸 出<head><style>...</style></head>的內容。
 
 + **js()**: 這個指令會把頁型、區域和區塊中所有的 js 程式碼整合起來，並加以輸出。這個指令應該只用在頁型中用來輸出<head><script>...</script></head>的內容。
 
