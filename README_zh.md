@@ -79,7 +79,7 @@ npm install coserv
     <%= value.title %>
     
 
-可用來取的 title 的欄位，
+可用來取得 title 的欄位，
 
     <% value.list.forEach(function(item) { %>
         <li><%= item.title %></li>
