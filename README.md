@@ -49,10 +49,12 @@ Learning from examples can always save us lots of time. If you want to start bui
 ### The Template Engine
 #### 1. Syntax
 To include directives or Javascript code, use
->	<% your javascript code or coServ directives htere %>
+
+    <% your javascript code or coServ directives htere %>
 
 To access values of variables, do this:
->    <% variable %>
+
+    <%= variable %>
 
 So in terms of syntax, it's very much like EJS.
     
