@@ -50,7 +50,7 @@ Learning from examples can always save us lots of time. If you want to start bui
 #### 1. Syntax
 To include directives or Javascript code, use
 
-    <% your javascript code or coServ directives htere %>
+    <% your javascript code or coServ directives %>
 
 To access values of variables, do this:
 
