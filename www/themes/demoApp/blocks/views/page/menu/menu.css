@@ -15,7 +15,10 @@ header {
   background-color: #190C0C;
 }
 
-ol, ul {
+ol {
+  list-style: none;
+}
+ul {
   list-style: none;
 }
 

@@ -2,5 +2,6 @@
 	"/index": {"id": "no"},
 	"/page/hot": {"id": "no"},
 	"/page/list": {"id": "no", "service": "/travTW/bus/list"},
+	"/page/multiL": {"id": "no"},
 	"/page/menu": {"id": "no"}
 }

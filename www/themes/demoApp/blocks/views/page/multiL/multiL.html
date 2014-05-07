@@ -1,0 +1,19 @@
+<div id="leftMenu">
+	<% block('/page/menu'); %>
+</div>
+
+<div class="multiL">
+	<h1><%=ph.title%></h1>
+	<p><%=ph.par1%></p>
+	<p><%=ph.par2%></p>
+
+	<p>
+		<%=ph.label%>:
+		<!-- calling the 'ctrl' variable allows the template engine to find out the controller for us. Check the page source to see what happened below -->
+		<select onchange="<%=ctrl%>.selectLang(this);">
+			<option><%=ph.defaultOption%></option>
+			<option value="en">English</option>
+			<option value="zh">繁體中文</option>
+		</select>
+	</p>
+</div>
