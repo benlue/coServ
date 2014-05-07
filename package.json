@@ -1,6 +1,6 @@
 {
   "name": "coserv",
-  "version": "0.8.3",
+  "version": "0.8.4",
   "description": "Block-based, cross-origin web server.",
   "engines": "0.10.21",
   "main": "coServ.js",
