@@ -1,0 +1,14 @@
+0.8.5:
+------
+  . Change how a local module is invoked. The run() method now will take a second parameter which is
+    a callback function. A local module calls the provided callback function to notify coServ that
+    its job has done.
+  . Bug fixes to help coServ better deal with more content types (not just JSON).
+  . Fix a bug in uploader. The bug could cause coServ fail to upload files to the COIMOTION API engine.
+  . A new demo is included in this release. The old demo is still around. If you want to run the old demo,
+    try http://localhost:8080. You can also modify the www/sites.json file to bring back the old demo.
+
+
+0.8.0:
+------
+The first public release.

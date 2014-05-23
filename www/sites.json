@@ -1,10 +1,17 @@
 {
-	"127.0.0.1" : {"caCode": "demoApp",
-				   "title": "A Simple Demo Site For coServ",
+	"127.0.0.1" : {"caCode": "index",
+				   "title": "The New Demo For coServ",
 				   "validFrom": "",
 				   "validTo":"",
 				   "locale": "en",
-				   "home": "/index",
-				   "appKeys": {"demoApp": "518d517f-2c91-0cf9-f3f1-a0f3133e85b0"}
+				   "home": "/index"
+			      },
+	"localhost" : {"caCode": "demoApp",
+					"title": "A Simple Demo Site For coServ",
+					"validFrom": "",
+					"validTo":"",
+					"locale": "en",
+					"home": "/index",
+					"appKeys": {"demoApp": "518d517f-2c91-0cf9-f3f1-a0f3133e85b0"}
 				  }
 }

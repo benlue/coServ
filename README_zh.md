@@ -58,20 +58,20 @@ npm install coserv
 #### 2. 指令
 除了嵌入 Javascript 程式碼到樣板中外，你也可以使用 coServ 的指令。coServ 的指令說明如下：
 
-+ **includeCss()**: 這個指令會找出頁型、區域和區塊中所引用的 CSS 檔，並加以輸出。這個指令應該只用在頁型中，用來列出所有的 CSS 檔，如<link rel=...>
++ **includeCss()**: 這個指令會找出頁型、區域和區塊中所引用的 CSS 檔，並加以輸出。這個指令應該只用在頁型中，用來列出所有的 CSS 檔，如 &lt;link rel=...&gt;
 
-+ **includeJs()**: 這個指令會找出頁型、區域和區塊中所引用的 js 檔，並加以輸出。這個指令應該只用在頁型中，用來列出所有的 js 檔，如 <script type="text/javascript" source="..."></script>
++ **includeJs()**: 這個指令會找出頁型、區域和區塊中所引用的 js 檔，並加以輸出。這個指令應該只用在頁型中，用來列出所有的 js 檔，如 &lt;script type="text/javascript" source="..."&gt;&lt;/script&gt;
 
-+ **css()**: 這個指令會把頁型、區域和區塊中所有的 CSS 規則整合起來，並加以輸出。這個指令應該只用在頁型中用來輸 出<head><style>...</style></head>的內容。
++ **css()**: 這個指令會把頁型、區域和區塊中所有的 CSS 規則整合起來，並加以輸出。這個指令應該只用在頁型中用來輸出 &lt;head&gt;&lt;style&gt;...&lt;/style&gt;&lt;/head&gt; 的內容。
 
-+ **js()**: 這個指令會把頁型、區域和區塊中所有的 js 程式碼整合起來，並加以輸出。這個指令應該只用在頁型中用來輸出<head><script>...</script></head>的內容。
++ **js()**: 這個指令會把頁型、區域和區塊中所有的 js 程式碼整合起來，並加以輸出。這個指令應該只用在頁型中用來輸出&lt;head&gt;&lt;script&gt;...&lt;/script&gt;&lt;/head&gt;的內容。
 
 + **region(region_path)**: 嵌入一個區域。區域像是一個容器，除了可以有自己的樣式設定外，區域主要的功能是用來包含其他的區域和區塊，方便做小範圍的排版。'region_path' 是用來指向定義區域的目錄。這個路徑的內容若是相對路徑（以 ./ 開頭），是相對於目前呼叫的區域所在目錄。如不是相對路徑，則表示要是用共用區域。共用區域一律存放在 'www/themes/share/views' 這個目錄底下。
 
 + **block(blockName, option)**: 嵌入一個區塊。區塊不項區域是個容器，而是會產生實際的內容。區塊的顯示方式會定義在 'www/themes/[Your_Website_Code]/blocks' 這個目錄下。'blockName' 這個參數表示區塊的名稱。
 
 #### 3. 變數
-樣板引擎提供了各種變數以便存取在網頁生成時所需的資料和輔助資訊。變數大致上分成以下幾類：回傳變數、區塊變數、環境變數和片語。
+樣板引擎提供了各種變數以便存取在網頁生成時所需的資料和輔助資訊。變數大致上分成以下幾類：回傳變數、區塊變數、環境變數、片語和一個特殊的'ctrl'變數。
 
 ##### i. 回傳變數
 回傳變數是在執行一個區塊時所產生的資料。這可能是呼叫一個遠端的 API 所回傳的結果（主要是呼叫COIMOTION API），或是執行一個本地端的區塊模組的傳回值。以下是一些範例：
@@ -109,6 +109,14 @@ npm install coserv
     <%= ph.addr %>
     
 會把 'addr' 這個片語轉成使用者所虛妄的語系文字。
+
+##### v. ctrl變數
+區塊重複使用是coServ一個非常重要的功能。但如何在 HTML 中辨識每個區塊，尤其是如何呼叫區塊的 controller 呢（coServ 使用 MVC 的 design pattern）？ coServ 提供了一個 'ctrl' 的變數，可協助開發者在 HTML 中取得區塊的 controller 。以下是個範例：
+
+
+    <a onclick="<%=ctrl%>.clickLink(this);">...</a>
+    
+在這個例子中，使用者點選連結時，controller 的 clickLink() 這個方法就會被呼叫。
 
 #### 4. 範例
 利用樣板來產生 HTML 的內容是最常見的用法。下列的例子可以用來設定網頁的標題：

@@ -1,0 +1,57 @@
+<div class="panel-group" id="rgLeftMenu">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#rgLeftMenu" href="#mmenu1">
+          Index Page
+        </a>
+      </h4>
+    </div>
+    <div id="mmenu1" class="panel-collapse collapse in">
+      <div class="panel-body">
+        <p>This page is served by a static block. That means contents are neither coming from a local module nor from a API service call.</p>
+        <p>The HTML source can be found in <b>blocks/views/index/index.html</b></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#rgLeftMenu" href="#mmenu2">
+          Cross Origin
+        </a>
+      </h4>
+    </div>
+    <div id="mmenu2" class="panel-collapse collapse">
+      <div class="panel-body">
+          <p>
+            In this example, contents are served by a local module (<b>blocks/modules/co/rss.js</b>). That module loads a RSS feed from Yahoo, parses it
+            and then sends it out as a JSON list for the template engine to compose the HTML output as you see it.
+        </p>
+          <p>
+              The source file of the local module can be found in <b>blocks/modules/co/rss.js</b>, and HTML source can be
+              found in <b>blocks/views/co/rss/rss.htlml</b>. There is also a rss.js file in the 'blocks/views/co/rss' directory.
+              That js file will run on browsers. Do not confuse it with the rss.js node module.
+          </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#rgLeftMenu" href="#mmenu3">
+          Block Reusing
+        </a>
+      </h4>
+    </div>
+    <div id="mmenu3" class="panel-collapse collapse">
+      <div class="panel-body">
+        This example shows how to re-use a block. The RSS block used in the 'Cross Origin' example above is used again in this example, not once but TWICE.
+        Please go checking the <b>/blocks/views/resue/reuse.html</b> file to see how easily and elegantly this can be done.
+        You may even customize its style when reusing a block as shown in this example.
+      </div>
+    </div>
+  </div>
+</div>

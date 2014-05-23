@@ -1,0 +1,18 @@
+/* Add css rules here that are valid for the whole page */
+#pgContainer {
+	margin: 0px auto;
+	width: 960px;
+}
+
+#pgLeft {
+	float: left;
+	width: 240px;
+}
+
+#pgContent {
+	margin-left: 250px;
+}
+
+#pgFooter {
+	clear: both;
+}
