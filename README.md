@@ -23,6 +23,10 @@ coServ is created in the view of the "internet of servers" paradigm. Servers cro
 
 + Hosting multiple web sites on a single coServ server. It's extremely easy to do so.
 
+## Development Guides
+Articles and guides can be found [here](https://github.com/coimotion/coServ/wiki).
+
+
 ## Install
 npm install coserv
 

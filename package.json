@@ -1,6 +1,6 @@
 {
   "name": "coserv",
-  "version": "0.8.5",
+  "version": "0.8.5.1",
   "description": "Block-based, cross-origin web server.",
   "engines": "0.10.21",
   "main": "coServ.js",
@@ -25,6 +25,7 @@
     "cookie-parser": "~1.0.1",
     "moment": "~2.5.1",
     "morgan": "~1.0.0",
+    "ncp": "^0.5.1",
     "nodemailer": "~0.6.0",
     "request": "^2.36.0",
     "serve-static": "~1.1.0",

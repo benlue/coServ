@@ -22,6 +22,9 @@ coServ 是基於 "internet of servers" 的理念所設計的。這意味不同�
 
 + 單一的 coServ 可以支援多個網站，而且非常簡單。只需二三行設定碼就可達成。
 
+## 開發者文件
+更多關於 coServ 的說明與技術文件，請參考[這裡](http://coimotion.github.io/coServ/zh/index.html)
+
 ## 如何安裝
 npm install coserv
 

@@ -1,3 +1,9 @@
+0.8.5.1:
+--------
+ . Add command line interfaces (CLI) to (1) add a website and (2) add a new page to a website.
+ . Release Date: 5/29/2014
+
+
 0.8.5:
 ------
   . Change how a local module is invoked. The run() method now will take a second parameter which is
