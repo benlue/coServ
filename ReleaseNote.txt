@@ -1,4 +1,4 @@
-0.8.5.1:
+0.8.6:
 --------
  . Add command line interfaces (CLI) to (1) add a website and (2) add a new page to a website.
  . Release Date: 5/29/2014
