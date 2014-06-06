@@ -1,8 +1,8 @@
 /*----------左側內容-----------*/
 #menuBtn {
-  position: absolute;
-  top: 10px;
-  left: 10px;
+  position: relative;
+  top: -5px;
+  left: -30px;
   height:30px;
   border: none;
   background: none;
