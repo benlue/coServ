@@ -184,9 +184,7 @@ ctrl.mQueue = function(type, cnID) {
 ctrl.insertCnt = function() {
   cnQ[3].forEach(function(cnID) {
     var url = ctrl.sel('img[cn="'+cnID+'"]').attr('data-src');
-    ctrl.sel('.cleditorButton[title="Insert Image"]').click();
-    ctrl.sel('.cleditorPrompt input[type="text"]').val(url);
-    ctrl.sel('.cleditorPrompt input[type="button"]').click();
+    ctrl.sel('iframe').contents().find('body').append('<img src="'+url+'">');
   });
   ctrl.receive(3);
 };
