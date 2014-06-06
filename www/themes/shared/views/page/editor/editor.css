@@ -1,4 +1,14 @@
 /*----------左側內容-----------*/
+#menuBtn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  height:30px;
+  border: none;
+  background: none;
+  font-size: 20px;
+  opacity: 0.8;
+}
 .leftCon{
   border-right: 1px solid #ccc;
   padding:0px;
@@ -58,7 +68,12 @@ cursor: pointer;
 }
 .Box-inner{
   padding:10px;
+  overflow-y: scroll;
+  max-height: 140px;
+  width: 100%;
+
 }
+
 .Box-List{
    min-height:50px;
    overflow:auto;
@@ -110,10 +125,11 @@ cursor: pointer;
   margin: 5px 0px 0px;
 }
 /*文章頭像*/
-.img{
-  width: 100%;
-  padding-top:40%;
-  padding-bottom:40%;
+#icon {
+  /*width: 100%;*/
+  min-height: 40px;
+  height:80px;
+  line-height: 80px;
   background: #E4E6E1;
   /*圓角*/
   -webkit-border-radius: 5px;
@@ -141,9 +157,9 @@ cursor: pointer;
 .cleditorMain {border:1px solid #999; padding:0 1px 1px; background-color:white}
 .cleditorMain iframe {border:none; margin:0; padding:0}
 .cleditorMain textarea {border:none; margin:0; padding:0; overflow-y:scroll; font:10pt Arial,Verdana; resize:none; outline:none /* webkit grip focus */}
-.cleditorToolbar {background: url('../../wcoim/backstage/cleditor/toolbar.gif') repeat}
+.cleditorToolbar {background: url('../../index/img/cleditor/toolbar.gif') repeat}
 .cleditorGroup {float:left; height:26px}
-.cleditorButton {float:left; width:24px; height:24px; margin:1px 0 1px 0; background: url('../../wcoim/backstage/cleditor/buttons.gif')}
+.cleditorButton {float:left; width:24px; height:24px; margin:1px 0 1px 0; background: url('../../index/img/cleditor/buttons.gif')}
 .cleditorDisabled {opacity:0.3; filter:alpha(opacity=30)}
 .cleditorDivider {float:left; width:1px; height:23px; margin:1px 0 1px 0; background:#CCC}
 .cleditorPopup {border:solid 1px #999; background-color:white; color:#333333; position:absolute; font:10pt Arial,Verdana; cursor:default; z-index:10000}
@@ -155,39 +171,6 @@ cursor: pointer;
 .cleditorPrompt {background-color:#F6F7F9; padding:4px; font-size:8.5pt}
 .cleditorPrompt input,.cleditorPrompt textarea {font:8.5pt Arial,Verdana;}
 .cleditorMsg {background-color:#FDFCEE; width:150px; padding:4px; font-size:8.5pt}
-
-
-/* bootstrap-wysiwyg */
-/* this CSS is not part of the widget, it is here just as an example of the demo page styling.... Don't copy this one, roll your own. One
- * of the key things about the widget is that it allows you to do your own styling!
- */
-/*
-#editor {
-  max-height: 250px;
-  height: 250px;
-  background-color: white;
-  border-collapse: separate;
-  border: 1px solid rgb(204, 204, 204);
-  padding: 4px;
-  box-sizing: content-box;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.0745098) 0px 1px 1px 0px inset;
-  box-shadow: rgba(0, 0, 0, 0.0745098) 0px 1px 1px 0px inset;
-  border-top-right-radius: 3px; border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px; border-top-left-radius: 3px;
-  overflow: scroll;
-  outline: none;
-}
-
-div[data-role="editor-toolbar"] {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.dropdown-menu a {
-  cursor: pointer;
-}
 
 
 /*--css--*/
@@ -210,4 +193,43 @@ div[data-role="editor-toolbar"] {
 }
 .Box-bu .bu i{
   font-size: 22px;
+}
+#attList i {
+  font-size: 30px;
+  margin-right: 2px;
+}
+#geoList i {
+  font-size: 22px;
+  margin-right: 2px;
+}
+#attList i.active {
+  color: #1bbc9b;
+}
+#picList img {
+  width:40px;
+  height:40px;
+  margin: 5px 5px;
+  background:grey;
+  opacity: 0.3;
+}
+#picList img.active {
+  padding: 2px 2px;
+  background: white;
+  opacity: 1.0;
+  border: 1px solid #1bbc9b;
+}
+#fg button.active {
+  background-color: #f0ad4e;
+  border-color: #cccccc;
+}
+
+/* 強制顯示scroll */
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.5);
+    box-shadow: 0 0 1px rgba(255,255,255,.5);
 }

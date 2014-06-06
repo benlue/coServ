@@ -2,5 +2,7 @@
 	"/index": {"id": "no"},
 	"/co/rss": {"id": "no"},
 	"/reuse": {"id": "no"},
-	"/mainMenu": {"id": "no"}
+	"/mainMenu": {"id": "no"},
+  "/editorDemo/editor": {"id": "no"},
+  "/editorDemo/addGeoCnt": {"id": "no"}
 }

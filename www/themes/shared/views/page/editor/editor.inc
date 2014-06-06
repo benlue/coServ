@@ -1,2 +1,3 @@
-/shared/css/style/jquery.cleditor.css
-/shared/js/wcoimJs/jquery.cleditor.min.js
+/shared/css/jquery.cleditor.css
+/shared/js/lib/jquery.cleditor.min.js
+/shared/css/font-awesome.css

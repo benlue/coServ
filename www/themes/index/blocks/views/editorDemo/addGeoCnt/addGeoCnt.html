@@ -1,0 +1,70 @@
+<% var kill = (bi.query.geID !== 'undefined' && bi.query.disable ==='undefined') %>
+<div class="modal-header">
+	<button type="button" class="close alpha80" aria-hidden="true" onclick="<%=ctrl%>.closeModal();">&times;</button>
+	<h3 class="modal-title"><i class="icon-map-marker"></i>
+		<% if (bi.query.geID === 'undefined') { %>
+			&nbsp;新增地理位置
+		<% } else { %>
+			&nbsp;地理位置
+		<% } %>
+	</h3>
+</div>
+<div class="modal-body">
+	<div class="col-md-12">
+		<!-- 表單開始 -->
+		<form class="form-horizontal" role="form">
+			<div class="form-group">
+				<label class="col-md-3 control-label">地址：</label>
+				<div class="col-md-9">
+					<textarea class="form-control" id="text"  name="addr" placeholder="必填" onchange="<%=ctrl%>.searchAddr();" <%if(kill) {%>disabled<%}%>></textarea>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-md-3 control-label">郵遞區號：</label>
+				<div class="col-md-9">
+					<input type="text" class="form-control" id="text"  name="zip" <%if(kill) {%>disabled<%}%>></input>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-md-3 control-label">經度：</label>
+				<div class="col-md-9">
+					<input type="text" class="form-control" id="text" name="lat" placeholder="必填" <%if(kill) {%>disabled<%}%>>
+					<!--<span class="fcG6 fs07 paT5" style="display:block;">※請輸入6碼以上的英數字</span>-->
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-md-3 control-label">緯度：</label>
+				<div class="col-md-9">
+					<input type="text" class="form-control" id="text" name="lng" placeholder="必填" <%if(kill) {%>disabled<%}%>>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-md-3 control-label">標題：</label>
+				<div class="col-md-9">
+					<input class="form-control" id="text"  name="title" <%if(kill) {%>disabled<%}%>></input>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-md-3 control-label">私人記錄：</label>
+				<div class="checkbox col-md-9">
+					<label>
+						<input type="checkbox" name="pri" value="1" onchange="<%=ctrl%>.changeStatus();" <%if(kill) {%>disabled<%}%>>不公開
+					</label>
+				</div>
+			</div>
+		</form>
+		<!-- 表單結束 -->
+	</div>
+</div>
+<div class="modal-footer" id="addGeoCnt" style="padding-right:35px;" ca="<%=bi.query.ca%>" appCode="<%=bi.query.appCode%>" rs="<%=bi.query.rs%>" ng="<%=bi.query.ngID%>" ge="<%=bi.query.geID%>" disable="<%=bi.query.disable%>">
+	<% if (bi.query.geID === 'undefined') { %>
+	<button type="button" class="btn btn-green" onclick="<%=ctrl%>.save();">新增</button>
+	<% } else { %>
+		<%if(!kill) {%>
+		<button id="delable" type="button" class="btn btn-danger" onclick="<%=ctrl%>.delCnt();">刪除</button>
+		<%}%>
+		<% if (!bi.query.ngID) { %>
+		<button type="button" class="btn btn-green" onclick="<%=ctrl%>.save();">儲存</button>
+		<%}%>
+	<% } %>
+</div>
