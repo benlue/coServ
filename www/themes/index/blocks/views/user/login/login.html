@@ -1,0 +1,16 @@
+<div class="container">
+
+  <form class="form-signin" role="form">
+    <h2 class="form-signin-heading">Please sign in</h2>
+    <input type="email" class="form-control" name="accName" placeholder="電子郵件" required autofocus>
+    <input type="text" class="form-control regField" name="fname" placeholder="姓名" required>
+    <input type="password" class="form-control regField" name="passwd" placeholder="設定密碼  ※請輸入6碼以上的英數字" >
+    <input type="password" class="form-control" name="passwd2" placeholder="密碼" required>
+    <div class="btn-group btn-group.btn-group-justified">
+      <button id="login" class="btn btn-lg btn-primary" type="submit">Sign in</button>
+      <button class="btn btn-lg btn-warning" onclick="<%=ctrl%>.reg();">Sign up</button>
+    </div>
+    <button id="reg" class="btn btn-lg btn-warning" type="submit">Sign up</button>
+  </form>
+
+</div>

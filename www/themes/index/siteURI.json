@@ -3,8 +3,7 @@
 	"/co/rss": {"id": "no"},
 	"/reuse": {"id": "no"},
 	"/mainMenu": {"id": "no"},
-  "/user/signup": {"id": "no"},
-  "/user/signin": {"id": "no"},
+  "/user/login": {"id": "no"},
   "/editorDemo/editor": {"id": "no"},
   "/editorDemo/addGeoCnt": {"id": "no"}
 }
