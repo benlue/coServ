@@ -11,6 +11,34 @@ ctrl.reg = function() {
   ctrl.sel('.btn-group').hide();
 };
 
+ctrl.doRegister = function()  {
+    var  pdata = ctrl.sel('form').serialize(),
+         reqData = {url: 'admin/user/register', post: pdata};
+    __.api(reqData, function(data) {
+        if (data.errCode === 0)
+            sendMail( data.value.actID );
+        else  {
+            // TODO: make it user friendly, ask user to try again
+            alert( data.message );
+        }
+    });
+};
+
 function wrongInfo() {
   ctrl.reg();
-}
+};
+
+function sendMail(actID)  {
+    var  pdata = collectData();
+	pdata.from = "webmaster@gocharm.com.tw";
+	pdata.to = pdata.accName;
+	pdata.title = "COIMOTION: Account Activation Letter"; /*email title*/
+	pdata.actID = actID;
+	pdata.email = pdata.accName;
+
+    $.post( "/mail/accActivate.wsj", pdata, function(data) {
+		alert("You've successfully registered.\r\nPlease check your mail box for the activation letter,\r\nand activate your account immediately.");
+		// we'll keep pulling the API engine until the user has activated his/her account.
+        // then something magical will happen
+	});
+};
