@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phrases>
+  <ph id="email">
+    <en>Email</en>
+    <zh>電子郵件</zh>
+  </ph>
+  <ph id="name">
+    <en>Name</en>
+    <zh>姓名</zh>
+  </ph>
+  <ph id="passwd_tip">
+    <en>Password</en>
+    <zh>輸入密碼  ※請輸入6碼以上的英數字</zh>
+  </ph>
+  <ph id="passwd_repeat">
+    <en>Password again</en>
+    <zh>重複輸入密碼</zh>
+  </ph>
+  <ph id="teamCode">
+    <en>Team Code</en>
+    <zh>團隊代碼</zh>
+  </ph>
+  <ph id="caCode">
+    <en>CA Code</en>
+    <zh>ca代碼</zh>
+  </ph>
+  <ph id="login">
+    <en>Login</en>
+    <zh>登入</zh>
+  </ph>
+  <ph id="regist">
+    <en>Regist</en>
+    <zh>註冊</zh>
+  </ph>
+</phrases>
