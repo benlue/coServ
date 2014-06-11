@@ -11,18 +11,18 @@
  */
  exports.run = function run(inData, callback)  {
      request.post(
-        /*
         {
           headers: {'content-type' : 'application/x-www-form-urlencoded'},
           url:     'http://tw.coimotion.com/mail/accActivate.wsj',
-          body:    inData
+          json:    inData
         },
-        */
+        /*
         {
           headers: {'content-type' : 'application/x-www-form-urlencoded'},
           url:     'http://127.0.0.1:9090/mail/accActivate.wsj',
-          body:    inData
+          json:    inData
         },
+        */
         function(error, response, body){
             if (error)
                 callback( {errCode: 1, message: "Failed to send out the activation mail."} );

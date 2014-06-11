@@ -31,10 +31,10 @@ var  sitePath,
           uriMap = JSON.parse( fs.readFileSync( uriPath ) ),
           demoSite = sites['127.0.0.1'];
 
-     demoSite.caCode = inData.value.caCode;
-     demoSite.appKeys[inData.value.caCode] = inData.value.appKey;
+     demoSite.caCode = inData.caCode;
+     demoSite.appKeys[inData.caCode] = inData.appKey;
 
-     var  servicePath = util.format('/%s/myPage/', inData.value.waCode);
+     var  servicePath = util.format('/%s/myPage/', inData.waCode);
      uriMap['/myPage/list'] = {id: 'no', service: servicePath + 'list'};
      uriMap['/myPage/view'] = {id: 'yes', service: servicePath + 'view'};
 

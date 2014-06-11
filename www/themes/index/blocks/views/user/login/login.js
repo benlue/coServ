@@ -24,7 +24,6 @@ ctrl.switch = function(type) {
 };
 
 ctrl.doRegister = function()  {
-    alert('I will be registering...');
     var  pdata = formData(true),
          reqData = {url: 'wcoim/admin/user/register', post: pdata, hasCA: true};
     pdata.all = 1;
@@ -76,7 +75,7 @@ ctrl.doLogin = function()  {
                     reqData.url = 'wcoim/admin/user/fastTrack';
                     __.api(reqData, function(ftData) {
                         if (ftData.errCode === 0)  {
-                            $.post('/sites/refresh.wsj', ftData, function(result) {
+                            $.post('/sites/refresh.wsj', ftData.value, function(result) {
                                 if (result.errCode === 0)  {
                                     ctrl.sel('#loginModal').modal('hide');
                                     var  bodyCtrl = getBodyCtrl();
@@ -152,7 +151,7 @@ function sendMail(regData)  {
                 if (result.errCode === 0)
                     // we'll keep pulling the API engine until the user has activated his/her account.
                     // then something magical will happen
-                    setTimeout( waitActivated, 90000 );
+                    setTimeout( waitActivated, 30000 );
                 else
                     alert( result.message );
             });
@@ -164,7 +163,7 @@ function sendMail(regData)  {
 
 function  waitActivated()  {
     var  pdata = formData(),
-         reqData = {url: 'admin/user/login', post: pdata};
+         reqData = {url: 'wcoim/admin/user/login', post: pdata, hasCA: true};
 
     __.api(reqData, function(data) {
         if (data.errCode === 0)  {
@@ -174,7 +173,7 @@ function  waitActivated()  {
         }
         else
             // wait for 15 seconds and try again
-            setTimeout( waitActivated, 15000 );
+            setTimeout( waitActivated, 10000 );
     });
 };
 
