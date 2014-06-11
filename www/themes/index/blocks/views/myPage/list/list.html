@@ -1,0 +1,26 @@
+<div class="myPageList">
+    <% if (errCode === 0) { %>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Summary</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <% value.list.forEach(function(item) { %>
+        <tr>
+            <td><%= item.title %></td>
+            <td><%= item.summary %></td>
+            <td>
+                <button class="btn btn-sm" onclick="<%=ctrl%>.viewPage('<%=item.ngID%>');">View</button>
+                <button class="btn btn-sm" onclick="<%=ctrl%>.editPage('<%=item.ngID%>');">Edit</button>
+            </td>
+        </tr>
+        <% }); %>
+    </table>
+    <% } else  { %>
+        <div>Error code: <%=errCode%>, messages: <%=message%></div>
+    <% } %>
+
+</div>

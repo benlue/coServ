@@ -2,4 +2,5 @@
 /shared/js/lib/jquery-1.10.2.min.js
 /shared/js/lib/bootstrap/js/bootstrap.min.js
 /shared/js/wFront.js
+/shared/js/sha1.js
 /shared/js/lib/jquery.cleditor.min.js

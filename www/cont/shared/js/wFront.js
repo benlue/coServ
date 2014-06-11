@@ -40,6 +40,7 @@ var  _wf = (function (_wf) {
 	};
 
 	_wf.api = function(req, callback)  {
+        //console.log(JSON.stringify(req));
 		$.post('/_api/post', req, function(data) {
 			callback(data);
 		});
@@ -170,7 +171,6 @@ var  _ctrl = (function()  {
                 var  cssIdx1 = html.indexOf('<style'),
                      cssIdx2 = idx1,
                      cssRules = $(html.substring(cssIdx1, cssIdx2));
-                console.log('css rules: %s', html.substring(cssIdx1, cssIdx2));
                 $('html > head').append( cssRules );
 
                 var  jsIdx = html.indexOf('(function', idx1);

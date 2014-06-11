@@ -10,6 +10,10 @@ ctrl.startup = function()  {
     ctrl.sel('#mmenu3').on('show.bs.collapse', function()  {
         getBodyCtrl().reload('/reuse');
     });
+
+    ctrl.sel('#mmenu4').on('show.bs.collapse', function()  {
+        getBodyCtrl().reload('/user/login');
+    });
 };
 
 

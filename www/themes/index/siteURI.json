@@ -1,9 +1,29 @@
 {
-	"/index": {"id": "no"},
-	"/co/rss": {"id": "no"},
-	"/reuse": {"id": "no"},
-	"/mainMenu": {"id": "no"},
-  "/user/login": {"id": "no"},
-  "/editorDemo/editor": {"id": "no"},
-  "/editorDemo/addGeoCnt": {"id": "no"}
+    "/index": {
+        "id": "no"
+    },
+    "/co/rss": {
+        "id": "no"
+    },
+    "/reuse": {
+        "id": "no"
+    },
+    "/mainMenu": {
+        "id": "no"
+    },
+    "/user/login": {
+        "id": "no"
+    },
+    "/user/mailActivate": {
+        "id": "no"
+    },
+    "/editorDemo/editor": {
+        "id": "no"
+    },
+    "/editorDemo/addGeoCnt": {
+        "id": "no"
+    },
+    "/sites/refresh": {
+        "id": "no"
+    }
 }

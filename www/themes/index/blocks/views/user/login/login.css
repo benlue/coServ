@@ -26,30 +26,26 @@
 .form-signup .form-control:focus {
   z-index: 2;
 }
-.form-signin input[type="email"]
-.form-signup input[type="email"] {
+input[type="email"],
+input[name="teamCode"] {
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
-.form-signin input[name="passwd2"] {
+input[name="passwd2"],
+input[name="caCode"] {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-.btn-group, #reg {
+.btn-group {
   width:100%;
 }
-#login {
-  width:68%; 
+#login, #reg {
+  width:72%; 
 }
 
 .form-signup input[type="text"],
 .form-signup input[name="passwd"] {
   border-radius: 0;
-}
-.form-signup input[name="passwd2"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
 }
