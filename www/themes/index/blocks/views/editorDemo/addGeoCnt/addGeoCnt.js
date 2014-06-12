@@ -118,7 +118,7 @@ function  collectData()  {
   return  pdata;
 };
 function getSrvPath() {
-  return ctrl.sel('#ng').attr('srv');
+  return ctrl.sel('#addGeoCnt').attr('srv');
 }
 function getGe() {
   return ctrl.sel('#addGeoCnt').attr('ge');
