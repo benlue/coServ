@@ -51,7 +51,7 @@ ctrl.doLogin = function()  {
         return;
     }
 
-    ctrl.sel('#loginModal').modal({backdrop:'static', keyboard: false, show: true});
+    ctrl.sel('#loginModal').modal({keyboard: false, show: true});
 
     var  pdata = {accName: ctrl.sel('input[name="accName"]').val()},
          reqData = {url: 'wcoim/admin/user/pwType', post: pdata, hasCA: true};
@@ -77,9 +77,10 @@ ctrl.doLogin = function()  {
                         if (ftData.errCode === 0)  {
                             $.post('/sites/refresh.wsj', ftData.value, function(result) {
                                 if (result.errCode === 0)  {
-                                    ctrl.sel('#loginModal').modal('hide');
-                                    var  bodyCtrl = getBodyCtrl();
-                                    bodyCtrl.reload('/myPage/list');
+                                    ctrl.sel('#loginModal').modal('hide').on('hidden.bs.modal', function (e) {
+                                      var  bodyCtrl = getBodyCtrl();
+                                      bodyCtrl.reload('/myPage/list');
+                                    });
                                 }
                                 else
                                     loginFail( result.message );

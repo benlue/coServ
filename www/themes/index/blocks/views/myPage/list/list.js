@@ -3,8 +3,21 @@ ctrl.startup = function()  {
 };
 
 
-ctrl.editPage = function(ngID)  {
+ctrl.editPage = function(ngID, srv)  {
+  var arr = srv.split('/'),
+      path = '';
+  for( var i = 1; i<arr.length-1; i++)
+    path+=arr[i]+'/';
+  // var params = {"ca": getCA(), "appCode": getAppCode(), "rs": rs, "locale":getLocale(), "disable": true};
+  // if (ngID !== 'undefined')
+  //   params.ngID = ngID;
+  var params = {srvPath: path};
+  if (ngID !== 'undefined')
+    params.ngID = ngID;
 
+  ctrl.embed('.editor', '/editorDemo/editor', {params: params}, function(emCtrl) {
+    emCtrl.addHandler("reqCloseEditor", ctrl.closeEditor);
+  });
 };
 
 
