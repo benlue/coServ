@@ -1,4 +1,7 @@
+var progCount = 0;
+
 ctrl.startup = function() {
+
     if (!<%=bi.isGuest%>)  {
         var  bodyCtrl = getBodyCtrl();
         bodyCtrl.reload('/myPage/list');
@@ -52,7 +55,6 @@ ctrl.doLogin = function()  {
     }
 
     ctrl.sel('#loginModal').modal({keyboard: false, show: true});
-
     var  pdata = {accName: ctrl.sel('input[name="accName"]').val()},
          reqData = {url: 'wcoim/admin/user/pwType', post: pdata, hasCA: true};
 
@@ -149,11 +151,12 @@ function sendMail(regData)  {
 
             // now let's update sites.json
             $.post('/sites/refresh.wsj', regData, function(result) {
-                if (result.errCode === 0)
+                if (result.errCode === 0) {
                     // we'll keep pulling the API engine until the user has activated his/her account.
                     // then something magical will happen
                     setTimeout( waitActivated, 30000 );
-                else
+                    showProgress();
+                } else
                     alert( result.message );
             });
         }
@@ -162,19 +165,31 @@ function sendMail(regData)  {
 	});
 };
 
+function showProgress() {
+    ctrl.sel('#loadingModal').modal({backdrop: 'static', keyboard: false, show: true});
+};
+
+function runProgress() {
+    progCount = Math.min(98, progCount+10);
+    ctrl.sel('.progress-bar').css('width', progCount+'%');
+};
+
 function  waitActivated()  {
     var  pdata = formData(),
          reqData = {url: 'wcoim/admin/user/login', post: pdata, hasCA: true};
-
+    runProgress();
+    
     __.api(reqData, function(data) {
         if (data.errCode === 0)  {
             // bingo! we've logged in.
-            var  bodyCtrl = getBodyCtrl();
-            bodyCtrl.reload('/myPage/list');
+            ctrl.sel('#loadingModal').modal('hide').on('hidden.bs.modal', function (e) {
+                var  bodyCtrl = getBodyCtrl();
+                bodyCtrl.reload('/myPage/list');
+            });
         }
         else
-            // wait for 15 seconds and try again
-            setTimeout( waitActivated, 10000 );
+            // wait for 10 seconds and try again
+            setTimeout( waitActivated, 10000 );        
     });
 };
 
