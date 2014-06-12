@@ -1,3 +1,12 @@
+<p>
+    <%=ph.label%>:
+    <select onchange="<%=ctrl%>.selectLang(this);">
+        <option><%=ph.defaultOption%></option>
+        <option value="en">English</option>
+        <option value="zh">繁體中文</option>
+    </select>
+</p>
+
 <div class="panel-group" id="rgLeftMenu">
   <div class="panel panel-default">
     <div class="panel-heading">

@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phrases>
+    <ph id="label">
+        <en>Language</en>
+        <zh>語系選擇</zh>
+    </ph>
+    <ph id="defaultOption">
+        <en>Please choose...</en>
+        <zh>請選擇語系...</zh>
+    </ph>
     <ph id="menuTitle1">
       <en>Index Page</en>
       <zh>首頁</zh>

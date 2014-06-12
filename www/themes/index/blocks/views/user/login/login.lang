@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phrases>
+  <ph id="signHeader">
+    <en>Please sign here</en>
+    <zh>請登入</zh>
+  </ph>
+  <ph id="ftHeader">
+    <en>...and take the fast-track</en>
+    <zh>...並啟動快速設定</zh>
+  </ph>
   <ph id="email">
     <en>Email</en>
     <zh>電子郵件</zh>
@@ -47,7 +55,7 @@
   </ph>
   <ph id="waitLogin">
     <en>Please wait...</en>
-    <zh>請稍後...</zh>
+    <zh>請稍候...</zh>
   </ph>
   <ph id="waitReg">
     <en>Login</en>
