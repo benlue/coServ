@@ -8,10 +8,7 @@ ctrl.editPage = function(ngID, srv)  {
       path = '';
   for( var i = 1; i<arr.length-1; i++)
     path+=arr[i]+'/';
-  // var params = {"ca": getCA(), "appCode": getAppCode(), "rs": rs, "locale":getLocale(), "disable": true};
-  // if (ngID !== 'undefined')
-  //   params.ngID = ngID;
-  var params = {srvPath: path};
+  var params = {srvPath: path, locale: getLocale(), disable: true};
   if (ngID !== 'undefined')
     params.ngID = ngID;
 
@@ -33,3 +30,16 @@ function  getBodyCtrl()  {
 
     return  bodyCtrl;
 };
+
+function getLocale() {
+  // var loc = ctrl.sel('.editor').attr('locale');
+  // switch (loc) {
+  //   case 'en':
+  //     return 1;
+  //     break;
+  //   case 'zh':
+  //     return 2;
+  //     break;
+  // }
+  return ctrl.sel('.editor').attr('locale');
+}

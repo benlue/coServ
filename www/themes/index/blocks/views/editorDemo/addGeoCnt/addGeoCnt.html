@@ -56,7 +56,7 @@
 		<!-- 表單結束 -->
 	</div>
 </div>
-<div class="modal-footer" id="addGeoCnt" style="padding-right:35px;" ca="<%=bi.query.ca%>" appCode="<%=bi.query.appCode%>" rs="<%=bi.query.rs%>" ng="<%=bi.query.ngID%>" ge="<%=bi.query.geID%>" disable="<%=bi.query.disable%>">
+<div class="modal-footer" id="addGeoCnt" style="padding-right:35px;" srv="<%=bi.query.srvPath%>" ng="<%=bi.query.ngID%>" ge="<%=bi.query.geID%>" disable="<%=bi.query.disable%>">
 	<% if (bi.query.geID === 'undefined') { %>
 	<button type="button" class="btn btn-green" onclick="<%=ctrl%>.save();">新增</button>
 	<% } else { %>

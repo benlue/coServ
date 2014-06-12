@@ -1,12 +1,15 @@
 var isPri = 0;
+var srvPath;
 ctrl.startup = function() {
-  var req = { post:{"detail": 1}, hasCA:true };
+  var req = { post:{"detail": 1}};
+  srvPath = getSrvPath();
+
   if (getGe() === 'undefined') return false;
 
   if (getNg() === 'undefined') {
-    req.url = getCA()+'/'+getAppCode()+'/'+getRs()+'/info/'+getGe();
+    req.url = '/'+srvPath+'info/'+getGe();
   } else {
-    req.url = getCA()+'/'+getAppCode()+'/'+getRs()+'/view/'+getNg();
+    req.url = '/'+srvPath+'view/'+getNg();
     req.post = {geo:1};
   }
 
@@ -32,11 +35,11 @@ ctrl.startup = function() {
 ctrl.save = function() {
   var pdata = collectData(),
       op = ( getGe() === 'undefined' ? ( getNg() === 'undefined' && isDisabled() === 'undefined' ? 'add' : 'addGeo/'+getNg() ) : 'update/'+getGe() );
-      req = {post:pdata, hasCA:true};
+      req = {post:pdata};
   if (getNg() === 'undefined' || getGe() == 'undefined' ) {
-    req.url = getCA()+'/'+getAppCode()+'/'+getRs()+'/'+op;
+    req.url = '/'+srvPath+op;
   } else {
-    req.url = 'wcoim/cms/geoLoc/'+op;
+    req.url = '/cms/geoLoc/'+op;
   }
 
   __.api(req, function(data) {
@@ -49,8 +52,7 @@ ctrl.save = function() {
 };
 ctrl.delCnt = function() {
   var pdata = {geID:getGe()},
-      req = {url: getCA()+'/'+getAppCode()+'/'+getRs()+'/delGeo/'+getNg(),
-              post:pdata, hasCA:true};
+      req = {url: '/'+srvPath+'delGeo/'+getNg(), post:pdata};
   __.api(req, function(data) {
     if (data.errCode === 0) {
       ctrl.closeModal();
@@ -115,15 +117,8 @@ function  collectData()  {
 
   return  pdata;
 };
-
-function getCA() {
-  return ctrl.sel('#addGeoCnt').attr('ca');
-}
-function getAppCode() {
-  return ctrl.sel('#addGeoCnt').attr('appCode');
-}
-function getRs() {
-  return ctrl.sel('#addGeoCnt').attr('rs');
+function getSrvPath() {
+  return ctrl.sel('#ng').attr('srv');
 }
 function getGe() {
   return ctrl.sel('#addGeoCnt').attr('ge');
