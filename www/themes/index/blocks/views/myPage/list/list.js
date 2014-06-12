@@ -38,14 +38,14 @@ function  getBodyCtrl()  {
 };
 
 function getLocale() {
-  // var loc = ctrl.sel('.editor').attr('locale');
-  // switch (loc) {
-  //   case 'en':
-  //     return 1;
-  //     break;
-  //   case 'zh':
-  //     return 2;
-  //     break;
-  // }
-  return ctrl.sel('.editor').attr('locale');
+  var loc = ctrl.sel('.editor').attr('locale');
+  switch (loc) {
+    case 'en':
+      return 1;
+      break;
+    case 'zh':
+      return 2;
+      break;
+  }
+  // return ctrl.sel('.editor').attr('locale');
 }
