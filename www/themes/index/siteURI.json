@@ -26,14 +26,11 @@
     "/sites/refresh": {
         "id": "no"
     },
-    "/images": {"id": "yes", "args": ["path"], "service": "/cms/att/node"
-    },
-    "/myPage/list": {
-        "id": "no",
-        "service": "/raphael/myPage/list"
-    },
-    "/myPage/view": {
+    "/images": {
         "id": "yes",
-        "service": "/raphael/myPage/view"
+        "args": [
+            "path"
+        ],
+        "service": "/cms/att/node"
     }
 }

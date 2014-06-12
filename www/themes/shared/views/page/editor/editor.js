@@ -16,12 +16,10 @@ var sender = {
       alert(JSON.stringify(err));
     }
   },
-  // init: function(ca, wa, rs) {
   init: function() {
     var geID = ctrl.sel('#ng').attr('ge'),
         ngID = ctrl.sel('#ng').attr('ng');
 
-    // sender.settings['url'] += ca+'/'+wa+'/'+rs+'/attach/';
     sender.settings['url'] += 'testBusAPI/'+srvPath + 'attach/';
     if (ngID !== 'undefined') {
       sender.settings['url'] += ngID;
@@ -54,12 +52,10 @@ var sender = {
 ctrl.startup = function() {
   srvPath = getSrvPath();
   ctrl.checkGeoInfo(ctrl.receiveAll);
-  // sender.init(getCA(), getAppCode(), getRs());
   sender.init();
 };
 
 ctrl.checkGeoInfo = function(callback) {
-  // var findGeInfo = {url:getCA()+'/'+getAppCode()+'/'+getRs()+'/info/'+getGe(), post:{detail:1}, hasCA:true},
   var findGeInfo = {url:'/'+srvPath+'info/'+getGe(), post:{detail:1}},
       fromPage = (getNg() !== 'undefined'),
       fromGeo = (getGe() !== 'undefined');
@@ -85,7 +81,6 @@ ctrl.checkGeoInfo = function(callback) {
 };
 
 ctrl.receiveAll = function(ng, onlyGeo) {
-  // var req = {url:getCA()+'/'+getAppCode()+'/'+getRs()+'/view/'+ng, post:{icon:1, geo:1, pic:1, att:1, "_loc":getLocale()}, hasCA:true};
   var req = {url:'/'+srvPath+'view/'+ng, post:{icon:1, geo:1, pic:1, att:1, "_loc":getLocale()}};
   __.api(req, function(data) {
     if (data.errCode === 0) {
@@ -115,7 +110,6 @@ ctrl.receiveAll = function(ng, onlyGeo) {
 
 ctrl.receive = function(type) {
   var pdata = {"nType": type},
-      // req = {url:getCA()+'/'+getAppCode()+'/'+getRs()+'/listAux/'+getNg(), post:pdata, hasCA:true};
       req = {url:'/'+srvPath+'listAux/'+getNg(), post:pdata};
   __.api(req, function(data) {
     if (data.errCode === 0) {
@@ -167,10 +161,8 @@ ctrl.draw = function(type, arr) {
   cnQ[+type] = [];
 };
 ctrl.showAddCnt = function(ngID, geID)  {
-  // var params = {"ca": getCA(), "appCode": getAppCode(), "rs": getRs(), "ngID": getNg(), "geID": geID, "disable": isDisabled()};
-  var params = {srvPath: srvPath, ngID: ngID, geID: geID, disable: isDisabled()};
   // TODO: change interface to connect geoLoc Modal.
-  alert('params:'+JSON.stringify(params));
+  var params = {srvPath: srvPath, ngID: ngID, geID: geID, disable: isDisabled()};
 
   if (isDisabled() !== 'undefined')
     params.disable = isDisabled();
@@ -202,7 +194,6 @@ ctrl.insertCnt = function() {
 };
 ctrl.delCnt = function(type) {
   cnQ[type].forEach(function(cnID) {
-    // var req = {url: getCA()+'/'+getAppCode()+'/'+getRs()+'/unattach/'+cnID, post:{}, hasCA:true};
     var req = {url: '/'+srvPath+'unattach/'+cnID, post:{}};
     __.api(req, function(data) {
       if (data.errCode === 0) {
@@ -222,7 +213,6 @@ ctrl.save = function() {
       ngID = getNg(),
       geID = getGe(),
       op = ( ngID === 'undefined' ? ( geID === 'undefined' ? 'create' : 'updInfo/'+geID ) : (geID === 'undefined' ? 'update/'+ngID : 'updInfo/'+geID) ),
-      // req = {url:getCA()+'/'+getAppCode()+'/'+getRs()+'/'+op, post:pdata, hasCA:true};
       req = {url:'/'+srvPath+op, post:pdata};
     __.api(req, function(data) {
       if (data.errCode === 0) {
@@ -324,15 +314,6 @@ function collectData()  {
 }
 function getSrvPath() {
   return ctrl.sel('#ng').attr('srv');
-}
-function getCA() {
-  return ctrl.sel('#ng').attr('ca');
-}
-function getAppCode() {
-  return ctrl.sel('#ng').attr('appCode');
-}
-function getRs() {
-  return ctrl.sel('#ng').attr('rs');
 }
 function getNg() {
   return ctrl.sel('#ng').attr('ng');

@@ -23,6 +23,12 @@ ctrl.viewPage = function(ngID)  {
     bodyCtrl.reload('/myPage/view', {id: ngID});
 };
 
+ctrl.closeEditor = function() {
+  ctrl.sel("#editorModal").modal('hide').on('hidden.bs.modal', function () {
+    var  bodyCtrl = getBodyCtrl();
+    bodyCtrl.reload('/myPage/list');
+  });
+};
 
 function  getBodyCtrl()  {
     var  bodyBkID = $('#_mainC').children('div').first().attr('id'),
