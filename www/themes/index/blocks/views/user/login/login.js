@@ -103,6 +103,10 @@ ctrl.doLogin = function()  {
     });
 };
 
+ctrl.closeMsg = function() {
+    ctrl.sel('#greeting').modal('hide');
+};
+
 function  wrongInfo() {
   ctrl.switch('reg');
 };

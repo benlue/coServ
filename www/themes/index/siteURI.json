@@ -32,16 +32,5 @@
             "path"
         ],
         "service": "/cms/att/node"
-    },
-    "/myPage/list": {
-        "id": "no",
-        "service": "/ben_lue/myPage/list",
-        "params": {
-            "caCode": "cTrvTW"
-        }
-    },
-    "/myPage/view": {
-        "id": "yes",
-        "service": "/ben_lue/myPage/view"
     }
 }
