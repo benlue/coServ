@@ -321,19 +321,19 @@ function getSrvPath() {
     return  getNGAttr('srv');
 };
 function getCA() {
-  return ctrl.sel('#ng').attr('ca');
+    return  getNGAttr('ca');
 };
 function getNg() {
-  return ctrl.sel('#ng').attr('ng');
+    return  getNGAttr('ng');
 };
 function getGe() {
-  return ctrl.sel('#ng').attr('ge');
+    return  getNGAttr('ge');
 };
 function getLocale() {
-  return ctrl.sel('#ng').attr('locale');
+    return  getNGAttr('locale');
 };
 function allowGeo() {
-  return ctrl.sel('#ng').attr('allowGeo');
+    return  getNGAttr('allowGeo');
 };
 function getCtrl() {
   return ctrl.sel('#geoList').attr('ctrl');
