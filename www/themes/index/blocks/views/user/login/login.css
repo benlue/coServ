@@ -49,3 +49,12 @@ input[name="caCode"] {
 .form-signup input[name="passwd"] {
   border-radius: 0;
 }
+
+#loginEffect {
+  font-size: 20px;
+  line-height:235px;
+  text-align: center;
+  width: 235px;
+  height: 235px;
+  background: url('../../index/img/loading.gif') no-repeat;
+}

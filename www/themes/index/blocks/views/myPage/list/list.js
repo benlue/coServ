@@ -8,7 +8,7 @@ ctrl.editPage = function(ngID, srv, caCode)  {
       path = '';
   for( var i = 1; i<arr.length-1; i++)
     path+=arr[i]+'/';
-  var params = {srvPath: path, ca: caCode, locale: getLocale(), disable: true};
+  var params = {srvPath: path, ca: caCode, locale: getLocale(), allowGeo: true};
   if (ngID !== 'undefined')
     params.ngID = ngID;
 

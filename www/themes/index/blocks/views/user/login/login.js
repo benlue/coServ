@@ -94,12 +94,16 @@ ctrl.doLogin = function()  {
                     });
                 }
                 else
-                    loginFail('<%=ph.jsLoginFail%>');
+                    loginFail('Login failed (' + data.message + ')');
             });
         }
         else
-            loginFail( '<%=ph.jsNoAccount%>' );
+            loginFail('Cannot contact the API service.');
     });
+};
+
+function  wrongInfo() {
+  ctrl.switch('reg');
 };
 
 function  formData(all)  {
@@ -150,7 +154,7 @@ function sendMail(regData)  {
                 if (result.errCode === 0) {
                     // we'll keep pulling the API engine until the user has activated his/her account.
                     // then something magical will happen
-                    setTimeout( waitActivated, 25000 );
+                    setTimeout( waitActivated, 30000 );
                     showProgress();
                 } else
                     alert( result.message );
@@ -174,7 +178,7 @@ function  waitActivated()  {
     var  pdata = formData(),
          reqData = {url: 'wcoim/admin/user/login', post: pdata, hasCA: true};
     runProgress();
-
+    
     __.api(reqData, function(data) {
         if (data.errCode === 0)  {
             // bingo! we've logged in.
@@ -185,7 +189,7 @@ function  waitActivated()  {
         }
         else
             // wait for 10 seconds and try again
-            setTimeout( waitActivated, 10000 );
+            setTimeout( waitActivated, 10000 );        
     });
 };
 

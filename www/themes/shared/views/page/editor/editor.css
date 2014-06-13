@@ -1,7 +1,7 @@
 /*----------左側內容-----------*/
 #menuBtn {
   position: relative;
-  top: -5px;
+  top: 0px;
   left: -30px;
   height:30px;
   border: none;
@@ -131,6 +131,7 @@ cursor: pointer;
   height:80px;
   line-height: 80px;
   background: #E4E6E1;
+  margin-bottom: 20px;
   /*圓角*/
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;

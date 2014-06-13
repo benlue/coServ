@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phrases>
+  <ph id="begin">
+    <en>Begin to enjoy!</en>
+    <zh>快開始使用吧！</zh>
+  </ph>
   <ph id="signHeader">
     <en>Please sign here</en>
     <zh>請登入</zh>
