@@ -1,6 +1,7 @@
 <% var langNeedSpace = (bi.query._loc == "en"); %>
 <!-- 主題內容開始 -->
-<div class="matter" style="padding:50px 50px 0 50px;">
+<button type="button" class="close alpha80" data-dismiss="modal" aria-hidden="true" style="margin: 20px 20px 0 0">&times;</button>
+<div class="matter" style="padding:30px 50px 0 50px;">
     <div class="row"  sytle="padding:0px; margin:0px;">
     <!-- 左側內容開始 -->
     <div>
@@ -54,6 +55,7 @@
           <form role="form" id="uploader" name="uploader" action="" enctype="multipart/form-data" method="POST">
             <input type="hidden" name="nType" value="3" >
             <input type="hidden" name="hasCA" value="1" >
+            <input type="hidden" name="_loc" value="<%=bi.query.locale%>" >
             <input type="file" name="aaa" multiple="multiple" class="form-control"><br>
           </form>
         </div>
@@ -80,7 +82,7 @@
                 <!-- 右側開始 -->
                 <div class="col-md-10 col-xs-10 col-Right rightMenu" id="iconRelate" style="margin-left:-2em; float:right">
 
-                  <div class="form-group" id="ng" ca="<%=bi.query.ca%>" appCode="<%=bi.query.appCode%>" rs="<%=bi.query.rs%>" ng="<%=bi.query.ngID%>" ge="<%=bi.query.geID%>" locale="<%=bi.query._loc%>" disable="<%=bi.query.disable%>">
+                  <div class="form-group" id="ng" srv="<%=bi.query.srvPath%>" ca="<%=bi.query.ca%>" appCode="<%=bi.query.appCode%>" rs="<%=bi.query.rs%>" ng="<%=bi.query.ngID%>" ge="<%=bi.query.geID%>" locale="<%=bi.query.locale%>" disable="<%=bi.query.disable%>">
                     <% if (langNeedSpace) {%>
                     <label class="col-md-3 col-xs-3 control-label rightLabel" for="title"><%= ph.title%></label>
                     <div class="col-md-9 col-xs-9">

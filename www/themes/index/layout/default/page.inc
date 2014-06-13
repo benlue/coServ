@@ -4,3 +4,4 @@
 /shared/js/wFront.js
 /shared/js/sha1.js
 /shared/js/lib/jquery.cleditor.min.js
+/shared/css/font-awesome.css
