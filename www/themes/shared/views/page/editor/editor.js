@@ -81,7 +81,6 @@ ctrl.checkGeoInfo = function(callback) {
 };
 
 ctrl.receiveAll = function(ng, onlyGeo) {
-    alert('receive all...');
   var req = {url: getCA() +'/'+srvPath+'view/'+ng, post:{icon:1, geo:1, pic:1, att:1, "_loc":getLocale()}, hasCA: true};
   __.api(req, function(data) {
     var tTitle = ctrl.sel('div#mdTime').text();
@@ -111,7 +110,6 @@ ctrl.receiveAll = function(ng, onlyGeo) {
 };
 
 ctrl.receive = function(type) {
-    alert('receive...');
   var pdata = {"nType": type},
       req = {url: getCA() +  '/' + srvPath + 'listAux/' + getNg(), post:pdata, hasCA: true};
   __.api(req, function(data) {
