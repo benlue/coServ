@@ -34,7 +34,7 @@ ctrl.startup = function() {
 };
 ctrl.save = function() {
   var pdata = collectData(),
-      op = ( getGe() === 'undefined' ? ( getNg() === 'undefined' && isDisabled() === 'undefined' ? 'add' : 'addGeo/'+getNg() ) : 'update/'+getGe() );
+      op = ( getGe() === 'undefined' ? ( getNg() === 'undefined' && allowGeo() === 'undefined' ? 'add' : 'addGeo/'+getNg() ) : 'update/'+getGe() );
       req = {post:pdata};
   if (getNg() === 'undefined' || getGe() == 'undefined' ) {
     req.url = '/'+srvPath+op;
@@ -126,6 +126,6 @@ function getGe() {
 function getNg() {
   return ctrl.sel('#addGeoCnt').attr('ng');
 }
-function isDisabled() {
-  return ctrl.sel('#addGeoCnt').attr('disable');
+function allowGeo() {
+  return ctrl.sel('#addGeoCnt').attr('allowGeo');
 }

@@ -162,10 +162,10 @@ ctrl.draw = function(type, arr) {
 };
 ctrl.showAddCnt = function(ngID, geID)  {
   // TODO: change interface to connect geoLoc Modal.
-  var params = {srvPath: srvPath, ngID: ngID, geID: geID, disable: isDisabled()};
-
-  if (isDisabled() !== 'undefined')
-    params.disable = isDisabled();
+  var params = {srvPath: srvPath, ngID: ngID, geID: geID};
+  if (allowGeo() !== 'undefined')
+    params.allowGeo = allowGeo();
+  
   ctrl.embed('.addGeo', '/editorDemo/addGeoCnt', {params: params}, function(emCtrl) {
     emCtrl.addHandler("regCloseAddGeoCnt", ctrl.closeAddCnt);
     ctrl.sel('#geoModal').css('z-index', '9999');
@@ -327,8 +327,8 @@ function getGe() {
 function getLocale() {
   return ctrl.sel('#ng').attr('locale');
 }
-function isDisabled() {
-  return ctrl.sel('#ng').attr('disable');
+function allowGeo() {
+  return ctrl.sel('#ng').attr('allowGeo');
 }
 function getCtrl() {
   return ctrl.sel('#geoList').attr('ctrl');
