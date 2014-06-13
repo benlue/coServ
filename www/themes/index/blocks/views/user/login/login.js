@@ -87,18 +87,17 @@ ctrl.doLogin = function()  {
                                 else
                                     loginFail( result.message );
                             });
-
                         }
                         else
                             loginFail( data.message );
                     });
                 }
                 else
-                    loginFail('Login failed (' + data.message + ')');
+                    loginFail('<%=ph.jsLoginFail%>');
             });
         }
         else
-            loginFail('Cannot contact the API service.');
+            loginFail('<%=ph.jsNoAccount%>');
     });
 };
 
@@ -154,7 +153,7 @@ function sendMail(regData)  {
                 if (result.errCode === 0) {
                     // we'll keep pulling the API engine until the user has activated his/her account.
                     // then something magical will happen
-                    setTimeout( waitActivated, 30000 );
+                    setTimeout( waitActivated, 25000 );
                     showProgress();
                 } else
                     alert( result.message );
@@ -178,7 +177,7 @@ function  waitActivated()  {
     var  pdata = formData(),
          reqData = {url: 'wcoim/admin/user/login', post: pdata, hasCA: true};
     runProgress();
-    
+
     __.api(reqData, function(data) {
         if (data.errCode === 0)  {
             // bingo! we've logged in.
@@ -189,7 +188,7 @@ function  waitActivated()  {
         }
         else
             // wait for 10 seconds and try again
-            setTimeout( waitActivated, 10000 );        
+            setTimeout( waitActivated, 10000 );
     });
 };
 
