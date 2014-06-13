@@ -2,6 +2,8 @@ var progCount = 0;
 
 ctrl.startup = function() {
 
+    ctrl.sel('#greeting').modal({keyboard: false, show: true});
+
     if (!<%=bi.isGuest%>)  {
         var  bodyCtrl = getBodyCtrl();
         bodyCtrl.reload('/myPage/list');
@@ -100,6 +102,10 @@ ctrl.doLogin = function()  {
         else
             loginFail('Cannot contact the API service.');
     });
+};
+
+ctrl.closeMsg = function() {
+    ctrl.sel('#greeting').modal('hide');
 };
 
 function  wrongInfo() {

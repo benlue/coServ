@@ -32,5 +32,16 @@
             "path"
         ],
         "service": "/cms/att/node"
+    },
+    "/myPage/list": {
+        "id": "no",
+        "service": "/raphael/myPage/list",
+        "params": {
+            "caCode": "testBusAPI"
+        }
+    },
+    "/myPage/view": {
+        "id": "yes",
+        "service": "/raphael/myPage/view"
     }
 }

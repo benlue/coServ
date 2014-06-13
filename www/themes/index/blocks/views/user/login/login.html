@@ -1,7 +1,5 @@
 <div class="container">
   <% if (bi.isGuest)  { %>
-  <div><%=ph.pgDesc1%></div>
-  <div><%=ph.pgDesc2%></div>
 
   <form class="form-signin">
     <h2 class="form-signin-heading"><%=ph.signHeader%></h2>
@@ -22,7 +20,17 @@
       <button id="reg" type="button" class="btn btn-lg btn-default" onclick="<%=ctrl%>.doRegister();"><%=ph.regist%></button>
     </div>
   </form>
-
+  <div id="greeting" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" style="top:20%">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="jumbotron" style="margin-bottom:0">
+          <p><%=ph.pgDesc1%></p>
+          <p><%=ph.pgDesc2%></p>
+          <button class="btn btn-primary btn-lg" onclick="<%=ctrl%>.closeMsg();"><%=ph.begin%></button>
+        </div>
+      </div>
+    </div>
+  </div>
   <div id="loginModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" style="top:20%">
     <div class="modal-dialog modal-sm">
       <div id="loginEffect" class="modal-content">
