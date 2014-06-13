@@ -1,7 +1,7 @@
 <% var langNeedSpace = (bi.query._loc == "en"); %>
 <!-- 主題內容開始 -->
 <button type="button" class="close alpha80" data-dismiss="modal" aria-hidden="true" style="margin: 20px 20px 0 0">&times;</button>
-<div class="matter" style="padding:30px 50px 0 50px;">
+<div class="matter" style="padding:20px 50px 0 50px;">
     <div class="row"  sytle="padding:0px; margin:0px;">
     <!-- 左側內容開始 -->
     <div>
@@ -73,7 +73,7 @@
                     <div id="icon" title="<%= ph.icon%>" alt="<%= ph.icon%>" style="height:80px;">
                       <%= ph.icon%>
                     </div>
-                    <div class="form-group" style="margin-bottom:2.5em;">
+                    <div class="form-group">
                         <button id="addIcon" type="button" class="btn btn-default btn-sm wc60 maT5" style="margin-bottom:-10px;"><%= ph.upload %></button>
                     </div>
                 </div>
@@ -140,7 +140,7 @@
                 <textarea class="cleditor" name="body_cnt" id="body_cnt" style="width:100%;height:350px;"></textarea>
               </div>
               <div class="col-md-12 col-xs-12 maT20">
-                <div class="pull-left fs08 fcGC paT5" id="mdTime"></div>
+                <div class="pull-left fs08 fcGC paT5" id="mdTime"><%=ph.mdTime%>：</div>
                 <div class="btn-group btn-group-sm pull-right" id="fg">
                   <button id="richText" type="button" class="btn btn-default" style="display:none"><%= ph.preview%></button>
                   <button id="source" type="button" class="btn btn-default"><%= ph.source%></button>

@@ -83,6 +83,7 @@ ctrl.checkGeoInfo = function(callback) {
 ctrl.receiveAll = function(ng, onlyGeo) {
   var req = {url:'/'+srvPath+'view/'+ng, post:{icon:1, geo:1, pic:1, att:1, "_loc":getLocale()}};
   __.api(req, function(data) {
+    var tTitle = ctrl.sel('div#mdTime').text();
     if (data.errCode === 0) {
       ctrl.draw(0, data.value.geoList);
       if (onlyGeo)
@@ -97,7 +98,7 @@ ctrl.receiveAll = function(ng, onlyGeo) {
       ctrl.sel('input[name="title"]').val(data.value.title);
       ctrl.sel('input[name="summary"]').val(data.value.summary);
       ctrl.sel('.cleditor').val(data.value.body);
-      ctrl.sel('div#mdTime').text('上次儲存時間：'+new Date(data.value.mdTime).toLocaleString());
+      ctrl.sel('div#mdTime').text(tTitle + new Date(data.value.mdTime).toLocaleString());
       ctrl.sel('select[name="locID"]').val(data.value.locID);
 
       if (data.value.isPublic === 1)
@@ -251,7 +252,7 @@ function embedEditor() {
     myEditor = $('#body_cnt').cleditor({
       // not to wait for rendering completely, you can get a right width
       width: $('.modal-dialog').width() * 0.66,
-      height: $(window).height() * 0.45,
+      height: $(window).height() * 0.55,
 
       controls:     // controls to add to the toolbar
                     "bold italic underline strikethrough | font size " +
