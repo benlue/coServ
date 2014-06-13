@@ -29,7 +29,7 @@ var sender = {
 
     ctrl.sel('#uploader').submit(sender.doUpload);
     ctrl.sel('input[name="aaa"]').change(function() {
-      ctrl.sel('#uploader').submit();
+    ctrl.sel('#uploader').submit();
     });
     sender.newUploadBtn(ctrl.sel('#addIcon'), 1);
     sender.newUploadBtn(ctrl.sel('#addAtt'), 2);
@@ -81,7 +81,8 @@ ctrl.checkGeoInfo = function(callback) {
 };
 
 ctrl.receiveAll = function(ng, onlyGeo) {
-  var req = {url:'/'+srvPath+'view/'+ng, post:{icon:1, geo:1, pic:1, att:1, "_loc":getLocale()}};
+    alert('receive all...');
+  var req = {url: getCA() +'/'+srvPath+'view/'+ng, post:{icon:1, geo:1, pic:1, att:1, "_loc":getLocale()}, hasCA: true};
   __.api(req, function(data) {
     var tTitle = ctrl.sel('div#mdTime').text();
     if (data.errCode === 0) {
@@ -110,8 +111,9 @@ ctrl.receiveAll = function(ng, onlyGeo) {
 };
 
 ctrl.receive = function(type) {
+    alert('receive...');
   var pdata = {"nType": type},
-      req = {url:'/'+srvPath+'listAux/'+getNg(), post:pdata};
+      req = {url: getCA() +  '/' + srvPath + 'listAux/' + getNg(), post:pdata, hasCA: true};
   __.api(req, function(data) {
     if (data.errCode === 0) {
       if (+type === 1) {
@@ -166,7 +168,7 @@ ctrl.showAddCnt = function(ngID, geID)  {
   var params = {srvPath: srvPath, ngID: ngID, geID: geID};
   if (allowGeo() !== 'undefined')
     params.allowGeo = allowGeo();
-  
+
   ctrl.embed('.addGeo', '/editorDemo/addGeoCnt', {params: params}, function(emCtrl) {
     emCtrl.addHandler("regCloseAddGeoCnt", ctrl.closeAddCnt);
     ctrl.sel('#geoModal').css('z-index', '9999');
@@ -214,7 +216,7 @@ ctrl.save = function() {
       ngID = getNg(),
       geID = getGe(),
       op = ( ngID === 'undefined' ? ( geID === 'undefined' ? 'create' : 'updInfo/'+geID ) : (geID === 'undefined' ? 'update/'+ngID : 'updInfo/'+geID) ),
-      req = {url:'/'+srvPath+op, post:pdata};
+      req = {url: getCA() + '/' + srvPath+op, post:pdata, hasCA: true};
     __.api(req, function(data) {
       if (data.errCode === 0) {
         ctrl.callHandler("reqCloseEditor");
@@ -312,25 +314,29 @@ function collectData()  {
   else
     pdata.isPublic = 1;
   return  pdata;
-}
+};
+
+function getNGAttr(key)  {
+    return  ctrl.sel('#ng').attr(key);
+};
 function getSrvPath() {
-  return ctrl.sel('#ng').attr('srv');
-}
+    return  getNGAttr('srv');
+};
 function getCA() {
   return ctrl.sel('#ng').attr('ca');
-}
+};
 function getNg() {
   return ctrl.sel('#ng').attr('ng');
-}
+};
 function getGe() {
   return ctrl.sel('#ng').attr('ge');
-}
+};
 function getLocale() {
   return ctrl.sel('#ng').attr('locale');
-}
+};
 function allowGeo() {
   return ctrl.sel('#ng').attr('allowGeo');
-}
+};
 function getCtrl() {
   return ctrl.sel('#geoList').attr('ctrl');
-}
+};
