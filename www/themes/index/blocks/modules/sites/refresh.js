@@ -35,7 +35,7 @@ var  sitePath,
      demoSite.appKeys[inData.caCode] = inData.appKey;
 
      var  servicePath = util.format('/%s/myPage/', inData.waCode);
-     uriMap['/myPage/list'] = {id: 'no', service: servicePath + 'list'};
+     uriMap['/myPage/list'] = {id: 'no', service: servicePath + 'list', params: {caCode: inData.caCode}};
      uriMap['/myPage/view'] = {id: 'yes', service: servicePath + 'view'};
 
      fs.writeFile(uriPath, JSON.stringify(uriMap, null, 4), function(err) {

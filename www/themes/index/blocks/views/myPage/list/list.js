@@ -3,12 +3,12 @@ ctrl.startup = function()  {
 };
 
 
-ctrl.editPage = function(ngID, srv)  {
+ctrl.editPage = function(ngID, srv, caCode)  {
   var arr = srv.split('/'),
       path = '';
   for( var i = 1; i<arr.length-1; i++)
     path+=arr[i]+'/';
-  var params = {srvPath: path, locale: getLocale(), disable: true};
+  var params = {srvPath: path, ca: caCode, locale: getLocale(), disable: true};
   if (ngID !== 'undefined')
     params.ngID = ngID;
 

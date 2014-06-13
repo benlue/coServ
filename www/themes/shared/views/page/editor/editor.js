@@ -20,7 +20,7 @@ var sender = {
     var geID = ctrl.sel('#ng').attr('ge'),
         ngID = ctrl.sel('#ng').attr('ng');
 
-    sender.settings['url'] += 'testBusAPI/'+srvPath + 'attach/';
+    sender.settings['url'] += getCA()+'/'+srvPath + 'attach/';
     if (ngID !== 'undefined') {
       sender.settings['url'] += ngID;
     } else if (geID !== 'undefined') {
@@ -314,6 +314,9 @@ function collectData()  {
 }
 function getSrvPath() {
   return ctrl.sel('#ng').attr('srv');
+}
+function getCA() {
+  return ctrl.sel('#ng').attr('ca');
 }
 function getNg() {
   return ctrl.sel('#ng').attr('ng');
