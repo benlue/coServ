@@ -1,6 +1,8 @@
 var progCount = 0;
 
 ctrl.startup = function() {
+    
+    ctrl.sel('#greeting').modal({keyboard: false, show: true});
 
     if (!<%=bi.isGuest%>)  {
         var  bodyCtrl = getBodyCtrl();
