@@ -14,7 +14,7 @@
             <td><%= item.summary %></td>
             <td>
                 <button class="btn btn-default btn-sm" onclick="<%=ctrl%>.viewPage('<%=item.ngID%>');"><%=ph.view%></button>
-                <button class="btn btn-default btn-sm"  data-toggle="modal" data-target="#editorModal" onclick="<%=ctrl%>.editPage('<%=item.ngID%>', '<%=bi.service%>', '<%=bi.query.caCode%>');"><%=ph.edit%></button>
+                <button class="btn btn-default btn-sm"  data-toggle="modal" data-target="#editorModal" onclick="<%=ctrl%>.editPage('<%=item.ngID%>', '<%=bi.service%>');"><%=ph.edit%></button>
             </td>
         </tr>
         <% }); %>
