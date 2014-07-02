@@ -1,3 +1,10 @@
+0.8.0
+------
+  . Support SASS with server-side automatic compilation.
+  . Relaced all fs.readFileSync() calls with fs.readFile() to achieve better performance.
+  . Fixed bugs in CSS aggregation. Key-frames and selector groups failed to work previously.
+
+
 0.8.7
 ------
   . Added a shared block 'editor': to be invoked by websites to provide page editing capabilities.
