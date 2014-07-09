@@ -11,6 +11,9 @@
     "/mainMenu": {
         "id": "no"
     },
+    "/sass/view": {
+        "id": "no"
+    },
     "/user/login": {
         "id": "no"
     },

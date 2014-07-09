@@ -1,0 +1,159 @@
+<div class="box">
+    <div class="con">
+      <span><i class="icon-arrow-up" onclick="<%=ctrl%>.prev();"></i></span>
+      <hr>
+    </div>
+
+    <input type="checkbox" id="checkbox" class="checkbox">
+    <label for="checkbox"></label>
+
+    <div class="menu">
+        <ul>
+          <a href="#feature"><li>新功能</li></a>
+          <a href="#about"><li>關於SASS</li></a>
+          <a href="#syntax"><li>語法</li></a>
+          <a href="#usage"><li>如何使用</li></a>
+          <a href="#partial"><li>部分使用</li></a>
+          <a href="#shared"><li>共用</li></a>
+          <a href="#workflow"><li>如何運作</li></a>
+          <a href="#extension"><li>擴充</li></a>
+        </ul>
+    </div>
+
+    <div class="con">
+      <hr>
+      <span><i class="icon-arrow-down" onclick="<%=ctrl%>.next();"></i></span>
+    </div>
+    <div class="con">
+      <hr>
+      <a href="/"><span><i class="icon-home"></i></span></a>
+    </div>
+
+</div>
+<div id="sass">
+    <div id="feature" class="slides">
+        <h1>coServ v0.8.8 新功能</h1>
+        <h3>內建SASS</h3>
+        <p>支援scss語法，不用自行編譯或下額外指令</p>
+    </div>
+
+    <div id="about" class="slides">
+        <h1>關於SASS</h1>
+        <h3><a href="http://sass-lang.com/guide">官方說明</a></h3>
+        <img height="160" src="http://sass-lang.com/assets/img/illustrations/glasses-46692be4.svg">
+        <p>簡單來說，讓CSS寫法更具彈性</p>
+    </div>
+
+    <div id="syntax" class="slides">
+        <h1>語法</h1>
+        <h3>長相？</h3>
+        <code class="desc">
+          @mixin border-radius($radius) {
+          <ul>
+            <li>-webkit-border-radius: $radius;</li>
+                <li>-moz-border-radius: $radius;</li>
+                <li>-ms-border-radius: $radius;</li>
+                <li>-o-border-radius: $radius;</li>
+                    <li>border-radius: $radius;</li>
+          </ul>
+          }
+        </code>
+        <code class="desc">
+          button {
+            <ul>
+              <li>@include border-radius(5px);</li>
+            </ul>
+          }
+        </code>
+    </div>
+
+    <div id="usage" class="slides">
+      <h1>如何使用</h1>
+      <h3>在coServ，SCSS有兩種用法</h3>
+      <code class="desc">
+        <ul>
+          <li>部分使用</li>
+          <ul>
+            <li>blocks</li>
+          </ul>
+          <li>共用</li>
+          <ul>
+            <li>cont/shared/sass</li>
+          </ul>
+        </ul>
+      </code>
+    </div>
+
+    <div id="partial" class="slides">
+        <h1>部分使用</h1>
+        <h3>路徑：blocks/views/[BlockName]</h3>
+        <code class="desc">
+          網頁切板常以區塊區分，這也是coServ載入頁面的最小單位，而一個block 會有這些檔案
+          <ul>
+            <li>Blocks</li>
+            <ul>
+              <li>myBlock</li>
+              <ul>
+                <li>myBlock.html</li>
+                <li>myBlock.css</li>
+                <li>myBlock.js</li>
+                <li>myBlock.lang  /* 多國語言設定檔 */</li>
+                <li>myBlock.sass  /* Here! */</li>
+              </ul>
+            </ul>
+          </ul>
+        </code>
+    </div>
+
+    <div id="shared" class="slides">
+        <h1>共用</h1>
+        <h3>路徑：cont/shared/sass</h3>
+        <p class="desc">
+          實際上是cont/shared/sass，適合放mixin library或自定的mixin.scss，讓myBlock.sass能夠引用sass code
+        </p>
+    </div>
+
+    <div id="workflow" class="slides">
+        <h1>如何運作</h1>
+        <h3>載入順序</h3>
+        <span class="desc">
+          你可能會有疑問，有CSS又有SCSS，那coServ會怎麼處理呢 ？
+          先載入Blocks內的.css，沒有才載入.
+
+          但coServ直接幫你在網頁加上sass編譯完成的css code，而不用另存新檔。
+        </p>
+    </div>
+
+    <div id="extension" class="slides">
+        <h1>擴充SASS MIXIN</h1>
+        <h3>Mixin Library</h3>
+        <h5>
+          <a href="http://compass-style.org">Compass</a>
+        </h5>
+        <h5>
+          <a href="<http://bourbon.io>">Bourbon</a>
+        </h5>
+    </div>
+
+    <div id="bourbon" class="slides">
+        <img src="http://blog.codepen.io/wp-content/uploads/2013/09/bourbon-logo.png" alt="bourbon" />
+        <h3>來喝酒吧</h3>
+        <code class="desc">
+          <ol>
+            <li>npm install node-bourbon --save</li>
+
+            <li>find "drink bourbon", 移除註解</li>
+
+            <li>/* myBlock.scss */</li>
+            @import "bourbon"; /* 載入bourbon mixin*/
+            <ul>
+              <li>....</li>
+              <li>.</li>
+              <li>.</li>
+              <li>....[your scss code]</li>
+            </ul>
+          </ol>
+        </code>
+        <p class="desc">這樣就能使用Bourbon的mixin了！</p>
+    </div>
+</div>

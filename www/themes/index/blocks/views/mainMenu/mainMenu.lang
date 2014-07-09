@@ -24,6 +24,10 @@
       <en>Connecting to BaaS</en>
       <zh>使用 BaaS 服務</zh>
     </ph>
+    <ph id="menuTitle5">
+      <en>Sass demo</en>
+      <zh>Sass demo</zh>
+    </ph>
     <ph id="mc1_1">
       <en>This page is served by a static block. That means contents are neither coming from a local module nor from a API service call.</en>
       <zh>這個範例的主要內容是由一個靜態的區塊所產生，意指內容既不是由程式、資料庫，也不是由所謂的 API 服務所提供，而只是單純的靜態網頁。</zh>
