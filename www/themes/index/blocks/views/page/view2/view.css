@@ -1,0 +1,116 @@
+/*view*/
+.float{
+  float: left;
+}
+.clear{
+  clear: both;
+}
+a:link, a:active {
+  text-decoration: none;
+}
+.view{
+  width: 620px;
+  float: left;  
+  margin: 0px auto;
+  padding: 10px 10px 10px 0;
+  color: #666;
+  font-size: 1.2em;
+  font-family: "微軟正黑體","Adobe 黑体 Std R", "Adobe 繁黑體 Std B",  Arial, sans-serif; 
+  margin-top: 10px;
+}
+.type a {
+  color: #666;
+  font-size: 0.8em;
+  line-height: 1em;  
+}
+.type a:hover {
+  color: #0057A7;
+}
+/*版頭標題*/
+.title {
+  padding-left: 10px;
+  color: #049D86;
+}
+/*版頭標語*/
+.tagline{
+  padding-left: 30px;
+  color: #049D86;
+}
+/*時間作者*/
+.sub{
+  text-align: right;
+  border-top: 3px solid #E4E4E4;
+}
+.strTime, 
+.dspName {
+  font-size: 0.8em;
+  color: #999;
+  line-height: 1.8em;
+}
+/*內文*/
+section {
+  margin-top: 1em;
+  padding: 5px;
+}
+section  p{
+  font-size: 1em;
+  line-height: 1.5em;
+  color: #666;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  word-break: break-all; 
+  /*word-wrap: break-word;*/
+}
+/*標題*/
+.subtitle{
+  font-weight: 900;
+  font-size: 1.6em;
+  line-height: 2.8em;
+  text-indent: 0.5em;  
+  color: #666;
+  margin-top:1.2em;
+}
+.subtitle h3{
+  color: #666;
+}
+p + .subtitle,
+pre + p,
+pre + p.subtitle,
+.subtitle + p.subtopic {
+  margin-top: 2em;
+}
+/*程式碼*/
+pre code{
+  font-size: 16px;
+  border-radius: 2px;
+  padding: 5px 5px 0;
+}
+.row_down{
+  width: 840px;
+  padding: 0 50px;
+  margin: 50px 0px;
+  border-top: 1px solid #ccc;
+  clear: both;
+}
+.column{
+  margin-top: 30px;
+}
+.column a {
+  font-size: 0.9em;
+  color: #888;
+}
+.column a:hover {
+  color: #666;
+}
+
+ul li{
+  list-style-type: square;
+  color: #049D86;
+  line-height: 2em;
+}
+ul li a{
+	color: #049D86;
+}
+ul li a:hover{
+	color: #666;
+}

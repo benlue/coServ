@@ -1,0 +1,144 @@
+/*---header---*/
+header{
+  width: 100% !important;
+  margin: 0;
+  padding: 0;
+}
+.row {
+  width: 100%;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+/*.bg{
+  background: #2EA0D1;
+  background: #EFEFEF;
+}*/
+img {
+  border: 0;
+}
+a:hover {
+  text-decoration: none;
+}
+.clear {
+  clear: left;
+}
+.float{
+  float: left;
+}
+.headLeft {
+  float: left;
+  width: 580px;
+  margin-left: 20px;
+  margin-bottom: 5px;
+}
+.headRight {
+  float: right;
+  text-align: right;
+  margin: 10px 20px 0 0;
+  width: 180px;
+}
+.home {
+  padding: 5px;
+  margin: 10px 10px 0 20px;
+  display: inline-block;
+  text-align: right;
+ }
+ .home a{
+  color: #2EA0D1;;
+  font-size: 1.2em;
+ }
+ .home a:hover {
+  color:#4d4d4d;
+  text-decoration: none;
+ }
+/*語系下拉選單*/
+.selectBox{
+  position:relative;
+  display:inline-block;
+  cursor:default;
+  text-align:left;
+  line-height:20px;
+  clear:both;
+  width:100px;
+  padding: 0px;
+  margin: 25px 0 0;
+  font-family: "微軟正黑體","Adobe 黑体 Std R", "Adobe 繁黑體 Std B",  Arial, sans-serif; 
+}
+.selected{
+  position:relative;
+  float:left;
+  width:100px;
+  height:24px;  
+  z-index:1;
+  text-indent:10px;
+  border:1px solid #ccc;
+  border-radius:4px;
+  background: #fff;
+  overflow:hidden;
+  padding: 0px; 
+}
+.selected a{
+  font-family:sans-serif; 
+  font-size: 14px;
+  line-height: 0px;
+  padding: 0px;
+  color:#3a3a3a;
+  display: block;
+  /*margin: -13px 0 0 -10px;*/
+  margin: 10px 0 0px;
+}
+.selected a:hover{
+  color: #666;
+  text-decoration: none;
+}
+.selectArrow{
+  position:absolute;
+  top:0px;
+  left:79px;
+  width:20px;
+  height:24px;
+  z-index:2;
+  border:1px solid #ccc;
+  border-top-right-radius:4px;
+  border-bottom-right-radius:4px;
+  text-align:center;
+  vertical-align:middle; 
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  /*background: #6D6D6D;*/
+  background: #2EA0D1;
+  font-size: 12px;
+  color: #fff;
+}
+.selectArrow i{
+  font-size: 12px;
+  color: #fff;
+  display: block;
+}
+.selectOptions{
+  position:absolute;
+  top:24px;
+  left:0px;
+  width:100px;
+  z-index: 7;
+  border:1px solid #ccc;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  overflow:hidden;
+  background: #fff;
+  text-indent: 10px;
+  display:none;
+}       
+.selectOption{
+  display: block;
+  width: 100%;
+  line-height: 20px;
+  padding: 5px 10%;
+}
+.selectOption:hover{
+  color:#555;
+  background: #F4F4F4; 
+}

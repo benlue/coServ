@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phrases>    
+	<ph id="title">
+		<en>coServ Developer's Guide</en>
+		<zh>coServ 開發者手冊</zh>
+	</ph>
+	<ph id="tagline">
+		<en>File structure of the site</en>
+		<zh>網站的檔案結構</zh>
+	</ph>
+	<ph id="strTime">
+		<en>2014-05-27&nbsp;/&nbsp;</en>
+		<zh>2014-05-27&nbsp;/&nbsp;</zh>
+	</ph>
+	<ph id="dspName">
+		<en>Author：benlue</en>
+		<zh>Author：benlue</zh>
+	</ph>
+	<ph id="subtitle1">
+		<en>Learn how to place data files</en>
+		<zh>了解檔案資料如何放置</zh>
+	</ph>
+	<ph id="section1">
+		<en>A single coServ server can host multiple websites, and files of websites are all stored under the 'www' directory. Take a look at the 'www' directory, you should find three items as:
+		</en>
+		<zh>為了方便網站的管理和維護，coServ 將網站中會用到的各種檔案做了整理和分類。這裡將介紹檔案是如何分類管理以及他們的放置位置，以便大家在做程式開發時能很快找到所需要的檔案。
+		所有與網站相關的檔案（程式檔、設定檔、HTML、CSS、Javascript、圖檔等）都是放在 'www' 的目錄底下。'www' 目錄主要有三個項目：
+		</zh>
+	</ph>
+	<ph id="code1">
+		<en>www
+  +-- [cont]
+  +-- [themes]
+  +-- sites.json
+     	</en>
+		<zh>www
+  +-- [cont]
+  +-- [themes]
+  +-- sites.json
+     	</zh>
+	</ph>
+	<ph id="section2">
+		<en>Static contents such as images, commonly used Javascript libraries and css files are stored in the 'cont' directory. The 'themes' directory contains web design files for each website, and the 'sites.json' file carries some basic information about every website hosted on a coServ server.	
+		The 'sites.json' File
+		Below is a sample of 'sites.json':
+		</en>
+		<zh>其中 cont 目錄主要是用來存放圖檔、Javascript 程式庫與 CSS 設定檔等一些靜態的檔案。裡面又區分成所有網站共享以及各個網站獨有的區域。 themes 目錄則儲存了網站中所使用到的各種設計樣板以及 server 端的程式。themes 目錄底下同樣也區分了所有網站共享以及個別網站獨有的區域。
+		至於 'sites.json' 這個檔案是用來描述 coServ 上所有的網站（coServ 可以同時支援多個網站）。每個 coServ 上的網站都會在 'sites.json' 這個檔案上有一筆記錄。以下是個範例：
+		</zh>
+	</ph>
+	<ph id="code2">
+		<en>{
+  "www.foo.com" : {"caCode": "index",
+		   "title": "The Official Website of XXX",
+		   "validFrom": "",
+		   "validTo":"",
+		   "locale": "en",
+		   "home": "/index"
+	}
+ }
+		</en>
+		<zh>{
+  "www.foo.com" : {"caCode": "index",
+		   "title": "The Official Website of XXX",
+		   "validFrom": "",
+		   "validTo":"",
+		   "locale": "en",
+		   "home": "/index"
+	}
+ }
+		</zh>
+	</ph>
+	<ph id="section3">
+		<en>For every website hosted on coServ, there is an entry in the 'sites.json' file. The key of every entry is the domain name of each website. coServ uses those key names to decide which incoming request goes to which website. The 'caCode' property will be matched to a directory under the 'themes' directory which we'll talk about later.
+		</en>
+		<zh>其中 'www.foo.com' 是網站的網域名稱，coServ 利用這個名稱來決定每個進到 coServ 的 request 是屬於哪一個網站。在程式開發階段，通常會將網域設成本機 （127.0.0.1）就好。'sites.json' 中每一筆記錄都是對網站的描述，其中 'caCode' 這個屬性值代表網站的代碼，會對應到 'www/cont' 和 'www/themes' 底下的目錄。 這部份文章等下會談到。'locale' 屬性則用來標示網站的預設語系（zh 表中文，en 表示英文）。如果你的網站支援多國語系而子端未表明語系時，就會參考這個屬性質。
+		</zh>
+	</ph>	
+	
+	<ph id="subtitle2">
+		<en>The 'themes' Directory</en>
+		<zh>themes 目錄</zh>
+	</ph>
+	<ph id="section4">
+		<en>The 'themes' directory would look something like the following:	</en>		
+		<zh>開發設計網站的工作，絕大部分在這個目錄底下完成。先看看 themes 這個目錄的結構：</zh>
+	</ph>
+	<ph id="code3">
+		<en>themes
+  +-- [site_A]
+  +-- [site_B]
+  +-- ...
+  +-- [shared]
+		</en>
+		<zh>themes
+  +-- [site_A]
+  +-- [site_B]
+  +-- ...
+  +-- [shared]
+		</zh>
+	</ph>
+	<ph id="section5">
+		<en>Every website hosted on coServ will have a sub-directory under the 'themes' directory. The sub-directory name should match the 'caCode' property specified in the sites.json file. The 'shared' directory is not for a particular website. It contains design files of 'blocks' which can be used by all websites.
+		</en>
+		<zh>我們可以發現每個網站在 themes 這個目錄下都會有一個目錄。這些網站目錄的名稱必須與 'sites.json' 中的 'caCode' 屬性一致。至於 'shared' 這個目錄是用來存放可以給所有網站共用的元件。由於開發者的工作和 'themes' 底下的網站目錄有很大的關係，所以我們接著來看網站目錄的結構。</zh>
+	</ph>
+
+	<ph id="subtitle3">
+		<en>Website Directories</en>
+		<zh>themes 網站目錄</zh>
+	</ph>
+	<ph id="section6">
+		<en>Now it's time to look at the website directories under the 'themes' directory. Below is a simplified diagram showing what are inside a website directory:			
+		</en>
+		<zh>如果你的網站代碼（caCode）取做 fooSite，那麼 fooSite 的網站目錄會像以下的示意圖（方括號表示是個目錄）：
+		</zh>
+	</ph>
+	<ph id="code4">
+		<en>themes
+  +-- [site_A]
+    +-- [blocks]
+      +-- [modules]
+      +-- [views]
+    +-- [layout]
+      +-- [default]
+      +-- [more_layout]
+    +-- layoutMap.json
+    +-- siteURI.json
+		</en>
+		<zh>themes
+  +-- [site_A]
+    +-- [blocks]
+      +-- [modules]
+      +-- [views]
+    +-- [layout]
+      +-- [default]
+      +-- [more_layout]
+    +-- layoutMap.json
+    +-- siteURI.json
+		</zh>
+	</ph>	
+	<ph id="section7">
+		<en>The 'blocks' directory contains design files for every block used in a website. The so-called 'design files' are node.js modules which implements the model part of a block, and a bundle of HTML, CSS, Javascript, and other files to make up the view and controller of a block. They are store in the 'modules' and 'views' directories respectively.
+			
+		The 'layout' directory contains the page layout design files. There will be at least a 'default' subdirectory below it, because every website should at least have a layout scheme and that is named as 'default'. It's possible (and quite common) to have multiple layout schemes for a website, and each layout scheme should have its own directory under the 'layout' directory.
+
+		The 'layoutMap.json' file describes what page layout will be applied for each page, and finally the 'siteURI.json' file describes all the valid web addresses of a website.
+			
+		</en>
+		<zh> 'layoutMap.json' 是用來告訴 coServ 每個網頁要用什麼頁型（page layout）去合成。一開始只有一個預設頁型的話，'layoutMap.json' 可以放個空物件即可。 'siteURI.json' 像是網站的 site map，列出網站上所有的有效網址。
+
+		layout 這個目錄包含了頁型的設計檔（所謂頁型就是網頁的設計框架，可以用來填入實際的內容。近似一般所謂的版型，但是更有彈性）。 一個網站至少要有一個頁型，稱為預設頁型。因此你可以在 layout 目錄下發現一個 default 的子目錄。講究畫面設計的網站通常會用到多個頁型，此時在 layout 目錄下會有多個子目錄，每個子目錄對應到一個頁型。
+
+		網站目錄下還有一個 blocks 的目錄，這也許是整個網站設計最重要的一個地方。coServ 將網頁切割成區域（regions）和區塊（blocks），而所有區塊的設計內容就放在 block 目錄下。 你可以暫時想像「區塊」是網頁上帶有內容的一個方塊，這個方塊包含資料內容、外觀以及與使用者互動的機制。以 MVC design pattern 來說，一個區塊就包含了 model, view 和 controller 三個部分。model 的部份會以 node.js 的 module 來實作，程式檔將放在 'blocks/modules' 目錄底下。 view 和 controller 則是由 HTML, CSS 和 Javascript 這三兄弟合力完成。區塊中和view 以及 controller 有關的檔案將存放在 'blocks/views' 目錄下。
+		</zh>
+	</ph>
+
+	<ph id="subtitle4">
+		<en>The 'cont' Directory</en>
+		<zh>cont 目錄</zh>
+	</ph>
+	<ph id="section8">
+		<en>Structures of the 'cont' directory is similar to the 'themes' directory. It also consists of a 'shared' directory and dedicated directories for each website.
+		</en>
+		<zh>最後來談談 cont 這個目錄。結構上 cont 目錄和 themes 目錄很類似，也是由一個共享目錄（share)以及多個網站目錄（每個網站有一個自己的目錄）所構成。 cont 目錄主要是用來存放一些靜態的檔案或資料，例如圖檔、css檔、Javascript 的程式庫等。如果是所有網站都會用到的檔案，例如 jQuery等，可以統一放在 'cont/shared' 底下。 個別網站使用的檔案，則存放在個別的網站目錄中。
+		以上完成了 coServ 檔案結構的介紹。大家可以發現雖然功能很強大，但經過適當的分類整理，並不會覺得複雜。接下來我們就要談最有趣的部份：coServ 的設計美學。
+		</zh>
+	</ph>
+
+	<ph id="subtitle5">
+		<en>More documents</en>
+		<zh>更多文件</zh>
+	</ph>
+	<ph id="list1">
+		<en>Preface</en>
+		<zh>開箱文</zh>
+	</ph>
+	<ph id="list2">
+		<en>coServ design aesthetics</en>
+		<zh>coServ 的設計美學</zh>
+	</ph>
+
+</phrases>

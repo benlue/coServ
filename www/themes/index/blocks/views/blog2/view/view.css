@@ -1,0 +1,131 @@
+.float{
+  float: left;
+}
+.clear{
+  clear: both;
+}
+img{
+	border: 0;
+}
+a:link, a:active {
+  text-decoration: none;
+}
+.faR {
+  float:right;
+}
+.matter{
+  width: 960px;
+  margin: 0px auto 20px;
+  padding-top: 10px;
+  color:#2EA0D1;
+  font-size: 1.2em;
+  font-family: "微軟正黑體","Adobe 黑体 Std R", "Adobe 繁黑體 Std B",  Arial, sans-serif;  
+}
+.type {
+  color: #2EA0D1;  
+  font-size: 0.8em;
+  line-height: 2.2em;
+  border-bottom: 3px solid #2EA0D1;
+  text-align: center;
+}
+.title{
+  font-weight: 900;
+  font-size: 1.8em;
+  line-height: 3.6em;
+  text-align: center;
+}
+.sub{
+  text-align: center;
+  border-top: 1px solid #2EA0D1;
+  border-bottom: 1px solid #2EA0D1;  
+  margin: 0 auto 2em;
+  width: 25%;
+}
+.strTime, 
+.dspName {
+  font-size: 0.8em;
+  color: #2EA0D1;
+  line-height: 2em;
+}
+article {
+  padding: 5px;
+}
+article p{
+  font-size: 1em;
+  line-height: 1.75em;
+  color: #4D4D4D;
+  padding: 5px;
+  word-break: break-all; 
+  /*word-wrap: break-word;*/
+}
+p+span.subtopic {
+  margin-top: 1.5em;
+}
+.subtitle {
+  display: inline-block;
+  margin: 0.5em 0 0.25em; 
+  font-size: 1.8em;
+  line-height: 1.8em;
+  font-weight: bolder;
+  color: #2EA0D1;  
+}
+.subtopic{
+  margin: 0.8em;  
+  font-weight: bolder;  
+  font-size: 1.1em; 
+  line-height: 0.8em; 
+  color: #2EA0D1;
+  display: block;
+}
+.focusList {
+  padding: 0px 20px;
+  margin: 20px 0;
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 2.4em;
+  background: #DEF0F8;
+  color: #288AB5;
+  display: inline-block;
+}
+code{
+  padding: 0px 4px;
+}
+.row_down{
+  width: 960px;
+  padding-top: 5px;
+  margin: 60px 0px;
+  border-top: 3px solid #2EA0D1;
+  clear: both;
+}
+.columnL{
+  margin-top: 10px;
+}
+/*.columnR {
+  float: right;
+  margin-top: 5px;
+}
+.col {
+  width: 140px;
+  float: left;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: #4d4d4d;
+  line-height: 1.5em;
+  padding-top: 10px;
+}
+.col i{
+  margin-right: 0.3em;
+}
+.paL{
+  margin-left: 1em;
+}*/
+.btn-op {
+  background: rgba(255,255,255,0);
+  font-size: 0.9em;
+  color: #2EA0D1;
+  font-weight: bold;
+  outline: none;
+}
+.btn-op:hover {
+  color: #4d4d4d;
+}

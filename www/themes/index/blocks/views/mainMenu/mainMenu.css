@@ -1,0 +1,28 @@
+a:hover{
+  text-decoration: none;
+}
+.green{
+  /*border-color: #13B5B1;*/ 
+  border-color:#70C3A5;   
+}
+.panel-heading{
+  /*background: #13B5B1;*/
+  background:#70C3A5;
+}
+.panel-heading h4{
+  color: #fff;
+}
+select{
+  /*border-color: #13B5B1;*/
+  border-color:#70C3A5;
+}
+.panel-default {
+  /*border-color: #13B5B1;*/
+  border-color:#70C3A5;
+}
+.panel-default>.panel-heading +
+.panel-collapse .panel-body {
+  /*border-color: #13B5B1;*/
+  border-color:#70C3A5;
+  border-top: none;
+}

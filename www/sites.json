@@ -3,7 +3,20 @@
         "title": "Single-Page Web Application Demo",
         "validFrom": "",
         "validTo": "",
-        "locale": "en",
+        "locale": "zh",
+        "home": "/index",
+        "theme": "index",
+        "appKeys": {
+            "wcoim": ""
+        },
+        "caCode": "index"
+    },
+
+    "192.168.1.5": {
+        "title": "Single-Page Web Application Demo",
+        "validFrom": "",
+        "validTo": "",
+        "locale": "zh",
         "home": "/index",
         "theme": "index",
         "appKeys": {

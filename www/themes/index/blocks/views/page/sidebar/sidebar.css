@@ -1,0 +1,67 @@
+/*-----------sidebar-------------*/
+.sidebar{ 
+  float: right; 
+  width: 200px;
+  padding: 0px;
+  margin: auto 0 0 0px;
+  font-family: "微軟正黑體","Adobe 黑体 Std R", "Adobe 繁黑體 Std B",  Arial, sans-serif;
+  margin-top: 10px;
+}
+.panel-title a:hover {
+  text-decoration: none;
+}
+.panel-group .panel-green {  
+  width: 100%;
+  border: 1px #019877 solid;  
+}
+.panel-group > .panel-green > .panel-heading {
+  font-weight: bold;
+  line-height: 1.2em;
+  color: #FFF;
+  background: #019877;
+  border: 1px #019877 solid;
+  -webkit-border-top-left-radius: 2px;
+  -webkit-border-top-right-radius: 2px;
+  -moz-border-radius-topleft: 2px;
+  -moz-border-radius-topright: 2px;
+  -ms-border-radius-topleft: 2px;
+  -ms-border-radius-topright: 2px;
+  -o-border-radius-topleft: 2px;
+  -o-border-radius-topright: 2px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+.panel-green > .panel-heading + .panel-collapse > .panel-body {
+  border-color:#FFF;
+  border-top: none;  
+  padding: 0;
+}
+.panel-body p {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-color: rgba( 1, 152, 119, 0.5);
+  padding: 10px;
+  margin: 0;
+  line-height: 1.2em;
+  width : 200px;
+  overflow : hidden;
+  text-overflow : ellipsis;
+  white-space : nowrap;
+}
+.panel-body p:last{
+  border-bottom: none;
+}
+p.right {
+  border-bottom: none;
+  text-align: right;
+}
+p.right a{
+  opacity: 0.7;
+}
+.panel-body p a {
+  color: #00765C;
+  text-decoration: none;
+}
+.panel-body p a:hover {
+  color: #019877;
+}

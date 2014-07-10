@@ -1,0 +1,11 @@
+/* Add css rules here that are valid for the whole page */
+#pgContainer {
+	margin: 0px auto;
+	width: 840px;
+}
+#pgContent {
+	width: 840px;
+}
+#pgFooter {
+	width: 840px;
+}

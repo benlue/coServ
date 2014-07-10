@@ -35,5 +35,82 @@
             "path"
         ],
         "service": "/cms/att/node"
+    },    
+     
+    "/blog/bgFooter": {
+        "id": "no"
+    }, 
+    "/blog/bgHead": {
+        "id": "no"
+    },
+    "/blog/default": {
+        "id": "no"
+    },
+    "/blog/list": {
+        "id": "no"
+    },
+     "/page/manage": {
+        "id": "no"
+    },
+    "/page/pageHead": {
+        "id": "no"
+    },
+    "/page/sidebar": {
+        "id": "no"
+    },
+    "/page/pageBanner": {
+        "id": "no"
+    },
+    "/page/view": {
+        "id": "no"
+    },   
+    "/page/view1": {
+        "id": "no"
+    }, 
+    "/page/view2": {
+        "id": "no"
+    },
+    "/page/view3": {
+        "id": "no"
+    },
+
+    "/blog2/view": {
+        "id": "no"
+    },
+    "/blog2/bgFooter": {
+        "id": "no"
+    }, 
+    "/blog2/bgHead": {
+        "id": "no"
+    },
+    "/blog2/default": {
+        "id": "no"
+    },
+    "/blog2/list": {
+        "id": "no"
+    },
+     "/page2/manage": {
+        "id": "no"
+    },
+    "/page2/pageHead": {
+        "id": "no"
+    },
+    "/page2/sidebar": {
+        "id": "no"
+    },
+    "/page2/pageBanner": {
+        "id": "no"
+    },
+    "/page2/view": {
+        "id": "no"
+    },   
+    "/page2/view1": {
+        "id": "no"
+    }, 
+    "/page2/view2": {
+        "id": "no"
+    },
+    "/page2/view3": {
+        "id": "no"
     }
 }

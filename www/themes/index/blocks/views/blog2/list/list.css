@@ -1,0 +1,126 @@
+.float{
+  float: left;
+}
+.clear{
+  clear: both;
+}
+*:hover{
+  text-decoration: none;
+}
+.view{
+  width: 100%;
+  padding: 5px;
+  margin: 0px auto;
+  font-family: "微軟正黑體","Adobe 黑体 Std R", "Adobe 繁黑體 Std B",  Arial, sans-serif; 
+}
+/*分類*/
+.typeside{
+  margin-top: 20px;
+  padding: 10px 10px 0; 
+  /*border-top: 3px solid #6D6D6D;*/
+  border-top: 3px solid #2EA0D1;
+  text-align: center;
+  font-size: 2em;
+  /*color: #2EA0D1;*/
+  color: #4d4d4d;  
+  line-height: 2em;
+}
+/*清單*/
+.row {
+  width: 100%;
+  margin: 0px auto;
+  padding: 0;
+  clear: both;
+}
+.col{
+  width: 240px;
+  margin: 15px 18px 20px;
+  float: left;
+  text-align: center;
+  cursor: pointer;
+}
+.title{
+  border-top: 3px solid #2EA0D1;
+  border-bottom: 1px solid #2EA0D1;
+  padding: 15px 8px 0;
+  height: 110px;
+  color: #2EA0D1; 
+}
+.title:hover{
+  border-top: 3px solid #6D6D6D;
+  border-bottom: 1px solid #6D6D6D;
+}
+.title i {
+  font-size: 2em;
+  line-height: 0.8em;
+  color: #777777;
+}
+.title i:hover {
+  color: #2EA0D1;
+}
+.title h4 {
+  line-height: 1.4em;
+}
+.title:hover{
+  color: #4D4D4D;
+  text-decoration: none;
+}
+.strTime{  
+  font-size: 0.8em;
+  color: #77C1E1;  
+  line-height: 2em;
+  padding-top: 10px;
+}
+.summary{
+  font-size: 1em;
+  line-height: 1.5em;
+  color: #4D4D4D;  
+  padding: 2px 6px; 
+  height: 68px;  
+  width: 230px;
+  overflow: hidden;   
+  text-overflow : ellipsis;
+  /*white-space : nowrap;*/
+}
+
+/*分頁按鈕*/
+.row_down{
+  width: 100%;
+  margin: 40px 0px;
+  /*border-top: 3px solid #6D6D6D;*/
+  border-top: 4px double #2EA0D1;
+}
+.chang{
+  margin: 30px auto 0;
+  padding: 0;
+  text-align: center;
+}
+.chang > span {
+  margin: 0 5px;
+  padding: 5px;
+}
+.chang > span > a{
+  font-size: 1.2em;
+  color: #2EA0D1;
+}
+.chang > span > a:hover,
+.chang > span > a:focus {  
+  color: #2785AD;
+  text-decoration: none;
+}
+.chang > .active > a,
+.chang > .active > a:hover,
+.chang > .active > a:focus {
+  z-index: 2;
+  color: #2EA0D1;
+  cursor: default;
+}
+.chang > .disabled > a,
+.chang > .disabled > a:hover,
+.chang > .disabled > a:focus {
+  color: #2EA0D1;
+  cursor: not-allowed;
+}
+.chang > .now >a {
+  font-size: 1.5em;
+}

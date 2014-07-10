@@ -1,0 +1,56 @@
+/* Add css rules here that are valid for the whole page */
+html  { font-size : 62.5 %;  /*10 ÷ 16 × 100% = 62.5%*/ }
+body  { font-size : 1.4 rem; /*1.4 × 10px = 14px */ }
+h1  { font-size : 3.6 rem ;  /*3.6 × 10px = 36px*/ }
+h2  { font-size : 3.0 rem ;  /*3.0 × 10px = 30px*/ }
+h3  { font-size : 2.4 rem ;  /*2.4 × 10px = 24px*/ }
+h4  { font-size : 1.8 rem ;  /*1.8 × 10px = 18px*/ }
+h5  { font-size : 1.4 rem ;  /*1.4 × 10px = 14px*/ }
+h6  { font-size : 1.2 rem ;  /*1.2 × 10px = 12px*/ }
+
+h1,.h1 {  font-size: 36px;}
+h2,.h2 {  font-size: 30px;}
+h3,.h3 {  font-size: 24px;}
+h4,.h4 {  font-size: 18px;}
+h5,.h5 {  font-size: 14px;}
+h6,.h6 {  font-size: 12px;}
+
+h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+}
+
+body{
+  line-height: 2.4 rem;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;  
+  font-family: "微軟正黑體","Adobe 黑体 Std R", "Adobe 繁黑體 Std B",  Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;   
+  direction: ltr;  
+}
+#pgContainer {
+  margin: 0px auto;
+  width: 840px;
+}
+#pgHead,
+#pgMain,
+#pgFooter {
+  padding: 0;
+  margin: 0;
+  width: 840px;
+}
+#pgContent{
+  float: left;
+  padding:0;
+  margin: 0;
+  width: 640px;
+}
+#pgSide {
+  float: right;
+  padding:0;
+  margin: 0;
+  width: 200px;
+}

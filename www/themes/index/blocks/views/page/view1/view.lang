@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phrases>    
+	<ph id="title">
+		<en>coServ Developer's Guide</en>
+		<zh>coServ 開發者手冊</zh>
+	</ph>
+	<ph id="tagline">
+		<en>Preface</en>
+		<zh>開箱文</zh>
+	</ph>
+	<ph id="strTime">
+		<en>2014-06-12&nbsp;/&nbsp;</en>
+		<zh>2014-06-12&nbsp;/&nbsp;</zh>
+	</ph>
+	<ph id="dspName">
+		<en>Author：benlue</en>
+		<zh>Author：benlue</zh>
+	</ph>
+
+	<ph id="subtitle1">
+		<en>Welcome to the coServ wiki!</en>
+		<zh>歡迎使用 coServ 這個新式的 Web Server</zh>
+	</ph>
+	<ph id="section1">
+		<en>From simple websites with a few static pages to really complicated web applications which integrate multiple DB along with other web servers, all these can be done effectively using coServ. If you want to spend more time on your own project rather than harnessing platforms (e.g. express.js), then coServ is your choice.
+		The following is a simple guide to show you how to build a website on coServ.
+		</en>
+		<zh>不論是只有幾個靜態網頁的簡易網站，到能夠整合資料庫、甚至數個網站的複雜的網路應用，coServ 都能幫助您快速而有效的達成。不想花這麼多時間學習 Express.js，而希望能直接進入網站開發的工作嗎？那麼使用 coServ 將會使你感到無比的成就感。
+		</zh>
+	</ph>       
+	<ph id="subtitle2">
+		<en>Let's Just Do It</en>
+		<zh>立刻動手</zh>
+	</ph>
+	<ph id="section2">
+		<en>Assuming you've installed node.js, this is how you can install coServ:</en>
+		<zh>假設您已安裝了 node.js，接下來就是安裝 coServ:</zh>
+	</ph>
+	<ph id="code1">
+		<en>&gt; npm install coserv</en>
+		<zh>&gt; npm install coserv</zh>
+	</ph>
+	<ph id="section3">
+		<en>Once it's done, you'll find the 'node_module/coServ' directory. Change to that directory and enter the following command:</en>
+		<zh>完成安裝後您會看到 coServ 的目錄。請進入到 node_modules/coServ 目錄後執行以下的命令：</zh>
+	</ph>
+	<ph id="code2">
+		<en>&gt;  node cli/addSite.js hello</en>
+		<zh>&gt;  node cli/addSite.js hello</zh>
+	</ph>
+	<ph id="section4">
+		<en>That will create a website code named 'hello', and assign the IP address '127.0.0.1' to that website. Now you can start the coServ server and see what the website looks like. To start coServ, run 
+		</en>
+		<zh>這將會幫您建立一個稱為 'hello' 的網站，並且把它設為 coServ 的預設網站。這時您只需啟動 coServ，然後到網路瀏覽器上輸入 http://127.0.0.1:8080 的網址，就會看到 'hello' 這個測試網站的首頁。以下是啟動 coServ 的命令：</zh>
+	</ph>	
+	<ph id="code3">
+		<en>&gt;  node coServ.js</en>
+		<zh>&gt;  node coServ.js</zh>
+	</ph>
+	<ph id="section5">
+		<en>In your browser, enter the 'http://127.0.0.1:8080'  and you should see the home page of the 'hello' website.
+		</en>		
+		<zh></zh>
+	</ph>	
+
+	<ph id="subtitle3">
+		<en>A Simple Test</en>
+		<zh>小小的測試</zh>
+	</ph>
+	<ph id="section6">
+		<en>The home page does nothing but saying hello. We'll add something to it. First, use whatever editor you prefer to open the 'www/themes/hello/blocks/views/index/index.html' file. The file only has one line of code, and we can add another to make it look like the following:</en>
+		<zh>接下來我們要做一些簡單的測試，以便熟悉如何建立自己的網站。首先請用您所熟悉的編輯器開啟 'www/themes/hello/blocks/views/index/index.html' 這個檔案。
+		檔案中只有一行HTML，我們可以再加一行讓檔案如以下所示：</zh>
+	</ph>
+	<ph id="code5">
+		<en> 
+&lt;div&gt;URL of this page is：&lt;%=bi.uri%&gt;&lt;/div&gt;</en>
+		<zh>
+&lt;div&gt;這個網頁的路徑是：&lt;%=bi.uri%&gt;&lt;/div&gt; </zh>
+	</ph>
+	<ph id="section7">
+		<en>Reload the page and you'll see the URL of the page is shown. Syntax of the template engine used on coServ is very similar to EJS (check README for more info about the coServ template engine). You can try a few more experiments to get yourself familiar with coServ. When you have enough fun, you can proceed.</en>
+		<zh>這時讓瀏覽器更新畫面，您會發現畫面上多了一行資訊。到目前為止，你會發現用 coServ 建立網站就好像用 PHP 一樣簡單。以後您還會發現用 coServ 架站更容易開發和維護。
+		現在讓我們再多做一些變化，以便更熟悉 coServ。
+		</zh>
+	</ph>
+
+	<ph id="subtitle4">
+		<en>Add A Page</en>
+		<zh>新增一個頁面</zh>
+	</ph>
+	<ph id="section8">
+		<en>We'll add a new page 'count' to our 'hello' website. The source code should be saved in the 'www/themes/hello/blocks/views/count' directory. We also need to add a entry to the 'www/themes/hello/siteURI.json' file so coServ would recognize this new page. To do this manually is a bit tedious, so coServ provides us some tools. You can use the following command to add a new page 'count' to the 'hello' website:</en>
+		<zh> 除了原有的 index.html 外，現在讓我們加上第二個網頁叫 count.html。這個新增的網頁必須放在 'www/themes/hello/blocks/views/count' 底下，
+		同時要在 'www/themes/hello/siteURI.json' 這個檔案中為這個新增的網頁加上一筆記錄。手動做這些動作有點麻煩，還好 coServ 提供了一些工具可以讓事情簡化一點。
+		如果我們要為 hello 這個網站新增一個 count 的網頁，執行以下的命令即可：
+		</zh>
+	</ph>
+	<ph id="code6">
+		<en>&gt; node cli/addPage.js hello count</en>
+		<zh>&gt; node cli/addPage.js hello count</zh>
+	</ph>
+	<ph id="section9">
+		<en>With that, a new file 'www/themes/hello/blocks/views/count/count.html' is created and a new entry is added to the 'www/themes/hello/siteURI.json'. You're encouraged to check those files to see what have happened.
+		Now we'll add some contents to the new page. Nothing fancy, just to print 1 ~ 10 on the page. Use your preferred editor to edit 'www/themes/hello/blocks/views/count/count.html':</en>
+		<zh>這時 addPage.js 會為我們新增一個 'www/themes/hello/blocks/views/count/count.html' 的檔案，並在 'www/themes/hello/siteURI.json' 這個檔案中新增一筆記錄。
+		有興趣的朋友可以去檢查這些變化。接下來，我們可以開始為這個新增的頁面加上一些內容。內容很簡單，只是印出 1 ~ 10 這十個數字。如果您想做做其他的事，請盡量去嘗試。
+		以下所提供的只是一個範例：
+		</zh>
+	</ph>
+	<ph id="code7">
+		<en> &lt;div&gt;Let's count 1 to 10：&lt;/div&gt;
+&lt;div&gt;
+    &lt;% for (var i = 1; i &lt;= 10; i++)  { %&gt;
+    	&lt;%= i %&gt;&amp;nbsp;
+    &lt;% } %&gt;
+&lt;/div&gt;
+		</en>
+		<zh> &lt;div&gt;以下列出1 ~ 10 的數字：&lt;/div&gt;
+&lt;div&gt;
+    &lt;% for (var i = 1; i &lt;= 10; i++)  { %&gt;
+    	&lt;%= i %&gt;&amp;nbsp;
+    &lt;% } %&gt;
+&lt;/div&gt;
+		</zh>
+	</ph>
+	<ph id="section10">
+		<en>Enter the address '127.0.0.1:8080/count  on your browser too see the result.
+		We've just built a simple website on coServ. You can check other wiki articles and learn how to unleash the power of coServ.</en>
+		<zh>將以上的內容複製到 count.html 這個檔案後，再到網路瀏覽器輸入 127.0.0.1:8080/count ，就能看到新頁面的內容。
+		</zh>
+	</ph>
+	<ph id="section11">
+		<en></en>
+		<zh>以上的範例示範了如何產生一些動態的內容。雖然是簡單的示範，但已說明如何利用 template 來協助產生網頁。不過這只展示了 coServ 大概 1% 的功能。
+		更強大的功能，我們將陸續介紹，就請大家耐心的往下看吧！
+		</zh>
+	</ph>
+
+	<ph id="subtitle5">
+		<en>More documents</en>
+		<zh>更多文件</zh>
+	</ph>
+	<ph id="list1">
+		<en>File structure of the site</en>
+		<zh>網站的檔案結構</zh>
+	</ph>
+	<ph id="list2">
+		<en>coServ design aesthetics</en>
+		<zh>coServ 的設計美學</zh>
+	</ph>
+
+</phrases>

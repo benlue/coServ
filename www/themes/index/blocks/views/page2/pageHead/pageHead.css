@@ -1,0 +1,57 @@
+/*---header---*/
+header{
+  width: 840px !important;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.bg{
+  background: transparent;
+  /*background: #EFEFEF;*/
+}
+a:hover {
+  text-decoration: none;
+}
+.clear {
+  clear: left;
+}
+.float{
+  float: left;
+}
+.row {
+  width: 100%;
+  margin-right: 0;
+  margin-left: 0;
+}
+.headLeft {
+  float: left;
+  width: 580px;
+  left: 30px;
+  top: 0px;
+  color: #2EA0D1;
+  position: absolute;
+  z-index: 1;
+}
+.headRight {
+  float: right;
+  text-align: right;
+  right: 20px;
+  top: 0px;
+  width: 180px;
+  position: absolute;
+  z-index: 1;
+}
+.home {
+  margin: 25px 20px 0 0;
+  display: inline-block;
+  text-align: right;
+ }
+ .home a{
+  /*color: #2EA0D1;*/
+  color: #fff;
+  font-size: 1em;
+ }
+ .home a:hover {
+  color: #DBFFFF;
+  text-decoration: none;
+ }

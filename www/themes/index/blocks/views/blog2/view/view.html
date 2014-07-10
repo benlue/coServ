@@ -1,0 +1,110 @@
+<div class="matter">	
+	<div class="type"><a href="list.html">回文章清單</a></div>
+	<div class="title">
+	COIMOTION phoneGap/Cordova Plugin 技術文件
+	</div>
+	<div class="sub">
+		<span class="strTime">2014-06-03 / </span>
+		<span class="dspName">Author：hungyu.su</span>
+	</div>
+		<section>
+	  	<p>coimPlugin目前版本(0.9.2)提供phonegap 開發者一個與iOS/Android COIMOTION SDK的介接，讓開發者使用phoneGap/Cordova開發app時可透過plugin的使用，來獲得原生開發者使用COIMOTION SDK的便利性，例如處理使用者登入/註冊/更新密碼及自動儲存/更新token等等，開發者亦可透過一般的Web開發方式使用直接使用COIMOTION API。</p>
+
+		<span class="subtitle">Js-Interface</span>
+		<p>
+		coimPlugin提供與coimSDK的介接方法，未來會隨著COIMOTION的成長逐步增加更多的功能，在此版本plugin提供有：</p>
+
+		<span class="subtopic">
+		coimPlugin.send: function(relativeURL, params, success, fail, invalid) </span>
+		<span class="subtopic">
+		coimPlugin.send: function(relativeURL, params, coimCallback)</span>
+		<p> 
+		發送API至開發者設定的功能元，relativeURL格式為[CA]/[RS]/[OP]，params為JS物件，將要發送的參數以key-value的方式放入params中送出，如果沒有參數的話，success、fail與invalid為callback函式，分別對應成功、失敗以及token失效三個事件；或是使用<code>var callback = new coimCallback();</code>指令產生callback物件，以第二個形式傳入coimPlugin函式，產生的callback物件中，開發者可以自行覆蓋 success、fail或是invalid方法。</p>
+
+		<span class="subtopic">
+		coimPlugin.updatePasswd: function(relativeURL, params, success, fail) </span>
+		<span class="subtopic">
+		coimPlugin.updatePasswd: function(relativeURL, params, coimCallback)</span>
+		<p>
+		發送密碼修改的API，relativeURL格式為[CA]/[RS]/[OP]，params必需有”oldPasswd”、”passwd”與”passwd2” ，success與fail 為callback函式，分別對應成功以及失敗兩個事件；或是使用<code>var callback = new coimCallback();</code>指令產生callback物件，以第二個形式傳入coimPlugin函式，產生的callback物件中，開發者可以自行覆蓋 success或是fail 方法。</p>
+
+		<span class="subtopic">
+		coimPlugin.login: function(relativeURL, params, success, fail) </span>
+		<span class="subtopic">
+		coimPlugin.login: function(relativeURL, params, coimCallback)</span>
+		<p>
+		發送登入API至開發者設定的功能元(需對應core/user/login)，relativeURL格式為[CA]/[RS]/[OP]，params必需有”accName”與”passwd”， success與fail 為callback函式，分別對應成功以及失敗兩個事件；或是使用<code>var callback = new coimCallback();</code>指令產生callback物件，以第二個形式傳入coimPlugin函式，產生的callback物件中，開發者可以自行覆蓋 success或fail 方法。</p>
+
+		<span class="subtopic">
+		coimPlugin.register: function(params, success, fail)</span>
+		<span class="subtopic">
+		coimPlugin.register: function(params, coimCallback)</span>
+		<p>
+		註冊使用者，Coimotion在註冊流程分為兩步，先註冊取得actID後再啟用該actID，考量到app使用者的註冊順暢度，在SDK中自動幫註冊的使用者啟用帳號，開發者使用此方法時，如果有成功取得回應即表示該帳號已啟用並取得token可進行之後的API操作，params必需有”accName”、”passwd”與”passwd2” ，success與fail 為callback函式，分別對應成功以及失敗兩個事件；或是使用<code>var callback = new coimCallback();</code>指令產生callback物件，以第二個形式傳入coimPlugin函式，產生的callback物件中，開發者可以自行覆蓋 success或是fail 方法。</p>
+		<span class="subtopic">
+		coimPlugin.logout : function(success, fail) </span>
+		<span class="subtopic">
+		coimPlugin.logout : function(coimCallback) </span>
+		<p>
+		將使用者登出，success與fail 為callback函式，分別對應成功以及失敗兩個事件；或是使用<code>var callback = new coimCallback();</code>指令產生callback物件，以第二個形式傳入coimPlugin函式，產生的callback物件中，開發者可以自行覆蓋 success或fail 方法。</p>
+
+		<span class="subtopic">	
+		coimPlugin.attach: function(relativeURL, params, files, files, success, fail, progress) </span>
+
+		<span class="subtopic">
+		coimPlugin.attach: function(relativeURL, params, files, files, coimCallback)</span>
+		<p>
+		上傳檔案至相關功能元(須繼承cms/page/attach或cms/geoLoc/attach)，params請參照相對應的功能元，param需有nType參數(1~5)，定義為： 1: icon 2: file 3: image 4: video 5: audio files為字串陣列，為要上傳的檔案路徑，目前限制一次上傳為三個檔案且不大於1 mB，success、fail與progress為callback函式，分別對應成功、失敗以及上傳進度三個事件；或是使用<code>var callback = new coimCallback();</code>指令產生callback物件，以第二個形式傳入coimPlugin函式，產生的callback物件中，開發者可以自行覆蓋 success、fail 或是progress方法。</p>
+
+		<span class="subtitle">關於callback</span>
+		<p>
+		本plugin提供coimCallback物件讓開發者使用，其中提供了success、fail、invalid以及progress四個方法，對應JS介接方法所需要的callback函式，因此開發者使用plugin時需要實作下敘方法或是以下列方法來覆蓋(override)coimCallback物件中的方法。</p>
+
+		<span class="subtopic">success(Object)</span>
+		<p>
+		當API呼叫完成時的callback，此object對應API回傳結果(JSON格式)，開發者可根據JSON的格式來進行剖析。</p>
+
+		<span class="subtopic">fail(err)</span>
+		<p>
+		SDK在處理、發送API或解析回應資料時有任何錯誤，會呼叫此方法並將錯誤訊息傳回，開發者可以在此方法中處理各種錯誤的對應。</p>
+
+		<span class="subtopic">invalid()</span>
+		<p>
+		COIMOTION API發送時會透過App key與App code進行權限的驗證，當發送的API中包含token(不為空字串)時，如果該token已失效，且該API為可匿名使用的API時，回傳的結果中會增加一個token=””的欄位，plugin(SDK亦然)會觸發invalid()這個callback，開發者便可採取對應的處理方式(ex: 將使用者登出)。</p>
+		 <p>• progress(progress)attach方法會進行檔案的上傳，因此提供progress callback以回傳上傳進度，傳入的progress參數為0-100。</p>
+
+		<span class="subtopic">coimCallback</span>
+		<p>
+		統合上述四個方法的js 物件，開發者可使用<code>var callback = new coimCallback()</code>來產生callback物件，並以<code>callback.success = function(obj){};</code>的方式進行callback方法的覆蓋。</p>
+		
+		<span class="subtitle">使用plugin</span>
+		<span class="subtopic">取得COIMOTION Plugin</span>
+		<p>
+		可由COIMOTION網站下載 (http://tw.coimotion.com/wcoim/SDK/coimPlugin.zip)</p>
+
+		<span class="subtopic">在phoneGap/Cordova中使用</span>
+		<p>將下載的壓縮檔解開， 在專案目錄下執行： <code>“# cordova plugin add path/to/coimPlugin” </code>或是<code> “# phonegap local plugin add path/to/coimPlugin” </code>即可在專案中安裝好本plugin，接下來 如果是android專案的話 請在AndroidManifest.
+		xml中的中加入兩個： 如果是ios專案的話 請在[project-name]-Info.plist中加入兩行properties， ”coim_app_key” 與 ”coim_app_code” 這兩個欄位的值請登入COIMOTION網站，進入”APP管理”選擇對應的APP，並切換至”基本資料”分頁，其中的代碼即為coim_app_code，程式金鑰則是coim_app_key 。完成後便可以在程式中使用plugin囉。</p>
+
+		<span class="focusList">如有問題的話，可到COIMOTION網站留言。</span>
+
+	  	</section>
+
+	<div class="row_down">
+		<div class="columnL">
+			<button class="btn btn-op pull-left" value="回上一頁" onclick="window.history.back();">&lt;&lt;&nbsp;PREV PAGE</button>
+			<button class="btn btn-op pull-right" value="到下一頁" >NEXT PAGE&nbsp;&gt;&gt;</button>
+	    </div>
+	    <!-- <div class="columnR">
+			<div class="col">
+				<i class="icon-comment"></i><span>評論</span><span class="paL">100,00</span>
+			</div>
+			<div class="col">
+				<i class="icon-star"></i><span>最愛</span><span class="paL">100,00</span>
+			</div>
+			<div class="col">
+				<i class="icon-share-alt"></i><span>分享</span><span class="paL">100,00</span>
+			</div>				
+		</div> -->
+	</div>		
+</div>
