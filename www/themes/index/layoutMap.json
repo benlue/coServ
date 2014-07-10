@@ -1,7 +1,7 @@
 {
 	"/sass": "slide",
 	"/blog" : "blog",
-	"/page" : "blog_oldschool",
+	"/blog/view" : "blog_oldschool",
 	"/blog2": "blog2",
-	"/page2" : "blog_page"
+	"/blog2/view": "blog_page"
 }

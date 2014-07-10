@@ -1,14 +1,20 @@
 <div class="view">
 		<div class="type">
-			<h1 class="title">coServ 開發者手冊</h1>
-			<h2 class="tagline">開箱文</h2>
+			<h1 class="title"><%= value.title %></h1>
+			<h2 class="tagline"><%= value.summary %></h2>
 		</div>	
 		<div class="sub">
+			<% var  createTime = value.createTime,
+					idx = createTime.indexOf('T');
+			   createTime = createTime.substring(idx);
+			%>
 			<span class="strTime">2014-07-02&nbsp;/&nbsp;</span>
-			<span class="dspName">Author：Chloe</span>
+			<span class="dspName">Author：<%= value.dspName %></span>
 		</div>
 
 		<section>
+			<%= value.body %>
+			<!--
 	    	<p class="subtitle"><h3>歡迎使用 coServ 這個新式的 Web Server</h3></p>
 
 			<p>不論是只有幾個靜態網頁的簡易網站，到能夠整合資料庫、甚至數個網站的複雜的網路應用，coServ 都能幫助您快速而有效的達成。不想花這麼多時間學習 Express.js，而希望能直接進入網站開發的工作嗎？那麼使用 coServ 將會使你感到無比的成就感。</p>
@@ -72,7 +78,7 @@
 			    <li><a href="#">網站的檔案結構</a></li>
 			    <li><a href="#">coServ 的設計美學</a></li>
 			</ul>
-
+			-->
 		</section>
 
 	<div class="row_down">

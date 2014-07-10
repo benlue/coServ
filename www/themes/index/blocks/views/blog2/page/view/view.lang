@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<phrases>    
+<phrases>   
 	<ph id="title">
 		<en>coServ Developer's Guide</en>
 		<zh>coServ 開發者手冊</zh>
@@ -74,10 +73,9 @@
 		檔案中只有一行HTML，我們可以再加一行讓檔案如以下所示：</zh>
 	</ph>
 	<ph id="code5">
-		<en> 
-&lt;div&gt;URL of this page is：&lt;%=bi.uri%&gt;&lt;/div&gt;</en>
-		<zh>
-&lt;div&gt;這個網頁的路徑是：&lt;%=bi.uri%&gt;&lt;/div&gt; </zh>
+		<en></en>
+		<zh>&lt;h2&gt;Hello World!&lt;/h2&gt;
+		&lt;div&gt;這個網頁的路徑是：/page2/manage.html&lt;/div&gt; </zh>
 	</ph>
 	<ph id="section7">
 		<en>Reload the page and you'll see the URL of the page is shown. Syntax of the template engine used on coServ is very similar to EJS (check README for more info about the coServ template engine). You can try a few more experiments to get yourself familiar with coServ. When you have enough fun, you can proceed.</en>
@@ -109,22 +107,7 @@
 		以下所提供的只是一個範例：
 		</zh>
 	</ph>
-	<ph id="code7">
-		<en> &lt;div&gt;Let's count 1 to 10：&lt;/div&gt;
-&lt;div&gt;
-    &lt;% for (var i = 1; i &lt;= 10; i++)  { %&gt;
-    	&lt;%= i %&gt;&amp;nbsp;
-    &lt;% } %&gt;
-&lt;/div&gt;
-		</en>
-		<zh> &lt;div&gt;以下列出1 ~ 10 的數字：&lt;/div&gt;
-&lt;div&gt;
-    &lt;% for (var i = 1; i &lt;= 10; i++)  { %&gt;
-    	&lt;%= i %&gt;&amp;nbsp;
-    &lt;% } %&gt;
-&lt;/div&gt;
-		</zh>
-	</ph>
+	
 	<ph id="section10">
 		<en>Enter the address '127.0.0.1:8080/count  on your browser too see the result.
 		We've just built a simple website on coServ. You can check other wiki articles and learn how to unleash the power of coServ.</en>

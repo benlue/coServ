@@ -16,6 +16,7 @@ header{
 img {
   border: 0;
 }
+* a,
 a:hover {
   text-decoration: none;
 }

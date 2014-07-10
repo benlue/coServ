@@ -7,9 +7,10 @@
         "home": "/index",
         "theme": "index",
         "appKeys": {
-            "wcoim": ""
+            "wcoim": "",
+            "blogDemo": "ce51fbb8-1df6-0442-e187-3e5e0a8785b8"
         },
-        "caCode": "index"
+        "caCode": "blogDemo"
     },
 
     "192.168.1.5": {
@@ -20,8 +21,9 @@
         "home": "/index",
         "theme": "index",
         "appKeys": {
-            "wcoim": ""
+            "wcoim": "",
+            "blogDemo": "ce51fbb8-1df6-0442-e187-3e5e0a8785b8"
         },
-        "caCode": "index"
+        "caCode": "blogDemo"
     }
 }

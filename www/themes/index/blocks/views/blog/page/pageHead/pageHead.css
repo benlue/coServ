@@ -5,27 +5,23 @@ header{
 }
 .row {
 	width: 100%;
-	margin-left: 0 !important;
-	margin-right: 0 !important;
+	margin: 0 !important;
 }
 .bg{
 	background: #3a3a3a;
+	height: 83px;
 }
 img {
 	border: 0;
 }
+a, 
 a:hover {
 	text-decoration: none;
-}
-.row {
-	width: 100%;
-	margin-right: 0;
-	margin-left: 0;
 }
 .headLeft {
 	float: left;
 	width: 250px;
-	padding: 0 0 10px 50px;
+	padding: 0 0 0px 50px;
 	color: #fff;
 }
 .headRight {
@@ -42,7 +38,8 @@ a:hover {
  .home a{
   color: #fff;
   font-size: 1em;
-  padding: 5px 0;
+  line-height: 1.7em;
+  padding: 5px 0 0;
  }
  .home a:hover {
   color: #B3DF7E;

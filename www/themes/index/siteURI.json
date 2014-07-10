@@ -47,36 +47,23 @@
         "id": "no"
     },
     "/blog/list": {
+        "id": "no",
+        "service": "/blogContent/blogRs/list"
+    },
+    "/blog/page/view": {
+        "id": "yes",
+        "service": "/blogContent/blogRs/view"
+    },
+    "/blog/page/pageHead": {
         "id": "no"
     },
-     "/page/manage": {
+    "/blog/page/sidebar": {
         "id": "no"
     },
-    "/page/pageHead": {
+    "/blog/page/pageBanner": {
         "id": "no"
     },
-    "/page/sidebar": {
-        "id": "no"
-    },
-    "/page/pageBanner": {
-        "id": "no"
-    },
-    "/page/view": {
-        "id": "no"
-    },   
-    "/page/view1": {
-        "id": "no"
-    }, 
-    "/page/view2": {
-        "id": "no"
-    },
-    "/page/view3": {
-        "id": "no"
-    },
-
-    "/blog2/view": {
-        "id": "no"
-    },
+    
     "/blog2/bgFooter": {
         "id": "no"
     }, 
@@ -87,30 +74,20 @@
         "id": "no"
     },
     "/blog2/list": {
+        "id": "no",
+        "service": "/blogContent/blogRs/list"
+    },
+    "/blog2/page/view": {
+        "id": "yes",
+        "service": "/blogContent/blogRs/view"
+    },
+    "/blog2/page/pageHead": {
         "id": "no"
     },
-     "/page2/manage": {
+    "/blog2/page/sidebar": {
         "id": "no"
     },
-    "/page2/pageHead": {
-        "id": "no"
-    },
-    "/page2/sidebar": {
-        "id": "no"
-    },
-    "/page2/pageBanner": {
-        "id": "no"
-    },
-    "/page2/view": {
-        "id": "no"
-    },   
-    "/page2/view1": {
-        "id": "no"
-    }, 
-    "/page2/view2": {
-        "id": "no"
-    },
-    "/page2/view3": {
+    "/blog2/page/pageBanner": {
         "id": "no"
     }
 }

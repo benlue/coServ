@@ -7,55 +7,63 @@
   font-family: "微軟正黑體","Adobe 黑体 Std R", "Adobe 繁黑體 Std B",  Arial, sans-serif;
   margin-top: 10px;
 }
-.panel-title a:hover {
-  text-decoration: none;
-}
 .panel-group .panel-green {  
   width: 100%;
   border: 1px #019877 solid;  
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
 }
-.panel-group > .panel-green > .panel-heading {
-  font-weight: bold;
-  line-height: 1.2em;
-  color: #FFF;
+.panel-group > .panel-green > .panel-heading { 
+  text-indent: 1em;
   background: #019877;
   border: 1px #019877 solid;
-  -webkit-border-top-left-radius: 2px;
-  -webkit-border-top-right-radius: 2px;
-  -moz-border-radius-topleft: 2px;
-  -moz-border-radius-topright: 2px;
-  -ms-border-radius-topleft: 2px;
-  -ms-border-radius-topright: 2px;
-  -o-border-radius-topleft: 2px;
-  -o-border-radius-topright: 2px;
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px; 
+  -ms-border-top-left-radius: 5px;
+  -ms-border-top-right-radius: 5px;
+  -moz-border-top-left-radius: 5px;
+  -moz-border-top-right-radius: 5px; 
+  -o-border-top-left-radius: 5px;
+  -o-border-top-right-radius: 5px; 
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  height: 50px;
 }
+.panel-title a:hover {
+  text-decoration: none;
+}
+.panel-title a{
+  color: #FFF;
+  text-decoration: none;
+  line-height: 1px;
+}
+
 .panel-green > .panel-heading + .panel-collapse > .panel-body {
-  border-color:#FFF;
   border-top: none;  
   padding: 0;
 }
 .panel-body p {
+  color: rgba( 1, 152, 119, 1);
   border-bottom-width: 1px;
   border-bottom-style: solid;
-  border-color: rgba( 1, 152, 119, 0.5);
+  border-bottom-color: rgba( 1, 152, 119, 0.5);
   padding: 10px;
   margin: 0;
   line-height: 1.2em;
-  width : 200px;
+  width : 180px;
   overflow : hidden;
   text-overflow : ellipsis;
   white-space : nowrap;
 }
-.panel-body p:last{
-  border-bottom: none;
-}
-p.right {
+
+.panel-body p.right {
   border-bottom: none;
   text-align: right;
 }
-p.right a{
+.panel-body p.right a{
   opacity: 0.7;
 }
 .panel-body p a {

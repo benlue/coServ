@@ -1,14 +1,20 @@
 <div class="view">
 		<div class="type">
-			<h1 class="title">coServ 開發者手冊</h1>
-			<h2 class="tagline">開箱文</h2>
+			<h1 class="title"><%= value.title %></h1>
+			<h2 class="tagline"><%= value.summary %></h2>
 		</div>	
 		<div class="sub">
+			<% var  createTime = value.createTime,
+					idx = createTime.indexOf('T');
+			   createTime = createTime.substring(idx);
+			%>
 			<span class="strTime">2014-07-02&nbsp;/&nbsp;</span>
-			<span class="dspName">Author：Chloe</span>
+			<span class="dspName">Author：<%= value.dspName %></span>
 		</div>
 
 		<section>
+			<%= value.body %>
+			<!--
 	    	<p class="subtitle"><h3>歡迎使用 coServ 這個新式的 Web Server</h3></p>
 
 			<p>不論是只有幾個靜態網頁的簡易網站，到能夠整合資料庫、甚至數個網站的複雜的網路應用，coServ 都能幫助您快速而有效的達成。不想花這麼多時間學習 Express.js，而希望能直接進入網站開發的工作嗎？那麼使用 coServ 將會使你感到無比的成就感。</p>
@@ -55,11 +61,11 @@
 
 			<pre><code>&lt;div&gt;以下列出1 ~ 10 的數字：&lt;/div&gt;
 &lt;div&gt;
-	<% for (var i = 1; i <= 10; i++)  { %>
-        <%= i %>&amp;nbsp;
-    <% } %>
+    &lt;% for (var i = 1; i &lt;= 10; i++)  { %&gt;
+    	&lt;%= i %&gt;&amp;nbsp;
+    &lt;% } %&gt;
 &lt;/div&gt;</code></pre>
-		
+			
 			<p>將以上的內容複製到 count.html 這個檔案後，再到網路瀏覽器輸入 127.0.0.1:8080/count ，就能看到新頁面的內容。</p>
 
 			<p>以上的範例示範了如何產生一些動態的內容。雖然是簡單的示範，但已說明如何利用 template 來協助產生網頁。不過這只展示了 coServ 大概 1% 的功能。
@@ -67,18 +73,18 @@
 
 			<p>&nbsp;</p>
 
-			<p class="more">更多文件</p>		
+			<p class="subtitle"><h3>更多文件</h3></p>		
 			<ul>
 			    <li><a href="#">網站的檔案結構</a></li>
 			    <li><a href="#">coServ 的設計美學</a></li>
 			</ul>
-
+			-->
 		</section>
 
-		<div class="row_down">
+	<div class="row_down">
 		<div class="column">
-			<a type="button" class="pull-left" href="#"><i class="icon-chevron-left"></i>&nbsp; PREV PAGE</a>
-			<a type="button" class="pull-right" href="#">NEXT PAGE &nbsp;<i class="icon-chevron-right"></i></a>			
-	    </div>    
+			<a type="button" class="pull-left" href="#"><i class="icon-angle-left"></i>&nbsp; PREV PAGE</a>
+			<a type="button" class="pull-right" href="#">NEXT PAGE &nbsp;<i class="icon-angle-right"></i></a>			
+	    </div>
 	</div>		
 </div>

@@ -1,4 +1,4 @@
-/*view*/
+/*--------view---------*/
 .float{
   float: left;
 }
@@ -86,7 +86,7 @@ pre code{
   padding: 5px 5px 0;
 }
 .row_down{
-  width: 840px;
+  width: 740px;
   padding: 0 50px;
   margin: 50px 0px;
   border-top: 1px solid #ccc;

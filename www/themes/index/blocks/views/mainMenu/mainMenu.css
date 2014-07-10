@@ -26,3 +26,7 @@ select{
   border-color:#70C3A5;
   border-top: none;
 }
+.panel-body a p{
+  font-size: 16px;
+  color: #666;
+}

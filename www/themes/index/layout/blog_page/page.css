@@ -25,6 +25,7 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
 body{
   line-height: 2.4 rem;
   margin: 0;
+  padding: 0;
   -webkit-font-smoothing: antialiased;  
   font-family: "微軟正黑體","Adobe 黑体 Std R", "Adobe 繁黑體 Std B",  Arial, sans-serif;
   font-weight: normal;
@@ -53,4 +54,20 @@ body{
   padding:0;
   margin: 0;
   width: 200px;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+       -o-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+          box-sizing: border-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+       -o-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+          box-sizing: border-box;
 }
