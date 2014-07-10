@@ -130,24 +130,26 @@ nav {
 
 網頁切板常以區塊區分，這也是coServ載入頁面的最小單位，而一個block 會有這些檔案
 
-    Blocks
+    blocks
 
-        myBlock
+        views
 
-            myBlock.html
+            myBlock
 
-            myBlock.css
+                myBlock.html
 
-            myBlock.js
+                myBlock.css
 
-            myBlock.lang  /\* 多國語言設定檔 \*/
+                myBlock.js
 
-            myBlock.sass  /\* Here! \*/
+                myBlock.lang  /\* 多國語言設定檔 \*/
+
+                myBlock.scss  /\* Here! \*/
 
   
-你可能會有疑問，有CSS又有SASS，那coServ會怎麼載入呢 ？
+你可能會有疑問，有CSS又有SCSS，那coServ會怎麼載入呢 ？
 
-答案是css。coServ先找Blocks內的.css，沒有？載入.sass。
+答案是css。coServ先找Blocks內的.css，沒有？載入.scss。
 
 但coServ直接幫你在網頁加上sass編譯完成的css code，而不用另存新檔。
 
@@ -155,7 +157,7 @@ nav {
 
 ### Cont (共用)
 
-實際上是cont/shared/sass，適合放mixin library或自定的mixin.scss，讓myBlock.sass能夠引用sass code
+實際上是cont/shared/sass，適合放mixin library或自定的mixin.scss，讓myBlock.scss引用
 
 
 
@@ -177,10 +179,10 @@ Bourbon是其中之一受歡迎的，我們也將拿它示範coServ如何擴充�
 
     2.  移除WebView.js 註解處 //drink bourbon
 
-    3.  myBlock.sass
+    3.  myBlock.scss
 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        /* myBlock.sass */
+        /* myBlock.scss */
         @import "bourbon"; /* 載入bourbon mixin*/
 
         ....
