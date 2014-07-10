@@ -11,28 +11,42 @@ else  {
         console.log('node addPage.js %ca\n\t%ca: the code name of the website getting a new page\n\t%pg: name of the new page');
     }
     else  {
-        var  bkPath = path.join(__dirname, '../www/themes/' + caCode + '/blocks/views/');
         // create a new block
-        fs.mkdir( bkPath + pageName, function(err) {
-            if (err)
-                console.log( err );
-            else
-                fs.writeFile(bkPath + pageName + '/' + pageName + '.html', '<div></div>', function(err) {
-                    if (err)
-                        console.log( err );
-                    else  {
-                        var  uriFile = path.join(__dirname, '../www/themes/' + caCode + '/siteURI.json'),
-                             siteURI = JSON.parse( fs.readFileSync(uriFile) );
+        var  bkPath = path.join(__dirname, '../www/themes/' + caCode + '/blocks/views');
 
-                        siteURI['/' + pageName] = {id: "no"};
-                        fs.writeFile(uriFile, JSON.stringify(siteURI, null, 4), function(err) {
-                            if (err)
-                                console.log('Failed to write to the siteURI.json file.')
-                            else
-                                console.log('Done!');
-                        });
-                    }
-                } );
-        })
+        // check if every directory on tha path exists
+        if (pageName.charAt(0) === '/')
+            pageName = pageName.substring(1);
+
+        var  fpath = pageName.split('/');
+        try  {
+            for (var i in fpath)  {
+                bkPath += '/' + fpath[i];
+                if (!fs.existsSync(bkPath))
+                    fs.mkdirSync(bkPath);
+            }
+
+            var  page = fpath[fpath.length-1];
+
+            fs.writeFile(bkPath + '/' + page + '.html', '<div></div>', function(err) {
+                if (err)
+                    console.log( err );
+                else  {
+                    var  uriFile = path.join(__dirname, '../www/themes/' + caCode + '/siteURI.json'),
+                         siteURI = JSON.parse( fs.readFileSync(uriFile) );
+
+                    siteURI['/' + pageName] = {id: "no"};
+                    fs.writeFile(uriFile, JSON.stringify(siteURI, null, 4), function(err) {
+                        if (err)
+                            console.log('Failed to write to the siteURI.json file.')
+                        else
+                            console.log('Done!');
+                    });
+                }
+            } );
+        }
+        catch (err)  {
+            console.log('Cannot create the designated file path.');
+        }
     }
 }
