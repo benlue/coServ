@@ -1,0 +1,10 @@
+.table tbody tr td {
+  /*border-top-color: #13B5B1;*/
+  border-top-color: #CCF4E8;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td, 
+.table-striped>tbody>tr:nth-child(odd)>th {
+  /*background-color: #f2fffe;*/
+  background-color: #EDF8F4;
+}

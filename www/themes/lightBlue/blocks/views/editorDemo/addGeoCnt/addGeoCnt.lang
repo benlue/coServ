@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phrases>
+  <ph id="addGe">
+    <en>Add Geolocation</en>
+    <zh>新增地理位置</zh>
+  </ph>
+  <ph id="modGe">
+    <en>Geolocation</en>
+    <zh>地理位置</zh>
+  </ph>
+  <ph id="address">
+    <en>Address</en>
+    <zh>地址</zh>
+  </ph>
+  <ph id="zip">
+    <en>Zip</en>
+    <zh>郵遞區號</zh>
+  </ph>
+  <ph id="lat">
+    <en>Latitude</en>
+    <zh>經度</zh>
+  </ph>
+  <ph id="lng">
+    <en>Longitude</en>
+    <zh>緯度</zh>
+  </ph>
+  <ph id="title">
+    <en>Title</en>
+    <zh>標題</zh>
+  </ph>
+  <ph id="isPri">
+    <en>Private</en>
+    <zh>私人記錄</zh>
+  </ph>
+  <ph id="notPublic">
+    <en></en>
+    <zh>不公開</zh>
+  </ph>
+  <ph id="add">
+    <en>Add</en>
+    <zh>新增</zh>
+  </ph>
+  <ph id="delete">
+    <en>Delete</en>
+    <zh>刪除</zh>
+  </ph>
+  <ph id="save">
+    <en>Save</en>
+    <zh>儲存</zh>
+  </ph>
+</phrases>
