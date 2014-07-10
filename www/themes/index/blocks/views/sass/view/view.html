@@ -1,6 +1,6 @@
 <div class="box">
-    <div class="con">
-      <span><i class="icon-arrow-up" onclick="<%=ctrl%>.prev();"></i></span>
+    <div class="con" onclick="<%=ctrl%>.prev();">
+      <span><i class="icon-arrow-up"></i></span>
       <hr>
     </div>
 
@@ -11,18 +11,15 @@
         <ul>
           <a href="#feature"><li>新功能</li></a>
           <a href="#about"><li>關於SASS</li></a>
-          <a href="#syntax"><li>語法</li></a>
           <a href="#usage"><li>如何使用</li></a>
-          <a href="#partial"><li>部分使用</li></a>
-          <a href="#shared"><li>共用</li></a>
           <a href="#workflow"><li>如何運作</li></a>
-          <a href="#extension"><li>擴充</li></a>
+          <a href="#extension"><li>自行擴充</li></a>
         </ul>
     </div>
 
-    <div class="con">
+    <div class="con" onclick="<%=ctrl%>.next();">
       <hr>
-      <span><i class="icon-arrow-down" onclick="<%=ctrl%>.next();"></i></span>
+      <span><i class="icon-arrow-down"></i></span>
     </div>
     <div class="con">
       <hr>
@@ -44,100 +41,120 @@
         <p>簡單來說，讓CSS寫法更具彈性</p>
     </div>
 
-    <div id="syntax" class="slides">
-        <h1>語法</h1>
-        <h3>長相？</h3>
-        <code class="desc">
-          @mixin border-radius($radius) {
-          <ul>
-            <li>-webkit-border-radius: $radius;</li>
-                <li>-moz-border-radius: $radius;</li>
-                <li>-ms-border-radius: $radius;</li>
-                <li>-o-border-radius: $radius;</li>
-                    <li>border-radius: $radius;</li>
-          </ul>
-          }
-        </code>
-        <code class="desc">
-          button {
-            <ul>
-              <li>@include border-radius(5px);</li>
-            </ul>
-          }
-        </code>
+    <div id="power" class="slides">
+        <h1>就像這樣</h1>
+        <h3></h3>
+        <img src="https://lh5.googleusercontent.com/-eUIED7ChJ4k/Tlt1Ap5H9FI/AAAAAAAACXA/tGHYiT-ayE4/css_sass_compass.jpg" alt="" />
     </div>
 
     <div id="usage" class="slides">
       <h1>如何使用</h1>
-      <h3>在coServ，SCSS有兩種用法</h3>
+      <h3>在coServ，SCSS依照用途放在不同路徑</h3>
       <code class="desc">
-        <ul>
-          <li>部分使用</li>
-          <ul>
-            <li>blocks</li>
-          </ul>
-          <li>共用</li>
-          <ul>
-            <li>cont/shared/sass</li>
-          </ul>
-        </ul>
+        <ol>
+          <li>blocks</li>
+          <!-- <li>./sass</li> -->
+          <li>cont/shared/sass</li>
+        </ol>
       </code>
     </div>
 
     <div id="partial" class="slides">
-        <h1>部分使用</h1>
-        <h3>路徑：blocks/views/[BlockName]</h3>
+        <h1>blocks/views/[myBlock]</h1>
+        <h3></h3>
         <code class="desc">
           網頁切板常以區塊區分，這也是coServ載入頁面的最小單位，而一個block 會有這些檔案
           <ul>
-            <li>Blocks</li>
+            <li>blocks</li>
             <ul>
-              <li>myBlock</li>
+              <li>views</li>
               <ul>
-                <li>myBlock.html</li>
-                <li>myBlock.css</li>
-                <li>myBlock.js</li>
-                <li>myBlock.lang  /* 多國語言設定檔 */</li>
-                <li>myBlock.sass  /* Here! */</li>
+                <li>myBlock</li>
+                <ul>
+                  <li>myBlock.html</li>
+                  <li>myBlock.css</li>
+                  <li>myBlock.js</li>
+                  <li>myBlock.lang  /* 多國語言設定檔 */</li>
+                  <li>myBlock.scss  /* Here! */</li>
+                </ul>
               </ul>
             </ul>
           </ul>
         </code>
+        <p class="desc">當你希望scss只在某區塊生效，試試放在這</p>
     </div>
 
     <div id="shared" class="slides">
-        <h1>共用</h1>
-        <h3>路徑：cont/shared/sass</h3>
+        <h1>cont/shared/sass</h1>
+        <h3></h3>
         <p class="desc">
-          實際上是cont/shared/sass，適合放mixin library或自定的mixin.scss，讓myBlock.sass能夠引用sass code
+          希望讓myBlock.scss引用scss code，而不用重複放在各個Blocks？
         </p>
+        <p class="desc">試試放這，適合整理mixin library或自定的mixin.scss</p>
+    </div>
+
+    <div class="slides">
+        <h1>整理 code</h1>
+        <h3></h3>
+        <code class="desc">
+          <ul>
+            <li>/* cont/shared/sass/example.scss */</li>
+            <ul>
+              <li>.</li>
+              <li>.</li>
+              <li>....[your mixin]</li>
+            </ul>
+          </ul>
+        </code>
+        <code class="desc">
+          <ul>
+            <li>/* myBlock.scss */</li>
+            @import "example.scss"; /* 載入自定mixin */
+            <ul>
+              <li>.</li>
+              <li>.</li>
+              <li>....[your scss code]</li>
+            </ul>
+          </ul>
+        </code>
     </div>
 
     <div id="workflow" class="slides">
         <h1>如何運作</h1>
         <h3>載入順序</h3>
-        <span class="desc">
-          你可能會有疑問，有CSS又有SCSS，那coServ會怎麼處理呢 ？
-          先載入Blocks內的.css，沒有才載入.
+        <p class="desc">
+          你可能會有疑問，有CSS又有SCSS，那coServ會怎麼處理呢？<br>
+          <br>
+          先載入Blocks內的.css，找不到才載入.scss<br>
+        </p>
+    </div>
 
-          但coServ直接幫你在網頁加上sass編譯完成的css code，而不用另存新檔。
+    <div class="slides">
+        <h1>會和css互衝？</h1>
+        <h3></h3>
+        <p class="desc">
+          原生SASS編譯後，會產生.css檔
+        </p>
+        <p class="desc">
+          但coServ直接幫你在網頁加上scss編譯完成的css code，不會產生.css檔。
         </p>
     </div>
 
     <div id="extension" class="slides">
-        <h1>擴充SASS MIXIN</h1>
-        <h3>Mixin Library</h3>
+        <h1>自行擴充</h1>
+        <h3>Mixin Library 有</h3>
         <h5>
           <a href="http://compass-style.org">Compass</a>
         </h5>
         <h5>
           <a href="<http://bourbon.io>">Bourbon</a>
         </h5>
+        <h5>...等選擇，選一套自己喜歡的</h5>
     </div>
 
     <div id="bourbon" class="slides">
         <img src="http://blog.codepen.io/wp-content/uploads/2013/09/bourbon-logo.png" alt="bourbon" />
-        <h3>來喝酒吧</h3>
+        <h3>為例</h3>
         <code class="desc">
           <ol>
             <li>npm install node-bourbon --save</li>
