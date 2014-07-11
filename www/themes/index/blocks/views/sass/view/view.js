@@ -25,9 +25,9 @@ function move(step) {
   var pos = $(document).scrollTop(),
       nextPos;
 
-  slide.height = ctrl.sel('.slides').height() * 1.15;
+  slide.height = ctrl.sel('.slides').outerHeight();
   slide.index = Math.floor(pos / slide.height) + step;
-  nextPos = slide.height * slide.index + 10;
+  nextPos = slide.height * slide.index;
 
 	$('html, body').animate({
 		scrollTop: nextPos// adjust number of px to scroll down

@@ -1,6 +1,6 @@
 <div class="box">
-    <div class="con">
-      <span><i class="icon-arrow-up" onclick="<%=ctrl%>.prev();"></i></span>
+    <div class="con" onclick="<%=ctrl%>.prev();">
+      <span><i class="icon-arrow-up"></i></span>
       <hr>
     </div>
 
@@ -13,13 +13,13 @@
           <a href="#about"><li>關於SASS</li></a>
           <a href="#usage"><li>如何使用</li></a>
           <a href="#workflow"><li>如何運作</li></a>
-          <a href="#extension"><li>擴充</li></a>
+          <a href="#extension"><li>自行擴充</li></a>
         </ul>
     </div>
 
-    <div class="con">
+    <div class="con" onclick="<%=ctrl%>.next();">
       <hr>
-      <span><i class="icon-arrow-down" onclick="<%=ctrl%>.next();"></i></span>
+      <span><i class="icon-arrow-down"></i></span>
     </div>
     <div class="con">
       <hr>
@@ -109,7 +109,7 @@
         <code class="desc">
           <ul>
             <li>/* myBlock.scss */</li>
-            @import "example.scss"; /* 載入bourbon mixin */
+            @import "example.scss"; /* 載入自定mixin */
             <ul>
               <li>.</li>
               <li>.</li>
@@ -123,7 +123,7 @@
         <h1>如何運作</h1>
         <h3>載入順序</h3>
         <p class="desc">
-          你可能會有疑問，有CSS又有SCSS，那coServ會怎麼處理呢 ？<br>
+          你可能會有疑問，有CSS又有SCSS，那coServ會怎麼處理呢？<br>
           <br>
           先載入Blocks內的.css，找不到才載入.scss<br>
         </p>
@@ -141,19 +141,20 @@
     </div>
 
     <div id="extension" class="slides">
-        <h1>擴充SASS MIXIN</h1>
-        <h3>Mixin Library</h3>
+        <h1>自行擴充</h1>
+        <h3>Mixin Library 有</h3>
         <h5>
           <a href="http://compass-style.org">Compass</a>
         </h5>
         <h5>
           <a href="<http://bourbon.io>">Bourbon</a>
         </h5>
+        <h5>...等選擇，選一套自己喜歡的</h5>
     </div>
 
     <div id="bourbon" class="slides">
         <img src="http://blog.codepen.io/wp-content/uploads/2013/09/bourbon-logo.png" alt="bourbon" />
-        <h3>來喝酒吧</h3>
+        <h3>為例</h3>
         <code class="desc">
           <ol>
             <li>npm install node-bourbon --save</li>
