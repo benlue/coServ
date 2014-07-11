@@ -49,21 +49,27 @@
 
     <div id="usage" class="slides">
       <h1><%=ph.s4_h1%></h1>
-      <h3><%=ph.s4_h3%></h3>
+      <h3></h3>
+      <p class="desc">
+          <%=ph.s4_h3%>
+      </p>
+      <!--
       <code class="desc">
         <ol>
           <li>blocks</li>
-          <!-- <li>./sass</li> -->
           <li>cont/shared/sass</li>
         </ol>
       </code>
+      -->
     </div>
 
     <div id="partial" class="slides">
         <h1>blocks/views/[myBlock]</h1>
         <h3></h3>
         <code class="desc">
+          <!--
           <%= ph.s5_comment%>
+          -->
           <ul>
             <li>blocks</li>
             <ul>
@@ -95,17 +101,7 @@
 
     <div class="slides">
         <h1><%=ph.s7_h1%></h1>
-        <h3></h3>
-        <code class="desc">
-          <ul>
-            <li>/* cont/shared/sass/example.scss */</li>
-            <ul>
-              <li>.</li>
-              <li>.</li>
-              <li>....[your mixin]</li>
-            </ul>
-          </ul>
-        </code>
+        <h3><%=ph.s7_h3_1%></h3>
         <code class="desc">
           <ul>
             <li>/* myBlock.scss */</li>
@@ -117,6 +113,19 @@
             </ul>
           </ul>
         </code>
+        <h3><%=ph.s7_h3_2%></h3>
+        <code class="desc">
+          <ul>
+            <li>/* cont/shared/sass/example.scss */</li>
+            <ul>
+              <li>.</li>
+              <li>.</li>
+              <li>....[your mixin]</li>
+            </ul>
+          </ul>
+        </code>
+
+
     </div>
 
     <div id="workflow" class="slides">
@@ -142,14 +151,16 @@
 
     <div id="extension" class="slides">
         <h1><%=ph.s10_h1%></h1>
-        <h3><%=ph.s10_h3%></h3>
-        <h5>
-          <a href="http://compass-style.org">Compass</a>
-        </h5>
-        <h5>
-          <a href="<http://bourbon.io>">Bourbon</a>
-        </h5>
-        <h5><%=ph.s10_h5%></h5>
+        <p class="desc">
+            <h3><%=ph.s10_h3%></h3>
+            <h5>
+              <a href="http://compass-style.org">Compass</a>
+            </h5>
+            <h5>
+              <a href="<http://bourbon.io>">Bourbon</a>
+            </h5>
+            <h5><%=ph.s10_h5%></h5>
+        </p>
     </div>
 
     <div id="bourbon" class="slides">

@@ -17,7 +17,7 @@ a,
 /*分類*/
 .typeside{
   margin-top: 20px;
-  padding: 10px 10px 0; 
+  padding: 20px 10px 0; 
   /*border-top: 3px solid #6D6D6D;*/
   border-top: 3px solid #2EA0D1;
   text-align: center;
@@ -44,7 +44,7 @@ a,
   border-top: 3px solid #2EA0D1;
   border-bottom: 1px solid #2EA0D1;
   padding: 15px 8px 0;
-  height: 100px;
+  height: 125px;
   color: #2EA0D1;
   line-height: 1.4em; 
   font-size: 1.3em;
@@ -57,11 +57,14 @@ a,
 }
 
 .callout h4 small{  
-  font-size: 0.8em;
-  color: #77C1E1;  
+  font-size: 0.7em;
+  color: #95CFE8;  
   line-height: 2em;
   padding-top: 10px;
   display: block;
+}
+.callout h4 small:hover{
+  color: #4D4D4D;
 }
 .summary{
   font-size: 1em;

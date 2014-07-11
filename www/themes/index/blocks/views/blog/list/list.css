@@ -31,7 +31,7 @@ a:hover {
   font-family: "微軟正黑體","Adobe 黑体 Std R", "Adobe 繁黑體 Std B",  Arial, sans-serif;
   font-weight: 900;
   line-height: 1.5em;
-  padding: 20px 0 0;
+  padding: 20px 0 10px;
   margin: 0;
   float: left;
   border-top: 5px solid #eee;
