@@ -1,13 +1,8 @@
-<link href="/shared/js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<script src="/shared/js/lib/jquery-1.10.2.min.js"></script>
-<script src="/shared/js/lib/bootstrap/js/bootstrap.min.js"></script>
-
-
 <header>
     <div class="row bg">
         <div class="headLeft"><h2>myBlog</h2></div>
         <div class="headRight">
-        	<span class="home"><a href="/index.html"><i class="icon-home"></i><%= ph.home %></a></span>
+        	<span class="home"><a href="/index.html?_loc=<%=bi.locale%>"><i class="icon-home"></i><%= ph.home %></a></span>
             <div class="dropdown select">
 			   <button class="btn btn-default dropdown-toggle style" type="button" id="dropdownMenu1" data-toggle="dropdown">
 			    <%= ph.original %>
@@ -24,4 +19,3 @@
         </div>
     </div>
 </header>
-
