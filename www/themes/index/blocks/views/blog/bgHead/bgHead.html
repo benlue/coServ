@@ -1,3 +1,8 @@
+<link href="/shared/js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="/shared/js/lib/jquery-1.10.2.min.js"></script>
+<script src="/shared/js/lib/bootstrap/js/bootstrap.min.js"></script>
+
+
 <header>
     <div class="row bg">
         <div class="headLeft"><h2>myBlog</h2></div>
@@ -8,9 +13,9 @@
 			    <%= ph.original %>
 			    <span class="caret"></span>
 			   </button>
-			   <ul class="dropdown-menu hidden" role="menu" aria-labelledby="dropdownMenu1">
+			   <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
 			   		<% var typePrefix = '/' + bi.uri.split('/')[1] + '/';
-                     var uri = bi.uri.replace(typePrefix, '');
+                     var uri = bi.uri.replace(typePrefix, '') + '?_loc=' + bi.locale;
                     %>
 			       <li role="presentation"><a role="menuitem" tabindex="-1" href="/blog/<%=uri%>"><%= ph.original %></a></li>
 			       <li role="presentation"><a role="menuitem" tabindex="-1" href="/blog2/<%=uri%>"><%= ph.lightBlue %></a></li>
@@ -20,10 +25,3 @@
     </div>
 </header>
 
-<script>
-$(function() {
-	 $(".hidden").hide();
-     $(".style").click(function(){
-  	  $(".hidden").fadeIn(500);
-});
-</script>

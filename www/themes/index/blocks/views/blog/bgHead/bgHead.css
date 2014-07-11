@@ -73,10 +73,16 @@ ul li {
 }
 .select {
   margin: 0;
-  display: inline-block;  
+  display: inline-block;
+  font-family: "微軟正黑體","Adobe 黑体 Std R", "Adobe 繁黑體 Std B",  Arial, sans-serif;  
 }
-.style {
-  margin-top: 25px;
+.select ul li{
+	margin-top: 0;
+}
+.select ul li a {
+   outline: none;
+}
+/*
   margin-left: 5px;
   font-family: "微軟正黑體","Adobe 黑体 Std R", "Adobe 繁黑體 Std B",  Arial, sans-serif;
   font-size: 1em;
@@ -105,3 +111,4 @@ ul li {
 	background: #efefef;
 	display: block;
 }
+*/

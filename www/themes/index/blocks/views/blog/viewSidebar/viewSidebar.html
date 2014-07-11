@@ -19,14 +19,14 @@
 					createTime = createTime.substring(0, idx);
 				%>
 	            <p>
-					<a href="/blog/view/<%=item.ngID%>"><%= item.title%></a>
+					<a href="/blog/view/<%=item.ngID%>?_loc=<%=bi.locale%>"><%= item.title%></a>
 
 	          		<span><%=createTime%></span>
 				</p>
 				<% } %>
 
           	<p class="right">
-          		<a href="/blog/list"><i class="icon-double-angle-right">&nbsp;more&nbsp;</i></a>
+          		<a href="/blog/list?_loc=<%=bi.locale%>"><i class="icon-double-angle-right">&nbsp;more&nbsp;</i></a>
           	</p>
 	        </div>
 	      </div>

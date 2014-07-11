@@ -57,7 +57,7 @@ a:hover {
  }
 
 /*語系下拉選單*/
-select {
+/*select {
   margin: 20px 0 0;
   font-family: "微軟正黑體","Adobe 黑体 Std R", "Adobe 繁黑體 Std B",  Arial, sans-serif;
   font-size: 0.9em;
@@ -66,4 +66,18 @@ select {
   width:130px;
   height:28px;
   padding-left: 5px;
+}*/
+ul li {
+  list-style-type: none;
+}
+.select {
+  margin-top: 20px;
+  /*display: inline-block;*/
+  font-family: "微軟正黑體","Adobe 黑体 Std R", "Adobe 繁黑體 Std B",  Arial, sans-serif;  
+}
+.select ul li{
+	margin-top: 0;
+}
+.select ul li a {
+   outline: none;
 }
