@@ -1,0 +1,62 @@
+/*---header---*/
+header{
+  width: 840px !important;
+  margin: 0;
+  padding: 0;
+  font-family: "微軟正黑體","Adobe 黑体 Std R", "Adobe 繁黑體 Std B",  Arial, sans-serif;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: center;
+}
+.bg{
+  background: transparent;
+  /*background: #EFEFEF;*/
+  height: 83px;
+}
+a, a:hover {
+  text-decoration: none;
+}
+.clear {
+  clear: left;
+}
+.float{
+  float: left;
+}
+.row {
+  width: 100%;
+  margin: 0 !important;
+}
+.headLeft {
+  float: left;
+  width: 580px;
+  height: 83px;
+  margin-left: 30px;
+  margin-top: 0px;
+  color: #2EA0D1;
+/*  position: absolute;
+  z-index: 100;*/
+}
+.headRight {
+  float: right;
+  text-align: right;
+  margin-right: 20px;
+  margin-top: 0px;
+  width: 180px;
+/*  position: absolute;
+  z-index: 100;*/
+}
+.home {
+  margin: 25px 20px 0 0;
+  display: inline-block;
+  text-align: right;
+ }
+ .home a{
+  /*color: #2EA0D1;*/
+  color: #fff;
+  font-size: 1em;
+ }
+ .home a:hover {
+  color: #DBFFFF;
+  text-decoration: none;
+ }

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phrases>
+  <ph id="begin">
+    <en>Begin to enjoy!</en>
+    <zh>快開始使用吧！</zh>
+  </ph>
+  <ph id="signHeader">
+    <en>Please sign here</en>
+    <zh>請登入</zh>
+  </ph>
+  <ph id="ftHeader">
+    <en>...and take the fast-track</en>
+    <zh>...並啟動快速設定</zh>
+  </ph>
+  <ph id="email">
+    <en>Email</en>
+    <zh>電子郵件</zh>
+  </ph>
+  <ph id="name">
+    <en>Name</en>
+    <zh>姓名</zh>
+  </ph>
+  <ph id="passwd_tip">
+    <en>Password</en>
+    <zh>輸入密碼  ※請輸入6碼以上的英數字</zh>
+  </ph>
+  <ph id="passwd_repeat">
+    <en>Password again</en>
+    <zh>重複輸入密碼</zh>
+  </ph>
+  <ph id="teamCode">
+    <en>Team Code (at least 6 characters)</en>
+    <zh>團隊代碼（至少要六碼長度）</zh>
+  </ph>
+  <ph id="caCode">
+    <en>App Code (at least 6 characters)</en>
+    <zh>子端代碼（至少要六碼長度）</zh>
+  </ph>
+  <ph id="login">
+    <en>Login</en>
+    <zh>登入</zh>
+  </ph>
+  <ph id="regist">
+    <en>Regist</en>
+    <zh>註冊</zh>
+  </ph>
+  <ph id="pgDesc1">
+    <en>In this example, we'll show you how to implement web page editing just like a blog.
+    To do so, we'll need a backend service to store and retrieve page contents for us, and the COIMOTION API service is used for this purpose.
+    So please login or register for a free account.</en>
+    <zh>這個範例展示的是如何在網站中，很輕易地建置類似部落個的網頁編輯功能。為了達到這個目的，COIMOTION API 服務被選用來儲存和讀取網頁的內容。
+    為了要執行這個範例，請先登入或申請一個 COIMOTION 的免費帳號。</zh>
+  </ph>
+  <ph id="pgDesc2">
+    <en>To make things real simple, we'll ask COIMOTION to do a 'fast-track' setup for you: it will create a dev team and a client app for you.
+    If you want to choose the code names for your team and app, you can enter them into the 'team code' and 'app code' text boxes.</en>
+    <zh>為了做到極簡，我們會為您執行 COIMTION 的快速設定功能：這將自動為您在 COIMOTION 上建立一個開發團隊和一個子端應用（client app）。
+    如果您想自己為這個開發團隊和子端應用取代碼，那麼請在「快速設定」下填入團隊和子端代碼。</zh>
+  </ph>
+  <ph id="waitLogin">
+    <en>Please wait...</en>
+    <zh>請稍候...</zh>
+  </ph>
+  <ph id="waitReg">
+    <en>Please activate your account now... to continue this demo</en>
+    <zh>請即刻開通帳號，以便執行接下來的步驟</zh>
+  </ph>
+  <ph id="jsLoginFail">
+    <en>Login failed.</en>
+    <zh>登入失敗。</zh>
+  </ph>
+  <ph id="jsNoAccount">
+    <en>You do not have a COIMOTION account yet. Please register first.</en>
+    <zh>您尚未有 COIMOTION 的帳號，請先註冊。</zh>
+  </ph>
+</phrases>
