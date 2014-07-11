@@ -14,21 +14,6 @@
     "/sass/view": {
         "id": "no"
     },
-    "/user/login": {
-        "id": "no"
-    },
-    "/user/mailActivate": {
-        "id": "no"
-    },
-    "/editorDemo/editor": {
-        "id": "no"
-    },
-    "/editorDemo/addGeoCnt": {
-        "id": "no"
-    },
-    "/sites/refresh": {
-        "id": "no"
-    },
     "/images": {
         "id": "yes",
         "args": [
@@ -36,7 +21,6 @@
         ],
         "service": "/cms/att/node"
     },
-
     "/blog/bgHead": {
         "id": "no"
     },

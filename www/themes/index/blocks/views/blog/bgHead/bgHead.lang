@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phrases>
 	<ph id="home">
-		<en>home</en>
+		<en>Home</en>
 		<zh>回首頁</zh>
-	</ph>
-	<ph id="style">
-		<en>style</en>
-		<zh>樣式</zh>
 	</ph>
 	<ph id="original">
 		<en>Original</en>
@@ -15,5 +11,5 @@
 	<ph id="lightBlue">
 		<en>Light Blue</en>
 		<zh>Light Blue 樣式</zh>
-	</ph>	
+	</ph>
 </phrases>

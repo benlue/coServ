@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phrases>
     <ph id="list">
-        <en>Article List</en>
+        <en>Articles</en>
         <zh>文章列表</zh>
-    </ph>    
+    </ph>
 </phrases>
