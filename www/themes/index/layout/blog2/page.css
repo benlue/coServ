@@ -1,0 +1,37 @@
+/* Add css rules here that are valid for the whole page */
+#pgContainer {
+	width: 840px;
+	margin: 0 auto;
+	padding: 0;	
+}
+#pgContent {
+	width: 840px;
+	margin: 0;
+	padding: 0;
+}
+#pgFooter {
+	width: 840px;
+	margin: 0;
+	padding: 0;
+}
+
+/*歸0*/
+body{
+	padding: 0;
+	margin: 0;
+}
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+       -o-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+          box-sizing: border-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+       -o-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+          box-sizing: border-box;
+}
