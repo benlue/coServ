@@ -2,17 +2,19 @@
 		<div class="type">
 			<h1 class="title"><%= value.title %></h1>
 			<h2 class="tagline"><%= value.summary %></h2>
-		</div>	
+		</div>
 		<div class="sub">
-			<% var  createTime = value.createTime,
-					idx = createTime.indexOf('T');
-			   createTime = createTime.substring(idx);
+			<% var t = new Date(value.createTime),
+						month = ('0'+(t.getMonth()+1)).slice(-2),
+						date = ('0'+t.getDate()).slice(-2),
+						year = t.getFullYear(),
+					createTime = year +'-'+ month +'-'+ date;
 			%>
-			<span class="strTime">2014-07-02&nbsp;/&nbsp;</span>
+			<span class="strTime"><%=createTime%>&nbsp;/&nbsp;</span>
 			<span class="dspName">Author：<%= value.dspName %></span>
 		</div>
 
 		<section>
-			<%= value.body %>			
+			<%= value.body %>
 		</section>
 </div>
