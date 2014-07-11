@@ -5,25 +5,29 @@
 	    <div class="panel panel-green">
 	      <div class="panel-heading">
 	        <h4 class="panel-title">
-	          <a data-toggle="collapse" data-parent="#sidebar" href="#menu1">
-	            發表文章
-	          </a>
+	          <!-- <a data-toggle="collapse" data-parent="#sidebar" href="#menu1"> -->
+	            <%= ph.list %>
+	          <!-- </a> -->
 	        </h4>
 	      </div>
 	      <div id="menu1" class="panel-collapse collapse in">
 	        <div class="panel-body">
-						<% for (var i in value.list) {
-							var  item = value.list[i],
-								createTime = item.createTime,
-								idx = createTime.indexOf('T');
-							createTime = createTime.substring(0, idx);
-						%>
-	          <p>
-							<a href="/blog/view/<%=item.ngID%>"><%= item.title%></a>
-	          	<span><%=createTime%></span>
-						</p>
-						<% } %>
-          	<p class="right"> <a href="#">more&nbsp;<i class="icon-double-angle-right"></i></a> </p>
+				<% for (var i in value.list) {
+					var  item = value.list[i],
+						createTime = item.createTime,
+						idx = createTime.indexOf('T');
+					createTime = createTime.substring(0, idx);
+				%>
+	            <p>
+					<a href="/blog/view/<%=item.ngID%>"><%= item.title%></a>
+
+	          		<span><%=createTime%></span>
+				</p>
+				<% } %>
+
+          	<p class="right">
+          		<a href="/blog/list"><i class="icon-double-angle-right">&nbsp;more&nbsp;</i></a>
+          	</p>
 	        </div>
 	      </div>
 	    </div>

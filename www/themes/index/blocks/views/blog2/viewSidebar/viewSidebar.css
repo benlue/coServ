@@ -2,17 +2,16 @@
 .sidebar{ 
   float: left; 
   width: 200px;
-  padding: 0px;
+  padding: 0;
   margin: 0;
-  font-family: "微軟正黑體","Adobe 黑体 Std R", "Adobe 繁黑體 Std B",  Arial, sans-serif;
-  margin-top: 20px;
+  font-family: "微軟正黑體","Adobe 黑体 Std R", "Adobe 繁黑體 Std B",  Arial, sans-serif;  
 }
-.panel-title a,
-.panel-title a:hover {
+.panel-title,
+.panel-title:hover {
   text-decoration: none;
 }
-.panel-title a{
-  line-height: 1px;
+.panel-title{
+  line-height: 1.5em;
   color: #2EA0D1;
   font-size: 1.5em;
   font-weight: bold;
@@ -24,11 +23,11 @@
 .panel-group > .panel-green > .panel-heading {
   font-weight: bold;
   font-size: 1em;
-  line-height: 1.2em;
   color: #2EA0D1;
   /*border-top: 1px #2EA0D1 solid;*/
   border-bottom: 3px #2EA0D1 double;
   text-align: center;  
+  height: 50px;
 }
 .panel-green > .panel-heading + .panel-collapse > .panel-body {
   border-color:#FFF;
@@ -42,15 +41,22 @@
   padding: 10px;
   margin: 0;
   line-height: 1.2em;
-  width : 180px;
+  width : 200px;
   overflow : hidden;
   text-overflow : ellipsis;
   white-space : nowrap;
   color: #2EA0D1;
 }
+.panel-body p span {
+   display: block;
+   font-size: 0.9em;
+   line-height: 1.2em;
+   text-align: right;
+   margin-top: 10px;
+}
 p.right {
   border-bottom: none;
-  text-align: right;
+  text-align: left;
   font-size: 0.9em;
 }
 p.right a{
