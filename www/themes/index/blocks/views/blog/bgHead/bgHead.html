@@ -10,10 +10,13 @@
 			  	  <i class="icon-chevron-down" style="margin-top:5px"></i>
 			    </span>
 			    <div class="selectOptions">
-			  	   <span class="selectOption" value="style1">style 1</span>
-			  	   <span class="selectOption" value="style2">style 2</span>	  	   
+             <% var typePrefix = '/' + bi.uri.split('/')[1] + '/';
+                 var uri = bi.uri.replace(typePrefix, '');
+             %>
+             <a href="/blog/<%=uri%>"><span class="selectOption" value="style1">style 1</span></a>
+             <a href="/blog2/<%=uri%>"><span class="selectOption" value="style2">style 2</span></a>
 			    </div>
 			</div>
         </div>
-    </div>	   
+    </div>
 </header>

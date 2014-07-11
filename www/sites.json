@@ -3,21 +3,7 @@
         "title": "Single-Page Web Application Demo",
         "validFrom": "",
         "validTo": "",
-        "locale": "zh",
-        "home": "/index",
-        "theme": "index",
-        "appKeys": {
-            "wcoim": "",
-            "blogDemo": "ce51fbb8-1df6-0442-e187-3e5e0a8785b8"
-        },
-        "caCode": "blogDemo"
-    },
-
-    "192.168.1.5": {
-        "title": "Single-Page Web Application Demo",
-        "validFrom": "",
-        "validTo": "",
-        "locale": "zh",
+        "locale": "en",
         "home": "/index",
         "theme": "index",
         "appKeys": {

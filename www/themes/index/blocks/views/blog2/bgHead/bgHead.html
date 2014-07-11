@@ -8,8 +8,11 @@
 			  	  <i class="icon-chevron-down" style="margin-top:5px"></i>
 			    </span>
 			    <div class="selectOptions">
-			  	   <span class="selectOption" value="style1"><a href="index/blog/list">style 1</a></span>
-			  	   <span class="selectOption" value="style2"><a href="/blog/list">style 2</a></span>	  	   
+			  	   <% var typePrefix = '/' + bi.uri.split('/')[1] + '/';
+                 var uri = bi.uri.replace(typePrefix, '');
+             %>
+             <a href="/blog/<%=uri%>"><span class="selectOption" value="style1">style 1</span></a>
+             <a href="/blog2/<%=uri%>"><span class="selectOption" value="style2">style 2</span></a>
 			    </div>
 			</div>
         </div>
@@ -17,5 +20,5 @@
         	<span class="home"><a href="/index.html"><i class="icon-home"></i>&nbsp;home</a></span>
         </div>
     </div>
-    <div class="clear"></div>	   
+    <div class="clear"></div>
 </header>
