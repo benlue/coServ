@@ -9,11 +9,11 @@
 
     <div class="menu">
         <ul>
-          <a href="#feature"><li>新功能</li></a>
-          <a href="#about"><li>關於SASS</li></a>
-          <a href="#usage"><li>如何使用</li></a>
-          <a href="#workflow"><li>如何運作</li></a>
-          <a href="#extension"><li>自行擴充</li></a>
+          <a href="#feature"><li><%=ph.feature%></li></a>
+          <a href="#about"><li><%=ph.about%></li></a>
+          <a href="#usage"><li><%=ph.usage%></li></a>
+          <a href="#workflow"><li><%=ph.workflow%></li></a>
+          <a href="#extension"><li><%=ph.extension%></li></a>
         </ul>
     </div>
 
@@ -29,27 +29,27 @@
 </div>
 <div id="sass">
     <div id="feature" class="slides">
-        <h1>coServ v0.8.8 新功能</h1>
-        <h3>內建SASS</h3>
-        <p>支援scss語法，不用自行編譯或下額外指令</p>
+        <h1><%=ph.s1_h1%></h1>
+        <h3><%=ph.s1_h3%></h3>
+        <p><%=ph.s1_p%></p>
     </div>
 
     <div id="about" class="slides">
-        <h1>關於SASS</h1>
-        <h3><a href="http://sass-lang.com/guide">官方說明</a></h3>
+        <h1><%=ph.s2_h1%></h1>
+        <h3><a href="http://sass-lang.com/guide"><%=ph.s2_h3%></a></h3>
         <img height="160" src="http://sass-lang.com/assets/img/illustrations/glasses-46692be4.svg">
-        <p>簡單來說，讓CSS寫法更具彈性</p>
+        <p><%=ph.s2_p%></p>
     </div>
 
     <div id="power" class="slides">
-        <h1>就像這樣</h1>
+        <h1><%=ph.s3_h1%></h1>
         <h3></h3>
         <img src="https://lh5.googleusercontent.com/-eUIED7ChJ4k/Tlt1Ap5H9FI/AAAAAAAACXA/tGHYiT-ayE4/css_sass_compass.jpg" alt="" />
     </div>
 
     <div id="usage" class="slides">
-      <h1>如何使用</h1>
-      <h3>在coServ，SCSS依照用途放在不同路徑</h3>
+      <h1><%=ph.s4_h1%></h1>
+      <h3><%=ph.s4_h3%></h3>
       <code class="desc">
         <ol>
           <li>blocks</li>
@@ -63,7 +63,7 @@
         <h1>blocks/views/[myBlock]</h1>
         <h3></h3>
         <code class="desc">
-          網頁切板常以區塊區分，這也是coServ載入頁面的最小單位，而一個block 會有這些檔案
+          <%= ph.s5_comment%>
           <ul>
             <li>blocks</li>
             <ul>
@@ -74,27 +74,27 @@
                   <li>myBlock.html</li>
                   <li>myBlock.css</li>
                   <li>myBlock.js</li>
-                  <li>myBlock.lang  /* 多國語言設定檔 */</li>
+                  <li>myBlock.lang  /* <%=ph.s5_comment%> */</li>
                   <li>myBlock.scss  /* Here! */</li>
                 </ul>
               </ul>
             </ul>
           </ul>
         </code>
-        <p class="desc">當你希望scss只在某區塊生效，試試放在這</p>
+        <p class="desc"><%=ph.s5_p%></p>
     </div>
 
     <div id="shared" class="slides">
         <h1>cont/shared/sass</h1>
         <h3></h3>
         <p class="desc">
-          希望讓myBlock.scss引用scss code，而不用重複放在各個Blocks？
+          <%=ph.s6_p1%>
         </p>
-        <p class="desc">試試放這，適合整理mixin library或自定的mixin.scss</p>
+        <p class="desc"><%=ph.s6_p2%></p>
     </div>
 
     <div class="slides">
-        <h1>整理 code</h1>
+        <h1><%=ph.s7_h1%></h1>
         <h3></h3>
         <code class="desc">
           <ul>
@@ -109,7 +109,7 @@
         <code class="desc">
           <ul>
             <li>/* myBlock.scss */</li>
-            @import "example.scss"; /* 載入自定mixin */
+            @import "example.scss"; /* <%=ph.s7_comment%> */
             <ul>
               <li>.</li>
               <li>.</li>
@@ -120,49 +120,49 @@
     </div>
 
     <div id="workflow" class="slides">
-        <h1>如何運作</h1>
-        <h3>載入順序</h3>
+        <h1><%=ph.s8_h1%></h1>
+        <h3><%=ph.s8_h3%></h3>
         <p class="desc">
-          你可能會有疑問，有CSS又有SCSS，那coServ會怎麼處理呢？<br>
+          <%=ph.s8_p1%><br>
           <br>
-          先載入Blocks內的.css，找不到才載入.scss<br>
+          <%=ph.s8_p2%><br>
         </p>
     </div>
 
     <div class="slides">
-        <h1>會和css互衝？</h1>
+        <h1><%=ph.s9_h1%></h1>
         <h3></h3>
         <p class="desc">
-          原生SASS編譯後，會產生.css檔
+          <%=ph.s9_p1%>
         </p>
         <p class="desc">
-          但coServ直接幫你在網頁加上scss編譯完成的css code，不會產生.css檔。
+          <%=ph.s9_p2%>
         </p>
     </div>
 
     <div id="extension" class="slides">
-        <h1>自行擴充</h1>
-        <h3>Mixin Library 有</h3>
+        <h1><%=ph.s10_h1%></h1>
+        <h3><%=ph.s10_h3%></h3>
         <h5>
           <a href="http://compass-style.org">Compass</a>
         </h5>
         <h5>
           <a href="<http://bourbon.io>">Bourbon</a>
         </h5>
-        <h5>...等選擇，選一套自己喜歡的</h5>
+        <h5><%=ph.s10_h5%></h5>
     </div>
 
     <div id="bourbon" class="slides">
         <img src="http://blog.codepen.io/wp-content/uploads/2013/09/bourbon-logo.png" alt="bourbon" />
-        <h3>為例</h3>
+        <h3><%=ph.s11_h3%></h3>
         <code class="desc">
           <ol>
             <li>npm install node-bourbon --save</li>
 
-            <li>find "drink bourbon", 移除註解</li>
+            <li>find "drink bourbon", <%=ph.s11_comment1%></li>
 
             <li>/* myBlock.scss */</li>
-            @import "bourbon"; /* 載入bourbon mixin*/
+            @import "bourbon"; /* <%=ph.s11_comment2%> */
             <ul>
               <li>....</li>
               <li>.</li>
@@ -171,6 +171,6 @@
             </ul>
           </ol>
         </code>
-        <p class="desc">這樣就能使用Bourbon的mixin了！</p>
+        <p class="desc"><%=ph.s11_p%></p>
     </div>
 </div>

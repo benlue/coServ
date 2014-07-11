@@ -152,7 +152,7 @@ npm install coserv
         <% } %>
     }
     
-（你也許不再需要SASS, SCSS 或是LESS了）
+
 
 ### 區塊模組
 區塊模組是用來供給區塊資料的（如果你不是用 COIMOTON API 來取的資料）。它讓開發者可以提供客製的功能。區塊模組基本上就是一個 nodejs 的模組，但是必須實作 run() 這個函數。以下是個簡單的範例：
@@ -163,11 +163,11 @@ npm install coserv
     
     hotMod.run = function run(inData)  {
         var  result = {
-    					"value": {
-    					"list": [{"title": "COIMOTION Is An Amazing API Service Engine."},
-    							 {"title": "coServ Help You Manage A Big WebSite With Ease."}]
-    					         }
-    				  };
+    		     "value": {
+    			     "list": [{"title": "COIMOTION Is An Amazing API Service Engine."},
+    					      {"title": "coServ Help You Manage A Big WebSite With Ease."}]
+    					   }
+    	};
         hotMod.emit('done', result);
     };
     

@@ -1,194 +1,52 @@
-關於SASS
-======
+# About Using Sass In coServ
 
-[如何使用SASS][3]
+-----------------
 
-[3]: <http://sass-lang.com/guide>
+According to the Sass website
 
+> Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.
+    
+Take it or not, Sass is indeed a popular CSS extension among front-end developers. So starting from version 0.8.8, coServ provides the first class support for Sass. That means you can write Sass source code and coServ will automatically compile and apply it to the HTML output. You no longer have to manually compile your Sass file as most front-end developers have to today.
 
-
-SCSS檔特色
-
-變數
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-$font-size: 18px;
-$font-stack: Helvetica, sans-serif;
-body {
-    font: $font-size $font-stack;
-    color: red;
-}
-----
-body {
-    font: 18px Helvetica, sans-serif;
-    color: red;
-}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+For those who are interested to know about Sass, please refer to [this](http://sass-lang.com/guide).
 
 
+## How To
+Using Sass on coServ is fairly easy. You simply use your .scss file to replace the .css file in the block directory, and that will do the work. The block directory is where you save all the related files of a block (if you're still not familiar with how coServ arranges files, please refer to [this article](https://github.com/coimotion/coServ/wiki/File-Structure)). 
 
-巢狀
+The following diargram could be more explanatory:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-ul {
-    list-decoration: none;
-    li {
-        font-size: 100%;
-        color: red;
-    }
-}
-----
-ul {
-    list-decoration: none;
-}
-ul li {
-    font-size: 100%;
-    color: red;
-}
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-
-mixin
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-@mixin border-radius($radius) {
-    -webkit-border-radius($radius);
-       -moz-border-radius($radius);
-        -ms-border-radius($radius);
-         -o-border-radius($radius);
-            border-radius($radius);
-}
-button {
-    @include border-radius(5px);
-}
-----
-button {
-    -webkit-border-radius(5px);
-       -moz-border-radius(5px);
-        -ms-border-radius(5px);
-         -o-border-radius(5px);
-            border-radius(5px);
-}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-
-extend
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.message {
-    font-size: 18px;
-    color: #333;
-}
-.success {
-    @extend .message;
-    color: green;
-}
-.error {
-    @extend .message;
-    color: red;
-}
-----
-.message, .success, .error {
-    font-size: 18px;
-    color: #333;
-}
-.success {
-    color: green;
-}
-.error {
-    color: red;
-}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-
-計算
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-nav {
-    width: 200px / 300px * 100%;
-}
-----
-nav {
-    width: 66.66666666666%;
-}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-
-如何使用
-====
-
-在coServ，SASS可以放在兩個地方 - Blcoks & Cont
-
-
-
-### Blocks ( 部分使用)
-
-網頁切板常以區塊區分，這也是coServ載入頁面的最小單位，而一個block 會有這些檔案
 
     blocks
-
-        views
-
-            myBlock
-
-                myBlock.html
-
-                myBlock.css
-
-                myBlock.js
-
-                myBlock.lang  /\* 多國語言設定檔 \*/
-
-                myBlock.scss  /\* Here! \*/
+       |
+       + views
+           |
+           + myBlock
+              |
+              +  myBlock.html /* the HTML template */
+              |
+              +  myBlock.css  /* the CSS template */
+              |
+              +  myBlock.js   /* the Javascript template */
+              |
+              +  myBlock.lang  /* multi-lingual reource bundle */
+              |
+              +  myBlock.scss  /* Here it is... the scss file */
 
   
-你可能會有疑問，有CSS又有SCSS，那coServ會怎麼載入呢 ？
+Actually you don't need both the .css and .scss file. You just need one of them. If you provide both files for a block, only the .css file will be processed. The .scss file will be ignored in such a case.
 
-答案是css。coServ先找Blocks內的.css，沒有？載入.scss。
+### The Sass Import Path
+In Sass, you can import other Sass files using the @import directive. In coServ, where can those imported files be found?
 
-但coServ直接幫你在網頁加上sass編譯完成的css code，而不用另存新檔。
+You can put your Sass mixins or libraries in the following directories and use the @import directive to import them:
 
+    www/themes/[site_code_name]/sass
+    
+or
 
+    www/cont/shared/sass
 
-### Cont (共用)
+If you put Sass files in the first directory of the two, those files will only be visible to that website. If you put Sass files in the other directory, they'll be visible to ALL websites hosted on coServ.    
 
-實際上是cont/shared/sass，適合放mixin library或自定的mixin.scss，讓myBlock.scss引用
-
-
-
-### 擴充Mixin - Bourbon
-
-Mixin Library百百種 - [Compass][1], [Bourbon][2]...等
-
-[1]: <http://compass-style.org>
-
-[2]: <http://bourbon.io>
-
-Bourbon是其中之一受歡迎的，我們也將拿它示範coServ如何擴充，拿高手的mixin簡化css開發流程。
-
-    1.  安裝node-bourbon模組
-
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        npm install node-bourbon --save
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-    2.  移除WebView.js 註解處 //drink bourbon
-
-    3.  myBlock.scss
-
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        /* myBlock.scss */
-        @import "bourbon"; /* 載入bourbon mixin*/
-
-        ....
-        .
-        .
-        ....[your sass code]
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-這樣就能使用Bourbon的mixin了！(參閱我們的範例: sass/view)
+That should do it. If you would like to see some examples, you can find one in the demo.
