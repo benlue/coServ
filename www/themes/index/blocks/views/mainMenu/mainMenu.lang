@@ -25,8 +25,8 @@
       <zh>使用 BaaS 服務</zh>
     </ph>
     <ph id="menuTitle5">
-      <en>Sass demo</en>
-      <zh>Sass demo</zh>
+      <en>Sass Demo</en>
+      <zh>展示 Sass 功能</zh>
     </ph>
     <ph id="menuTitle6">
       <en>Blog</en>
@@ -83,11 +83,11 @@
       <zh>如果您申請帳號，請記得到郵箱中開啟並點選帳號啟動的連結，以便範例能繼續往下執行。</zh>
     </ph>
     <ph id="mc6_1">
-      <en>style11</en>
-      <zh>style1</zh>
+      <en>Original</en>
+      <zh>Original</zh>
     </ph>
     <ph id="mc6_2">
-      <en>style2</en>
-      <zh>style2</zh>
+      <en>Light Blue</en>
+      <zh>Light Blue</zh>
     </ph>
 </phrases>
