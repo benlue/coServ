@@ -35,8 +35,8 @@
             "path"
         ],
         "service": "/cms/att/node"
-    },    
-     
+    },
+
     "/blog/bgHead": {
         "id": "no"
     },
@@ -52,9 +52,32 @@
         "id": "no"
     },
     "/blog/viewSidebar": {
-        "id": "no"
+        "id": "no",
+        "service": "/blogContent/blogRs/list"
     },
     "/blog/viewBanner": {
+        "id": "no"
+    },
+
+    "/blog2/bgHead": {
+        "id": "no"
+    },
+    "/blog2/list": {
+        "id": "no",
+        "service": "/blogContent/blogRs/list"
+    },
+    "/blog2/view": {
+        "id": "yes",
+        "service": "/blogContent/blogRs/view"
+    },
+    "/blog2/viewHead": {
+        "id": "no"
+    },
+    "/blog2/viewSidebar": {
+        "id": "no",
+        "service": "/blogContent/blogRs/list"
+    },
+    "/blog2/viewBanner": {
         "id": "no"
     }
 }

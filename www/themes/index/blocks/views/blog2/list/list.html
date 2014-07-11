@@ -1,8 +1,8 @@
 <div class="matter">			
 	<div class="typeside">
 		<div class="type active">文章清單</div>
-		<div class="type">&nbsp;</div>
-		<div class="type">&nbsp;</div>
+		<!-- <div class="type">&nbsp;</div>
+		<div class="type">&nbsp;</div> -->
 	</div>
 	<div class="clear"></div>
 	
@@ -14,15 +14,17 @@
 		createTime = createTime.substring(0, idx);
 	%>
 		<div class="callout">
-			<a href="/blog/view/<%=item.ngID%>">
+			<a href="/blog2/view/<%=item.ngID%>">
 				<h4><%= item.title %>
 				<small><%= createTime %></small></h4></a>
 			<p class="summary"><%= item.summary %></p>
 		</div>
+
 	<% } %>
-		
+					
 	</div>
-	<div class="row">			
+	<div class="clear"></div>
+	<div class="row_down">			
 		<div class="chang">
 			<!-- <span class="LR"><a href="#">&laquo;</a></span>
 			<span><a href="#">1</a></span>
