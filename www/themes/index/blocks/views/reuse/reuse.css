@@ -6,6 +6,7 @@
 #rss2 h2 {
     /*color: blue;*/
     color: #389389;
+    font-family:"Adobe 黑体 Std R", "Adobe 繁黑體 Std B", "微軟正黑體", Arial, sans-serif !important;
 }
 #rss2 .table tbody tr td {
   /*border-top-color: #13B5B1;*/
