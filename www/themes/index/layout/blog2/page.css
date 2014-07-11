@@ -15,7 +15,6 @@
 	padding: 0;
 }
 
-/*歸0*/
 body{
 	padding: 0;
 	margin: 0;
@@ -34,4 +33,20 @@ body{
        -o-box-sizing: border-box;
       -ms-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+/*footer*/
+footer {
+  width: 840px;
+  height: 80px;
+  font-size: 1em;
+  text-align: center;
+  color: #FFF;
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 3px #2EA0D1 solid;
+  font-family: "微軟正黑體","Adobe 黑体 Std R", "Adobe 繁黑體 Std B",  Arial, sans-serif;
+}
+footer p{
+  color: #2EA0D1;
 }
