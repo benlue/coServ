@@ -2,7 +2,7 @@
     <div class="row bg">
         <div class="headLeft"><h2>myBlog</h2></div>
         <div class="headRight">
-        	<span class="home"><a href="/index.html"><i class="icon-home"></i><%= ph.home %></a></span>
+        	<span class="home"><a href="/index.html?_loc=<%=bi.locale%>"><i class="icon-home"></i><%= ph.home %></a></span>
         	<select class="form-control">
                 <% var typePrefix = '/' + bi.uri.split('/')[1] + '/';
                      var uri = bi.uri.replace(typePrefix, '');
@@ -18,7 +18,7 @@
                 <div class="selectOptions">
                     <% var typePrefix = '/' + bi.uri.split('/')[1] + '/';
                      var uri = bi.uri.replace(typePrefix, '');
-                    %>              
+                    %>
                     <a href="/blog/<%=uri%>"><span class="selectOption" value="Original"><%= ph.original %></span></a>
                     <a href="/blog2/<%=uri%>"><span class="selectOption" value="LightBlue"><%= ph.lightBlue %></span></a>
                 </div>
