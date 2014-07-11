@@ -60,12 +60,48 @@ a:hover {
  }
 
 /*語系下拉選單*/
-select {
-  margin: 10px 0 0 5px;
+/*  margin: 10px 0 0 5px;
   font-family: "微軟正黑體","Adobe 黑体 Std R", "Adobe 繁黑體 Std B",  Arial, sans-serif;
   font-size: 0.9em;
   line-height: 1.5em;
   color:#3a3a3a;
   width:130px;
   height:28px;
+}*/
+ul li {
+  list-style-type: none;
+}
+.select {
+  margin: 0;
+  display: inline-block;  
+}
+.style {
+  margin-top: 25px;
+  margin-left: 5px;
+  font-family: "微軟正黑體","Adobe 黑体 Std R", "Adobe 繁黑體 Std B",  Arial, sans-serif;
+  font-size: 1em;
+  line-height: 1em;
+  color: #3a3a3a;
+  width:130px;
+  height:30px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+#hidden {	
+	width: 130px;
+	margin: 0;
+	padding: 0;
+	line-height: 2em;	
+	background: #FFF;
+	text-indent: 0.5em;
+	border: #ddd 1px solid;
+}
+#hidden a {
+	color:#3a3a3a;
+	display: block;
+}
+#hidden a:hover {
+	color:#222222;
+	background: #efefef;
+	display: block;
 }

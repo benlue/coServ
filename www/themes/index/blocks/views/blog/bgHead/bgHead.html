@@ -3,26 +3,27 @@
         <div class="headLeft"><h2>myBlog</h2></div>
         <div class="headRight">
         	<span class="home"><a href="/index.html"><i class="icon-home"></i><%= ph.home %></a></span>
-        	<select class="form-control">
-                <% var typePrefix = '/' + bi.uri.split('/')[1] + '/';
+            <div class="dropdown select">
+			   <button class="btn btn-default dropdown-toggle style" type="button" id="dropdownMenu1" data-toggle="dropdown">
+			    <%= ph.original %>
+			    <span class="caret"></span>
+			   </button>
+			   <ul class="dropdown-menu hidden" role="menu" aria-labelledby="dropdownMenu1">
+			   		<% var typePrefix = '/' + bi.uri.split('/')[1] + '/';
                      var uri = bi.uri.replace(typePrefix, '');
-                %>
-              <option><%= ph.original %></option>
-              <option><%= ph.lightBlue %></option>
-            </select>
-            <!-- <div class='selectBox'>
-                <span class='selected'><a href="#"><%= ph.style %></a></span>
-                <span class="selectArrow">
-                  <i class="icon-chevron-down" style="margin-top:5px;"></i>
-                </span>
-                <div class="selectOptions">
-                    <% var typePrefix = '/' + bi.uri.split('/')[1] + '/';
-                     var uri = bi.uri.replace(typePrefix, '');
-                    %>              
-                    <a href="/blog/<%=uri%>"><span class="selectOption" value="Original"><%= ph.original %></span></a>
-                    <a href="/blog2/<%=uri%>"><span class="selectOption" value="LightBlue"><%= ph.lightBlue %></span></a>
-                </div>
-            </div> -->
+                    %>
+			       <li role="presentation"><a role="menuitem" tabindex="-1" href="/blog/<%=uri%>"><%= ph.original %></a></li>
+			       <li role="presentation"><a role="menuitem" tabindex="-1" href="/blog2/<%=uri%>"><%= ph.lightBlue %></a></li>
+			   </ul>
+			</div>
         </div>
     </div>
 </header>
+
+<script>
+$(function() {
+	 $(".hidden").hide();
+     $(".style").click(function(){
+  	  $(".hidden").fadeIn(500);
+});
+</script>
