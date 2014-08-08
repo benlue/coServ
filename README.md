@@ -28,8 +28,13 @@ Release notes can be found [here](https://github.com/coimotion/coServ/blob/maste
 
 
 ## Install
-npm install coserv
+Since release 0.8.8, the node-sass module has become one of the coServ dependencies and the node-sass module requires super-user privileges to install. Therefore, on Linux or Mac please try:
 
+    sudo npm install coserv
+
+On Windows, you should install with the administrative role:
+
+    npm install coserv
 
 ## Usage
 1. Go to the module directory (coServ) and run 'node coServ.js'. That should start the server at port 8080.
@@ -44,7 +49,7 @@ npm install coserv
 ## Build Your Own Site
 Learning from examples can always save us lots of time. If you want to start building your own site, here are a few steps that we recommand:
 
-1. Go to coServ/www/themes, duplicate the 'demoApp' directory. Assuming 'foo' is the name of your website, then rename the newly created directory to 'foo'.
+1. Go to coServ/www/themes, duplicate the 'index' directory. Assuming 'foo' is the name of your website, then rename the newly created directory to 'foo'.
 
 2. Now everything thing under the 'www/themes/foo' directory produces the look and feel of the'foo' website. For details about how files are organized for a website, please check this [article](https://github.com/coimotion/coServ/wiki/File-Structure).
 
@@ -57,6 +62,19 @@ The second parameter (domain name) is optional. If web domain is not given, the 
     > node cli/addPage.js web_site page_name
 
 The above command will add a new page to the specified website.
+
+Starting from release 0.8.9, the 'www' directory can be relocated to anywhere in a file system (that is the 'www' directory no longer has to be embedded inside the coServ module). You can put your 'www' directory somewhere and specify its location in the config.json file with the 'wwwPath' property. For example, if your 'www' path is in the /Users/john/www directory, then you can modify the config.json file like this:
+
+    {
+	    "apiEngine": {
+		    "host": "coimapi.tw",
+		    "port": 80,
+		    "method": "POST"
+	    },
+	    "wwwPath": "/Users/john/www"
+    }
+
+With this new feature, you can update coServ to the latest version without spoiling the existing websites.
 
 ### The Template Engine
 #### 1. Syntax

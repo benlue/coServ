@@ -1,3 +1,9 @@
+0.8.9
+------
+  . The 'www' path is now configurable.
+  . Fix bugs about some multi-hosting problems.
+  . Fix some path problems when running on Windows.
+
 0.8.8
 ------
   . Support SASS with server-side automatic compilation.

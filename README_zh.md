@@ -27,7 +27,13 @@ coServ 是基於 "internet of servers" 的理念所設計的。這意味不同�
 關於版本說明，請參考[這裡](https://github.com/coimotion/coServ/blob/master/ReleaseNote.txt)。更多關於 coServ 的說明與技術文件，請參考[這裡](http://coimotion.github.io/coServ/zh/index.html)
 
 ## 如何安裝
-npm install coserv
+從 0.8.8 版起，coServ 開始支援 SASS。其中使用了 node-sass 這個模組，而這個模組需要 super-user 的權限才能安裝。因此在 Linux 或是 Mac 上請用以下的指令安裝：
+
+    sudo npm install coserv
+    
+若是在 Windows 上，必須用 adminstrator 的權限來執行以下的指令：
+
+    npm install coserv
 
 ## 如何使用
 1. 安裝完成後到 coServ 目錄底下執行 'node coServ.js' 即可。Server 預設跑在 8080 port。
@@ -54,6 +60,19 @@ npm install coserv
     > node cli/addPage.js web_site page_name
 
 當你要使用 coServ 架站時，我們極度建議你先參考這篇[文章](http://coimotion.github.io/coServ/zh/index.html)。這將會節省你很多時間。
+
+從 0.8.9 版起，'www' 這個目錄可以在檔案系統的任何一個位置，而不再需要固定在 coServ 底下。你只需將 'www' 目錄所在的位置設定到 config.json 檔案中的 'wwwPath' 屬性即可。例如你的 'www' 目錄是放在 /Users/john/www 中，那麼你的 config.json 檔應該是像以下的樣子：
+
+    {
+	    "apiEngine": {
+		    "host": "coimapi.tw",
+		    "port": 80,
+		    "method": "POST"
+	    },
+	    "wwwPath": "/Users/john/www"
+    }
+    
+有了這個功能，以後在更新 coServ 版本時就不用再擔心原有的網站設計被覆寫掉了。
 
 ### 樣板引擎
 #### 1. 語法
