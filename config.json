@@ -4,5 +4,5 @@
 		"port": 80,
 		"method": "POST"
 	},
-	"wwwPath": "/Users/ben/proj/yr103/testIns/www"
+	"wwwPath": ""
 }
