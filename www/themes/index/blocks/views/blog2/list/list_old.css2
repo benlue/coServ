@@ -1,20 +1,17 @@
-<%
-    var  pane = {
-        width: '100%',
-        margin: '0px auto'
-    };
-%>
+.float{
+  float: left;
+}
+.clear{
+  clear: both;
+}
 a,
 *:hover{
   text-decoration: none;
 }
 .matter{
-  /*
   width: 100%;
-  margin: 0px auto;
-  */
-  <%= jass.p(pane); %>
   padding: 5px;
+  margin: 0px auto;
   font-family: "微軟正黑體","Adobe 黑体 Std R", "Adobe 繁黑體 Std B",  Arial, sans-serif;
 }
 /*分類*/
@@ -31,7 +28,8 @@ a,
 }
 /*清單*/
 .row {
-  <%= jass.p(pane); %>
+  width: 100%;
+  margin: 0px auto;
   padding: 0;
   clear: both;
 }
