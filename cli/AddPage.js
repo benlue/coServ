@@ -2,13 +2,13 @@ var  fs = require('fs'),
      path = require('path');
 
 if (process.argv.length < 4)  {
-    console.log('Missing the website code and page name.\n  Try node addPage.js -h for usage.');
+    console.log('Missing the web theme and page name.\n  Try node addPage.js -h for usage.');
 }
 else  {
     var  caCode = process.argv[2],
          pageName = process.argv[3];
     if (caCode === '-h')  {
-        console.log('node addPage.js %ca\n\t%ca: the code name of the website getting a new page\n\t%pg: name of the new page');
+        console.log('node addPage.js %ca\n\t%ca: the code name of the web theme\n\t%pg: name of the new page');
     }
     else  {
         // create a new block
@@ -46,7 +46,7 @@ else  {
             } );
         }
         catch (err)  {
-            console.log('Cannot create the designated file path.');
+            console.log('Cannot create the file with the designated path.');
         }
     }
 }
