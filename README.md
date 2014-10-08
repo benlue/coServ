@@ -1,3 +1,6 @@
+# 0.9.0 Released
+The main attraction of the latest coServ release is JASS. JASS is the SASS counterpart in node.js, or even more powerful. To know what JASS is, please refer to this [article](https://github.com/coimotion/coServ/wiki/JASS:-Just-Awesome-Style-Sheet).
+
 # coServ
 
 coServ is a light weight web framework implemented in Node.js. With less than 2 kloc, it supports the MVC paradigm, a convenient page layout scheme, a very versatile template engine, multi-lingual page generation, a SASS like CSS pre-processor, and more. It is intended to bring a friendly web development environment to node developers.
