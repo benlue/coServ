@@ -3,26 +3,26 @@ The main attraction of the latest coServ release is JASS. JASS is the SASS count
 
 # coServ
 
-coServ is a light weight web framework implemented in Node.js. With less than 2 kloc, it supports the MVC paradigm, a convenient page layout scheme, a very versatile template engine, multi-lingual page generation, a SASS like CSS pre-processor, and more. It is intended to bring a friendly web development environment to node developers.
+coServ is a light weight web framework implemented in node.js. With less than 2 kloc, it supports the MVC paradigm, a convenient page layout scheme, a very versatile template engine, multi-lingual page generation, a SASS like CSS pre-processor, and more. It is intended to bring a friendly web development environment to node developers.
 
 coServ can be used to build simple websites with just a few static pages or extremely complicated web applications. coServ helps developers to decouple contents from presentations by embedding Javascript code into HTML, CSS or even Javascript files. coServ also breaks up web pages into reusable blocks. By assembling web pages with blocks, development time can be cut down dramatically and single-page web applications can be easily built as well.
 
-coServ does not try to tweak CSS or Javascript. It does not invent a whole new system for you to lean before you can do anything. There are no new syntex to learn, though coServ may ask you to think of web applications in a different way. By thinking differently, web development can be much easier and more interesting.
+coServ does not try to tweak CSS or Javascript. It does not invent a whole new system for you to digest before you can do anything. There are no new syntex to learn, though coServ may ask you to think of web applications in a different way. By thinking differently, web development can be much easier and more interesting.
 
 
 ##  Features
 
 + Using page layout to simplify web page design.
 
-+ Decomposing web pages into regions and blocks. Blocks can be dynamically embedded or reloaded without affecting other regions/blocks in a page.
++ Decomposing web pages into regions and blocks. Blocks can be dynamically embedded or reloaded without affecting other regions/blocks in the same page.
 
 + Embedding Javascript code in HTML, CSS or even Javascript itself.
 
 + A CSS pre-processor to harness CSS.
 
-+ Using node modules to customizing web applications (or websites).
++ Using node modules to customize web applications (or websites).
 
-+ If you have enough of the hassle regarding databases, coServ has the first-class support for the COIMOTION API services to manage your contents.
++ If you have enough of the hassle of dealing with databases, coServ has the first-class support for the COIMOTION API services to manage your contents.
 
 + Hosting multiple web sites on a single coServ server. It's extremely easy to do so.
 
@@ -211,9 +211,9 @@ A block module is to provide data (contents) to a block for rendering. It's a no
 The _run()_ function takes two parameters: _inData_ contains input parameters of a HTTP request (for HTTP GET, coServ will parse the query string and put the result in _inData_; for HTTP POST, coServ will parse the post body) while _callback_ should be invoked when a block module has done its job.
 
 ### JASS
-Without proper management, CSS can easily go wild. Ruby developers have been happy with SASS, but how about node?
+Without proper management, CSS can easily go wild. Ruby developers have been happy to have SASS. How about node.js developers?
 
-JASS is node's answer to the CSS design and management issues. JASS allows developers to treat CSS properties as Javascript objects and embed Javascript code in CSS. The result is a very powerful tool to manage CSS.
+JASS is node's answer to the CSS design and management issues. JASS allows developers to treat CSS properties as Javascript objects and embed Javascript code in CSS. The result is a very powerful tool to harness CSS.
 
 JASS provides two functions to deal with CSS: _jass.p()_ to print out CSS rules or properties and _jass.r()_ to create CSS rules. If you prefer less typing, _$.p()_ and _$.r()_ are the shorter version.
 
