@@ -1,3 +1,7 @@
+0.9.1
+------
+  . Fixed a bug which would cause JS and CSS templates failed to read multi-lingual phrases.
+
 0.9.0
 ------
   . Introduce JASS.

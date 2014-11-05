@@ -6,11 +6,11 @@ var  wwwPath = config.wwwPath;
 if (!wwwPath)
 	wwwPath = path.join(__dirname, './www/');
 if (path.sep === '\\')
-	wwwPath = wwwPath.replace(/\\/, '/');
+	wwwPath = wwwPath.replace(/\\/g, '/');
 
 var connect = require('connect'),
     http = require('http'),
-    siteLookup = require('./lib/server/SiteLookup.js')(wwwPath + '/themes/'),
+    siteLookup = require('./lib/server/SiteLookup.js')(path.join(wwwPath, './themes/')),
     uploader = require('./lib/server/Uploader.js')(config),
     webFront = require('./lib/server/WebFront.js')();
 
