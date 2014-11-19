@@ -10,7 +10,7 @@ if (path.sep === '\\')
 
 var connect = require('connect'),
     http = require('http'),
-    siteLookup = require('./lib/server/SiteLookup.js')(path.join(wwwPath, './themes/')),
+    siteLookup = require('./lib/server/SiteLookup.js')(path.join(wwwPath)),
     uploader = require('./lib/server/Uploader.js')(config),
     webFront = require('./lib/server/WebFront.js')();
 
