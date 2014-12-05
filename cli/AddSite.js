@@ -1,4 +1,5 @@
-var  fs = require('fs'),
+var  config = require('../config.json'),
+     fs = require('fs'),
      ncp = require('ncp'),
      path = require('path');
 
@@ -11,9 +12,13 @@ else  {
         console.log('node addSite.js %ca\n\t%ca: the code name of the website to be created\n\t%dn: (optional) domain name of this website');
     }
     else  {
-        var  wwwPath = path.join(__dirname, '../www/'),
-             tempPath = path.join(__dirname, './template/HLF')
-             themePath = path.join(wwwPath, 'themes/' + caCode + '/');
+        // deal with the www path
+        var  wwwPath = config.wwwPath  ?  path.join(config.wwwPath, './') : path.join(__dirname, './www/');
+        if (path.sep === '\\')
+            wwwPath = wwwPath.replace(/\\/g, '/');
+
+        var  themePath = path.join(wwwPath, 'themes/' + caCode + '/'),
+             tempPath = path.join(__dirname, './template/HLF');
 
         // First, let's see if the code name has been used
         var  sites = JSON.parse(fs.readFileSync( wwwPath + 'sites.json' ));

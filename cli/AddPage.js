@@ -1,4 +1,5 @@
-var  fs = require('fs'),
+var  config = require('../config.json'),
+     fs = require('fs'),
      path = require('path');
 
 if (process.argv.length < 4)  {
@@ -11,8 +12,12 @@ else  {
         console.log('node addPage.js %ca\n\t%ca: the code name of the web theme\n\t%pg: name of the new page');
     }
     else  {
+        // decide the theme path
+        var  tmPath = config.wwwPath  ?  path.join(config.wwwPath, './themes/') : path.join(__dirname, './www/themes/');
+        if (path.sep === '\\')
+            tmPath = tmPath.replace(/\\/g, '/');
         // create a new block
-        var  bkPath = path.join(__dirname, '../www/themes/' + caCode + '/blocks/views');
+        var  bkPath = path.join(tmPath, caCode + '/blocks/views');
 
         // check if every directory on tha path exists
         if (pageName.charAt(0) === '/')
@@ -32,7 +37,7 @@ else  {
                 if (err)
                     console.log( err );
                 else  {
-                    var  uriFile = path.join(__dirname, '../www/themes/' + caCode + '/siteURI.json'),
+                    var  uriFile = path.join(tmPath, caCode + '/siteURI.json'),
                          siteURI = JSON.parse( fs.readFileSync(uriFile) );
 
                     siteURI['/' + pageName] = {id: "no"};

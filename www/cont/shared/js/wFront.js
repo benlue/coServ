@@ -133,14 +133,17 @@ var  _ctrl = (function()  {
 				    	callback( ctrl );
 				 })();
 			}
+			else  if (callback)
+				callback();
 		}, 'html');
 	};
 
 	_ctrl.prototype.reload = function reload(url, args, target)  {
 		if (url)  {
 			if (typeof url !== 'string')  {
-				url = this.opURI;
+				target = args;
 				args = url;
+				url = this.opURI;
 			}
 		}
         else
@@ -199,6 +202,12 @@ var  _ctrl = (function()  {
 			else
 				console.log('Oops! Reloaded block controller is not found!');
 		}, 'html');
+	};
+
+	_ctrl.prototype.api = function(req, callback)  {
+		$.post('/_api/post', req, function(data) {
+			callback(data);
+		});
 	};
 
 	_ctrl.prototype.addHandler = function(evtSource, handler)  {
