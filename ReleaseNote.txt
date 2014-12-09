@@ -2,7 +2,8 @@
 ------
   . Added server-side device detection capabilities.
   . Fixed the problem that cli/AddSite and cli/AddPage would not create on the relocated www directory.
-    
+  . CORS support.
+
 0.9.1
 ------
   . Fixed a bug which would cause JS and CSS templates failed to read multi-lingual phrases.

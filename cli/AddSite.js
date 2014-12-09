@@ -13,7 +13,7 @@ else  {
     }
     else  {
         // deal with the www path
-        var  wwwPath = config.wwwPath  ?  path.join(config.wwwPath, './') : path.join(__dirname, './www/');
+        var  wwwPath = config.wwwPath  ?  path.join(config.wwwPath, './') : path.join(__dirname, '../www/');
         if (path.sep === '\\')
             wwwPath = wwwPath.replace(/\\/g, '/');
 
