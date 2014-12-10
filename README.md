@@ -14,7 +14,7 @@ With the arrival of HTML5, CSS3 and ES5 (or the coming ES6), developers have eno
 
 + Implemented in node.js.
 
-+ Regardless it's backend functions or front-end templates, developers can use one single language (Javascript) to implement them.
++ Regardless it's backend functions or front-end templates, developers can use one single language (Javascript) to do them all.
 
 + Besides HTML, CSS and Javascript, developers don't have to learn anything new to use coServ.
 
