@@ -1,6 +1,6 @@
 # coServ
 ## Why coServ
-Providing smooth or excellent user experiences is becoming the norm of web applications. Even though it's trendy, it's definitely not a simple task. Compounded with the problems that today's web applications are much more complicated than they used to be, web developers need better tools or platforms to meet the challenge. Many platforms have been developed for the quest. Unfortunately, most platforms present more problems than solving them.
+Providing smooth or excellent user experiences is becoming the norm of web applications. Even though it's trendy, it's definitely not a simple task. Compounded with the problems that today's web applications are much more complicated than they used to be, web developers need better web platforms to meet the challenge. Many platforms have been developed for the quest. Unfortunately, most platforms present more problems than solving them.
 
 With the arrival of HTML5, CSS3 and ES5 (or the coming ES6), developers have enough power to tackle most web application problems. The issue is not to create a more powerful tool, but to effectively utilize those three fundamental technologies, F3 (HTML, CSS and Javascript). We've seen many web platforms invented new syntax or extensions on top of the standard, but do little to help developers make full use of F3. We're not happy with the direction to which many web platforms are heading, so we build coServ. Below are the major design guild lines of coServ:
 
