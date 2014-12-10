@@ -1,10 +1,10 @@
 # coServ
 ## Why coServ
-Providing smooth or excellent user experiences is becoming the norm of web applications. It's a must but not a simple task. Compounded with the problems that today's web applications are much more complicated than they used to be, web developers need better tools or platforms to meet the challenge. Many platforms have been developed for the quest. Unfortunately, most platforms present more problems than solving them.
+Providing smooth or excellent user experiences is becoming the norm of web applications. However, it's not a simple task. Compounded with the problems that today's web applications are much more complicated than they used to be, web developers need better tools or platforms to meet the challenge. Many platforms have been developed for the quest. Unfortunately, most platforms present more problems than solving them.
 
-With the arrival of HTML5, CSS3 and ES5 (or the coming ES6), developers have enough power to tackle most web application problems. The issue is not to create a more powerful tool, but to effectively utilize those three fundamental technologies (HTML, CSS and Javascript). We're not happy with the direction to which web platforms are heading, so we build coServ. There are three major design guild lines in making coServ:
+With the arrival of HTML5, CSS3 and ES5 (or the coming ES6), developers have enough power to tackle most web application problems. The issue is not to create a more powerful tool, but to effectively utilize those three fundamental technologies, F3 (HTML, CSS and Javascript). We've seen many web platforms invented new syntax or extensions on top of the standard, but do little to help developers make full use of F3. We're not happy with the direction to which many web platforms are heading, so we build coServ. There are three major design guild lines in coServ:
 
-+ With the help of a web platform, developers can spend their time on design ing and coding rather than spend time on learning or harnessing the platform itself.
++ With the help of a web platform, developers can spend their time on designing and coding rather than spend time on learning or harnessing the platform itself.
 
 + Help developers not to repeat themselves.
 
