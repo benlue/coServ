@@ -33,9 +33,7 @@
 
 + 修改 CLI AddPage 和 AddSite 無法對非預設網站目錄正常執行的問題。
 
-+ 支援 CORS
-    
 
 ## 技術文件
-    
+
 開發者指南請參考[這裡](http://www.coservjs.org/coserv/guide?_loc=zh)。相關的部落格文章請參考[這裡](http://www.coservjs.org/coserv/doc?_loc=zh)。

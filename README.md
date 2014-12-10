@@ -34,8 +34,6 @@ The latest version of coServ is 0.9.2. Below is the release note of the latest r
 
 + Fixed bugs in "AddSite" and "AddPage" CLI when the web directory is not in the default location.
 
-+ CORS support.
-
 
 ## Documentation
 This is the area where needs lots of improvement. Still, a complete developer guide can be found [here](http://www.coservjs.org/coserv/guide). There are a few more articles can be found [here](http://www.coservjs.org/coserv/doc).
