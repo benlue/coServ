@@ -18,7 +18,7 @@ With the arrival of HTML5, CSS3 and ES5 (or the coming ES6), developers have eno
 
 + Besides HTML, CSS and Javascript, developers don't have to learn anything new to use coServ.
 
-+ Help developers to divide a page up to smaller regions and blocks, and to focus working on the parts.
++ Help developers to divide a page up to smaller regions and blocks, and to focus working on the parts (divide and conquer).
 
 + An extremely easy and elegant way to provide multi-lingual support.
 
