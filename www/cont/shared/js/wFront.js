@@ -66,13 +66,17 @@ var  _ctrl = (function()  {
 		this.getJqTarget = function()  {
 			return  this.jqDspTarget;
 		};
+
+		this.getBlockID = function()  {
+			return  this.jqDspTarget.attr('id');
+		};
 	};
 
 	_ctrl.prototype.init = function init()  {
 		this.jqDspTarget = $(this.dspTarget);
 		var  blockID = this.dspTarget.substring(1);
 
-		if (blockID)
+		if (blockID && !_wf.getCtrl(blockID))
 			_wf.addCtrl( blockID, this );
 	};
 
@@ -138,7 +142,7 @@ var  _ctrl = (function()  {
 		}, 'html');
 	};
 
-	_ctrl.prototype.reload = function reload(url, args, target)  {
+	_ctrl.prototype.reload = function reload(url, args)  {
 		if (url)  {
 			if (typeof url !== 'string')  {
 				target = args;
@@ -159,12 +163,11 @@ var  _ctrl = (function()  {
 			if (args.params)
 				pdata = args.params;
 		}
-		target = target || this.getJqTarget().parent();
 
+		var  blkID = this.getBlockID(),
+			 bkCtrl = this,
+			 target = this.getJqTarget().parent();
 		$.post(url, pdata, function(html) {
-			var  blkID = $(target).children().first().attr('id'),
-				 bkCtrl = __.getCtrl(blkID);
-
 			// a bit of hacking. tried jQuery find, but not work.
 			var  idx1 = html.indexOf('<script'),
 				 idx2 = html.indexOf('</script>', idx1);
@@ -179,28 +182,35 @@ var  _ctrl = (function()  {
                 var  jsIdx = html.indexOf('(function', idx1);
                 if (jsIdx > 0)  {
                     var  jsCode = html.substring(jsIdx, idx2);
-                    bkCtrl = eval( jsCode );
-                }
+
+					__.removeCtrl( blkID );
+
+					var  newBkCtrl = eval( jsCode );
+					newBkCtrl.dspTarget = '#' + blkID;
+
+					// copy event handlers
+					var  hlist = this.evtMap;
+					if (hlist)  {
+						newBkCtrl.evtMap = [];
+						for (var p in hlist)
+							newBkCtrl.evtMap[p] = hlist[p];
+					}
+
+					bkCtrl = newBkCtrl;
+				}
             }
 
+			// replace the HTML source
 			idx1 = html.indexOf('<div', idx2 + 9);
 			htmlText = html.substring(idx1);
-			//console.log('html: %s', htmlText);
-
 			target.empty().append( htmlText );
+			$(target).children().first().attr('id', blkID);
 
 			if (bkCtrl)  {
-                _wf.removeCtrl( blkID );
-
-                // change the controller id
-                var  newID = $(target).children().first().attr('id');
-                bkCtrl.dspTarget = '#' + newID;
-
-				bkCtrl.init();	// reloaded block should not init ctrl again
+				bkCtrl.init();
 				bkCtrl.startup();
 			}
-			else
-				console.log('Oops! Reloaded block controller is not found!');
+
 		}, 'html');
 	};
 
