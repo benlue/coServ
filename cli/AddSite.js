@@ -18,16 +18,24 @@ else  {
             wwwPath = wwwPath.replace(/\\/g, '/');
 
         var  themePath = path.join(wwwPath, 'themes/' + caCode + '/'),
-             tempPath = path.join(__dirname, './template/HLF');
+             tempPath = path.join(__dirname, './template/HLF'),
+             siteFile = wwwPath + 'sites.json',
+             sites;
 
-        // First, let's see if the code name has been used
-        var  sites = JSON.parse(fs.readFileSync( wwwPath + 'sites.json' ));
-        for (var dn in sites)  {
-            if (sites[dn].caCode === caCode)  {
-                console.log('The code name has been used. Please try another one.');
-                return;
+        if (fs.existsSync(siteFile))  {
+            // First, let's see if the code name has been used
+            sites = JSON.parse(fs.readFileSync( siteFile ));
+            for (var dn in sites)  {
+                if (sites[dn].caCode === caCode)  {
+                    console.log('The code name has been used. Please try another one.');
+                    return;
+                }
             }
         }
+        else
+            // the workspace does not even have the sites.json file
+            sites = {};
+
 
         // Is there an extra parameter to specify the domain name of this website?
         var  domainName = process.argv.length > 3  ?  process.argv[3] : '127.0.0.1';
@@ -53,7 +61,7 @@ else  {
 
                 var  siteInfo = {caCode: caCode, title: '[' + caCode + '] WebSite', validFrom: '', validTo: '', locale: 'en', home: '/index'};
                 sites[domainName] = siteInfo;
-                fs.writeFile(wwwPath + 'sites.json', JSON.stringify(sites, null, 4), function(err) {
+                fs.writeFile(siteFile, JSON.stringify(sites, null, 4), function(err) {
                     if (err)
                         console.log('Failed to write to the sites.json file.')
                     else

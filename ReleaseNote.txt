@@ -1,6 +1,10 @@
 0.9.3
 ------
+  . Using gulp.js to support live reload.
   . Fixed a block reload problem when reloading a block, event handlers of a block would lost.
+  . Fixed a problem that block include files cannot be loaded when the block include file (.inc) is created on Windows.
+  . Fixed a bug that coServ can't pickup a web theme based on the client device.
+  . Now the server port and http max-sockets can be specified in the config.json file.
 
 0.9.2
 ------

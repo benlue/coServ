@@ -13,7 +13,7 @@
   border-top-color: #CCF4E8;
 }
 
-#rss2 .table-striped>tbody>tr:nth-child(odd)>td, 
+#rss2 .table-striped>tbody>tr:nth-child(odd)>td,
 #rss2 .table-striped>tbody>tr:nth-child(odd)>th {
   /*background-color: #f2fffe;*/
   background-color: #EDF8F4;

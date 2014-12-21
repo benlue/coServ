@@ -1,8 +1,12 @@
 {
-	"apiEngine": {
-		"host": "coimapi.tw",
-		"port": 80,
-		"method": "POST"
-	},
-	"wwwPath": ""
+    "apiEngine": {
+        "host": "coimapi.tw",
+        "port": 80,
+        "method": "POST"
+    },
+    "server": {
+        "wwwPath": "",
+        "port": 8080,
+        "maxSockets": 20
+    }
 }

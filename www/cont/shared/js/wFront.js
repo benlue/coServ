@@ -128,7 +128,7 @@ var  _ctrl = (function()  {
 			target.empty().append( htmlText );
 
 			if (scriptText.length > 0)  {
-				console.log('will new a conrtoller.');
+				//console.log('will new a conrtoller.');
 				(function() {
 				    var  ctrl = eval( scriptText );
 				    ctrl.init();
