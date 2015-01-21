@@ -1,6 +1,6 @@
 {
   "name": "coserv",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "description": "A node.js web platform which helps to fully utilize HTML, CSS and Javascript.",
   "engines": "0.10.21",
   "main": "coServ.js",

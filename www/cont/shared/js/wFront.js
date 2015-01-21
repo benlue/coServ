@@ -186,7 +186,7 @@ var  _ctrl = (function()  {
 					__.removeCtrl( blkID );
 
 					var  newBkCtrl = eval( jsCode );
-					newBkCtrl.dspTarget = '#' + blkID;
+					//newBkCtrl.dspTarget = '#' + blkID;
 
 					// copy event handlers
 					var  hlist = this.evtMap;
@@ -204,7 +204,10 @@ var  _ctrl = (function()  {
 			idx1 = html.indexOf('<div', idx2 + 9);
 			htmlText = html.substring(idx1);
 			target.empty().append( htmlText );
-			$(target).children().first().attr('id', blkID);
+
+			// update controller with the new block ID
+			var  newBlkID = $(target).children().first().attr('id');
+			bkCtrl.dspTarget = '#' + newBlkID;
 
 			if (bkCtrl)  {
 				bkCtrl.init();

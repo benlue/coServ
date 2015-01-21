@@ -1,3 +1,7 @@
+0.9.4
+------
+  . Fixed a bug in block reload problem which would cause __.getCtrl() fail to work properly.
+
 0.9.3
 ------
   . Using gulp.js to support live reload.
