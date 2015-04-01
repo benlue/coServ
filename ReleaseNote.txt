@@ -1,3 +1,7 @@
+0.9.5
+-----
+  . Upgraded dependencies to work with the latest node version.
+
 0.9.4
 ------
   . Fixed a bug in block reload problem which would cause __.getCtrl() fail to work properly.
