@@ -1,14 +1,14 @@
 # coServ
 ## The Latest Release
-The latest release is 0.9.5 with the following features/improvements:
+The latest release is 0.9.6 with the following features/improvements:
+
++ It's now possible to do server side redirect. This is how: create a block (without view) and make a customized module for the block. In the customized module, simply return {"_httpCode": 302, "_httpHeaders": {Location: 'the redirect URL'}} in the callback.
 
 + Upgraded coServ dependencies. It's recommended to run coServ with the latest version (v0.12.2) of node.js.
 
 + coServ now supports live reload via [gulp](http://gulpjs.com). The needed gulpfile.js is included in the release. To use live reload, both gulp and [browser-sync](http://www.browsersync.io) have to be installed.
 
 + Both the server port number and node.js max socket pooling settings (http.agent.maxSockets) can now be specified in the config.json file. Developers no longer have to manually modify the coServ.js file to do the settings.
-
-+ Quite a few bug fixes. For details, please refer to [ReleaseNote.txt](https://github.com/coimotion/coServ/blob/master/ReleaseNote.txt).
 
 ## Why coServ
 Offering smooth or even exceptional user experiences is becoming the norm of web applications. However, it's definitely not a simple task. Compounded with the problems that today's web applications are much more complicated than they used to be, web developers need better web platforms to meet the challenge. Many platforms have been developed for the quest. Unfortunately, most platforms present more challenges than solving them.

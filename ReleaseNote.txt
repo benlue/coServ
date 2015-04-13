@@ -1,3 +1,7 @@
+0.9.6
+-----
+  . Added support for server side redirect.
+
 0.9.5
 -----
   . Upgraded dependencies to work with the latest node version.

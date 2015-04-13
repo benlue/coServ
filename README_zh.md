@@ -1,6 +1,10 @@
 # coServ
 ## 最新版本
-coServ 目前的最新版本是 0.9.3。0.9.3 版主要提供了以下的新功能或改進：
+coServ 目前的最新版本是 0.9.6。0.9.6 版主要提供了以下的新功能或改進：
+
++ 在 coServ 0.9.6 版中支援 server side redirect 的功能。
+
++ 更新 coServ 在最新的 node.js 版本下執行(v0.12.2)，並將 coServ 所依賴的模組版本都升到最新版。
 
 + 當你修改網站的任何一個檔案時（HTML, CSS 或 Javascript），coServ 會自動將網路瀏覽器上的頁面更新（live reload）。這個功能是以 [gulp](http://gulpjs.com) 達成。0.9.3 版提供了所需的gulpfile.js。
 
