@@ -1,7 +1,13 @@
+/*!
+ * coServ
+ * authors: Ben Lue
+ * license: MIT
+ * Copyright(c) 2015 Gocharm Inc.
+ */
 var  assert = require('assert'),
      jass = require('../lib/css/jass');
 
-describe('[coServ/css]...', function() {
+describe('[coServ/jass]...', function() {
     it('try add...', function()  {
         var  r = jass.r('nav'),
              r_h1 = jass.r('h1', {color: '#888'}),
