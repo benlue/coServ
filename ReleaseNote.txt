@@ -1,3 +1,10 @@
+0.9.8
+-----
+  . Fixed a bug when passing parameters to embedded blocks.
+  . Allowed page description to be specified in the siteURI.json file.
+  . cli/addPage renamed to cli/addBlock. Also, addBlock will not overwrite the existing block.
+  . A bunch of minor bug fixes.
+
 0.9.7
 -----
   . Lots of codes have been rewritten and cleaned up. This release can be considered as the release candidate of verion 1.0.

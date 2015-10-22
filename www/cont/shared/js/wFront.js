@@ -72,11 +72,12 @@ var  _ctrl = (function()  {
 		};
 	};
 
-	_ctrl.prototype.init = function init()  {
+	_ctrl.prototype.init = function init(ption)  {
 		this.jqDspTarget = $(this.dspTarget);
 		var  blockID = this.dspTarget.substring(1);
 
-		if (blockID && !_wf.getCtrl(blockID))
+		//if (blockID && !_wf.getCtrl(blockID))
+		if (blockID)
 			_wf.addCtrl( blockID, this );
 	};
 
@@ -102,6 +103,8 @@ var  _ctrl = (function()  {
 				url += '/' + args.id;
 			if (args.params)
 				pdata = args.params;
+			if (args.knownAs)
+				pdata._cs_knownAs = args.knownAs;
 		}
 
 		$.post(url, pdata, function(html) {
@@ -128,13 +131,19 @@ var  _ctrl = (function()  {
 			target.empty().append( htmlText );
 
 			if (scriptText.length > 0)  {
-				//console.log('will new a conrtoller.');
 				(function() {
-				    var  ctrl = eval( scriptText );
-				    ctrl.init();
-				    ctrl.startup();
-				    if (callback)
-				    	callback( ctrl );
+					try {
+						//console.log( scriptText );
+						var  ctrl = eval( scriptText );
+							 
+						ctrl.init();
+						ctrl.startup();
+						if (callback)
+							callback( ctrl );
+					}
+					catch (e)  {
+						console.log(e);
+					}
 				 })();
 			}
 			else  if (callback)
@@ -167,6 +176,11 @@ var  _ctrl = (function()  {
 		var  blkID = this.getBlockID(),
 			 bkCtrl = this,
 			 target = this.getJqTarget().parent();
+			 
+		// reuse the original block ID
+		pdata = pdata || {};
+		pdata._cs_knownAs = blkID;
+		
 		$.post(url, pdata, function(html) {
 			// a bit of hacking. tried jQuery find, but not work.
 			var  idx1 = html.indexOf('<script'),
@@ -205,9 +219,11 @@ var  _ctrl = (function()  {
 			htmlText = html.substring(idx1);
 			target.empty().append( htmlText );
 
+			/* Since we're recycling the block ID, the following code is no longer needed
 			// update controller with the new block ID
 			var  newBlkID = $(target).children().first().attr('id');
 			bkCtrl.dspTarget = '#' + newBlkID;
+			*/
 
 			if (bkCtrl)  {
 				bkCtrl.init();

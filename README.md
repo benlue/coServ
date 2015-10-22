@@ -14,6 +14,8 @@ With the arrival of HTML5, CSS3 and ES5 (or the coming ES6), developers actually
 ## The Latest Release
 Below are highlights of recent releases:
 
++ [v0.9.8] wFront.js was updated. If you do not use the default web directory ('/www'), remeber to copy the wFront.js file to your custom web directory (/www/cont/shared/js/wFront.js).
+
 + [v0.9.7] Cleaned up the code base and many codes have been written. This release can be regarded as the release candidate of v1.0. More test cases will be added before release 1.0.
 
 + [v0.9.6] It's now possible to do server side redirect. This is how: create a block (without view) and make a customized module for the block. In the customized module, simply return {"_httpCode": 302, "_httpHeaders": {Location: 'the redirect URL'}} in the callback.

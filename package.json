@@ -1,7 +1,7 @@
 {
   "name": "coserv",
-  "version": "0.9.7",
-  "description": "A node.js web platform which helps to fully utilize HTML, CSS and Javascript.",
+  "version": "0.9.8",
+  "description": "A web framework helping developers to fully utilize HTML, CSS and Javascript.",
   "engines": "0.12.2",
   "main": "coServ.js",
   "repository": {
@@ -38,6 +38,7 @@
   },
   "devDependencies": {
     "browser-sync": "^1.8.0",
+    "cheerio": "^0.19.0",
     "gulp": "^3.8.10"
   }
 }

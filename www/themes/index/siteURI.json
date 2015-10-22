@@ -62,5 +62,11 @@
     },
     "/blog2/viewBanner": {
         "id": "no"
+    },
+    "/foo": {
+        "id": "no"
+    },
+    "/sports/news": {
+        "id": "no"
     }
 }
