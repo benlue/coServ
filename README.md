@@ -1,9 +1,9 @@
 # coServ
 
 ## Why coServ
-Offering smooth or even exceptional user experiences is becoming the norm of web applications. However, it's definitely not a simple task. Compounded with the problems that today's web applications are much more complicated than they used to be, web developers need better web platforms to meet the challenge. Many platforms have been developed for the quest. Unfortunately, most platforms present more challenges than solving them.
+Offering smooth or even exceptional user experiences is becoming the norm of web applications. However, it's not a simple task. Compounded with the problems that today's web applications are much more complicated than they used to be, web developers need better web platforms to meet the challenge. Many platforms have been developed for the quest. Unfortunately, most platforms present more problems than solving them.
 
-With the arrival of HTML5, CSS3 and ES5 (or the coming ES6), developers actually have enough facilities to tackle web application problems. The focus should not be creating a more powerful tool, but effectively utilizing those three fundamental technologies. We've seen many web platforms inventing new syntax or extensions on top of those standards, but do little to help developers fully utilize the three fundamental yet powerful technologies. That does not seem to be the right direction, so we decided to show an alternative approach by building coServ. Below are the major design guide lines of coServ:
+With the arrival of HTML5, CSS3 and ES5/ES6, developers actually have enough facilities to the problems. The focus should not be on creating a more powerful tool, but effectively utilizing those three fundamental technologies. We've seen many web platforms inventing new syntax or extensions on top of those standards, but do little to help developers fully utilize the three fundamental yet powerful technologies. That does not seem to be the right direction, so we decided to show an alternative approach by building coServ. Below are the major design guide lines of coServ:
 
 + Developers should spend time on designing and coding rather than spend time on learning or harnessing the platform itself.
 
