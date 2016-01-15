@@ -1,5 +1,5 @@
 {
-    "127.0.0.1": {
+    "x-127.0.0.1": {
         "title": "Single-Page Web Application Demo",
         "locale": "en",
         "home": "/index",
@@ -9,5 +9,13 @@
             "blogDemo": "ce51fbb8-1df6-0442-e187-3e5e0a8785b8"
         },
         "caCode": "blogDemo"
+    },
+    "127.0.0.1": {
+        "caCode": "ezRB",
+        "title": "[ezRB] WebSite",
+        "validFrom": "",
+        "validTo": "",
+        "locale": "en",
+        "home": "/index"
     }
 }

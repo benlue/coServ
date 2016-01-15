@@ -1,19 +1,15 @@
 /* Add css rules here that are valid for the whole page */
-#pgContainer {
-	margin: 0px auto;
-	width: 960px;
+#pgBody {
+	margin: 0px 20px;
+	display: flex;
 }
 
 #pgLeft {
-	float: left;
-	width: 240px;
+	flex-basis: 250px;
+	flex-shrink: 0;
 }
 
 #pgContent {
-	margin-left: 250px;
-	min-height: 300px;
-}
-
-#pgFooter {
-	clear: both;
+	margin-left: 10px;
+	flex-grow: 1;
 }

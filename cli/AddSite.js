@@ -9,11 +9,11 @@ if (process.argv.length < 3)  {
 else  {
     var  caCode = process.argv[2];
     if (caCode === '-h')  {
-        console.log('node addSite.js %ca\n\t%ca: the code name of the website to be created\n\t%dn: (optional) domain name of this website');
+        console.log('node addSite.js %ca %dn\n\t%ca: the code name of the website to be created\n\t%dn: (optional) domain name of this website');
     }
     else  {
         // deal with the www path
-        var  wwwPath = config.wwwPath  ?  path.join(config.wwwPath, './') : path.join(__dirname, '../www/');
+        var  wwwPath = config.server.wwwPath  ?  path.join(config.server.wwwPath, './') : path.join(__dirname, '../www/');
         if (path.sep === '\\')
             wwwPath = wwwPath.replace(/\\/g, '/');
 

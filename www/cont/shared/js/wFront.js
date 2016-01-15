@@ -81,6 +81,14 @@ var  _ctrl = (function()  {
 			_wf.addCtrl( blockID, this );
 	};
 
+	_ctrl.prototype.setID = function(id)  {
+		var  oldID = this.getBlockID();
+		_wf.removeCtrl( oldID );
+		_wf.addCtrl( id, this );
+
+		this.jqDspTarget.attr('id', id);
+	};
+
 	_ctrl.prototype.startup = function startup()  { / *empty */ };
 
 	_ctrl.prototype.sel = function sel(s)  {
@@ -96,7 +104,7 @@ var  _ctrl = (function()  {
 		}
 		var  target = this.getJqTarget().find(div),
 			 url = srvURI + '.hf',
-			 pdata = null;
+			 pdata = {};
 
 		if (args)  {
 			if (args.id)
@@ -151,20 +159,49 @@ var  _ctrl = (function()  {
 		}, 'html');
 	};
 
-	_ctrl.prototype.reload = function reload(url, args)  {
+	_ctrl.prototype.reload = function reload(url, args, cb)  {
+		switch (arguments.length)  {
+			case  0:
+				url = this.opURI;
+				break;
+
+			case  1:
+				if (typeof url === 'function')  {
+					cb = url;
+					url = this.opURI;
+				}
+				else  if (typeof url !== 'string')  {
+					args = url;
+					url = this.opURI;
+				}
+				break;
+
+			case  2:
+				if (typeof args === 'function')  {
+					cb = args;
+					if (typeof url === 'string')
+						args = null;
+					else  {
+						args = url;
+						url = this.opURI;
+					}
+				}
+				break;
+		}
+		/*
 		if (url)  {
 			if (typeof url !== 'string')  {
-				target = args;
 				args = url;
 				url = this.opURI;
 			}
 		}
         else
             url = this.opURI;
-		url += '.hf';
+        */
 
         var  newSrc = url !== this.opURI,
              pdata = null;
+		url += '.hf';
 
 		if (args)  {
 			if (args.id)
@@ -230,6 +267,9 @@ var  _ctrl = (function()  {
 				bkCtrl.startup();
 			}
 
+			if (cb)
+				cb( bkCtrl );
+
 		}, 'html');
 	};
 
@@ -240,7 +280,7 @@ var  _ctrl = (function()  {
 	};
 
 	_ctrl.prototype.addHandler = function(evtSource, handler)  {
-		console.log("Adding to [" + evtSource + "] handler list: ");
+		//console.log("Adding to [" + evtSource + "] handler list: ");
 		var  hlist = this.evtMap[evtSource];
 		if (!hlist)  {
 			hlist = [];
@@ -257,10 +297,12 @@ var  _ctrl = (function()  {
 
 		if (notYet)  {
 			hlist.push( handler );
-			console.log("Handler is added.");
+			//console.log("Handler is added.");
 		}
+		/*
 		else
 			console.log("Handler not added.");
+		*/
 	};
 
 	_ctrl.prototype.callHandler = function(evtSource, args)  {

@@ -1,36 +1,44 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html">
 <html>
-  <head>
-    <title><%=ctx.title%></title>
-    <meta name="description" content="<%ctx.description%>" />
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="shortcut icon" href="../../wcoim/backstage/favicon.ico">
-    <% includeCss(); %>
-    <% includeJs(); %>
+    <head>
+        <title><%=ctx.title%></title>
+        <meta name="description" content="<%=ctx.description%>" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="shortcut icon" href="../../wcoim/backstage/favicon.ico">
+        <% includeCss(); %>
+        <% includeJs(); %>
 
-    <style type="text/css">
-      <% css(); %>
-    </style>
-    <script type="text/javascript">
-  	<!--
-  	<% js(); %>
-  	$(document).ready(function() {
-      	$.ajaxSetup ({
-        		// Disable caching of AJAX responses
-        		cache: false
+        <style type="text/css">
+          <% css(); %>
+        </style>
+        <script type="text/javascript">
+      	<!--
+      	<% js(); %>
+      	$(document).ready(function() {
+          	$.ajaxSetup ({
+            		// Disable caching of AJAX responses
+            		cache: false
+          	});
+      	   __.initPage();
       	});
-  	   __.initPage();
-  	});
-  	-->
-    </script>
-  </head>
+      	-->
+        </script>
+    </head>
 
-  <body>
-	<div id="pgContainer">
-  	<div id="pgHead"><% region('./head'); %></div>
-      <div id="pgLeft"><% region('./left'); %></div>
-  	<div id="pgContent"><% block(); %></div>
-  	<div id="pgFooter"><% region('./footer'); %></div>
-	</div>
-  </body>
+    <body>
+        <div id="pgHead">
+           <h3>Page Header</h3> 
+        </div>
+        <div id="pgBody">
+            <div id="pgLeft">
+                Include a left block here...
+            </div>
+            <div id="pgContent"><% block(); %></div>
+        </div>
+        <div id="pgFooter">
+            <h6 style="text-align:center;">
+                This website is powered by coServ -- a new generation web server project by COIMOTION
+            </h6>
+        </div>
+    </body>
 </html>

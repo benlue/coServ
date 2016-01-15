@@ -7,7 +7,7 @@ var  port = config.getServer().port || 8080,
 
 var connect = require('connect'),
     http = require('http'),
-    siteLookup = require('./lib/server/SiteLookup.js')(wwwPath),
+    siteLookup = require('./lib/server/SiteLookup.js'),
     uploader = require('./lib/server/Uploader.js')(config.getApiEngine()),
     webFront = require('./lib/server/WebFront.js')();
 

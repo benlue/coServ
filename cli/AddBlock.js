@@ -14,7 +14,7 @@ if (caCode === '-h')  {
 }
 else  {
     // decide the theme path
-    var  tmPath = config.wwwPath  ?  path.join(config.wwwPath, './themes/') : path.join(__dirname, '../www/themes/');
+    var  tmPath = config.server.wwwPath  ?  path.join(config.server.wwwPath, './themes/') : path.join(__dirname, '../www/themes/');
     if (path.sep === '\\')
         tmPath = tmPath.replace(/\\/g, '/');
     // create a new block
