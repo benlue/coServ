@@ -14,6 +14,8 @@ With the arrival of HTML5, CSS3 and ES5/ES6, developers actually have enough fac
 ## The Latest Release
 Below are highlights of recent releases:
 
++ [v0.9.9] A web interface (coServ design console) has been added to manage & design websites running on a coServ server.
+
 + [v0.9.8] wFront.js was updated (wFront.js is the main controller of coServ on the client side). If you do not use the default web directory ('/www'), remember to copy the wFront.js file to your custom web directory (/www/cont/shared/js/wFront.js).
 
 + [v0.9.7] Cleaned up the code base and many codes have been written. This release can be regarded as the release candidate of v1.0. More test cases will be added before release 1.0.
@@ -39,6 +41,11 @@ Below are highlights of recent releases:
 + A single coServ server can host multiple websites, and it's very easy to manage them.
 
 + Support a very powerful CSS preprocessor called JASS.
+
+## The Design Console
+Since the 0.9.9 release, a web interface called "design console" was added to the release bundle. The design console can help developers to easily manage or design websites. If you are new to coServ, you'll find this tool is very helpful to get you jump-started.
+
+To play with the design console, simply start the coServ console (node coServ) and point your browser to "localhost:8080". That should do it.
 
 
 ## Documentation
