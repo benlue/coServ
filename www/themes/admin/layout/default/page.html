@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%=ctx.title%></title>
+        <meta name="description" content="<%ctx.description%>" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="shortcut icon" href="../../wcoim/backstage/favicon.ico">
+        <% includeCss(); %>
+        <% includeJs(); %>
+
+        <style type="text/css">
+          <% css(); %>
+        </style>
+        <script type="text/javascript">
+      	<!--
+      	<% js(); %>
+      	$(document).ready(function() {
+          	$.ajaxSetup ({
+            		// Disable caching of AJAX responses
+            		cache: false
+          	});
+      	   __.initPage();
+      	});
+      	-->
+        </script>
+    </head>
+
+    <body>
+      	<div id="pgHead"><% block('/head/main'); %></div>
+        <div class="flexContainer">
+            <div id="pgLeft"><% block('/mainMenu'); %></div>
+            <div id="pgContent"><% block(); %></div>
+        </div>
+      	<div id="pgFooter">
+            <h5 style="text-align:center;">coServ -- the new generation web server</h5>
+        </div>
+    </body>
+</html>

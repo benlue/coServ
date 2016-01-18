@@ -1,0 +1,51 @@
+<div id="menuContainer">
+	<div id="websiteDropdown" style="margin-bottom: 5px;">
+		<% block('/mainMenu/website/list'); %>
+	</div>
+
+	<div id="menuPane">
+		<div class="panel-group" id="leftMainMenu" role="tablist" aria-multiselectable="true">
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="layoutHeading">
+					<h4 class="panel-title">
+						<a role="button" data-toggle="collapse" data-parent="#leftMainMenu" 
+						   href="#" aria-expanded="true" aria-controls="collapseOne"
+						   onclick="<%=ctrl%>.webSettings();">
+							<%=ph.wsSettings%>
+						</a>
+					</h4>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="layoutHeading">
+					<h4 class="panel-title">
+						<a role="button" data-toggle="collapse" data-parent="#leftMainMenu" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+							<%=ph.layouts%>
+						</a>
+					</h4>
+				</div>
+				<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="layoutHeading">
+					<div class="panel-body">
+						<% block('mainMenuLayoutList', '/mainMenu/layout/list'); %>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="layoutHeading">
+					<h4 class="panel-title">
+						<a role="button" data-toggle="collapse" data-parent="#leftMainMenu" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+							<%=ph.blocks%>
+						</a>
+					</h4>
+				</div>
+				<div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="layoutHeading">
+					<div class="panel-body">
+						<% block('mainMenuBlockList', '/mainMenu/block/list'); %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,3 +1,11 @@
+0.9.9
+-----
+  . The major addition to this release is the new "website design console" which is a web interface to manage/design websites running on coServ.
+  . Cleaned up website templates.
+  . Fixed the block reload problem.
+  . Fixed a bug of cli/AddSite and cli/AddBlock.
+  . A bunch of bug fixes.
+
 0.9.8
 -----
   . Fixed a bug when passing parameters to embedded blocks.

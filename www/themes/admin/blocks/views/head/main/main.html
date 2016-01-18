@@ -1,0 +1,45 @@
+<div class="pgHeader">
+    <div id="HeadTitle">
+  		<img class="img-rounded" src="/admin/img/xs.png" style="height: 30px; margin-right: 20px;">[Design Console]
+    </div>
+    <div class="HeadItem">
+        <button type="button" class="btn btn-default" onclick="<%=ctrl%>.newWebsite();">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> <%=ph.createLabel%>
+        </button>
+    </div>
+    <div class="HeadItem">  
+        <%
+            var  langList = [
+           			{
+           				title: 'English',
+           				arg: 'en'
+           			},
+           			{
+           				title: '中文',
+           				arg: 'zh'
+           			}
+           		 ];
+        %>
+        <%
+            block('langList', 'bs/dropdown', {
+                params: {
+                    btnID: 'langDropdown',
+                    btnLabel: ph.selectLabel + '[<b>' + bi.locale + '</b>]',
+                    list: langList
+                }
+            });
+        %>
+    </div>
+</div>
+
+<!-- new website dialog -->
+<%
+    block('wsCreateDialog', 'bs/modal', {
+        params: {
+            cssID: 'createWSDialog',
+            title: 'Create A Website',
+            bodyURL: '/website/info',
+            args: {}
+        }
+    });
+%>

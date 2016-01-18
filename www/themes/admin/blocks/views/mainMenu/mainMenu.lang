@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phrases>
+    <ph id="websiteLabel">
+      <en>Website : </en>
+      <zh>網站： </zh>
+    </ph>
+    <ph id="wsSettings">
+      <en>Settings</en>
+      <zh>網站設定</zh>
+    </ph>
+    <ph id="layouts">
+      <en>Layouts</en>
+      <zh>網版</zh>
+    </ph>
+    <ph id="blocks">
+      <en>Blocks</en>
+      <zh>區塊</zh>
+    </ph>
+</phrases>

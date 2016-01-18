@@ -1,6 +1,6 @@
 {
   "name": "coserv",
-  "version": "0.9.8",
+  "version": "0.9.9",
   "description": "A web framework helping developers to fully utilize HTML, CSS and Javascript.",
   "engines": "0.12.2",
   "main": "coServ.js",
@@ -23,18 +23,18 @@
   "license": "MIT",
   "readmeFilename": "README.md",
   "dependencies": {
-    "async": "^0.9.0",
-    "bluebird": "^2.9.34",
-    "body-parser": "^1.12.2",
-    "connect": "^3.3.5",
-    "cookie-parser": "~1.0.1",
-    "morgan": "~1.0.0",
-    "ncp": "^0.5.1",
-    "node-sass": "^2.1.1",
-    "nodemailer": "^1.4.0",
-    "request": "^2.36.0",
-    "serve-static": "^1.9.2",
-    "xml2js": "~0.4.2"
+    "async": "^1.5.0",
+    "bluebird": "^3.0.5",
+    "body-parser": "^1.14.1",
+    "connect": "^3.4.0",
+    "cookie-parser": "^1.4.0",
+    "morgan": "^1.6.1",
+    "ncp": "^2.0.0",
+    "node-sass": "^3.4.1",
+    "nodemailer": "^1.9.0",
+    "request": "^2.65.0",
+    "serve-static": "^1.10.0",
+    "xml2js": "^0.4.15"
   },
   "devDependencies": {
     "browser-sync": "^1.8.0",

@@ -1,0 +1,46 @@
+<form>
+    <div class="form-group">
+        <label for="wsDomain" class="text-danger"><%=ph.domainLabel%></label>
+        <input type="text" class="form-control" id="wsDomain" 
+                value="<%=value.domain || ''%>" placeholder="<%=ph.domainHolder%>">
+    </div>
+
+    <div class="form-group">
+        <label for="wsApp" class="text-danger"><%=ph.appLabel%></label>
+        <input type="text" class="form-control" id="wsApp" 
+               value="<%=value.caCode || ''%>" placeholder="<%=ph.appHolder%>"
+               <%= value.domain  ?  'disabled' : ''%>>
+    </div>
+
+    <div class="form-group">
+        <label for="wsTitle"><%=ph.titleLabel%></label>
+        <input type="text" class="form-control" id="wsTitle" 
+               value="<%=value.title || ''%>" placeholder="<%=ph.titleHolder%>">
+    </div>
+    
+    <div class="form-group">
+        <label for="wsLocale"><%=ph.localeLabel%></label>
+        <input type="text" class="form-control" id="wsLocale" 
+               value="<%=value.locale || ''%>" placeholder="<%=ph.localeHolder%>">
+    </div>
+    
+    <div class="form-group">
+        <label for="wsHome"><%=ph.homeLabel%></label>
+        <input type="text" class="form-control" id="wsHome" 
+               value="<%=value.home || ''%>" placeholder="<%=ph.homeHolder%>">
+    </div>
+
+    <div class="flexContainer">
+        <div style="flex-grow:1;"></div>
+        <div style="flex-basis: content">
+            <%
+            if (value.domain)  {
+            %>
+            <button type="button" class="btn btn-danger" onclick="<%=ctrl%>.delWebsite();"><%= ph.deleteBtn %></button>
+            <button type="button" class="btn btn-primary" onclick="<%=ctrl%>.save();"><%= ph.saveBtn %></button>
+            <% } else { %>
+            <button type="button" class="btn btn-primary" onclick="<%=ctrl%>.create();"><%= ph.createBtn %></button>
+            <% } %>
+        </div>
+    </div>
+</form>

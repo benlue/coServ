@@ -96,12 +96,13 @@ var  _ctrl = (function()  {
 	};
 
 	_ctrl.prototype.embed = function embed(div, srvURI, args, callback)  {
-		if (!callback && args)  {
-			if (!args.hasOwnProperty('id') && !args.hasOwnProperty('params'))  {
+		if (arguments.length === 3)  {
+			if (typeof args === 'function')  {
 				callback = args;
 				args = null;
 			}
 		}
+		
 		var  target = this.getJqTarget().find(div),
 			 url = srvURI + '.hf',
 			 pdata = {};

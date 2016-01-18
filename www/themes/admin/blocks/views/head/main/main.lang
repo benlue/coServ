@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phrases>
+    <ph id="selectLabel">
+      <en>Language : </en>
+      <zh>選擇語系： </zh>
+    </ph>
+    <ph id="createLabel">
+      <en>Website</en>
+      <zh>網站</zh>
+    </ph>
+</phrases>

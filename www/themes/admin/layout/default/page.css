@@ -1,0 +1,16 @@
+.flexContainer {
+	display: flex;
+	margin-left: 20px;
+}
+
+#pgLeft {
+	flex-basis: 280px;
+}
+
+#pgContent {
+	flex-grow: 1;
+	margin-left: 10px;
+}
+
+#pgFooter {
+}

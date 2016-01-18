@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phrases>
+    <ph id="title">
+      <en>Title</en>
+      <zh>區塊名稱（標題）</zh>
+    </ph>
+    <ph id="url">
+      <en>Block URL</en>
+      <zh>區塊網址</zh>
+    </ph>
+  	<ph id="description">
+      <en>Description</en>
+      <zh>敘述說明</zh>
+    </ph>
+  	<ph id="hasID">
+      <en>ID In URL</en>
+      <zh>網址是否包含 ID</zh>
+    </ph>
+  	<ph id="apiService">
+      <en>API Service</en>
+      <zh>API 服務網址</zh>
+    </ph>
+  	<ph id="delete">
+      <en>Delete</en>
+      <zh>刪除區塊</zh>
+    </ph>
+  	<ph id="create">
+      <en>Create</en>
+      <zh>建立區塊</zh>
+    </ph>
+  	<ph id="save">
+      <en>Save</en>
+      <zh>存檔</zh>
+    </ph>
+    <ph id="js_confirm">
+      <en>Are you sure to delete this block?</en>
+      <zh>你確定要刪除這個區塊嗎？</zh>
+    </ph>
+</phrases>

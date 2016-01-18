@@ -1,0 +1,10 @@
+.CodeMirror {
+	height: 380px;
+}
+
+.statusBar {
+	margin-right: 10px;
+	margin-bottom: 0px;
+	flex-grow: 1;
+	padding: 10px;
+}

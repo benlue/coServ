@@ -1,0 +1,8 @@
+#menuContainer {
+	overflow-y: auto;
+	padding-right: 10px;
+}
+
+#menuPane {
+	display: none;
+}

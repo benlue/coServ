@@ -1,0 +1,74 @@
+{
+    "/index": {
+        "id": "no"
+    },
+    "/mainMenu": {
+        "id": "maybe"
+    },
+    "/mainMenu/layout/list": {
+        "id": "no"
+    },
+    "/mainMenu/block/list": {
+        "id": "no"
+    },
+    "/mainMenu/website/list": {
+        "id": "no"
+    },
+    "/workArea/block/main": {
+        "id": "no"
+    },
+    "/workArea/block/config": {
+        "id": "no"
+    },
+    "/workArea/block/edit": {
+        "id": "no"
+    },
+    "/workArea/block/source": {
+        "id": "no"
+    },
+    "/workArea/block/updateSource": {
+        "id": "no"
+    },
+    "/workArea/block/update": {
+        "id": "no"
+    },
+    "/workArea/layout/main": {
+        "id": "no"
+    },
+    "/workArea/layout/edit": {
+        "id": "no"
+    },
+    "/workArea/layout/source": {
+        "id": "no"
+    },
+    "/workArea/layout/create": {
+        "id": "no"
+    },
+    "/workArea/layout/config": {
+        "id": "no"
+    },
+    "/workArea/layout/map": {
+        "id": "no"
+    },
+    "/workArea/layout/remove": {
+        "id": "no"
+    },
+    "/workArea/layout/updateMap": {
+        "id": "no"
+    },
+    "/workArea/layout/updateSource": {
+        "id": "no"
+    },
+    "/head/main": {
+        "id": "no"
+    },
+    "/website/info": {
+        "id": "maybe"
+    },
+    "/website/update": {
+        "id": "no"
+    },
+    "undefined": {
+        "id": "maybe"
+    }
+}
