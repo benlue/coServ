@@ -43,7 +43,7 @@ Below are highlights of recent releases:
 + Support a very powerful CSS preprocessor called JASS.
 
 ## The Design Console
-Starting from the 0.9.9 release, a web interface called "design console" was added to the release bundle. The design console can help developers to easily manage or design websites. If you are new to coServ, you'll find this tool very helpful to get you started.
+Starting from the 0.9.9 release, a web interface called "design console" was added to the release bundle. The design console can help developers to easily manage or design websites. It's a great tool to get things started.
 
 To play with the design console, simply start coServ (node coServ) and point your browser to "localhost:8080". That should do it.
 
