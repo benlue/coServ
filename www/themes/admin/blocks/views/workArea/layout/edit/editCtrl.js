@@ -13,18 +13,20 @@ ctrl.startup = function()  {
 		 	mode: '<%= bi.query.mode %>'
 		 };
 
-	$.post('/workArea/layout/source.txt', pdata, function(data) {
-		if (data)
-			editor.setValue( data );
-		editor.on('change', handleDocChange);
-	});
-
 	editor = CodeMirror.fromTextArea( ctrl.sel('#codeEditor')[0], {
 		lineNumbers: true,
       	indentUnit: 4,
 		mode: toEditMode('<%=bi.query.mode%>'),
 		theme: 'elegant'
 	});
+	
+	window.setTimeout(function() {
+		$.post('/workArea/layout/source.txt', pdata, function(data) {
+			if (data)
+				editor.setValue( data );
+			editor.on('change', handleDocChange);
+		});
+	}, 250);
 
 	adjustHeight();
 }

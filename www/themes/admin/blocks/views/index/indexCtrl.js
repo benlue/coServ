@@ -26,7 +26,7 @@ ctrl.dispatch = function(design, target) {
 	else  if (design === 'block')  {
 		if (target === '_+_')  {
 			// create a new block
-			ctrl.embed('#bodyArea', '/workArea/block/info');
+			ctrl.embed('#bodyArea', '/workArea/block/config');
 		}
 		else  {
 			var  params = {

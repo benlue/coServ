@@ -67,8 +67,5 @@
     },
     "/website/update": {
         "id": "no"
-    },
-    "undefined": {
-        "id": "maybe"
     }
 }

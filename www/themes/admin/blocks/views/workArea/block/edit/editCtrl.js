@@ -20,11 +20,13 @@ ctrl.startup = function()  {
 		theme: 'elegant'
 	});
 
-	$.post('/workArea/block/source.txt', pdata, function(data) {
-		if (data)
-			editor.setValue( data );
-		editor.on('change', handleDocChange);
-	});
+	window.setTimeout(function() {
+		$.post('/workArea/block/source.txt', pdata, function(data) {
+			if (data)
+				editor.setValue( data );
+			editor.on('change', handleDocChange);
+		});
+	}, 250);
 
 	adjustHeight();
 }
