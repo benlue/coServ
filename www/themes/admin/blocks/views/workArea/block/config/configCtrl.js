@@ -18,9 +18,9 @@ ctrl.updateConfig = function(isUpdate)  {
         };
 
     $.post('/workArea/block/update.wsj', bkData, function(result) {
-        alert( result.message );
-
-        if (result.errCode === 0 && !isUpdate)
+        if (result.errCode)
+            alert( result.message );
+        else  if (!isUpdate)
             blkCtrl.refresh(bkURL);
     }, 'json');
 }
@@ -38,9 +38,9 @@ ctrl.deleteBlock = function(bkName)  {
             };
 
         $.post('/workArea/block/update.wsj', bkData, function(result) {
-            alert( result.message );
-
-            if (result.errCode === 0)  {
+            if (result.errCode)
+                alert( result.message );
+            else  {
                 var  idxCtrl = __.getCtrl('workArea');
                 idxCtrl.dispatch('home');
 
