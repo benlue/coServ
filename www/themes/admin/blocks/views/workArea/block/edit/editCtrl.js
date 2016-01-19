@@ -16,8 +16,7 @@ ctrl.startup = function()  {
 	editor = CodeMirror.fromTextArea( ctrl.sel('#codeEditor')[0], {
 		lineNumbers: true,
       	indentUnit: 4,
-		mode: toEditMode('<%=bi.query.bkType%>'),
-		theme: 'elegant'
+		mode: toEditMode('<%=bi.query.bkType%>')
 	});
 
 	window.setTimeout(function() {

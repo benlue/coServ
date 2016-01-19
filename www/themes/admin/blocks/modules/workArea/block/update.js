@@ -125,24 +125,29 @@ function  removeBlock(theme, viewPath, bkName, cb) {
         // remove the block module, if applicable
         viewPath = path.join(viewPath, '../blocks/modules');
         var  modFile = viewPath + bkName + '.js';
-        fs.unlinkSync(modFile);
+        
+        try  {
+            // the module file may not exist at all.
+            fs.unlinkSync(modFile);
 
-        var  fpath = bkName,
-             idx = fpath.lastIndexOf('/'),
-             removeDir = idx > 0;
-        fpath = fpath.substring(0, idx);
-
-        while (removeDir)  {
-            fs.rmdirSync( viewPath + fpath );
-
-            var  idx = fpath.lastIndexOf('/');
-            if (idx > 0)  {
-                 fpath = fpath.substring(0, idx);
-                 removeDir = fs.readdirSync(viewPath + fpath).length === 0;
+            var  fpath = bkName,
+                 idx = fpath.lastIndexOf('/'),
+                 removeDir = idx > 0;
+            fpath = fpath.substring(0, idx);
+    
+            while (removeDir)  {
+                fs.rmdirSync( viewPath + fpath );
+    
+                var  idx = fpath.lastIndexOf('/');
+                if (idx > 0)  {
+                    fpath = fpath.substring(0, idx);
+                    removeDir = fs.readdirSync(viewPath + fpath).length === 0;
+                }
+                else
+                    removeDir = false;
             }
-            else
-                removeDir = false;
         }
+        catch(e)  {}
         
         cb({
             errCode: 0,

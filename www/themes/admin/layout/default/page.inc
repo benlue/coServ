@@ -1,11 +1,10 @@
 /shared/js/lib/bootstrap/css/bootstrap.min.css
-/shared/js/codeMirror/lib/codemirror.css
-/shared/js/codeMirror/theme/elegant.css
+/admin/codeMirror/lib/codemirror.css
 /shared/js/lib/jquery-2.1.4.min.js
 /shared/js/lib/bootstrap/js/bootstrap.min.js
-/shared/js/codeMirror/lib/codemirror.js
-/shared/js/codeMirror/mode/javascript/javascript.js
-/shared/js/codeMirror/mode/htmlmixed/htmlmixed.js
-/shared/js/codeMirror/mode/css/css.js
-/shared/js/codeMirror/mode/xml/xml.js
+/admin/codeMirror/lib/codemirror.js
+/admin/codeMirror/mode/javascript/javascript.js
+/admin/codeMirror/mode/htmlmixed/htmlmixed.js
+/jsadmincodeMirror/mode/css/css.js
+/admin/codeMirror/mode/xml/xml.js
 /shared/js/wFront.js
