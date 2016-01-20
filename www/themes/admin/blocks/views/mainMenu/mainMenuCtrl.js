@@ -19,6 +19,14 @@ ctrl.startup = function()  {
         var  idxCtrl = __.getCtrl('workArea');
 		idxCtrl.dispatch('home');
 	});
+	
+	ctrl.sel('#menuPane').on('hidden.bs.collapse', function () {
+		// clear up display when users switch panel
+		ctrl.sel('.panel-body li').removeClass('active');
+		
+		var  idxCtrl = __.getCtrl('workArea');
+		idxCtrl.dispatch('home');
+	});
 
 	adjustHeight();
 }
@@ -36,7 +44,7 @@ function  adjustHeight()  {
 	var  h = window.innerHeight
 			 - $('#pgHead').outerHeight(true)
 			 - $('#pgFooter').outerHeight(true)
-			 - ctrl.sel('#websiteDropdown').outerHeight(true) + 15;
+			 - ctrl.sel('#websiteDropdown').outerHeight(true) + 10;
 
 	ctrl.sel('#menuContainer').height( h ); 
 }

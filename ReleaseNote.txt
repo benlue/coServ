@@ -1,9 +1,16 @@
+0.9.10
+------
+  . The web design console now can automatically make block creation/deletion effective without restarting the coServ server.
+  . Fixed a problem that web themes cannot be properly matched when running multiple websites on a server.
+  . Make the demo work again.
+  . Clean up some UI glitches in the design console.
+
 0.9.9
 -----
   . The major addition to this release is the new "website design console" which is a web interface to manage/design websites running on coServ.
   . Cleaned up website templates.
   . Fixed the block reload problem.
-  . Fixed a bug of cli/AddSite and cli/AddBlock.
+  . Fixed bugs in cli/AddSite and cli/AddBlock.
   . A bunch of bug fixes.
 
 0.9.8

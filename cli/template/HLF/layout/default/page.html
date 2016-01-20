@@ -27,13 +27,10 @@
 
     <body>
         <div id="pgHead">
-           <h3>Page Header</h3> 
+           <% block('/head'); %>
         </div>
         <div id="pgBody">
-            <div id="pgLeft">
-                Include a left block here...
-            </div>
-            <div id="pgContent"><% block(); %></div>
+            <% block(); %>
         </div>
         <div id="pgFooter">
             <h6 style="text-align:center;">

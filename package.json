@@ -1,8 +1,8 @@
 {
   "name": "coserv",
-  "version": "0.9.9",
+  "version": "0.9.10",
   "description": "A web framework helping developers to fully utilize HTML, CSS and Javascript.",
-  "engines": "0.12.2",
+  "engines": "4.2.2",
   "main": "coServ.js",
   "repository": {
     "type": "git",
@@ -30,9 +30,8 @@
     "cookie-parser": "^1.4.0",
     "morgan": "^1.6.1",
     "ncp": "^2.0.0",
-    "node-sass": "^3.4.1",
-    "nodemailer": "^1.9.0",
-    "request": "^2.65.0",
+    "node-sass": "^3.4.2",
+    "request": "^2.67.0",
     "serve-static": "^1.10.0",
     "xml2js": "^0.4.15"
   },

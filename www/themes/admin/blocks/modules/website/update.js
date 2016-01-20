@@ -226,7 +226,19 @@ function  createSite(ctx, inData, cb)  {
                     cb(err);
                 else  {
                     var  idxFile = path.join(idxBlk, 'index.html');
-                    fs.writeFile(idxFile, 'Hello World!', cb);
+                    fs.writeFile(idxFile, '<div class="page-header"><h1>Hello World!</h1></div>', cb);
+                }
+            });
+        },
+        
+        function(cb)  {
+            var  hdBlk = path.join(wwwRoot, './themes/' + theme + '/blocks/views/head');
+            fs.mkdir( hdBlk, function(err) {
+                if (err)
+                    cb(err);
+                else  {
+                    var  idxFile = path.join(hdBlk, 'head.html');
+                    fs.writeFile(idxFile, '<div class="bg-success" style="padding: 5px 0px;">Page Header</div>', cb);
                 }
             });
         },
@@ -234,7 +246,8 @@ function  createSite(ctx, inData, cb)  {
     	function(cb)  {
     		var  siteURI = path.join(wwwRoot, './themes/' + theme + '/siteURI.json'),
                  bkInfo = {
-                    "/index": {id: "no"}
+                    "/index": {id: "no"},
+                    "/head": {id: "no"}
                  };
     		fs.writeFile( siteURI, JSON.stringify(bkInfo, null, 4), cb);
     	},

@@ -5,8 +5,7 @@ $(window).resize( function() {
 var  editor;
 
 ctrl.startup = function()  {
-	var  txArea = ctrl.sel('#codeEditor'),
-		 blkCtrl = __.getCtrl('mainMenuBlockList'),
+	var  blkCtrl = __.getCtrl('mainMenuBlockList'),
 		 pdata = {
 		 	theme: blkCtrl.getTheme(),
 		 	bkName: '<%= bi.query.bkName %>',
