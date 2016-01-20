@@ -29,9 +29,31 @@
         <input type="text" class="form-control" id="wsHome" 
                value="<%=value.home || ''%>" placeholder="<%=ph.homeHolder%>">
     </div>
+</form>
 
-    <div class="flexContainer">
-        <div style="flex-grow:1;"></div>
+    <div class="flexContainer" style="margin-left: 0px;">
+        <div style="flex-grow:1;">
+            <%
+            if (value.domain)  {
+            %>
+            <!--
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="wsExpDir"><%=ph.exportLabel%></label>
+                    <input type="text" class="form-control" id="wsExpDir">
+                </div>
+                <button type="button" class="btn btn-default"
+                        onclick="<%=ctrl%>.exportWebsite();"><%=ph.exportBtn%></button>
+            </form>
+            -->
+            <!--
+            <span class="btn btn-default btn-file">
+                匯出網站
+                <input type="file" webkitdirectory directory>
+            </span>
+            -->
+            <% } %>
+        </div>
         <div style="flex-basis: content">
             <%
             if (value.domain)  {
@@ -43,4 +65,3 @@
             <% } %>
         </div>
     </div>
-</form>

@@ -5,6 +5,6 @@
 /admin/codeMirror/lib/codemirror.js
 /admin/codeMirror/mode/javascript/javascript.js
 /admin/codeMirror/mode/htmlmixed/htmlmixed.js
-/jsadmincodeMirror/mode/css/css.js
+/admin/codeMirror/mode/css/css.js
 /admin/codeMirror/mode/xml/xml.js
 /shared/js/wFront.js

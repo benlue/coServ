@@ -67,5 +67,8 @@
     },
     "/website/update": {
         "id": "no"
+    },
+    "/website/export": {
+        "id": "no"
     }
 }

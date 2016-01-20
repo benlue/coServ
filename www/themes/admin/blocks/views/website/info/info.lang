@@ -40,6 +40,14 @@
       <en>Default page of this website</en>
       <zh>請輸入網站的預設首頁</zh>
     </ph>
+    <ph id="exportLabel">
+      <en>Enter the export directory:</en>
+      <zh>請輸入網站匯出的網址：</zh>
+    </ph>
+    <ph id="exportBtn">
+      <en>Export</en>
+      <zh>匯出</zh>
+    </ph>
     <ph id="createBtn">
       <en>Create</en>
       <zh>新增</zh>
@@ -63,5 +71,9 @@
     <ph id="jsDelConfirm">
       <en>All files related to this website will be deleted.\nAre you sure to delete this website?</en>
       <zh>所有與此網站相關的檔案都將被刪除。\n你確定要刪除這個網站嗎？ </zh>
+    </ph>
+    <ph id="jsNoExpPathError">
+      <en>Please enter the website export directory.</en>
+      <zh>請輸入網站匯出的網址</zh>
     </ph>
 </phrases>

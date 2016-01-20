@@ -1,5 +1,8 @@
 .flexContainer {
 	display: flex;
+}
+
+.pgBody {
 	margin-left: 20px;
 }
 

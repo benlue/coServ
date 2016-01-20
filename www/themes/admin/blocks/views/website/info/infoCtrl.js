@@ -1,3 +1,15 @@
+/*
+ * Export the whole website
+ */
+ctrl.exportWebsite = function()  {
+    var  expPath = ctrl.sel('#wsExpDir').val();
+    if (!expPath)  {
+        alert('<%=ph.jsNoExpPathError%>');
+        return  issueWarning('#wsExpDir');
+    }
+}
+
+
 ctrl.create = function()  {
     var  domain = ctrl.sel('#wsDomain').val(),
          caCode = ctrl.sel('#wsApp').val();
