@@ -1,14 +1,15 @@
 <%
 	var  btnID = _params.btnID,
 		 btnLabel = _params.btnLabel,
-		 itemList = _params.list;
+		 itemList = _params.list,
+		 rightMenu = _params.rightMenu;
 %>
 <div class="dropdown">
 	<button class="btn btn-default dropdown-toggle" type="button" id="<%= btnID %>_" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 		<%= btnLabel %>
 		<span class="caret"></span>
 	</button>
-	<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+	<ul class="dropdown-menu<%=rightMenu  ?  ' pull-right' : ''%>" aria-labelledby="dropdownMenu1">
 		<%
 		for (var i in itemList)  {
 			var  item = itemList[i];

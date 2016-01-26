@@ -9,7 +9,11 @@
       <zh>網版</zh>
     </ph>
     <ph id="blocks">
-      <en>Blocks</en>
-      <zh>區塊</zh>
+        <en>Blocks</en>
+        <zh>區塊</zh>
+    </ph>
+    <ph id="wcomps">
+        <en>WComps</en>
+        <zh>網頁元件</zh>
     </ph>
 </phrases>

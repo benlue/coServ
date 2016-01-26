@@ -32,7 +32,7 @@
 			</div>
 
 			<div class="panel panel-default">
-				<div class="panel-heading" role="tab" id="layoutHeading">
+				<div class="panel-heading" role="tab" id="blockHeading">
 					<h4 class="panel-title">
 						<a role="button" data-toggle="collapse" data-parent="#leftMainMenu" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
 							<button class="btn btn-xs btn-default pull-right"
@@ -43,9 +43,28 @@
 						</a>
 					</h4>
 				</div>
-				<div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="layoutHeading">
+				<div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="blockHeading">
 					<div class="panel-body">
 						<% block('mainMenuBlockList', '/mainMenu/block/list'); %>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="wcompHeading">
+					<h4 class="panel-title">
+						<a role="button" data-toggle="collapse" data-parent="#leftMainMenu" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+							<button class="btn btn-xs btn-default pull-right"
+									onclick="<%=ctrl%>.newWComp();">
+						   		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+						   	</button>
+							<%=ph.wcomps%>
+						</a>
+					</h4>
+				</div>
+				<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="wcompHeading">
+					<div class="panel-body">
+						<% block('mainMenuWcompList', '/mainMenu/wcomp/list'); %>
 					</div>
 				</div>
 			</div>

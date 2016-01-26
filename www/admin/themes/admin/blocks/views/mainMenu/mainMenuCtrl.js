@@ -96,6 +96,15 @@ ctrl.newBlock = function() {
 }
 
 
+ctrl.newWComp = function() {
+	_newObj = true;
+	collapseID = 'collapseThree';
+	
+	var  idxCtrl = __.getCtrl('workArea');
+	idxCtrl.dispatch('wcomp', '_+_');
+}
+
+
 ctrl.getCurrentSite = function()  {
 	return  curCaCode;
 }

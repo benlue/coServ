@@ -70,5 +70,8 @@
     },
     "/website/export": {
         "id": "no"
+    },
+    "/mainMenu/wcomp/list": {
+        "id": "no"
     }
 }
