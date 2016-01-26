@@ -5,9 +5,9 @@ $(window).resize( function() {
 var  editor;
 
 ctrl.startup = function()  {
-	var  blkCtrl = __.getCtrl('mainMenuBlockList'),
+	var  menuCtrl = __.getCtrl('pgMainMenu'),
 		 pdata = {
-		 	theme: blkCtrl.getTheme(),
+		 	caCode: menuCtrl.getCurrentSite(),
 		 	bkName: '<%= bi.query.bkName %>',
 		 	bkType: '<%= bi.query.bkType %>'
 		 };
@@ -24,7 +24,7 @@ ctrl.startup = function()  {
 				editor.setValue( data );
 			editor.on('change', handleDocChange);
 		});
-	}, 250);
+	}, 100);
 
 	adjustHeight();
 }
@@ -32,9 +32,9 @@ ctrl.startup = function()  {
 
 ctrl.saveDoc = function()  {
 	//console.log( editor.getValue() );
-	var  blkCtrl = __.getCtrl('mainMenuBlockList'),
+	var  menuCtrl = __.getCtrl('pgMainMenu'),
 		 pdata = {
-			theme: blkCtrl.getTheme(),
+			caCode: menuCtrl.getCurrentSite(),
 			bkName: '<%= bi.query.bkName %>',
 			bkType: '<%= bi.query.bkType %>',
 			data: editor.getValue()

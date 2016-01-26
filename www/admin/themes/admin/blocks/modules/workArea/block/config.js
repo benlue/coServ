@@ -1,11 +1,11 @@
 var  fs = require('fs'),
-	 path = require('path');
+	 path = require('path'),
+     siteUtil = require('../../util/siteUtil.js');
 
 exports.execute = function(ctx, inData, cb)  {
-	var  inData = ctx.bi.query,
-         theme = inData.theme,
+	var  caCode = inData.caCode,
          bkName = inData.bkName,
-         viewPath = path.join(__dirname, '../../../../../' + theme + '/siteURI.json');
+         viewPath = path.join(siteUtil.getRootWWW(ctx, caCode), './siteURI.json');
     //console.log('theme: %s, bkName: %s', theme, bkName);
   
   	fs.readFile(viewPath, 'utf8', function(err, data) {

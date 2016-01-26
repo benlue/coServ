@@ -1,14 +1,15 @@
 var  fs = require('fs'),
-	 path = require('path');
+	 path = require('path'),
+	 siteUtil = require('../../util/siteUtil.js');
 
 exports.execute = function(ctx, inData, cb)  {
-	var  theme = inData.theme,
+	var  caCode = inData.caCode,
 		 bkName = ctx.bi.query.bkName,
 		 bkType = ctx.bi.query.bkType;
 	//console.log('bkName is %s, bkType is %s', bkName, bkType);
 
 	if (bkType === 'model')  {
-		var  modelRoot = path.join(__dirname, '../../../../../' + theme + '/blocks/modules'),
+		var  modelRoot = path.join(siteUtil.getRootWWW(ctx, caCode), './blocks/modules'),
 			 modelPath = path.join(modelRoot, bkName + '.js');
 
 		fs.readFile( modelPath, {encoding: 'utf8'}, function(err, data) {
@@ -27,7 +28,7 @@ exports.execute = function(ctx, inData, cb)  {
 		});
 	}
 	else  {
-		var  blockRoot = path.join(__dirname, '../../../../../' + theme + '/blocks/views'),
+		var  blockRoot = path.join(siteUtil.getRootWWW(ctx, caCode), './blocks/views'),
 			 bkPath = path.join(blockRoot, bkName);
 		
 		fs.readdir(bkPath, function(err, files) {

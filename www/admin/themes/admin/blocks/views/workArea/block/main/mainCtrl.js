@@ -42,10 +42,10 @@ ctrl.config = function(link)  {
 	ctrl.sel('.nav li').removeClass('active');
 	$(link).parent().addClass('active');
 
-	var  blkCtrl = __.getCtrl('mainMenuBlockList'),
+	var  menuCtrl = __.getCtrl('pgMainMenu'),
 		 params = {
-			bkName: bkName,
-			theme: blkCtrl.getTheme()
+			caCode: menuCtrl.getCurrentSite(),
+			bkName: bkName
 		 };
 
 	ctrl.embed('#editBody', '/workArea/block/config', {params: params});

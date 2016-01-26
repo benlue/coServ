@@ -16,7 +16,8 @@
 				<div class="panel-heading" role="tab" id="layoutHeading">
 					<h4 class="panel-title">
 						<a role="button" data-toggle="collapse" data-parent="#leftMainMenu" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-							<button class="btn btn-xs btn-default pull-right">
+							<button class="btn btn-xs btn-default pull-right"
+									onclick="<%=ctrl%>.newLayout();">
 						   		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 						   	</button>
 							<%=ph.layouts%>
@@ -34,7 +35,8 @@
 				<div class="panel-heading" role="tab" id="layoutHeading">
 					<h4 class="panel-title">
 						<a role="button" data-toggle="collapse" data-parent="#leftMainMenu" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-							<button class="btn btn-xs btn-default pull-right">
+							<button class="btn btn-xs btn-default pull-right"
+									onclick="<%=ctrl%>.newBlock();">
 						   		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 						   	</button>
 							<%=ph.blocks%>

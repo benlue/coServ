@@ -6,9 +6,9 @@ var  editor;
 
 ctrl.startup = function()  {
 	var  txArea = ctrl.sel('#codeEditor'),
-		 blkCtrl = __.getCtrl('mainMenuBlockList'),
+		 menuCtrl = __.getCtrl('pgMainMenu'),
 		 pdata = {
-		 	theme: blkCtrl.getTheme(),
+		 	caCode: menuCtrl.getCurrentSite(),
 		 	layout: '<%= bi.query.layout %>',
 		 	mode: '<%= bi.query.mode %>'
 		 };
@@ -25,7 +25,7 @@ ctrl.startup = function()  {
 				editor.setValue( data );
 			editor.on('change', handleDocChange);
 		});
-	}, 250);
+	}, 100);
 
 	adjustHeight();
 }
@@ -33,9 +33,9 @@ ctrl.startup = function()  {
 
 ctrl.saveDoc = function()  {
 	//console.log( editor.getValue() );
-	var  blkCtrl = __.getCtrl('mainMenuBlockList'),
+	var  menuCtrl = __.getCtrl('pgMainMenu'),
 		 pdata = {
-			theme: blkCtrl.getTheme(),
+			caCode: menuCtrl.getCurrentSite(),
 			layout: '<%= bi.query.layout %>',
 			bkType: '<%= bi.query.mode %>',
 			data: editor.getValue()
