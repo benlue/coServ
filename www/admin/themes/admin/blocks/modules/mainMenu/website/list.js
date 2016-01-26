@@ -1,10 +1,10 @@
 var  fs = require('fs'),
-	 path = require('path'),
-	 sitePath = path.join(__dirname, '../../../../../../sites.json');
-	 //console.log('sites.json path: ' + wwwPath);
+	 siteUtil = require('../../util/siteUtil.js');
 
 exports.execute = function(ctx, inData, cb)  {
-	fs.readFile(sitePath, function(err, data) {
+	var  sitesFile = siteUtil.getSitesJSON(ctx);
+
+	fs.readFile(sitesFile, function(err, data) {
 		if (err)
 			return  cb({
 				errCode: 1,
@@ -19,7 +19,7 @@ exports.execute = function(ctx, inData, cb)  {
 				var site = sitesInfo[key],
 					item = {
 						title: site.title,
-						arg: site.theme || site.caCode
+						arg: site.caCode
 					 };
 				list.push( item );
 			}

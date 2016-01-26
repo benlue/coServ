@@ -1,14 +1,11 @@
-var  async = require('async'),
-	 fs = require('fs'),
-	 path = require('path'),
-	 SiteCache;
+var  fs = require('fs'),
+	 siteUtil = require('../util/siteUtil.js');
 
 exports.execute = function(ctx, inData, cb)  {
     var  caCode = ctx.bi.id;
     
     if (caCode)  {
-        var  sitesFile = path.join(__dirname, '../../../../../sites.json');
-             
+        var  sitesFile = siteUtil.getSitesJSON(ctx);
         fs.readFile(sitesFile, function(err, data) {
             if (err)
     			return  cb(err);

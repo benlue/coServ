@@ -2,19 +2,9 @@
     "localhost": {
         "caCode": "admin",
         "title": "The coServ Design Console",
+        "sitePath": "./admin",
         "validFrom": "",
         "validTo": "",
         "locale": "en"
-    },
-    "127.0.0.1": {
-        "title": "Single-Page Web Application Demo",
-        "locale": "en",
-        "home": "/index",
-        "theme": "index",
-        "appKeys": {
-            "wcoim": "",
-            "blogDemo": "ce51fbb8-1df6-0442-e187-3e5e0a8785b8"
-        },
-        "caCode": "blogDemo"
     }
 }

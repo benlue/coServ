@@ -2,7 +2,6 @@
 $(window).resize(adjustHeight);
 
 var  curCaCode,
-	 curTheme,
 	 _newObj = false,
 	 collapseID;
 
@@ -18,11 +17,7 @@ ctrl.startup = function()  {
 	// set up the website selector (drop-down list)
 	var  dropCtrl = __.getCtrl('websiteList');
 
-	dropCtrl.addHandler('itemChosen', function(siteInfo) {
-		var  ss = siteInfo.split(':');
-		curCaCode = ss[0];
-		curTheme = ss[1];
-
+	dropCtrl.addHandler('itemChosen', function(curCaCode) {
 		ctrl.sel('#wsConfigBtn').show();
 		ctrl.sel('#menuPane').show();
 		
@@ -101,11 +96,6 @@ ctrl.newBlock = function() {
 
 ctrl.getCurrentSite = function()  {
 	return  curCaCode;
-}
-
-
-ctrl.getCurrentTheme = function()  {
-	return  curTheme;
 }
 
 
