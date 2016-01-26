@@ -1,6 +1,0 @@
-.float{
-  float: left;
-}
-.clear{
-  clear: both;
-}

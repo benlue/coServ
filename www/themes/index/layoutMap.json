@@ -1,7 +1,0 @@
-{
-	"/sass": "slide",
-	"/blog" : "blog",
-	"/blog/view" : "blog_view",
-	"/blog2" : "blog2",
-	"/blog2/view" : "blog2_view"
-}
