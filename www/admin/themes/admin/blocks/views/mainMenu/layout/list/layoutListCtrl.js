@@ -12,17 +12,18 @@ ctrl.startup = function() {
 	}
 }
 
-
+/*
 ctrl.newLayout = function() {
 	var  idxCtrl = __.getCtrl('workArea');
 	idxCtrl.dispatch('layout', '_+_');
 }
+*/
 
 
 ctrl.refresh = function(itemName)  {
-	var  blkCtrl = __.getCtrl('mainMenuBlockList'),
+	var  menuCtrl = __.getCtrl('pgMainMenu'),
 		 params = {
-			theme: blkCtrl.getTheme()
+			caCode: menuCtrl.getCurrentSite()
 		 };
 
 	ctrl.reload({params: params}, function()  {

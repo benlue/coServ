@@ -28,7 +28,7 @@
     <body>
       	<div id="pgHead"><% block('/head/main'); %></div>
         <div class="flexContainer pgBody">
-            <div id="pgLeft"><% block('/mainMenu'); %></div>
+            <div id="pgLeft"><% block('pgMainMenu', '/mainMenu'); %></div>
             <div id="pgContent"><% block(); %></div>
         </div>
       	<div id="pgFooter">

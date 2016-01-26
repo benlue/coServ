@@ -1,11 +1,13 @@
 var  fs = require('fs'),
-	 path = require('path');
+	 path = require('path'),
+	 siteUtil = require('../../util/siteUtil.js');
 
 exports.execute = function(ctx, inData, cb)  {
-	var  theme = ctx.bi.query.theme,
-		 viewPath = path.join(__dirname, '../../../../../' + theme + '/layout');
+	var  caCode = inData.caCode;
 
-	if (theme)
+	if (caCode)  {
+		var  viewPath = path.join(siteUtil.getRootWWW(ctx, caCode), './layout');
+
 		fs.readdir(viewPath, function(err, dirList) {
 			if (err)
 				cb({errCode: 1, message: 'Cannot read the website design.'});
@@ -35,6 +37,7 @@ exports.execute = function(ctx, inData, cb)  {
 				});
 			}
 		});
+	}
 	else
 		cb({
 			errCode: 0,

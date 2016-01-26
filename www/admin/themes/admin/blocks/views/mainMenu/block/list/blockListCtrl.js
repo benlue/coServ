@@ -14,9 +14,10 @@ ctrl.startup = function() {
 
 
 ctrl.refresh = function(itemName)  {
-	var  params = {
-		theme: ctrl.getTheme()
-	};
+	var  menuCtrl = __.getCtrl('pgMainMenu'),
+		 params = {
+			caCode: menuCtrl.getCurrentSite()
+		 };
 
 	ctrl.reload({params: params}, function()  {
 		if (itemName)  {
@@ -29,6 +30,7 @@ ctrl.refresh = function(itemName)  {
 }
 
 
+/*
 ctrl.newBlock = function() {
 	var  idxCtrl = __.getCtrl('workArea');
 	idxCtrl.dispatch('block', '_+_');
@@ -38,3 +40,4 @@ ctrl.newBlock = function() {
 ctrl.getTheme = function() {
     return  ctrl.sel('#themeField').val();
 }
+*/
