@@ -1,12 +1,12 @@
 var  async = require('async'),
 	 fs = require('fs'),
-     path = require('path');
+     path = require('path'),
+	 siteUtil = require('../../util/siteUtil.js');
 
 exports.execute = function(ctx, inData, cb)  {
-	var  inData = ctx.bi.query,
-         theme = inData.theme,
+	var  caCode = inData.caCode,
          layout = inData.layout,
-         rootPath = path.join(__dirname, '../../../../../', theme);
+         rootPath = siteUtil.getRootWWW(ctx, caCode);
 
     // first, clear up layout map...
     var  lm = path.join(rootPath, 'layoutMap.json');

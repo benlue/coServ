@@ -1,13 +1,13 @@
 var  fs = require('fs'),
-	 path = require('path');
+	 path = require('path'),
+     siteUtil = require('../../util/siteUtil.js');
 
 exports.execute = function(ctx, inData, cb)  {
-	var  inData = ctx.bi.query,
-         theme = inData.theme,
+	var  caCode = inData.caCode,
          layout = inData.layout,
          blockURL = inData.url,
          isRemove = inData.remove
-         mapFile = path.join(__dirname, '../../../../../', theme + '/layoutMap.json');
+         mapFile = path.join(siteUtil.getRootWWW(ctx, caCode), 'layoutMap.json');
 
     fs.readFile(mapFile, function(err, data) {
     	if (err)

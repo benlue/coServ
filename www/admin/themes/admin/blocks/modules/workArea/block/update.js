@@ -29,7 +29,7 @@ exports.execute = function(ctx, inData, cb)  {
                                 message: "Cannot write to the block file."
                             });
                         
-                        removeBlock(ctx, theme, viewPath, bkName, cb)
+                        removeBlock(ctx, caCode, viewPath, bkName, cb)
                     });
                 }
                 else  {
@@ -58,7 +58,7 @@ exports.execute = function(ctx, inData, cb)  {
                             });
 
                         if (doCreate)
-                            createBlock( ctx, theme, viewPath, bkName, cb );
+                            createBlock( ctx, caCode, viewPath, bkName, cb );
                         else
                             cb({
                                 errCode: 0,

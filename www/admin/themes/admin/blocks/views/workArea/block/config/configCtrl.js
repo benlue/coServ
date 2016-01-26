@@ -23,8 +23,10 @@ ctrl.updateConfig = function(isUpdate)  {
         else  {
             if (isUpdate)
                 alert( result.message );
-            else
+            else  {
+                var  blkCtrl = __.getCtrl('mainMenuBlockList');
                 blkCtrl.refresh(bkURL);
+            }
         }
     }, 'json');
 }
