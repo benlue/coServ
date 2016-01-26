@@ -27,6 +27,7 @@ ctrl.create = function()  {
     var  pdata = {
             domain: domain,
             caCode: caCode,
+            sitePath: ctrl.sel('#wsPath').val(),
             title: ctrl.sel('#wsTitle').val(),
             locale: ctrl.sel('#wsLocale').val(),
             homePage: ctrl.sel('#wsHome').val(),

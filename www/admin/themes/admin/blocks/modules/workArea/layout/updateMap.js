@@ -29,11 +29,14 @@ exports.execute = function(ctx, inData, cb)  {
     				errCode: 2,
     				message: 'Unable to update the layout mapping.'
     			});
-    		else
+    		else  {
+                siteUtil.resetLayoutMap(ctx, caCode);
+
     			cb({
 		    		errCode: 0,
 		    		message: 'Ok'
 		    	});
+            }
     	});
     });
 }

@@ -41,6 +41,7 @@ function  findSite(sites, prop, caCode)  {
             data = {
                 domain: k,
                 caCode: siteInfo.caCode,
+                sitePath: siteInfo.sitePath,
                 title: siteInfo.title,
                 locale: siteInfo.locale || 'en',
                 home: siteInfo.home

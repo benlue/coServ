@@ -4,8 +4,7 @@ var  fs = require('fs'),
      siteCache;
 
 exports.getRootWWW = function(ctx, caCode, device)  {
-    if (!siteCache)
-        siteCache = require( path.join(ctx.basePath, './server/SiteCache.js'));
+    requireSiteCache(ctx);
 
     device = device || 'desktop';
     var  wsite = siteCache.lookupByCode( caCode );
@@ -22,18 +21,31 @@ exports.getSitesJSON = function(ctx)  {
 
 
 exports.reloadSites = function(ctx)  {
-	if (!siteCache)
-        siteCache = require(path.join(ctx.basePath, './server/SiteCache.js'));
+	requireSiteCache(ctx);
 
     siteCache.reload();
 }
 
 
 exports.resetBlockMap = function(ctx, caCode)  {
-    if (!siteCache)
-        siteCache = require(path.join(ctx.basePath, './server/SiteCache.js'));
+    requireSiteCache(ctx);
 
     var  website = siteCache.lookupByCode( caCode );
     if (website)
         website.resetBlockMap();
+}
+
+
+exports.resetLayoutMap = function(ctx, caCode)  {
+    requireSiteCache(ctx);
+
+    var  website = siteCache.lookupByCode( caCode );
+    if (website)
+        website.resetLayoutMap();
+}
+
+
+function  requireSiteCache(ctx)  {
+    if (!siteCache)
+        siteCache = require(path.join(ctx.basePath, './server/SiteCache.js'));
 }

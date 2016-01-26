@@ -13,6 +13,12 @@
     </div>
 
     <div class="form-group">
+        <label for="wsPath"><%=ph.pathLabel%></label>
+        <input type="text" class="form-control" id="wsPath" 
+               value="<%=value.sitePath || ''%>" placeholder="<%=ph.pathHolder%>">
+    </div>
+
+    <div class="form-group">
         <label for="wsTitle"><%=ph.titleLabel%></label>
         <input type="text" class="form-control" id="wsTitle" 
                value="<%=value.title || ''%>" placeholder="<%=ph.titleHolder%>">

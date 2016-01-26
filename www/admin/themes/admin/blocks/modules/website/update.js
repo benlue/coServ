@@ -39,6 +39,8 @@ function  updateSite(ctx, inData, cb)  {
                     sites[inData.domain] = siteInfo;
                 }
 
+                if (inData.sitePath)
+                    siteInfo.sitePath = inData.sitePath;
                 if (inData.title)
                     siteInfo.title = inData.title;
                 if (inData.locale)
@@ -155,7 +157,7 @@ function  createSite(ctx, inData, cb)  {
          sitePath = inData.sitePath || ('./' + caCode),
          theme = caCode;
 
-    var  wwwRoot = getWWWRoot(ctx, caCode),
+    var  wwwRoot = inData.sitePath || getWWWRoot(ctx, caCode),
          tempPath = path.join(ctx.basePath, '../cli/template');
 
     async.series([
@@ -190,7 +192,12 @@ function  createSite(ctx, inData, cb)  {
     	},
 
         function(cb)  {
-            fs.mkdir(wwwRoot, cb);
+            fs.stat( wwwRoot, function(err, stats)  {
+                if (err)
+                    fs.mkdir(wwwRoot, cb);
+                else
+                    cb();
+            });
         },
 
     	function(cb)  {
