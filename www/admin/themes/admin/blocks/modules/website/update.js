@@ -101,7 +101,7 @@ function  deleteSite(ctx, inData, cb)  {
     	},
 
     	function(caCode, cb)  {
-    		var  siteDir = path.join(siteUtil.getRootWWW(ctx, caCode), '../../../');
+    		var  siteDir = path.join(siteUtil.getRootWWW(ctx, caCode), '../../');
     		removeDir(siteDir, cb);
     	}
     ],

@@ -7,10 +7,10 @@ ctrl.updateConfig = function(isUpdate)  {
     if (bkURL.charAt(0) != '/')
         bkURL = '/' + bkURL;
     
-    var  blkCtrl = __.getCtrl('mainMenuBlockList'),
+    var  menuCtrl = __.getCtrl('pgMainMenu'),
          bkData = {
             url: bkURL,
-            theme: blkCtrl.getTheme(),
+            caCode: menuCtrl.getCurrentSite(),
             title: ctrl.sel('#blockTitle').val(),
             desc: ctrl.sel('#blockDesc').val(),
             service: ctrl.sel('#blockAPI').val(),
@@ -20,8 +20,12 @@ ctrl.updateConfig = function(isUpdate)  {
     $.post('/workArea/block/update.wsj', bkData, function(result) {
         if (result.errCode)
             alert( result.message );
-        else  if (!isUpdate)
-            blkCtrl.refresh(bkURL);
+        else  {
+            if (isUpdate)
+                alert( result.message );
+            else
+                blkCtrl.refresh(bkURL);
+        }
     }, 'json');
 }
 
@@ -30,10 +34,10 @@ ctrl.deleteBlock = function(bkName)  {
     event.preventDefault();
 
     if (confirm('<%=ph.js_confirm%>'))  {
-        var  blkCtrl = __.getCtrl('mainMenuBlockList'),
+        var  menuCtrl = __.getCtrl('pgMainMenu'),
              bkData = {
                 url: ctrl.sel('#blockURL').val(),
-                theme: blkCtrl.getTheme(),
+                caCode: menuCtrl.getCurrentSite(),
                 doDelete: true
             };
 
@@ -41,9 +45,10 @@ ctrl.deleteBlock = function(bkName)  {
             if (result.errCode)
                 alert( result.message );
             else  {
-                var  idxCtrl = __.getCtrl('workArea');
-                idxCtrl.dispatch('home');
+                var  idxCtrl = __.getCtrl('workArea'),
+                     blkCtrl = __.getCtrl('mainMenuBlockList');
 
+                idxCtrl.dispatch('home');
                 blkCtrl.refresh();
             }
         }, 'json');

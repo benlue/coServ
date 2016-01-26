@@ -1,12 +1,11 @@
 var  fs = require('fs'),
      path = require('path'),
-     siteLookup;
+     siteUtil = require('../../util/siteUtil.js');
 
 exports.execute = function(ctx, inData, cb)  {
-	var  inData = ctx.bi.query,
-         theme = inData.theme,
+	var  caCode = inData.caCode,
          bkName = inData.url,
-         viewPath = path.join(__dirname, '../../../../../' + theme + '/siteURI.json');
+         viewPath = path.join(siteUtil.getRootWWW(ctx, caCode), 'siteURI.json');
     //console.log('theme: %s, bkName: %s', theme, bkName);
   
   	fs.readFile(viewPath, 'utf8', function(err, data) {
@@ -30,10 +29,7 @@ exports.execute = function(ctx, inData, cb)  {
                                 message: "Cannot write to the block file."
                             });
                         
-                        if (!siteLookup)
-                            siteLookup = require(path.join(ctx.basePath, './server/SiteCache.js'));
-
-                        removeBlock(theme, viewPath, bkName, cb)
+                        removeBlock(ctx, theme, viewPath, bkName, cb)
                     });
                 }
                 else  {
@@ -61,12 +57,8 @@ exports.execute = function(ctx, inData, cb)  {
                                 message: "Cannot write to the block file."
                             });
 
-                        if (doCreate)  {
-                            if (!siteLookup)
-                                siteLookup = require(path.join(ctx.basePath, './server/SiteCache.js'));
-
-                            createBlock( theme, viewPath, bkName, cb );
-                        }
+                        if (doCreate)
+                            createBlock( ctx, theme, viewPath, bkName, cb );
                         else
                             cb({
                                 errCode: 0,
@@ -85,7 +77,7 @@ exports.execute = function(ctx, inData, cb)  {
 }
 
 
-function  createBlock(theme, viewPath, bkName, cb)  {
+function  createBlock(ctx, theme, viewPath, bkName, cb)  {
     var  bkPath = path.join(viewPath, '../blocks/views'),
     	 fpath = bkName.split('/').slice(1);
     
@@ -96,9 +88,8 @@ function  createBlock(theme, viewPath, bkName, cb)  {
             if (!fs.existsSync(bkPath))
                 fs.mkdirSync(bkPath);
         }
-        var  website = siteLookup.lookupByCode( theme );
-        if (website)
-            website.resetBlockMap();
+        
+        siteUtil.resetBlockMap(ctx, theme);
         
         cb({
             errCode: 0,
@@ -114,8 +105,8 @@ function  createBlock(theme, viewPath, bkName, cb)  {
 }
 
 
-function  removeBlock(theme, viewPath, bkName, cb) {
-    removeView(theme, viewPath, bkName, function(err) {
+function  removeBlock(ctx, theme, viewPath, bkName, cb) {
+    removeView(ctx, theme, viewPath, bkName, function(err) {
         if (err)
             return  cb({
                 errCode: 20,
@@ -157,7 +148,7 @@ function  removeBlock(theme, viewPath, bkName, cb) {
 }
 
 
-function  removeView(theme, viewPath, bkName, cb) {
+function  removeView(ctx, theme, viewPath, bkName, cb) {
     var  viewPath = path.join(viewPath, '../blocks/views');
 
     fs.readdir(viewPath + bkName, function(err, files)  {
@@ -191,9 +182,7 @@ function  removeView(theme, viewPath, bkName, cb) {
                 removeDir = false;
         }
 
-        var  website = siteLookup.lookupByCode( theme );
-        if (website)
-            website.resetBlockMap();
+        siteUtil.resetBlockMap(ctx, theme);
 
         cb();
     });

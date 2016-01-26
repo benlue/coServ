@@ -1,0 +1,9 @@
+{
+    "/index": {
+        "id": "no"
+    },
+    "/head": {
+        "id": "maybe",
+        "title": "Page Header 2"
+    }
+}

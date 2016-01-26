@@ -1,14 +1,14 @@
 var  fs = require('fs'),
-	 path = require('path');
+	 path = require('path'),
+     siteUtil = require('../../util/siteUtil.js');
 
 exports.execute = function(ctx, inData, cb)  {
-	var  inData = ctx.bi.query,
-		 theme = inData.theme,
+	var  caCode = inData.caCode,
 		 layout = inData.layout,
 		 bkType = inData.bkType,
 		 data = inData.data;
 
-	var  layoutDir = path.join(__dirname, '../../../../../' + theme + '/layout/' + layout)
+	var  layoutDir = path.join(siteUtil.getRootWWW(ctx, caCode), './layout/' + layout)
 	//console.log('layoutDir is ' + layoutDir);
 	
 	fs.readdir(layoutDir, function(err, files) {

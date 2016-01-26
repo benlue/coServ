@@ -27,3 +27,13 @@ exports.reloadSites = function(ctx)  {
 
     siteCache.reload();
 }
+
+
+exports.resetBlockMap = function(ctx, caCode)  {
+    if (!siteCache)
+        siteCache = require(path.join(ctx.basePath, './server/SiteCache.js'));
+
+    var  website = siteCache.lookupByCode( caCode );
+    if (website)
+        website.resetBlockMap();
+}

@@ -1,15 +1,15 @@
 var  fs = require('fs'),
-	 path = require('path');
+	 path = require('path'),
+     siteUtil = require('../../util/siteUtil.js');
 
 exports.execute = function(ctx, inData, cb)  {
-	var  inData = ctx.bi.query,
-		 theme = inData.theme,
+	var  caCode = inData.caCode,
 		 bkName = inData.bkName,
 		 bkType = inData.bkType,
 		 data = inData.data;
 
 	if (bkType === 'model')  {
-		var  modelRoot = path.join(__dirname, '../../../../../' + theme + '/blocks/modules'),
+		var  modelRoot = path.join(siteUtil.getRootWWW(ctx, caCode), './blocks/modules'),
 			 modPath = modelRoot,
 			 fpath = bkName.split('/'),
 			 plen = fpath.length-1,
@@ -46,7 +46,7 @@ exports.execute = function(ctx, inData, cb)  {
 	    }
 	}
 	else  {
-		var  blockRoot = path.join(__dirname, '../../../../../' + theme + '/blocks/views'),
+		var  blockRoot = path.join(siteUtil.getRootWWW(ctx, caCode), './blocks/views'),
 			 bkPath = path.join(blockRoot, bkName);
 		//console.log('bkPath is ' + bkPath);
 		
