@@ -6,3 +6,8 @@
 #menuPane {
 	display: none;
 }
+
+
+#websiteDropdown {
+	flex-grow: 1;
+}

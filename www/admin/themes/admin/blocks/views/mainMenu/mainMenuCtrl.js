@@ -17,9 +17,11 @@ ctrl.startup = function()  {
 	// set up the website selector (drop-down list)
 	var  dropCtrl = __.getCtrl('websiteList');
 
-	dropCtrl.addHandler('itemChosen', function(curCaCode) {
+	dropCtrl.addHandler('itemChosen', function(caCode) {
 		ctrl.sel('#wsConfigBtn').show();
 		ctrl.sel('#menuPane').show();
+
+		curCaCode = caCode;
 		
 		var  label = '<%=ph.websiteLabel%> [<b>' + curCaCode + '</b>] ';
 		dropCtrl.setLabel( label );

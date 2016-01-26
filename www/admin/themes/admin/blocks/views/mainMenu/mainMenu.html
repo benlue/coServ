@@ -1,6 +1,13 @@
 <div id="menuContainer">
-	<div id="websiteDropdown" style="margin-bottom: 5px;">
-		<% block('/mainMenu/website/list'); %>
+	<div class="flexContainer">
+		<div id="websiteDropdown" style="margin-bottom: 5px;">
+			<% block('/mainMenu/website/list'); %>
+		</div>
+		<div id="wsConfigBtn" style="display:none;">
+			<button class="btn btn-default" onclick="<%=ctrl%>.webSettings();">
+				<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+			</button>
+		</div>
 	</div>
 
 	<div id="menuPane">
@@ -8,19 +15,10 @@
 			<div class="panel panel-default">
 				<div class="panel-heading" role="tab" id="layoutHeading">
 					<h4 class="panel-title">
-						<a role="button" data-toggle="collapse" data-parent="#leftMainMenu" 
-						   href="#" aria-expanded="true" aria-controls="collapseOne"
-						   onclick="<%=ctrl%>.webSettings();">
-							<%=ph.wsSettings%>
-						</a>
-					</h4>
-				</div>
-			</div>
-
-			<div class="panel panel-default">
-				<div class="panel-heading" role="tab" id="layoutHeading">
-					<h4 class="panel-title">
 						<a role="button" data-toggle="collapse" data-parent="#leftMainMenu" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+							<button class="btn btn-xs btn-default pull-right">
+						   		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+						   	</button>
 							<%=ph.layouts%>
 						</a>
 					</h4>
@@ -36,6 +34,9 @@
 				<div class="panel-heading" role="tab" id="layoutHeading">
 					<h4 class="panel-title">
 						<a role="button" data-toggle="collapse" data-parent="#leftMainMenu" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+							<button class="btn btn-xs btn-default pull-right">
+						   		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+						   	</button>
 							<%=ph.blocks%>
 						</a>
 					</h4>
