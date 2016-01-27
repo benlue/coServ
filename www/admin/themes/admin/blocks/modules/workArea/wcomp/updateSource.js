@@ -4,31 +4,33 @@ var  fs = require('fs'),
 
 exports.execute = function(ctx, inData, cb)  {
 	var  caCode = inData.caCode,
-		 layout = inData.layout,
+		 wcomp = inData.wcomp,
 		 bkType = inData.bkType,
 		 data = inData.data;
 
-	var  layoutDir = path.join(siteUtil.getRootWWW(ctx, caCode), './layout/' + layout);
-	//console.log('layoutDir is ' + layoutDir);
+	var  wcompPath = path.join(siteUtil.getRootWWW(ctx, caCode), '../../wcomp/' + wcomp);
+	//console.log('wcompPath is ' + wcompPath);
 	
-	fs.readdir(layoutDir, function(err, files) {
+	fs.readdir(wcompPath, function(err, files) {
 		if (err)
 			return  cb({
 				errCode: 1,
-				message: 'The layout directory is not found.'
+				message: 'The wcomp directory is not found.'
 			});
 
 		var  filePath;
 		for (var i in files)  {
 			var  postFix = files[i].split('.')[1];
 			if (postFix === bkType)  {
-				filePath = path.join(layoutDir, files[i]);
+				filePath = path.join(wcompPath, files[i]);
 				break;
 			}
 		}
 
-		if (!filePath)
-			filePath = layoutDir + '/page.' + bkType;
+		if (!filePath)  {
+            var  wp = wcomp.split('/');
+			filePath = wcompPath + '/' + wp[wp.length-1] + '.' + bkType;
+        }
 
 		//console.log('filePath: ' + filePath);
 
@@ -36,7 +38,7 @@ exports.execute = function(ctx, inData, cb)  {
 			if (err)
 				return cb({
 					errCode: 2,
-					message: 'Cannot write to the layout file.'
+					message: 'Cannot write to the wcomp file.'
 				});
 
 			return  cb({

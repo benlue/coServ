@@ -42,6 +42,6 @@ exports.execute = function(ctx, inData, cb)  {
 		cb({
 			errCode: 0,
 			message: 'Ok',
-			list: []
+			value: {list: []}
 		})
 }

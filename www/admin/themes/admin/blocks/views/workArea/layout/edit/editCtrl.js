@@ -5,19 +5,18 @@ $(window).resize( function() {
 var  editor;
 
 ctrl.startup = function()  {
-	var  txArea = ctrl.sel('#codeEditor'),
-		 menuCtrl = __.getCtrl('pgMainMenu'),
-		 pdata = {
-		 	caCode: menuCtrl.getCurrentSite(),
-		 	layout: '<%= bi.query.layout %>',
-		 	mode: '<%= bi.query.mode %>'
-		 };
-
 	editor = CodeMirror.fromTextArea( ctrl.sel('#codeEditor')[0], {
 		lineNumbers: true,
       	indentUnit: 4,
 		mode: toEditMode('<%=bi.query.mode%>')
 	});
+
+	var  menuCtrl = __.getCtrl('pgMainMenu'),
+		 pdata = {
+		 	caCode: menuCtrl.getCurrentSite(),
+		 	layout: '<%= bi.query.layout %>',
+		 	mode: '<%= bi.query.mode %>'
+		 };
 	
 	window.setTimeout(function() {
 		$.post('/workArea/layout/source.txt', pdata, function(data) {

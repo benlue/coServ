@@ -1,13 +1,13 @@
-var  layCtrl;
+var  compCtrl;
 
 ctrl.startup = function() {
-	if (!layCtrl)  {
+	if (!compCtrl)  {
 		// don't register handler twice
-		layCtrl = __.getCtrl('layoutList');
+		compCtrl = __.getCtrl('wcompList');
 
-		layCtrl.addHandler('pillItemChosen', function(layoutName) {
+		compCtrl.addHandler('pillItemChosen', function(wcompName) {
 			var  idxCtrl = __.getCtrl('workArea');
-			idxCtrl.dispatch('layout', layoutName);
+			idxCtrl.dispatch('wcomp', wcompName);
 		});
 	}
 }
@@ -21,9 +21,10 @@ ctrl.refresh = function(itemName)  {
 
 	ctrl.reload({params: params}, function()  {
 		if (itemName)  {
-			$('#layoutList li a').each(function() {
+			ctrl.sel('#wcompList li a').each(function() {
+				console.log("item test: %s, target: %s", $(this).text(), itemName);
 				if ($(this).text() === itemName)
-					layCtrl.chooseItem( $(this), itemName );
+					compCtrl.chooseItem( $(this), itemName );
 			});
 		}
 	});

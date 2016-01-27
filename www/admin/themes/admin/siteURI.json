@@ -73,5 +73,26 @@
     },
     "/mainMenu/wcomp/list": {
         "id": "no"
+    },
+    "/workArea/wcomp/main": {
+        "id": "no"
+    },
+    "/workArea/wcomp/edit": {
+        "id": "no"
+    },
+    "/workArea/wcomp/source": {
+        "id": "no"
+    },
+    "/workArea/wcomp/updateSource": {
+        "id": "no"
+    },
+    "/workArea/wcomp/config": {
+        "id": "no"
+    },
+    "/workArea/wcomp/create": {
+        "id": "no"
+    },
+    "/workArea/wcomp/remove": {
+        "id": "no"
     }
 }

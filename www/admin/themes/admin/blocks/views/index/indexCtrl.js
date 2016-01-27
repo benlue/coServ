@@ -49,6 +49,19 @@ ctrl.dispatch = function(design, target) {
 			ctrl.embed('#bodyArea', '/workArea/layout/main', {params: params});
 		}
 	}
+	else  if (design === 'wcomp')  {
+		if (target === '_+_')  {
+			// create a new block
+			ctrl.embed('#bodyArea', '/workArea/wcomp/config');
+		}
+		else  if (target !== 'no-op')  {
+			var  params = {
+				wcomp: target
+			};
+
+			ctrl.embed('#bodyArea', '/workArea/wcomp/main', {params: params});
+		}
+	}
 };
 
 

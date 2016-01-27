@@ -1,4 +1,5 @@
-var  fs = require('fs'),
+var  async = require('async'),
+	 fs = require('fs'),
 	 path = require('path'),
 	 siteUtil = require('../../util/siteUtil.js');
 
@@ -6,42 +7,57 @@ exports.execute = function(ctx, inData, cb)  {
 	var  caCode = inData.caCode;
 
 	if (caCode)  {
-		var  wcompPath = path.join(siteUtil.getRootWWW(ctx, caCode), './wcomp');
+		var  wcompPath = path.join(siteUtil.getRootWWW(ctx, caCode), '../../wcomp'),
+			 wcompList = [];
 
-		fs.readdir(viewPath, function(err, dirList) {
-			if (err)
-				cb({errCode: 1, message: 'Cannot read the website design.'});
-			else  {
-				var  list = [],
-					 pathLen = viewPath.length + 1;
-
-				dirList.map(function (file) {
-			    	return path.join(viewPath, file);
-			    }).filter(function (file) {
-			    	return fs.statSync(file).isDirectory();
-			    }).forEach(function (file) {
-			    	var  layoutName = file.substring(pathLen);
-			    	
-			    	list.push({
-						title: layoutName,
-						arg: layoutName
-					});
-			    });
-
-				cb({
-					errCode: 0,
-					message: 'Ok',
-					value: {
-						list: list
-					}
-				});
-			}
+		walkPath(wcompPath, '/', wcompList, function(err)  {
+			//console.log('wcomp list:\n' + JSON.stringify(wcompList, null, 4));
+			cb({
+				errCode: 0,
+				message: 'Ok',
+				value: {
+					list: wcompList
+				}
+			});
 		});
 	}
 	else
 		cb({
 			errCode: 0,
 			message: 'Ok',
-			list: []
+			value: {list: []}
 		})
+}
+
+
+function  walkPath(baseDir, curDir, plist, cb)  {
+	var  workPath = path.join(baseDir, curDir);
+	//console.log('walk on path: %s', curDir);
+
+	fs.readdir(workPath, function(err, flist)  {
+		if (err)  {
+			console.error( err );
+			return  cb(err);
+		}
+
+		var  subList = [],
+			 isComp = !flist.length && curDir !== '/';
+
+		for (var i in flist)  {
+			var  f = flist[i],
+				 stats = fs.statSync( path.join(workPath, f) );
+
+			if (stats.isDirectory())
+				subList.push( path.join(curDir, f) );
+			else
+				isComp = isComp || stats.isFile();
+		}
+
+		if (isComp)
+			plist.push( {title: curDir, arg: curDir} );
+
+		async.each( subList, function(item, cb) {
+			walkPath( baseDir, item, plist, cb);
+		}, cb);
+	});
 }

@@ -1,0 +1,9 @@
+/* Add css rules here that are valid for the whole page */
+#pgHead {
+	text-align: center;
+	font-size: 18px;
+}
+
+#pgBody {
+	margin: 0px 20px;
+}

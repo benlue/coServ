@@ -1,4 +1,11 @@
 <%
+if (value.list.length === 0)  {
+	value.list = [
+		{title: ph.noWCompLabel, arg: 'no-op'}
+	];
+}
+%>
+<%
 	block('wcompList', 'bs/pills', {
 		params: {
 			isVertical: true,

@@ -4,22 +4,22 @@ $(window).resize( function() {
 
 var  editor;
 
-ctrl.startup = function()  { 
+ctrl.startup = function()  {
 	editor = CodeMirror.fromTextArea( ctrl.sel('#codeEditor')[0], {
 		lineNumbers: true,
       	indentUnit: 4,
-		mode: toEditMode('<%=bi.query.bkType%>')
+		mode: toEditMode('<%=bi.query.mode%>')
 	});
 
 	var  menuCtrl = __.getCtrl('pgMainMenu'),
 		 pdata = {
 		 	caCode: menuCtrl.getCurrentSite(),
-		 	bkName: '<%= bi.query.bkName %>',
-		 	bkType: '<%= bi.query.bkType %>'
+		 	wcomp: '<%= bi.query.wcomp %>',
+		 	mode: '<%= bi.query.mode %>'
 		 };
-
+	
 	window.setTimeout(function() {
-		$.post('/workArea/block/source.txt', pdata, function(data) {
+		$.post('/workArea/wcomp/source.txt', pdata, function(data) {
 			if (data)
 				editor.setValue( data );
 			editor.on('change', handleDocChange);
@@ -35,12 +35,12 @@ ctrl.saveDoc = function()  {
 	var  menuCtrl = __.getCtrl('pgMainMenu'),
 		 pdata = {
 			caCode: menuCtrl.getCurrentSite(),
-			bkName: '<%= bi.query.bkName %>',
-			bkType: '<%= bi.query.bkType %>',
+			wcomp: '<%= bi.query.wcomp %>',
+			bkType: '<%= bi.query.mode %>',
 			data: editor.getValue()
 		 };
 
-	$.post('/workArea/block/updateSource.wsj', pdata, function(result) {
+	$.post('/workArea/wcomp/updateSource.wsj', pdata, function(result) {
 		if (result.errCode === 0)
 			ctrl.sel('#saveBtn').attr('disabled', 'disabled');
 		showOnStatus( result.message );
@@ -52,7 +52,7 @@ function  adjustHeight()  {
 	if (editor)  {
 		// adjH is really a patch
 		var  h = ctrl.sel('#editPane').height() - ctrl.sel('.flexContainer').outerHeight(true),
-			 adjH = $('#bodyArea').height() - $('.WorkAreaBlockMain').height();
+			 adjH = $('#bodyArea').height() - $('.WorkAreaWcompMain').height();
 
 		editor.setSize(null, h + adjH);
 	}
@@ -82,12 +82,7 @@ function  toEditMode(bkType)  {
 			break;
 
 		case 'js':
-		case 'model':
 			mode = "javascript";
-			break;
-
-		case 'lang':
-			mode = "text/xml";
 			break;
 	}
 	return  mode;

@@ -1,0 +1,12 @@
+<div id="editPane">
+	<textarea id="codeEditor"></textarea>
+
+	<div class="flexContainer" style="margin-top: 10px;">
+		<p id="editStatusBar" class="bg-success statusBar">Status: </p>
+		<button type="button" id="saveBtn" 
+				class="btn btn-primary" style="flex-basis: 60px;" disabled="disabled"
+				onclick="<%=ctrl%>.saveDoc();">
+			<%=ph.saveBtn%>
+		</button>
+	</div>
+</div>

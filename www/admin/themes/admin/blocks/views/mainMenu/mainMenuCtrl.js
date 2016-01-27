@@ -31,6 +31,9 @@ ctrl.startup = function()  {
 
 		var  blkCtrl = __.getCtrl('mainMenuBlockList');
 		blkCtrl.reload({params: {caCode: curCaCode}});
+
+		var  compCtrl = __.getCtrl('mainMenuWcompList');
+		compCtrl.reload({params: {caCode: curCaCode}});
         
         var  idxCtrl = __.getCtrl('workArea');
 		idxCtrl.dispatch('home');
