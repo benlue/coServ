@@ -6,11 +6,5 @@
         "validFrom": "",
         "validTo": "",
         "locale": "en"
-    },
-    "127.0.0.1": {
-        "caCode": "hoola",
-        "title": "The [hoola] website",
-        "sitePath": "./hoola",
-        "locale": "en"
     }
 }
