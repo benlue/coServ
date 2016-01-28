@@ -65,6 +65,60 @@ ctrl.delWebsite = function()  {
 }
 
 
+ctrl.importSite = function(files)  {
+    var  domain = ctrl.sel('#wsDomain').val(),
+         sitePath = ctrl.sel('#wsPath').val();
+
+    //var  fileObj = $(fin)[0].files[0];
+    //console.log( JSON.stringify(fileObj, null, 4) );
+
+    // let's prepare the form data
+    var  formData = new FormData();
+    formData.append('domain', domain);
+    formData.append('sitePath', sitePath);
+    formData.append('siteFile', files[0]);
+
+    // send the request
+    var  xhr = new XMLHttpRequest();
+    xhr.onload = function()  {
+        if (xhr.status === 200)  {
+            alert('Ok');
+            document.location.reload();
+        }
+        else
+            alert('Failed to uplod the website.');
+    };
+
+    xhr.open('POST', '/website/import');
+    xhr.send( formData );
+}
+
+
+ctrl.importCheck = function()  {
+    var  domain = ctrl.sel('#wsDomain').val();
+
+    if (!domain)  {
+        event.preventDefault();
+
+        alert('<%=ph.jsNoDomain%>');
+        issueWarning('#wsDomain');
+    }
+}
+
+
+ctrl.importToggle = function(ckbox)  {
+    //console.log('is import checked: ' + $(ckbox).is(':checked'));
+    if ($(ckbox).is(':checked'))  {
+        ctrl.sel('.manualMode').hide();
+        ctrl.sel('.importMode').show();
+    }
+    else  {
+        ctrl.sel('.manualMode').show();
+        ctrl.sel('.importMode').hide();
+    }
+}
+
+
 ctrl.save = function()  {
     var  pdata = {
             domain: ctrl.sel('#wsDomain').val(),

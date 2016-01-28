@@ -21,8 +21,12 @@
       <zh>預設語系</zh>
     </ph>
     <ph id="homeLabel">
-      <en>Default Page</en>
-      <zh>預設首頁</zh>
+        <en>Default Page</en>
+        <zh>預設首頁</zh>
+    </ph>
+    <ph id="importLabel">
+        <en>Importing a website</en>
+        <zh>匯入網站</zh>
     </ph>
     <ph id="domainHolder">
       <en>Domain (or ip address) of this website</en>
@@ -55,6 +59,10 @@
     <ph id="exportBtn">
       <en>Export</en>
       <zh>匯出</zh>
+    </ph>
+    <ph id="importBtn">
+      <en>Import</en>
+      <zh>匯入網站</zh>
     </ph>
     <ph id="createBtn">
       <en>Create</en>

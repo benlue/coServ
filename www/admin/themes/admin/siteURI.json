@@ -65,6 +65,10 @@
     "/website/info": {
         "id": "maybe"
     },
+    "/website/import": {
+        "id": "maybe",
+        "upload": true
+    },
     "/website/update": {
         "id": "no"
     },
