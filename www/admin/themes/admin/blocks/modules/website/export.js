@@ -1,22 +1,12 @@
 var  archiver = require('archiver'),
 	 fs = require('fs'),
-	 path = require('path');
+	 path = require('path'),
+	 siteUtil = require('../util/siteUtil.js');
 
 exports.execute = function(ctx, inData, cb)  {
-	var  inData = ctx.bi.query,
-		 caCode = inData.caCode,
-		 expPath = inData.expPath,
-		 cwd = path.join(__dirname, '../../../../../../');
-		 
-	var  output = fs.createWriteStream( path.join(expPath, caCode + '.zip') ),
+	var  caCode = ctx.bi.id,
+		 cwd = path.join(siteUtil.getRootWWW(ctx, caCode), '../../../' + caCode),
 		 archive = archiver('zip');
-		 
-	output.on('close', function()  {
-		cb({
-			errCode: 0,
-			message: 'Ok'
-		});
-	});
 	
 	archive.on('error', function(err) {
 		cb({
@@ -25,8 +15,10 @@ exports.execute = function(ctx, inData, cb)  {
 		});
 	});
 	
-	archive.pipe( output );
 	archive.bulk([
-		{expand: true, cwd: cwd, src: ['*.*']}
+		{expand: true, cwd: cwd, src: ['**']}
 	]);
+	archive.finalize();
+
+	cb({_stream: archive});
 }

@@ -29,11 +29,11 @@
       <zh>網站所屬的網域或 ip 網址</zh>
     </ph>
     <ph id="appHolder">
-      <en>Code name of the website, also the directory name of the web theme.</en>
+      <en>Code name of the website, also the directory name of website files.</en>
       <zh>請輸入網站代碼</zh>
     </ph>
     <ph id="pathHolder">
-        <en>Enter the path of the website root directory.</en>
+        <en>Enter the website root directory.</en>
         <zh>請輸入網站檔案的根目錄</zh>
     </ph>
     <ph id="titleHolder">

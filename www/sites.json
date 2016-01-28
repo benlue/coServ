@@ -6,5 +6,11 @@
         "validFrom": "",
         "validTo": "",
         "locale": "en"
+    },
+    "127.0.0.1": {
+        "caCode": "hoola",
+        "title": "The [hoola] website",
+        "sitePath": "/Users/ben/proj/yr105/coWWW/hoola",
+        "locale": "en"
     }
 }

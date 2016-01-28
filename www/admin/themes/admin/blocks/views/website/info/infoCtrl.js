@@ -2,10 +2,14 @@
  * Export the whole website
  */
 ctrl.exportWebsite = function()  {
+    event.preventDefault();
+
     var  expPath = ctrl.sel('#wsExpDir').val();
-    if (!expPath)  {
+    if (expPath)  {
+    }
+    else  {
         alert('<%=ph.jsNoExpPathError%>');
-        return  issueWarning('#wsExpDir');
+        issueWarning('#wsExpDir');
     }
 }
 

@@ -12,11 +12,16 @@
                <%= value.domain  ?  'disabled' : ''%>>
     </div>
 
+    <%
+        // website created by 0.9.10 and earlier should not show this info
+        if (!value.caCode || value.sitePath)  {
+    %>
     <div class="form-group">
         <label for="wsPath"><%=ph.pathLabel%></label>
         <input type="text" class="form-control" id="wsPath" 
                value="<%=value.sitePath || ''%>" placeholder="<%=ph.pathHolder%>">
     </div>
+    <% } %>
 
     <div class="form-group">
         <label for="wsTitle"><%=ph.titleLabel%></label>
@@ -37,37 +42,31 @@
     </div>
 </form>
 
-    <div class="flexContainer" style="margin-left: 0px;">
-        <div style="flex-grow:1;">
-            <%
-            if (value.domain)  {
-            %>
-            <!--
-            <form class="form-inline">
-                <div class="form-group">
-                    <label for="wsExpDir"><%=ph.exportLabel%></label>
-                    <input type="text" class="form-control" id="wsExpDir">
-                </div>
-                <button type="button" class="btn btn-default"
-                        onclick="<%=ctrl%>.exportWebsite();"><%=ph.exportBtn%></button>
-            </form>
-            -->
-            <!--
-            <span class="btn btn-default btn-file">
-                匯出網站
-                <input type="file" webkitdirectory directory>
-            </span>
-            -->
-            <% } %>
-        </div>
-        <div style="flex-basis: content">
-            <%
-            if (value.domain)  {
-            %>
-            <button type="button" class="btn btn-danger" onclick="<%=ctrl%>.delWebsite();"><%= ph.deleteBtn %></button>
-            <button type="button" class="btn btn-primary" onclick="<%=ctrl%>.save();"><%= ph.saveBtn %></button>
-            <% } else { %>
-            <button type="button" class="btn btn-primary" onclick="<%=ctrl%>.create();"><%= ph.createBtn %></button>
-            <% } %>
-        </div>
+<div class="flexContainer" style="margin-left: 0px;">
+    <div style="flex-grow:1;">
+        <%
+            if (value.sitePath)  {
+        %>
+        <a class="btn btn-default" href="/website/export/<%=value.caCode%>" download="<%=value.caCode%>.zip">
+            <%=ph.exportBtn%>
+        </a>
+        <% } %>
     </div>
+    <div style="flex-basis: content">
+        <%
+        if (value.domain)  {
+        %>
+        <button type="button" class="btn btn-danger" onclick="<%=ctrl%>.delWebsite();"><%= ph.deleteBtn %></button>
+        <button type="button" class="btn btn-primary" onclick="<%=ctrl%>.save();"><%= ph.saveBtn %></button>
+        <% } else { %>
+        <button type="button" class="btn btn-primary" onclick="<%=ctrl%>.create();"><%= ph.createBtn %></button>
+        <% } %>
+    </div>
+</div>
+
+<!--
+<span class="btn btn-default btn-file">
+    匯出網站
+    <input type="file" webkitdirectory directory>
+</span>
+-->
