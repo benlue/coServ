@@ -1,0 +1,41 @@
+<!DOCTYPE html">
+<html>
+    <head>
+        <title><%=ctx.title%></title>
+        <meta name="description" content="<%=ctx.description%>" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="shortcut icon" href="../../wcoim/backstage/favicon.ico">
+        <% includeCss(); %>
+        <% includeJs(); %>
+
+        <style type="text/css">
+          <% css(); %>
+        </style>
+        <script type="text/javascript">
+      	<!--
+      	<% js(); %>
+      	$(document).ready(function() {
+          	$.ajaxSetup ({
+            		// Disable caching of AJAX responses
+            		cache: false
+          	});
+      	   __.initPage();
+      	});
+      	-->
+        </script>
+    </head>
+
+    <body>
+        <div id="drawer-back"></div>
+        <div id="pgHead" class="red lighten-2">
+           <% block('/head'); %>
+        </div>
+        <div id="pgLeft" class="red lighten-2">
+           <% block('/drawer'); %>
+        </div>
+        <div id="pgBody" class="teal lighten-2">
+            <% block(); %>
+        </div>
+    </body>
+</html>

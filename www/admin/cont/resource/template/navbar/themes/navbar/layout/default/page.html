@@ -1,0 +1,39 @@
+<!DOCTYPE html">
+<html>
+    <head>
+        <title><%=ctx.title%></title>
+        <meta name="description" content="<%=ctx.description%>" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="shortcut icon" href="../../wcoim/backstage/favicon.ico">
+        <% includeCss(); %>
+        <% includeJs(); %>
+
+        <style type="text/css">
+          <% css(); %>
+        </style>
+        <script type="text/javascript">
+      	<!--
+      	<% js(); %>
+      	$(document).ready(function() {
+          	$.ajaxSetup ({
+            		// Disable caching of AJAX responses
+            		cache: false
+          	});
+      	   __.initPage();
+      	});
+      	-->
+        </script>
+    </head>
+
+    <body>
+        <div id="pgHead">
+           <% block('/head'); %>
+        </div>
+        <div id="pgBody">
+            <% block(); %>
+        </div>
+        <div id="pgFooter">
+           <% block('/foot'); %>
+        </div>
+    </body>
+</html>
