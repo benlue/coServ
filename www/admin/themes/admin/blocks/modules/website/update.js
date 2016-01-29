@@ -158,7 +158,9 @@ function  createSite(ctx, inData, cb)  {
          theme = caCode;
 
     var  wwwRoot = inData.sitePath || getWWWRoot(ctx, caCode),
-         tempPath = path.join(ctx.basePath, '../cli/template');
+         //tempPath = path.join(ctx.basePath, '../cli/template');
+         adminSite = siteUtil.lookupSite(ctx, 'admin'),
+         tempPath = path.join( adminSite.getRootPath(), '../../cont/resource/template/drawer' );
 
     async.series([
     	function(cb)  {
@@ -194,12 +196,22 @@ function  createSite(ctx, inData, cb)  {
         function(cb)  {
             fs.stat( wwwRoot, function(err, stats)  {
                 if (err)
-                    fs.mkdir(wwwRoot, cb);
+                    fs.mkdir(wwwRoot, function(err) {
+                        if (err)
+                            cb(err);
+                        copyFiles(tempPath, wwwRoot, cb);
+                    });
                 else
                     cb();
             });
         },
 
+        function(cb)  {
+            var  oldp = path.join(wwwRoot, 'themes/drawer'),
+                 newp = path.join(wwwRoot, 'themes/' + caCode);
+            fs.rename(oldp, newp, cb);
+        }
+        /*
     	function(cb)  {
     		var  contDir = path.join(wwwRoot, './cont');
     		fs.mkdir(contDir, function(err) {
@@ -229,6 +241,7 @@ function  createSite(ctx, inData, cb)  {
             var  wcomp = path.join(wwwRoot, './wcomp/');
             fs.mkdir(wcomp, cb);
         }
+        */
     ],
     function(err, results) {
     	if (err)  {

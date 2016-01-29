@@ -20,6 +20,12 @@ exports.getSitesJSON = function(ctx)  {
 }
 
 
+exports.lookupSite = function(ctx, caCode)  {
+    requireSiteCache(ctx);
+    return  siteCache.lookupByCode( caCode );
+}
+
+
 exports.reloadSites = function(ctx)  {
 	requireSiteCache(ctx);
 
