@@ -1,4 +1,5 @@
-var  config = require('./lib/server/config.js'),
+var  fs = require('fs'),
+	 config = require('./lib/server/config.js'),
 	 bodyParser = require('body-parser'),
 	 serverStatic = require('serve-static'),
 	 path = require('path'),
@@ -15,14 +16,21 @@ var  port = config.getServer().port || 8080,
 var app = connect()
 	.use(require('morgan')('dev'))
 	.use(require('cookie-parser')())
-	.use(serverStatic(path.join(__dirname, './www/admin/cont')))
-	.use(serverStatic(wwwPath + '/cont'))
-	//.use(require('serve-static')(wwwPath + '/cont'))
+	.use(serverStatic(wwwPath + '/cont'));
 	//.use(require('express-session')({ secret: 'my secret here' }))
-	.use(siteLookup)
-	.use(uploader)
-	.use(bodyParser.urlencoded({extended: true}))
-	.use(webFront);
+
+// supply static file directories for all sites running on coServ
+var  staticList = listStaticPath();
+for (var i in staticList)  {
+	app.use(serverStatic(staticList[i]));
+}
+
+app
+.use(siteLookup)
+.use(require('connect-multiparty')())
+.use(uploader)
+.use(bodyParser.urlencoded({extended: true}))
+.use(webFront);
 
 var  server = http.createServer(app);
 server.listen(port);
@@ -31,4 +39,30 @@ exports.restart = function()  {
 	server.close();
 	server = http.createServer(app);
 	server.listen(port);
+}
+
+
+function  listStaticPath()  {
+	var  siteFile = path.join( wwwPath, 'sites.json' ),
+		 pathList = [];
+
+	try  {
+		var  sites = JSON.parse( fs.readFileSync(siteFile) );
+		for (var domain in sites)  {
+			var  siteInfo = sites[domain],
+				 sitePath = siteInfo.sitePath;
+
+			if (sitePath)  {
+				if (sitePath.charAt(0) === '.')
+					sitePath = path.join( wwwPath, sitePath );
+
+				pathList.push( path.join(sitePath, './cont') );
+			}
+		}
+	}
+	catch (e)  {
+		console.error( e );
+	}
+
+	return  pathList;
 }
