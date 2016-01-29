@@ -9,18 +9,16 @@ exports.execute = function(ctx, inData, cb)  {
 		 sitePath = inData.sitePath,
 		 files = inData.files;
 
-	console.log('domain: %s, sitePath: %s', domain, sitePath);
-	//console.log('do we have files? ' + (files  ?  'true' : 'false'));
-	//console.log('uploaded files\n' + JSON.stringify(files, null, 4));
+	//console.log('domain: %s, sitePath: %s', domain, sitePath);
 
 	var  keys = Object.keys(files);
 
-	//if (Array.isArray(files[keys[0]]))
-	//	files = files[keys[0]];
+	if (Array.isArray(files[keys[0]]))
+		files = files[keys[0]];
 
 	var  sitesFile = siteUtil.getSitesJSON(ctx),
 		 fileObj = files.siteFile;
-	console.log('file obj:\n' + JSON.stringify(fileObj, null, 4));
+	//console.log('file obj:\n' + JSON.stringify(fileObj, null, 4));
 
 	fs.readFile(sitesFile, 'utf8', function(err, data) {
 		if (err)
@@ -43,8 +41,16 @@ exports.execute = function(ctx, inData, cb)  {
 					});
 
 				// now let's extract the uploaded file
-				var  zip = new adm( fileObj.path );
-				zip.extractAllTo( destPath, true );
+				try  {
+					var  zip = new adm( fileObj.path );
+					zip.extractAllTo( destPath, true );
+				}
+				catch (e)  {
+					return  cb({
+						errCode: 11,
+						message: ''
+					})
+				}
 
 				var  nfList = fs.readdirSync(destPath),
 					 caCode;
@@ -55,13 +61,13 @@ exports.execute = function(ctx, inData, cb)  {
 						break;
 					}
 				}
-				console.log('caCode: ' + caCode);
+				//console.log('caCode: ' + caCode);
 
 				var  siteWWW = path.join(destPath, caCode);
 				fs.readFile( path.join(siteWWW, 'mySite.json'), 'utf8', function(err, data) {
 					if (err)
 						return  cb({
-							errCode: 11,
+							errCode: 12,
 							message: 'The website file seems to be corrupted'
 						});
 
@@ -72,7 +78,7 @@ exports.execute = function(ctx, inData, cb)  {
 					fs.writeFile(sitesFile, JSON.stringify(sites, null, 4), 'utf8', function(err) {
 						if (err)
 							return  cb({
-								errCode: 12,
+								errCode: 13,
 								message: 'Unable to update the sites.json file'
 							});
 
