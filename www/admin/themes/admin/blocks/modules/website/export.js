@@ -5,7 +5,7 @@ var  archiver = require('archiver'),
 
 exports.execute = function(ctx, inData, cb)  {
 	var  caCode = ctx.bi.id,
-		 cwd = path.join(siteUtil.getRootWWW(ctx, caCode), '../../../' + caCode),
+		 cwd = path.join(siteUtil.getRootWWW(ctx, caCode), '../../../'),
 		 sitesFile = siteUtil.getSitesJSON(ctx);
 
 	fs.readFile(sitesFile, 'utf8', function(err, data) {
@@ -22,7 +22,7 @@ exports.execute = function(ctx, inData, cb)  {
 			if (siteInfo)  {
 				delete  siteInfo.sitePath;
 
-				var  mySite = path.join(cwd, 'mySite.json');
+				var  mySite = path.join(cwd, './' + caCode + '/mySite.json');
 				fs.writeFile( mySite, JSON.stringify(siteInfo), 'utf8', function(err)  {
 					if (err)
 						return  cb({
@@ -55,7 +55,7 @@ exports.execute = function(ctx, inData, cb)  {
 		catch (e)  {
 			cb({
 				errCode: 2,
-				message: 'The sites.json file has been corrupted.'
+				message: 'The sites.json file is corrupted.'
 			});
 		}
 		

@@ -83,13 +83,13 @@ ctrl.importSite = function(files)  {
     xhr.onload = function()  {
         if (xhr.status === 200)  {
             alert('Ok');
-            document.location.reload();
+            //document.location.reload();
         }
         else
             alert('Failed to uplod the website.');
     };
 
-    xhr.open('POST', '/website/import');
+    xhr.open('POST', '/website/import.wsj');
     xhr.send( formData );
 }
 
