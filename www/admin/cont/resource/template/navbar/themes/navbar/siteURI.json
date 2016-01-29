@@ -1,0 +1,20 @@
+{
+    "/index": {
+        "id": "no"
+    },
+    "/head": {
+        "id": "no"
+    },
+    "/nav/about": {
+        "id": "no"
+    },
+    "/nav/news": {
+        "id": "no"
+    },
+    "/nav/product": {
+        "id": "no"
+    },
+    "/foot": {
+        "id": "no"
+    }
+}

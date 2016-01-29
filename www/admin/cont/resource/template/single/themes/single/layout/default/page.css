@@ -1,0 +1,25 @@
+/* Add css rules here that are valid for the whole page */
+#pgHead {
+	width: 100%;
+	height: 80px;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: 9;
+	text-align: center;
+	color: #FFF;
+}
+
+#pgBody {
+	width: 100%;
+	min-height: 100%;
+	padding: 10px;
+	margin-top: 80px;
+}
+
+#pgFooter {
+	width: 100%;
+	height: 100px;
+	text-align: center;
+	color: #FFF;
+}
