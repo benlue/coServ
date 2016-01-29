@@ -69,16 +69,27 @@ exports.execute = function(ctx, inData, cb)  {
 					siteInfo.sitePath = siteWWW;
 					sites[domain] = siteInfo;
 
-					fs.readFile(sitesFile, JSON.stringify(sites, null, 4), 'utf8', function(err) {
+					fs.writeFile(sitesFile, JSON.stringify(sites, null, 4), 'utf8', function(err) {
+						if (err)
+							return  cb({
+								errCode: 12,
+								message: 'Unable to update the sites.json file'
+							});
+
+						// ok. clean up the mess
+						siteUtil.reloadSites( ctx );
+						fs.unlinkSync(path.join(siteWWW, 'mySite.json'));
+
+						cb( {
+							errCode: 0,
+							message: 'Ok'
+						});
 					});
 				});
 
 				fs.unlinkSync(fileObj.path);
 
-				cb( {
-					errCode: 0,
-					message: 'Ok'
-				});
+				
 			});
 		}
 		catch (e)  {
