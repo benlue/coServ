@@ -290,7 +290,7 @@ function  copyFiles(srcPath, destPath, cb)  {
                     var  destF = path.join( destPath, item );
 
                     if (stats.isFile())  {
-                        fs.readFile( f, (err, data) => {
+                        fs.readFile( f, function(err, data) {
                             if (err)
                                 cb(err);
                             else
