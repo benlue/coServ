@@ -30,7 +30,13 @@ app
 .use(require('connect-multiparty')())
 .use(uploader)
 .use(bodyParser.urlencoded({extended: true}))
-.use(webFront);
+.use(webFront)
+.use(function(err, req, res, next)  {
+	if (err)  {
+		res.writeHead(404, 'Unknown site');
+		res.end();
+	}
+});
 
 var  server = http.createServer(app);
 server.listen(port);

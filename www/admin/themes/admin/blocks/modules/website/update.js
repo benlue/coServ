@@ -4,6 +4,7 @@ var  async = require('async'),
      siteUtil = require('../util/siteUtil.js');
 
 var  config,
+     coServ,
 	 SiteCache;
 
 exports.execute = function(ctx, inData, cb)  {
@@ -117,6 +118,11 @@ function  deleteSite(ctx, inData, cb)  {
             // ok. we can now reload the site cache to have the new website taking effect.
             siteUtil.reloadSites( ctx );
 
+            // restart server to stop static file loading of the removed website
+            if (!coServ)
+                coServ = require(path.join(ctx.basePath, '../coServ.js'));
+            coServ.restart();
+
     		cb({
     			errCode: 0,
     			message: 'Ok'
@@ -154,13 +160,19 @@ function  removeDir(dir, cb)  {
 function  createSite(ctx, inData, cb)  {
 	var  domain = inData.domain,
          caCode = inData.caCode,
-         sitePath = inData.sitePath || ('./' + caCode),
          theme = caCode;
 
-    var  wwwRoot = inData.sitePath || getWWWRoot(ctx, caCode),
-         //tempPath = path.join(ctx.basePath, '../cli/template');
+    var  sitePath,
+         wwwRoot,
          adminSite = siteUtil.lookupSite(ctx, 'admin'),
          tempPath = path.join( adminSite.getRootPath(), '../../cont/resource/template/drawer' );
+
+    if (inData.sitePath)
+        wwwRoot = sitePath = path.join(inData.sitePath, caCode)
+    else  {
+        sitePath = './' + caCode;
+        wwwRoot = getWWWRoot(ctx, caCode);
+    }
 
     async.series([
     	function(cb)  {
@@ -194,6 +206,7 @@ function  createSite(ctx, inData, cb)  {
     	},
 
         function(cb)  {
+            // copy the whole template
             fs.stat( wwwRoot, function(err, stats)  {
                 if (err)
                     fs.mkdir(wwwRoot, function(err) {
@@ -201,6 +214,17 @@ function  createSite(ctx, inData, cb)  {
                             cb(err);
                         copyFiles(tempPath, wwwRoot, cb);
                     });
+                else
+                    cb();
+            });
+        },
+
+        function(cb)  {
+            // make sure the wcomp directory is available
+            var  wcomPath = path.join(wwwRoot, 'wcomp');
+            fs.stat( wcomPath, function(err, stats)  {
+                if (err)
+                    fs.mkdir( wcomPath, cb );
                 else
                     cb();
             });
@@ -227,6 +251,11 @@ function  createSite(ctx, inData, cb)  {
     	else  {
     		// ok. we can now reload the site cache to have the new website taking effect.
     		siteUtil.reloadSites( ctx );
+
+            // restart server to enable static file loading
+            if (!coServ)
+                coServ = require(path.join(ctx.basePath, '../coServ.js'));
+            coServ.restart();
 
 	    	cb({
 		        errCode: 0,
