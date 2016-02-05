@@ -211,37 +211,6 @@ function  createSite(ctx, inData, cb)  {
                  newp = path.join(wwwRoot, 'themes/' + caCode);
             fs.rename(oldp, newp, cb);
         }
-        /*
-    	function(cb)  {
-    		var  contDir = path.join(wwwRoot, './cont');
-    		fs.mkdir(contDir, function(err) {
-                if (err)
-                    cb(err);
-                else
-                    copyFiles(path.join(tempPath, './cont'), contDir, cb);
-            });
-    	},
-
-        function(cb)  {
-            var  themeRoot = path.join(wwwRoot, './themes/');
-            fs.mkdir(themeRoot, cb);
-        },
-
-    	function(cb)  {
-    		var  themeRoot = path.join(wwwRoot, './themes/' + theme);
-    		fs.mkdir(themeRoot, function(err)  {
-    			if (err)
-    				return  cb(err);
-
-                copyFiles( path.join(tempPath, './HLF'), themeRoot, cb );
-    		});
-    	},
-
-        function(cb)  {
-            var  wcomp = path.join(wwwRoot, './wcomp/');
-            fs.mkdir(wcomp, cb);
-        }
-        */
     ],
     function(err, results) {
     	if (err)  {

@@ -21,7 +21,7 @@
            		 ];
         %>
         <%
-            block('langList', 'bs/dropdown', {
+            wcomp('langList', '/bs/dropdown', {
                 params: {
                     btnID: 'langDropdown',
                     btnLabel: ph.selectLabel + '[<b>' + bi.locale + '</b>]',
@@ -35,7 +35,7 @@
 
 <!-- new website dialog -->
 <%
-    block('wsCreateDialog', 'bs/modal', {
+    wcomp('wsCreateDialog', '/bs/modal', {
         params: {
             cssID: 'createWSDialog',
             title: 'Create A Website',
