@@ -1,20 +1,20 @@
 /* Add css rules here that are valid for the whole page */
 #pgHead {
-	text-align: center;
-	font-size: 18px;
+    text-align: center;
+    font-size: 18px;
 }
 
 #pgLeft {
-	float: left;
-	width: 240px;
+    float: left;
+    width: 240px;
 }
 
 #pgBody {
-	float: left;
+    float: left;
 }
 
 .clear {
-	clear: both;
+    clear: both;
 }
 
 
@@ -38,7 +38,7 @@
     height: 100%;
     margin-left: -250px;
     overflow-y: auto;
-    background: #000;
+    background: #f6f6f6;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;

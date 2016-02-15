@@ -6,7 +6,8 @@ var  badgeHtml = '<a href="#" class="badge-ok">' +
         		 '</a>';
 
 ctrl.goBack = function()  {
-    ctrl.reload('/website/info');
+    var  pdata = collectParam();
+    ctrl.reload('/website/info', {params: pdata});
 }
 
 
@@ -25,16 +26,9 @@ ctrl.chooseTemplate = function(link, tempName)  {
 
 
 ctrl.create = function()  {
-    var  pdata = {
-            domain: ctrl.sel('#wsDomain').val(),
-            caCode: ctrl.sel('#wsApp').val(),
-            sitePath: ctrl.sel('#wsPath').val(),
-            title: ctrl.sel('#wsTitle').val(),
-            locale: ctrl.sel('#wsLocale').val(),
-            homePage: ctrl.sel('#wsHome').val(),
-            temName: curTempName,
-            doCreate: true
-         };
+    var  pdata = collectParam();
+    pdata.tempName = curTempName;
+    pdata.doCreate = true;
 
     $.post('/website/update.wsj', pdata, function(result) {
         alert( result.message );
@@ -42,4 +36,16 @@ ctrl.create = function()  {
         if (result.errCode === 0)
             document.location.reload();
     }, 'json');
+}
+
+
+function  collectParam()  {
+    return  {
+        domain: ctrl.sel('#wsDomain').val(),
+        caCode: ctrl.sel('#wsApp').val(),
+        sitePath: ctrl.sel('#wsPath').val(),
+        title: ctrl.sel('#wsTitle').val(),
+        locale: ctrl.sel('#wsLocale').val(),
+        homePage: ctrl.sel('#wsHome').val()
+    };
 }

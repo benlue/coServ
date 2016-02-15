@@ -2,13 +2,13 @@
     <div class="form-group">
         <label for="wsDomain" class="text-danger"><%=ph.domainLabel%></label>
         <input type="text" class="form-control" id="wsDomain" 
-                value="<%=value.domain || ''%>" placeholder="<%=ph.domainHolder%>">
+                value="<%=value.domain || bi.query.domain || ''%>" placeholder="<%=ph.domainHolder%>">
     </div>
 
     <div class="form-group manualMode">
         <label for="wsApp" class="text-danger"><%=ph.appLabel%></label>
         <input type="text" class="form-control" id="wsApp" 
-               value="<%=value.caCode || ''%>" placeholder="<%=ph.appHolder%>"
+               value="<%=value.caCode || bi.query.caCode || ''%>" placeholder="<%=ph.appHolder%>"
                <%= value.domain  ?  'disabled' : ''%>>
     </div>
 
@@ -19,7 +19,7 @@
     <div class="form-group">
         <label for="wsPath"><%=ph.pathLabel%></label>
         <input type="text" class="form-control" id="wsPath" 
-               value="<%=value.sitePath || ''%>" placeholder="<%=ph.pathHolder%>">
+               value="<%=value.sitePath || bi.query.sitePath || ''%>" placeholder="<%=ph.pathHolder%>">
     </div>
     <% } %>
 
@@ -32,13 +32,13 @@
     <div class="form-group manualMode">
         <label for="wsLocale"><%=ph.localeLabel%></label>
         <input type="text" class="form-control" id="wsLocale" 
-               value="<%=value.locale || ''%>" placeholder="<%=ph.localeHolder%>">
+               value="<%=value.locale || bi.query.locale || ''%>" placeholder="<%=ph.localeHolder%>">
     </div>
     
     <div class="form-group manualMode">
         <label for="wsHome"><%=ph.homeLabel%></label>
         <input type="text" class="form-control" id="wsHome" 
-               value="<%=value.home || ''%>" placeholder="<%=ph.homeHolder%>">
+               value="<%=value.home || bi.query.homePage || ''%>" placeholder="<%=ph.homeHolder%>">
     </div>
 </form>
 

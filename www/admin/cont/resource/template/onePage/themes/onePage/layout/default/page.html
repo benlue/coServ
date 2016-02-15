@@ -13,21 +13,21 @@
           <% css(); %>
         </style>
         <script type="text/javascript">
-      	<!--
-      	<% js(); %>
-      	$(document).ready(function() {
-          	$.ajaxSetup ({
-            		// Disable caching of AJAX responses
-            		cache: false
-          	});
-      	   __.initPage();
-      	});
-      	-->
+        <!--
+        <% js(); %>
+        $(document).ready(function() {
+            $.ajaxSetup ({
+                // Disable caching of AJAX responses
+                cache: false
+            });
+           __.initPage();
+        });
+        -->
         </script>
     </head>
 
     <body>
-        <div id="pgHead" class="blue lighten-2">
+        <div id="pgHead" class="teal lighten-2">
           <% block('/head'); %>
         </div>
         <div id="pgBody">
@@ -36,7 +36,7 @@
           <% block('/section/section2'); %>
           <% block('/section/section3'); %>
         </div>
-        <div id="pgFooter" class="blue lighten-2">
+        <div id="pgFooter" class="teal lighten-4">
           <% block('/foot'); %>
         </div>
     </body>

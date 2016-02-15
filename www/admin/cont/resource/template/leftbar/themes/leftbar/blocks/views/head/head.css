@@ -4,9 +4,9 @@
 	left: 10px;
 }
 
-.head-layout {
+#head-layout {
 	width: 100%;
 	padding: 10px;
 	position: relative;
-	background-color: #dedede;
+	background-color: #46b5ac;
 }

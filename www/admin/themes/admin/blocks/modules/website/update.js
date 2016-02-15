@@ -161,12 +161,13 @@ function  removeDir(dir, cb)  {
 function  createSite(ctx, inData, cb)  {
 	var  domain = inData.domain,
          caCode = inData.caCode,
+         webTemplate = inData.tempName || DEFAULT_TEMP,
          theme = caCode;
 
     var  sitePath,
          wwwRoot,
          adminSite = siteUtil.lookupSite(ctx, 'admin'),
-         tempPath = path.join( adminSite.getRootPath(), '../../cont/resource/template/' + DEFAULT_TEMP );
+         tempPath = path.join( adminSite.getRootPath(), '../../cont/resource/template/' + webTemplate );
 
     if (inData.sitePath)
         wwwRoot = sitePath = path.join(inData.sitePath, caCode)
@@ -232,7 +233,7 @@ function  createSite(ctx, inData, cb)  {
         },
 
         function(cb)  {
-            var  oldp = path.join(wwwRoot, 'themes/' + DEFAULT_TEMP),
+            var  oldp = path.join(wwwRoot, 'themes/' + webTemplate),
                  newp = path.join(wwwRoot, 'themes/' + caCode);
             fs.rename(oldp, newp, cb);
         }
