@@ -66,8 +66,8 @@
         <button type="button" class="btn btn-primary" onclick="<%=ctrl%>.save();"><%= ph.saveBtn %></button>
     <% } else { %>
         <button type="button" class="btn btn-primary manualMode" 
-                onclick="<%=ctrl%>.create();">
-            <%= ph.createBtn %>
+                onclick="<%=ctrl%>.nextStep();">
+            <%= ph.nextBtn %>
         </button>
         <span class="btn btn-primary btn-file importMode" style="display:none;">
             <%= ph.importBtn %>
@@ -78,10 +78,3 @@
     <% } %>
     </div>
 </div>
-
-<!--
-<span class="btn btn-default btn-file">
-    匯出網站
-    <input type="file" webkitdirectory directory>
-</span>
--->

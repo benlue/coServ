@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phrases>
+    <ph id="createBtn">
+		<en>Create</en>
+		<zh>建立網站</zh>
+    </ph>
+    <ph id="backBtn">
+		<en>&lt;&lt; Back</en>
+		<zh>回上一步</zh>
+    </ph>
+</phrases>

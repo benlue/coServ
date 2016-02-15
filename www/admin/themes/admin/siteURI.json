@@ -98,5 +98,8 @@
     },
     "/workArea/wcomp/remove": {
         "id": "no"
+    },
+    "/website/showTemplates": {
+        "id": "no"
     }
 }

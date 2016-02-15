@@ -5,7 +5,8 @@ var  async = require('async'),
 
 var  config,
      coServ,
-	 SiteCache;
+	 SiteCache,
+     DEFAULT_TEMP = 'drawer';
 
 exports.execute = function(ctx, inData, cb)  {
 	var  inData = ctx.bi.query;
@@ -165,7 +166,7 @@ function  createSite(ctx, inData, cb)  {
     var  sitePath,
          wwwRoot,
          adminSite = siteUtil.lookupSite(ctx, 'admin'),
-         tempPath = path.join( adminSite.getRootPath(), '../../cont/resource/template/drawer' );
+         tempPath = path.join( adminSite.getRootPath(), '../../cont/resource/template/' + DEFAULT_TEMP );
 
     if (inData.sitePath)
         wwwRoot = sitePath = path.join(inData.sitePath, caCode)
@@ -231,7 +232,7 @@ function  createSite(ctx, inData, cb)  {
         },
 
         function(cb)  {
-            var  oldp = path.join(wwwRoot, 'themes/drawer'),
+            var  oldp = path.join(wwwRoot, 'themes/' + DEFAULT_TEMP),
                  newp = path.join(wwwRoot, 'themes/' + caCode);
             fs.rename(oldp, newp, cb);
         }

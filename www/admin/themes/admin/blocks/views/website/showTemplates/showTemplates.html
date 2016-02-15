@@ -1,0 +1,47 @@
+<h5 style="margin-top: 0;">Choose a website template...</h5>
+<input id="wsDomain" type="hidden" value="<%=bi.query.domain%>">
+<input id="wsApp" type="hidden" value="<%=bi.query.caCode%>">
+<input id="wsPath" type="hidden" value="<%=bi.query.sitePath%>">
+<input id="wsTitle" type="hidden" value="<%=bi.query.title%>">
+<input id="wsLocale" type="hidden" value="<%=bi.query.locale%>">
+<input id="wsHome" type="hidden" value="<%=bi.query.homePage%>">
+
+<div class="flexView">
+    <div class="flexImage">
+        <img class="wsPreview" src="/resource/template/drawer/doc/preview.png"
+             onclick="<%=ctrl%>.chooseTemplate(this, 'drawer');">
+    </div>
+    <div class="flexImage">
+        <img class="wsPreview" src="/resource/template/leftbar/doc/preview.png"
+             onclick="<%=ctrl%>.chooseTemplate(this, 'leftbar');">
+    </div>
+</div>
+
+<div class="flexView">
+    <div class="flexImage">
+        <img class="wsPreview" src="/resource/template/navbar/doc/preview.png"
+             onclick="<%=ctrl%>.chooseTemplate(this, 'navbar');">
+        <!--
+        <a href="#" class="badge-ok">
+            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+        </a>
+        -->
+    </div>
+    <div class="flexImage">
+        <img class="wsPreview" src="/resource/template/single/doc/preview.png"
+             onclick="<%=ctrl%>.chooseTemplate(this, 'single');">
+    </div>
+</div>
+
+<div class="flexContainer">
+    <div style="flex-grow:1;">
+        <button class="btn btn-success" onclick="<%=ctrl%>.goBack();">
+            <%=ph.backBtn%>
+        </button>
+    </div>
+    <div style="flex-basis: content">
+        <button class="btn btn-primary" onclick="<%=ctrl%>.create();">
+            <%=ph.createBtn%>
+        </button>
+    </div>
+</div>

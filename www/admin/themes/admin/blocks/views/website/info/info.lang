@@ -64,9 +64,9 @@
       <en>Import</en>
       <zh>匯入網站</zh>
     </ph>
-    <ph id="createBtn">
-      <en>Create</en>
-      <zh>新增</zh>
+    <ph id="nextBtn">
+      <en>Next</en>
+      <zh>下一步</zh>
     </ph>
     <ph id="saveBtn">
       <en>Save</en>

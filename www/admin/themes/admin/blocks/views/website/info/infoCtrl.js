@@ -14,7 +14,7 @@ ctrl.exportWebsite = function()  {
 }
 
 
-ctrl.create = function()  {
+ctrl.nextStep = function()  {
     var  domain = ctrl.sel('#wsDomain').val(),
          caCode = ctrl.sel('#wsApp').val();
          
@@ -38,12 +38,7 @@ ctrl.create = function()  {
             doCreate: true
          };
 
-    $.post('/website/update.wsj', pdata, function(result) {
-        alert( result.message );
-        
-        if (result.errCode === 0)
-            document.location.reload();
-    }, 'json');
+    ctrl.reload('/website/showTemplates', {params: pdata});
 }
 
 
