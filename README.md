@@ -12,17 +12,15 @@ With the arrival of HTML5, CSS3 and ES5/ES6, developers actually have enough fac
 + Help developers to fully utilize HTML, CSS and Javascript.
 
 ## The Latest Release
-Below are highlights of recent releases:
+Below are highlights of recent releases. More details in [release notes](https://github.com/coimotion/coServ/blob/master/ReleaseNote.md).
+
++ [v0.10.0] A new feature called **wcomp** was introduced (see [below](#wcomp) for more explanations). A more managable websit file structure was introduced and the design console can import &amp; export websites.
 
 + [v0.9.9] A web interface (coServ design console) has been added to manage & design websites running on a coServ server. For details, check the "Design Console" section below.
 
 + [v0.9.8] wFront.js was updated (wFront.js is the main controller of coServ on the client side). If you do not use the default web directory ('/www'), remember to copy the wFront.js file to your custom web directory (/www/cont/shared/js/wFront.js).
 
-+ [v0.9.7] Cleaned up the code base and many codes have been written. This release can be regarded as the release candidate of v1.0. More test cases will be added before release 1.0.
-
 + [v0.9.6] It's now possible to do server side redirect. This is how: create a block (without view) and make a customized module for the block. In the customized module, simply return {"_httpCode": 302, "_httpHeaders": {Location: 'the redirect URL'}} in the callback.
-
-+ [v0.9.5] Upgraded coServ dependencies. It's recommended to run coServ with the latest version (v0.12.2) of node.js.
 
 + [v0.9.3] coServ now supports live reload via [gulp](http://gulpjs.com). The needed gulpfile.js is included in the release. To use live reload, both gulp and [browser-sync](http://www.browsersync.io) have to be installed.
 
@@ -47,6 +45,12 @@ Starting from the 0.9.9 release, a web interface called "design console" was add
 
 To play with the design console, simply start coServ (node coServ) and point your browser to "localhost:8080". The website you're working on can be assigned to "127.0.0.1". That's a small trick to host two websites on your local machine.
 
+<a name="wcomp"></a>
+## Wcomps
+A new concept called **wcomp** was introduced in v0.10.0. With **wcomps**, you can package sophisticated UI designs into a component which is ready to be re-used anywhere in your websites.
+
+Conceptually, wcomps are very similar to [web components](http://webcomponents.org/) except that wcomps do not use shadow DOM and do not require polyfill or native support from browsers. Wcomps are also similar to blocks. The main difference between **wcomps** and **blocks** is that wcomps are not bound to any specific contents.
+
 
 ## Documentation
-A complete developer guide can be found [here](http://www.coservjs.org/coserv/guide). A few more articles can be found [here](http://www.coservjs.org/coserv/doc).
+An [user guide](https://benlue.gitbooks.io/coserv-user-guide/content/) is now available on gitbook. A few more articles can be found [here](http://www.coservjs.org/coserv/doc).
