@@ -14,7 +14,7 @@ With the arrival of HTML5, CSS3 and ES5/ES6, developers actually have enough fac
 ## The Latest Release
 Below are highlights of recent releases. More details in [release notes](https://github.com/coimotion/coServ/blob/master/ReleaseNote.md).
 
-+ [v0.10.0] A new feature called **wcomp** was introduced (see [below](#wcomp) for more explanations). A more managable websit file structure was introduced and the design console can import &amp; export websites.
++ [v0.10.0] A new feature called **wcomp** was introduced (see [below](#wcomp) for more explanations). A more managable websit file structure was introduced and the design console can import &amp; export websites. Also the "region" feature is deprecated.
 
 + [v0.9.9] A web interface (coServ design console) has been added to manage & design websites running on a coServ server. For details, check the "Design Console" section below.
 

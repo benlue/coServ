@@ -6,7 +6,7 @@ var  async = require('async'),
 var  config,
      coServ,
 	 SiteCache,
-     DEFAULT_TEMP = 'drawer';
+     DEFAULT_TEMP = 'base';
 
 exports.execute = function(ctx, inData, cb)  {
 	var  inData = ctx.bi.query;

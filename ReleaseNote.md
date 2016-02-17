@@ -5,6 +5,7 @@
 + A new feature 'wcomp' is introduced while 'region' is deprecated.
 + The web design console now can export & import websites.
 + When creating a new website, there are a few templates to choose from.
++ The "region" feature is deprecated. It would still work, but not recommended. The "region" feature may be completely removed in teh v1.0 release.
 
 0.9.10
 ------

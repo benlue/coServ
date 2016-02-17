@@ -27,17 +27,15 @@
 + 提供了一個比 SASS 更強大的 CSS 前置處理方案 (JASS)。
 
 ## 最新版本
-coServ 目前的最新版本是 0.9.10。以下是最近版本所提供的新功能或改進：
+coServ 目前的最新版本是 0.10.0。以下是最近版本所提供的新功能或改進：
+
++ [v0.10.0] 新增了網頁元件 (wcomp) 的功能，細節請參考[網頁元件](#wcomp)一節。網站的檔案結構也做了調整，使多網站的管理更方便。另外透過管理工具，現在可以將整個網站匯入或匯出。另外「region」的功能已退役，不建議再使用。
 
 + [v0.9.9] 除了一些小 bug 的修正，這個版本最大的變化就是新增了一個網站介面來管理以及協助開發者設計網站。詳細內容請詳以下「管理工具」一節。
 
 + [v0.9.8] 一些小問題的修正。此外，wFront.js 檔在此版本做了一些修正。如果你不是使用預設的 '/www' 目錄，記得將 wFront.js 檔複製到你的自定網站目錄中 (/www/cont/shared/js/wFront.js)。
 
-+ [v0.9.7] 大量的原始程式已被修改和清理過，並增加了一些測試範例。這個版本可以視為正式 1.0 版的 release candidate。
-
 + [v0.9.6] 在 coServ 0.9.6 版中支援 server side redirect 的功能。
-
-+ [v0.9.5] 更新 coServ 在最新的 node.js 版本下執行(v0.12.2)，並將 coServ 所依賴的模組版本都升到最新版。
 
 + [v0.9.3] 當你修改網站的任何一個檔案時（HTML, CSS 或 Javascript），coServ 會自動將網路瀏覽器上的頁面更新（live reload）。這個功能是以 [gulp](http://gulpjs.com) 達成。0.9.3 版提供了所需的gulpfile.js。
 
@@ -55,6 +53,12 @@ coServ 許多先進的構想讓網站設計可以有效的化繁為簡。不過�
     
 就可以開始使用管理工具的各項功能。
 
+<a name="wcomp"></a>
+## 網頁元件
+從 0.10.0 版開始，coServ 新增了網頁元件的功能。透過網頁元件，你可以將複雜的網頁 UI 設計包裝成一個元件，然後在不同的網頁、甚至不同的網站中重複使用。
+
+在概念上，網頁元件和 [web components](http://webcomponents.org/) 是很類似的。只是網頁元件不需要使用 shadow DOM，也不需要使用 polyfill 才能在不同的瀏覽器中工作。至於網頁元件和 coServ 原來所支援的「區塊」間有什麼不同呢？基本的差異在網頁元件不會預先綁定在任何資料模式上 (data model)。以 MVC 的設計模式來說，網頁元件只實作了 view 和 controller 的部份，而開放了資料模式端。所以更有利於元件的重複使用。
+
 ## 技術文件
 
-開發者指南請參考[這裡](http://www.coservjs.org/coserv/guide?_loc=zh)。相關的部落格文章請參考[這裡](http://www.coservjs.org/coserv/doc?_loc=zh)。
+使用指南請參考[這裡](https://benlue.gitbooks.io/coserv-user-guide/content/)。相關的部落格文章請參考[這裡](http://www.coservjs.org/coserv/doc?_loc=zh)。
