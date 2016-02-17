@@ -67,6 +67,8 @@ ctrl.dispatch = function(design, target) {
 
 function  adjustHeight()  {
 	var  w = window.innerWidth - 330, // 20 + 280 + 10 + 20
-		 h = window.innerHeight - $('#pgHead').outerHeight(true) - $('#pgFooter').outerHeight(true);
-	ctrl.sel('#bodyArea').width(w).height( h - 25 );  // 5: header margin, 20: footer margin
+		 h = window.innerHeight - 45 - $('#pgFooter').outerHeight(true);
+		 //h = window.innerHeight - $('#pgHead').outerHeight(true) - $('#pgFooter').outerHeight(true);
+
+	ctrl.sel('#bodyArea').width(w).height( h );
 }

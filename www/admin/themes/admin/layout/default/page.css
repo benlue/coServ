@@ -3,11 +3,15 @@
 }
 
 .pgBody {
-	margin-left: 20px;
+	padding-top: 45px;
 }
 
 #pgLeft {
 	flex-basis: 280px;
+	padding-top: 5px;
+	padding-left: 20px;
+	background-color: #f8f8f8;
+	border-right: solid 1px #e7e7e7;
 }
 
 #pgContent {
@@ -16,4 +20,7 @@
 }
 
 #pgFooter {
+	background-color: #f8f8f8;
+	border-top: solid 1px #e7e7e7;
+	padding: 5px;
 }

@@ -14,6 +14,9 @@ ctrl.startup = function() {
 			document.location.reload();
 		});
 	}
+
+	ctrl.sel('.navbar-brand').height(20);
+	ctrl.sel('nav').height(45);
 }
 
 

@@ -1,35 +1,41 @@
-<div class="pgHeader">
-    <div id="HeadTitle">
-  		<img class="img-rounded" src="/img/xs.png" style="height: 30px; margin-right: 20px;">[Design Console]
+<nav class="navbar navbar-default navbar-fixed-top" style="min-height: 40px;">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#" style="padding: 12px 15px;">
+                <img alt="coServ Design Console" src="/img/xs.png" style="height: 24px; margin-right: 10px;">
+                coServ Design Console
+            </a>
+        </div>
+        <form class="navbar-form navbar-right">
+            <button type="button" class="btn btn-default btn-sm" onclick="<%=ctrl%>.newWebsite();">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> <%=ph.createLabel%>
+            </button>
+            <div class="form-group">
+            <%
+                var  langList = [
+                        {
+                            title: 'English',
+                            arg: 'en'
+                        },
+                        {
+                            title: '中文',
+                            arg: 'zh'
+                        }
+                     ];
+            %>
+            <%
+                wcomp('langList', '/bs/dropdown', {
+                    btnID: 'langDropdown',
+                    btnLabel: ph.selectLabel + '[<b>' + bi.locale + '</b>]',
+                    list: langList,
+                    btnSize: 'btn-sm',
+                    rightMenu: true
+                });
+            %>
+            </div>
+        </form>
     </div>
-    <div class="HeadItem">
-        <button type="button" class="btn btn-default" onclick="<%=ctrl%>.newWebsite();">
-            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> <%=ph.createLabel%>
-        </button>
-    </div>
-    <div class="HeadItem" style="margin-right:10px;">  
-        <%
-            var  langList = [
-           			{
-           				title: 'English',
-           				arg: 'en'
-           			},
-           			{
-           				title: '中文',
-           				arg: 'zh'
-           			}
-           		 ];
-        %>
-        <%
-            wcomp('langList', '/bs/dropdown', {
-                btnID: 'langDropdown',
-                btnLabel: ph.selectLabel + '[<b>' + bi.locale + '</b>]',
-                list: langList,
-                rightMenu: true
-            });
-        %>
-    </div>
-</div>
+</nav>
 
 <!-- new website dialog -->
 <%

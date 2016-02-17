@@ -4,7 +4,7 @@
 			<% block('/mainMenu/website/list'); %>
 		</div>
 		<div id="wsConfigBtn" style="display:none;">
-			<button class="btn btn-default" onclick="<%=ctrl%>.webSettings();">
+			<button class="btn btn-default btn-sm" onclick="<%=ctrl%>.webSettings();">
 				<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
 			</button>
 		</div>
@@ -13,14 +13,15 @@
 	<div id="menuPane">
 		<div class="panel-group" id="leftMainMenu" role="tablist" aria-multiselectable="true">
 			<div class="panel panel-default">
+				<button class="btn btn-xs btn-default pull-right"
+						style="margin-top: 8px; margin-right: 10px;"
+						onclick="<%=ctrl%>.newLayout();">
+			   		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+			   	</button>
 				<div class="panel-heading" role="tab" id="layoutHeading">
 					<h4 class="panel-title">
 						<a role="button" data-toggle="collapse" data-parent="#leftMainMenu" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-							<button class="btn btn-xs btn-default pull-right"
-									onclick="<%=ctrl%>.newLayout();">
-						   		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-						   	</button>
-							<%=ph.layouts%>
+							<span class="text-primary"><%=ph.layouts%></span>
 						</a>
 					</h4>
 				</div>
@@ -32,14 +33,15 @@
 			</div>
 
 			<div class="panel panel-default">
+				<button class="btn btn-xs btn-default pull-right"
+						style="margin-top: 8px; margin-right: 10px;"
+						onclick="<%=ctrl%>.newBlock();">
+			   		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+			   	</button>
 				<div class="panel-heading" role="tab" id="blockHeading">
 					<h4 class="panel-title">
 						<a role="button" data-toggle="collapse" data-parent="#leftMainMenu" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-							<button class="btn btn-xs btn-default pull-right"
-									onclick="<%=ctrl%>.newBlock();">
-						   		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-						   	</button>
-							<%=ph.blocks%>
+							<span class="text-primary"><%=ph.blocks%></span>
 						</a>
 					</h4>
 				</div>
@@ -51,14 +53,15 @@
 			</div>
 
 			<div class="panel panel-default">
+				<button class="btn btn-xs btn-default pull-right"
+						style="margin-top: 8px; margin-right: 10px;"
+						onclick="<%=ctrl%>.newWComp();">
+			   		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+			   	</button>
 				<div class="panel-heading" role="tab" id="wcompHeading">
 					<h4 class="panel-title">
 						<a role="button" data-toggle="collapse" data-parent="#leftMainMenu" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-							<button class="btn btn-xs btn-default pull-right"
-									onclick="<%=ctrl%>.newWComp();">
-						   		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-						   	</button>
-							<%=ph.wcomps%>
+							<span class="text-primary"><%=ph.wcomps%></span>
 						</a>
 					</h4>
 				</div>

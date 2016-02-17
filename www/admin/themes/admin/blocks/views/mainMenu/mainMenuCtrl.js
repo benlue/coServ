@@ -123,9 +123,9 @@ function  clearMenuList()  {
 
 function  adjustHeight()  {
 	var  h = window.innerHeight
-			 - $('#pgHead').outerHeight(true)
-			 - $('#pgFooter').outerHeight(true)
-			 - ctrl.sel('#websiteDropdown').outerHeight(true) + 10;
+			 - 65
+			 //- $('#pgFooter').outerHeight(true)
+			 - ctrl.sel('#websiteDropdown').outerHeight(true);
 
 	ctrl.sel('#menuContainer').height( h ); 
 }
