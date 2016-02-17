@@ -2,8 +2,11 @@ ctrl.updateConfig = function(isUpdate)  {
     event.preventDefault();
 
     var  bkURL = ctrl.sel('#blockURL').val();
-    if (!isUpdate && !bkURL)
-            return  alert('You should at least specify the block URL.');
+    if (!isUpdate && !bkURL)  {
+        issueWarning('#blockURL');
+        return  alert('You should at least specify the block URL.');
+    }
+    
     if (bkURL.charAt(0) != '/')
         bkURL = '/' + bkURL;
     
@@ -55,4 +58,9 @@ ctrl.deleteBlock = function(bkName)  {
             }
         }, 'json');
     }
+}
+
+function  issueWarning(cssID)  {
+    ctrl.sel('.form-group').removeClass('has-error');
+    ctrl.sel(cssID).focus().parent().addClass('has-error');
 }

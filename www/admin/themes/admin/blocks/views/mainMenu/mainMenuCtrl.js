@@ -26,17 +26,21 @@ ctrl.startup = function()  {
 		var  label = '<%=ph.websiteLabel%> [<b>' + curCaCode + '</b>] ';
 		dropCtrl.setLabel( label );
 
+		var  idxCtrl = __.getCtrl('workArea');
+		idxCtrl.dispatch('home');
+
 		var  layCtrl = __.getCtrl('mainMenuLayoutList');
 		layCtrl.reload({params: {caCode: curCaCode}});
 
 		var  blkCtrl = __.getCtrl('mainMenuBlockList');
-		blkCtrl.reload({params: {caCode: curCaCode}});
+		blkCtrl.reload({params: {caCode: curCaCode}}, function() {
+			idxCtrl.adjustHeight();
+		});
 
 		var  compCtrl = __.getCtrl('mainMenuWcompList');
-		compCtrl.reload({params: {caCode: curCaCode}});
-        
-        var  idxCtrl = __.getCtrl('workArea');
-		idxCtrl.dispatch('home');
+		compCtrl.reload({params: {caCode: curCaCode}}, function() {
+			idxCtrl.adjustHeight();
+		});
 	});
 
 	/*
@@ -66,6 +70,11 @@ ctrl.startup = function()  {
 			var  idxCtrl = __.getCtrl('workArea');
 			idxCtrl.dispatch('home');
 		}
+	});
+
+	ctrl.sel('#menuPane').on('shown.bs.collapse', function (event) {
+		var  idxCtrl = __.getCtrl('workArea');
+		idxCtrl.adjustHeight();
 	});
 
 	adjustHeight();

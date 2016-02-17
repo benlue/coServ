@@ -5,7 +5,7 @@ ctrl.startup = function() {
 	// make this block available to other blocks as 'workArea'
 	ctrl.setID('workArea');
 
-	adjustHeight();
+	ctrl.adjustHeight();
 };
 
 
@@ -65,8 +65,10 @@ ctrl.dispatch = function(design, target) {
 };
 
 
-function  adjustHeight()  {
-	var  w = window.innerWidth - 330, // 20 + 280 + 10 + 20
+ctrl.adjustHeight = adjustHeight;
+
+function adjustHeight()  {
+	var  w = window.innerWidth - $('#bodyArea').position().left - 10,	// 10: rigth margin
 		 h = window.innerHeight - 45 - $('#pgFooter').outerHeight(true);
 		 //h = window.innerHeight - $('#pgHead').outerHeight(true) - $('#pgFooter').outerHeight(true);
 

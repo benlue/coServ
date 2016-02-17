@@ -1,6 +1,8 @@
 .statusBar {
-	margin-right: 10px;
+	margin-right: 5px;
 	margin-bottom: 0px;
 	flex-grow: 1;
-	padding: 10px;
+	padding: 5px 10px;
+	border: solid 1px #e7e7e7;
+	border-radius: 4px;
 }
