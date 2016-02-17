@@ -22,12 +22,10 @@
         %>
         <%
             wcomp('langList', '/bs/dropdown', {
-                params: {
-                    btnID: 'langDropdown',
-                    btnLabel: ph.selectLabel + '[<b>' + bi.locale + '</b>]',
-                    list: langList,
-                    rightMenu: true
-                }
+                btnID: 'langDropdown',
+                btnLabel: ph.selectLabel + '[<b>' + bi.locale + '</b>]',
+                list: langList,
+                rightMenu: true
             });
         %>
     </div>
@@ -36,11 +34,9 @@
 <!-- new website dialog -->
 <%
     wcomp('wsCreateDialog', '/bs/modal', {
-        params: {
-            cssID: 'createWSDialog',
-            title: 'Create A Website',
-            bodyURL: '/website/info',
-            args: {}
-        }
+        cssID: 'createWSDialog',
+        title: 'Create A Website',
+        bodyURL: '/website/info',
+        args: {}
     });
 %>
