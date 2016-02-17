@@ -2,7 +2,7 @@
 	<div class="form-group">
 		<label for="wcompName"><%=ph.wcompName%></label>
 		<input id="wcompName" class="form-control" placeholder="<%=ph.wcompHolder%>"
-			   value="<%=bi.query.wcomp || ''%>">
+			   value="<%=bi.query.wcomp || ''%>"<%= bi.query.wcomp  ?  ' disabled' : ''%>>
 	</div>
 	<div style="text-align:right;">
 		<%

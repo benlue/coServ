@@ -48,7 +48,7 @@ function  walkPath(baseDir, curDir, plist, cb)  {
 				 stats = fs.statSync( path.join(workPath, f) );
 
 			if (stats.isDirectory())
-				subList.push( path.join(curDir, f) );
+				subList.push( path.join(curDir, f).replace(/\\/g, '/') );
 			else
 				isComp = isComp || stats.isFile();
 		}
