@@ -1,3 +1,8 @@
+0.10.1
+------
++ Nested dynamic block loading (by ctrl.reload()) now works.
++ Change the editor theme to a dark one.
+
 0.10.0
 ------
 + Allowed file upload. Previously, file uploads were all directed to the COIMOTION API services. Now websites on coServ can receive their own file uploads.

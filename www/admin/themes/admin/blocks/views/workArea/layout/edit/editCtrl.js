@@ -5,11 +5,14 @@ $(window).resize( function() {
 var  editor;
 
 ctrl.startup = function()  {
-	editor = CodeMirror.fromTextArea( ctrl.sel('#codeEditor')[0], {
+    editor = CodeMirror.fromTextArea( ctrl.sel('#codeEditor')[0], {
 		lineNumbers: true,
       	indentUnit: 4,
-		mode: toEditMode('<%=bi.query.mode%>')
+        scrollbarStyle: "simple",
+        matchBrackets: true
+		/* mode: toEditMode('<%=bi.query.mode%>') */
 	});
+    editor.setOption("theme", "bespin");
 
 	var  menuCtrl = __.getCtrl('pgMainMenu'),
 		 pdata = {

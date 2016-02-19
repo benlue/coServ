@@ -8,8 +8,11 @@ ctrl.startup = function()  {
 	editor = CodeMirror.fromTextArea( ctrl.sel('#codeEditor')[0], {
 		lineNumbers: true,
       	indentUnit: 4,
-		mode: toEditMode('<%=bi.query.bkType%>')
+        scrollbarStyle: "simple",
+        matchBrackets: true
+		/* mode: toEditMode('<%=bi.query.bkType%>') */
 	});
+    editor.setOption("theme", "bespin");
 
 	var  menuCtrl = __.getCtrl('pgMainMenu'),
 		 pdata = {

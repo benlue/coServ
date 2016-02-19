@@ -18,6 +18,7 @@ ctrl.startup = function()  {
 	var  dropCtrl = __.getCtrl('websiteList');
 
 	dropCtrl.addHandler('itemChosen', function(caCode) {
+        
 		ctrl.sel('#wsConfigBtn').show();
 		ctrl.sel('#menuPane').show();
 

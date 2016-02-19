@@ -1,9 +1,11 @@
-/**
- * New node file
+/*!
+ * coServ front-end controller
+ * authors: Ben Lue
+ * license: MIT
+ * Copyright(c) 2014 ~ 2016 Gocharm Inc.
  */
 var  _wf = (function (_wf) {
 	_wf.blkList = [];
-	_wf.ctrlList = [];
 	_wf.ctrlMap = {};
 
 	_wf.register = function register(url)  {
@@ -15,7 +17,6 @@ var  _wf = (function (_wf) {
 
 	_wf.addCtrl = function addCtrl(id, ctrl)  {
 		_wf.ctrlMap[id] = ctrl;
-		//console.log( _wf.ctrlMap );
 	};
 
 	_wf.getCtrl = function getCtrl(id)  {
@@ -27,20 +28,22 @@ var  _wf = (function (_wf) {
 	};
 
 	_wf.addPageCtrl = function(c)  {
-		_wf.ctrlList.push( c );
+        var  bkID = c.dspTarget.substring(1);
+        _wf.ctrlMap[bkID] = c;
 	};
 
 	_wf.initPage = function()  {
-		_wf.ctrlList.forEach( function(c) {
-			c.init();
-		});
-		_wf.ctrlList.forEach( function(c) {
-			c.startup();
-		});
+        for (var k in _wf.ctrlMap)  {
+        	var  c = _wf.ctrlMap[k];
+        	if (!c._init)  {
+        		c._init = true;
+        		//c.init();
+        		c.startup();
+        	}
+        }
 	};
 
 	_wf.api = function(req, callback)  {
-        //console.log(JSON.stringify(req));
 		$.post('/_api/post', req, function(data) {
 			callback(data);
 		});
@@ -53,9 +56,10 @@ var  __ = _wf;
 
 var  _ctrl = (function()  {
 	var  _ctrl = function _ctrl(target, opURI)  {
-		this.dspTarget = target;
 		this.evtMap = {};
 		this.opURI = opURI;
+		this.dspTarget = target;
+		this._init = false;
 
 		_wf.addPageCtrl( this );
 
@@ -64,35 +68,35 @@ var  _ctrl = (function()  {
 		};
 
 		this.getJqTarget = function()  {
+			this.jqDspTarget = this.jqDspTarget  || $(this.dspTarget);
 			return  this.jqDspTarget;
 		};
 
 		this.getBlockID = function()  {
-			return  this.jqDspTarget.attr('id');
+			return  this.getJqTarget().attr('id');
 		};
 	};
 
+	/*
 	_ctrl.prototype.init = function init(ption)  {
+		//console.log('[%s] is initialized...', this.opURI);
 		this.jqDspTarget = $(this.dspTarget);
-		var  blockID = this.dspTarget.substring(1);
-
-		//if (blockID && !_wf.getCtrl(blockID))
-		if (blockID)
-			_wf.addCtrl( blockID, this );
+		this._init = true;
 	};
+	*/
 
 	_ctrl.prototype.setID = function(id)  {
 		var  oldID = this.getBlockID();
 		_wf.removeCtrl( oldID );
 		_wf.addCtrl( id, this );
 
-		this.jqDspTarget.attr('id', id);
+		this.getJqTarget().attr('id', id);
 	};
 
 	_ctrl.prototype.startup = function startup()  { / *empty */ };
 
 	_ctrl.prototype.sel = function sel(s)  {
-		return  this.jqDspTarget.find(s);
+		return  this.getJqTarget().find(s);
 	};
 
 	_ctrl.prototype.embed = function embed(div, srvURI, args, callback)  {
@@ -128,7 +132,6 @@ var  _ctrl = (function()  {
 
 			idx1 = html.indexOf('<div', idx2 + 9);
 			htmlText = html.substring(idx1);
-			//console.log('html: %s', htmlText);
 
 			if (cssText.length > 0 && (isNew = _wf.register( srvURI )))  {
 				var css = document.createElement('style');
@@ -142,11 +145,12 @@ var  _ctrl = (function()  {
 			if (scriptText.length > 0)  {
 				(function() {
 					try {
-						//console.log( scriptText );
 						var  ctrl = eval( scriptText );
 							 
-						ctrl.init();
-						ctrl.startup();
+						//ctrl.init();
+						//ctrl.startup();
+						__.initPage();
+
 						if (callback)
 							callback( ctrl );
 					}
@@ -189,16 +193,6 @@ var  _ctrl = (function()  {
 				}
 				break;
 		}
-		/*
-		if (url)  {
-			if (typeof url !== 'string')  {
-				args = url;
-				url = this.opURI;
-			}
-		}
-        else
-            url = this.opURI;
-        */
 
         var  newSrc = url !== this.opURI,
              pdata = null;
@@ -212,8 +206,7 @@ var  _ctrl = (function()  {
 		}
 
 		var  blkID = this.getBlockID(),
-			 bkCtrl = this,
-			 target = this.getJqTarget().parent();
+			 bkCtrl = this;
 			 
 		// reuse the original block ID
 		pdata = pdata || {};
@@ -237,8 +230,9 @@ var  _ctrl = (function()  {
 
 					__.removeCtrl( blkID );
 
-					var  newBkCtrl = eval( jsCode );
-					//newBkCtrl.dspTarget = '#' + blkID;
+                    //eval( jsCode );
+					//var  newBkCtrl = __.getCtrl( blkID );
+                    var  newBkCtrl = eval( jsCode );
 
 					// copy event handlers
 					var  hlist = this.evtMap;
@@ -251,22 +245,17 @@ var  _ctrl = (function()  {
 					bkCtrl = newBkCtrl;
 				}
             }
+            else  {
+            	bkCtrl.jqDspTarget = null;
+            	bkCtrl._init = false;
+            }
 
 			// replace the HTML source
 			idx1 = html.indexOf('<div', idx2 + 9);
 			htmlText = html.substring(idx1);
-			target.empty().append( htmlText );
+			bkCtrl.getJqTarget().parent().empty().append( htmlText );
 
-			/* Since we're recycling the block ID, the following code is no longer needed
-			// update controller with the new block ID
-			var  newBlkID = $(target).children().first().attr('id');
-			bkCtrl.dspTarget = '#' + newBlkID;
-			*/
-
-			if (bkCtrl)  {
-				bkCtrl.init();
-				bkCtrl.startup();
-			}
+			__.initPage();
 
 			if (cb)
 				cb( bkCtrl );
@@ -296,14 +285,8 @@ var  _ctrl = (function()  {
 			}
 		}
 
-		if (notYet)  {
+		if (notYet)
 			hlist.push( handler );
-			//console.log("Handler is added.");
-		}
-		/*
-		else
-			console.log("Handler not added.");
-		*/
 	};
 
 	_ctrl.prototype.callHandler = function(evtSource, args)  {
