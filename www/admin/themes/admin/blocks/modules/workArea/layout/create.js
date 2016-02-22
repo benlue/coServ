@@ -16,8 +16,9 @@ exports.execute = function(ctx, inData, cb)  {
     					message: 'Unable to create the layout directory.'
     				});
 
-    			var  templatePath = path.join(ctx.basePath, '../cli/template/HLF/layout/default');
-    			copyFiles(templatePath, layoutDir, ['page.html', 'page.css', 'page.inc']);
+                var  adminSite = siteUtil.lookupSite(ctx, 'admin'),
+                     tempPath = path.join( adminSite.getRootPath(), '../../cont/resource/template/base/themes/base/layout/default' );
+    			copyFiles(tempPath, layoutDir, ['page.html', 'page.css', 'page.inc']);
 
     			cb({
     				errCode: 0,
