@@ -41,7 +41,7 @@ coServ 目前的最新版本是 0.10.2。以下是最近版本所提供的新功
 
 + 現在 server 的埠號（port number）以及 node.js http 對 concurrent socket 總數的限制可以在 config.json 檔案中設定。關於 http concurrent socket 的限制，在 node.js 文件中有說明。如果你將 coServ 應用在 production 的環境中，把 server.maxSockets 設為 20 ~ 100 之間都算是合理的數字。
 
-更多版本更新資訊請參考 [ReleaseNote.txt](https://github.com/coimotion/coServ/blob/master/ReleaseNote.txt)。
+更多版本更新資訊請參考 [ReleaseNote](https://github.com/coimotion/coServ/blob/master/ReleaseNote.md)。
 
 ## 管理工具
 coServ 許多先進的構想讓網站設計可以有效的化繁為簡。不過因為 coServ 的觀念新穎，有些開發者一開始上手時不易了解或駕馭這個新的概念。從 0.9.9 版起，一個網頁介面的管理工具被創造出來，協助開發者更有效率的使用 coServ 去建置網站。
