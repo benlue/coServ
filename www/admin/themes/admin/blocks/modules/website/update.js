@@ -185,25 +185,21 @@ function  createSite(ctx, inData, cb)  {
 
     			var  sites = JSON.parse(data);
     			if (sites[domain])
-    				cb({
-    					errCode: 1,
-    					message: 'The web domain has already been used.'
-    				});
-    			else  {
-    				var  siteConfig = {
-    					caCode: caCode,
-    					title: inData.title || 'The [' + caCode + '] website',
-                        sitePath: sitePath,
-    					locale: inData.locale || 'en'
-    				};
+                    sites['x-' + domain] = sites[domain];
 
-    				if (inData.homePage)
-    					siteConfig.home = inData.homePage;
+				var  siteConfig = {
+					caCode: caCode,
+					title: inData.title || 'The [' + caCode + '] website',
+                    sitePath: sitePath,
+					locale: inData.locale || 'en'
+				};
 
-    				sites[domain] = siteConfig;
+				if (inData.homePage)
+					siteConfig.home = inData.homePage;
 
-    				fs.writeFile( sitesFile, JSON.stringify(sites, null, 4), cb);
-    			}
+				sites[domain] = siteConfig;
+
+				fs.writeFile( sitesFile, JSON.stringify(sites, null, 4), cb);
     		});
     	},
 

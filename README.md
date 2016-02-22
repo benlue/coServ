@@ -1,15 +1,15 @@
 # coServ
 
 ## Why coServ
-Offering smooth or even exceptional user experiences is becoming the norm of web applications. However, it's not a simple task. Compounded with the problems that today's web applications are much more complicated than they used to be, web developers need better web platforms to meet the challenge. Many platforms have been developed for the quest. Unfortunately, most platforms present more problems than solving them.
+Offering smooth user experiences is becoming the norm of web applications. However, it's not a simple task. Compounded with the problems that today's web applications are much more complicated than they used to be, web developers need better web platforms to meet the challenge. Many platforms have been developed for the quest. Unfortunately, most platforms present more problems than solving them.
 
-With the arrival of HTML5, CSS3 and ES5/ES6, developers actually have enough facilities to tackle the problems. The focus should not be on creating yet another web design technology, but on effectively utilizing those three fundamental facilities. We've seen many web platforms inventing new syntax or extensions on top of those standards, but do little to help developers fully utilize the fundamental yet powerful technologies. That does not seem to be the right direction, so we decided to show an alternative. Below are the major design guidelines of **coServ**:
+With the arrival of HTML5, CSS3 and ES5/ES6, developers actually have enough facilities to tackle the problems. The focus should not be on creating yet another web design technology, but on effectively utilizing those three fundamental facilities. We've seen many web platforms inventing new syntax or extensions on top of those standards, but do little to help developers fully utilize them. That does not seem to be the right direction, so we decided to show an alternative. Below are the major design guidelines of **coServ**:
 
-+ Developers should spend time on designing/coding rather than spend time on learning or harnessing the platform itself.
++ Developers should spend time on designing/coding rather than learning or harnessing the platform itself.
 
 + Help developers not to repeat themselves.
 
-+ Help developers to fully utilize HTML, CSS and Javascript.
++ Help developers to fully utilize HTML, CSS and Javascript. Besides HTML, CSS and Javascript, developers don't have to learn anything more.
 
 ## The Latest Release
 Below are highlights of recent releases. More details in [release notes](https://github.com/coimotion/coServ/blob/master/ReleaseNote.md).
@@ -26,13 +26,13 @@ Below are highlights of recent releases. More details in [release notes](https:/
 
 ##  Features
 
-+ Implemented in node.js.
-
 + Regardless it's backend functions or front-end templates, developers can use one single language (Javascript) to do them all.
 
-+ Besides HTML, CSS and Javascript, developers don't have to learn anything new to build web applications.
++ Help developers to divide web pages into smaller blocks and wcomps, so ti's easier to focus (the **divide and conquer** strategy).
 
-+ Help developers to divide web pages into smaller regions and blocks, and to focus on those smaller parts (the **divide and conquer** strategy).
++ HTML refactoring&ampreuse + CSS encapsulation.
+
++ HTML, CSS and JS can all be formulated as templates.
 
 + An extremely easy and elegant way to provide multi-lingual support.
 

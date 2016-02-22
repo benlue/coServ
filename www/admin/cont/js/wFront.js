@@ -254,6 +254,8 @@ var  _ctrl = (function()  {
 			idx1 = html.indexOf('<div', idx2 + 9);
 			htmlText = html.substring(idx1);
 			bkCtrl.getJqTarget().parent().empty().append( htmlText );
+			// clean up jqTarget again
+			bkCtrl.jqDspTarget = null;
 
 			__.initPage();
 

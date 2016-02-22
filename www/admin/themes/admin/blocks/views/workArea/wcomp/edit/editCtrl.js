@@ -5,31 +5,29 @@ $(window).resize( function() {
 var  editor;
 
 ctrl.startup = function()  {
-    editor = CodeMirror.fromTextArea( ctrl.sel('#codeEditor')[0], {
-		lineNumbers: true,
-      	indentUnit: 4,
-        scrollbarStyle: "simple",
-        matchBrackets: true
-		/* mode: toEditMode('<%=bi.query.mode%>') */
-	});
-    editor.setOption("theme", "bespin");
-
 	var  menuCtrl = __.getCtrl('pgMainMenu'),
 		 pdata = {
 		 	caCode: menuCtrl.getCurrentSite(),
 		 	wcomp: '<%= bi.query.wcomp %>',
 		 	mode: '<%= bi.query.mode %>'
 		 };
-	
-	window.setTimeout(function() {
-		$.post('/workArea/wcomp/source.txt', pdata, function(data) {
-			if (data)
-				editor.setValue( data );
-			editor.on('change', handleDocChange);
-		});
-	}, 100);
 
-	adjustHeight();
+	$.post('/workArea/wcomp/source.txt', pdata, function(data) {
+		editor = CodeMirror.fromTextArea( ctrl.sel('#codeEditor')[0], {
+			lineNumbers: true,
+	      	indentUnit: 4,
+	        scrollbarStyle: "simple",
+	        matchBrackets: true,
+			mode: toEditMode('<%=bi.query.mode%>')
+		});
+
+	    editor.setOption("theme", "bespin");
+		if (data)
+			editor.setValue( data );
+		editor.on('change', handleDocChange);
+
+		adjustHeight();
+	});
 }
 
 

@@ -13,38 +13,51 @@ var  fs = require('fs'),
 var  port = config.getServer().port || 8080,
 	 wwwPath = config.getWWW();
 
-var app = connect()
-	.use(require('morgan')('dev'))
-	.use(require('cookie-parser')())
-	.use(serverStatic(wwwPath + '/cont'));
-	//.use(require('express-session')({ secret: 'my secret here' }))
+(function() {
+	startServer();
+})();
 
-// supply static file directories for all sites running on coServ
-var  staticList = listStaticPath();
-for (var i in staticList)  {
-	app.use(serverStatic(staticList[i]));
-}
-
-app
-.use(siteLookup)
-.use(require('connect-multiparty')())
-.use(uploader)
-.use(bodyParser.urlencoded({extended: true}))
-.use(webFront)
-.use(function(err, req, res, next)  {
-	if (err)  {
-		res.writeHead(404, 'Unknown site');
-		res.end();
-	}
-});
-
-var  server = http.createServer(app);
-server.listen(port);
 
 exports.restart = function()  {
 	server.close();
+	startServer();
+}
+
+
+function  startServer()  {
+	var  app = createServerApp();
 	server = http.createServer(app);
 	server.listen(port);
+}
+
+
+function  createServerApp()  {
+	var app = connect()
+		.use(require('morgan')('dev'))
+		.use(require('cookie-parser')())
+		.use(serverStatic(wwwPath + '/cont'));
+		//.use(require('express-session')({ secret: 'my secret here' }))
+
+	// supply static file directories for all sites running on coServ
+	var  staticList = listStaticPath();
+	for (var i in staticList)  {
+		app.use(serverStatic(staticList[i]));
+	}
+
+	app
+	.use(siteLookup)
+	.use(require('connect-multiparty')())
+	.use(uploader)
+	.use(bodyParser.urlencoded({extended: true}))
+	.use(webFront)
+	.use(function(err, req, res, next)  {
+		if (err)  {
+			res.writeHead(404, 'Unknown site');
+			res.end();
+		}
+	});
+
+	return  app;
 }
 
 

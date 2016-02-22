@@ -5,15 +5,6 @@ $(window).resize( function() {
 var  editor;
 
 ctrl.startup = function()  { 
-	editor = CodeMirror.fromTextArea( ctrl.sel('#codeEditor')[0], {
-		lineNumbers: true,
-      	indentUnit: 4,
-        scrollbarStyle: "simple",
-        matchBrackets: true
-		/* mode: toEditMode('<%=bi.query.bkType%>') */
-	});
-    editor.setOption("theme", "bespin");
-
 	var  menuCtrl = __.getCtrl('pgMainMenu'),
 		 pdata = {
 		 	caCode: menuCtrl.getCurrentSite(),
@@ -21,15 +12,22 @@ ctrl.startup = function()  {
 		 	bkType: '<%= bi.query.bkType %>'
 		 };
 
-	window.setTimeout(function() {
-		$.post('/workArea/block/source.txt', pdata, function(data) {
-			if (data)
-				editor.setValue( data );
-			editor.on('change', handleDocChange);
+	$.post('/workArea/block/source.txt', pdata, function(data) {
+		editor = CodeMirror.fromTextArea( ctrl.sel('#codeEditor')[0], {
+			ineNumbers: true,
+	      	indentUnit: 4,
+	        scrollbarStyle: "simple",
+	        matchBrackets: true,
+			mode: toEditMode('<%=bi.query.bkType%>')
 		});
-	}, 100);
 
-	adjustHeight();
+	    editor.setOption("theme", "bespin");
+	    if (data)
+			editor.setValue( data );
+		editor.on('change', handleDocChange);
+
+		adjustHeight();
+	});
 }
 
 
