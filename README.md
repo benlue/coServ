@@ -30,7 +30,7 @@ Below are highlights of recent releases. More details in [release notes](https:/
 
 + Help developers to divide web pages into smaller blocks and wcomps, so ti's easier to focus (the **divide and conquer** strategy).
 
-+ HTML refactoring&amp;reuse + CSS encapsulation.
++ HTML refactoring &amp; reuse + CSS encapsulation.
 
 + HTML, CSS and JS can all be formulated as templates.
 
