@@ -1,7 +1,7 @@
 /js/lib/bootstrap/css/bootstrap.min.css
 /codeMirror/lib/codemirror.css
 /codeMirror/addon/scroll/simplescrollbars.css
-/codeMirror/theme/bespin.css
+/codeMirror/theme/vibrant-ink.css
 /js/lib/jquery-2.1.4.min.js
 /js/lib/bootstrap/js/bootstrap.min.js
 /codeMirror/lib/codemirror.js

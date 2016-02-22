@@ -21,7 +21,7 @@ ctrl.startup = function()  {
 			mode: toEditMode('<%=bi.query.bkType%>')
 		});
 
-	    editor.setOption("theme", "bespin");
+	    editor.setOption("theme", "vibrant-ink");
 	    if (data)
 			editor.setValue( data );
 		editor.on('change', handleDocChange);
