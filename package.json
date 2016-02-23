@@ -4,6 +4,9 @@
   "description": "A web framework helping developers to fully utilize HTML, CSS and Javascript.",
   "engines": "4.2.2",
   "main": "coServ.js",
+  "scripts": {
+    "start": "node coServ.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/coimotion/coServ.git"
