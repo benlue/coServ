@@ -1,6 +1,7 @@
 (The MIT License)
 
 Copyright (c) 2014-2016 Gocharm Inc.
+
 Copyright (c) 2014-2016 Ben Lue <ben.lue@gocharm.com.tw>
 
 Permission is hereby granted, free of charge, to any person obtaining
