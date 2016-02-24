@@ -11,7 +11,26 @@ With the arrival of HTML5, CSS3 and ES5/ES6, developers actually have enough fac
 
 + Help developers to fully utilize HTML, CSS and Javascript. Besides HTML, CSS and Javascript, developers don't have to learn anything more.
 
-## The Latest Release
+##  Features
+
++ Regardless it's backend or front-end, developers can use one single language (Javascript) to do them all.
+
++ Help developers to divide web pages into smaller blocks and wcomps, so ti's easier to work on (the **divide and conquer** strategy).
+
++ HTML refactoring &amp; reuse + CSS encapsulation.
+
++ HTML, CSS and JS can all be formulated as templates.
+
++ An extremely easy and elegant way to provide multi-lingual support.
+
++ A single coServ server can host multiple websites, and it's very easy to manage them.
+
++ Support a very powerful CSS preprocessor called JASS.
+
+## Get started
+The easiest way is probably to try the [one page demo](https://github.com/benlue/cows-onePage). That is a one page website implemented with coServ. You'll find how easily a RWD website can be built using coServ.
+
+## What's new
 Below are highlights of recent releases. More details in [release notes](https://github.com/coimotion/coServ/blob/master/ReleaseNote.md).
 
 + [v0.10.3] coServ now can be deployed to Heroku right out of box without any modifications required. The "region" feature is officially removed.
@@ -26,21 +45,6 @@ Below are highlights of recent releases. More details in [release notes](https:/
 
 + [v0.9.3] coServ now supports live reload via [gulp](http://gulpjs.com). The needed gulpfile.js is included in the release. To use live reload, both gulp and [browser-sync](http://www.browsersync.io) have to be installed.
 
-##  Features
-
-+ Regardless it's backend functions or front-end templates, developers can use one single language (Javascript) to do them all.
-
-+ Help developers to divide web pages into smaller blocks and wcomps, so ti's easier to focus (the **divide and conquer** strategy).
-
-+ HTML refactoring &amp; reuse + CSS encapsulation.
-
-+ HTML, CSS and JS can all be formulated as templates.
-
-+ An extremely easy and elegant way to provide multi-lingual support.
-
-+ A single coServ server can host multiple websites, and it's very easy to manage them.
-
-+ Support a very powerful CSS preprocessor called JASS.
 
 ## The Design Console
 Starting from the 0.9.9 release, a web interface called "design console" was added to the release bundle. The design console can help developers to easily manage or design websites. It's a great tool to get things started.
