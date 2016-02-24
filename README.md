@@ -28,7 +28,7 @@ With the arrival of HTML5, CSS3 and ES5/ES6, developers actually have enough fac
 + Support a very powerful CSS preprocessor called JASS.
 
 ## Get started
-The easiest way is probably to try the [one page demo](https://github.com/benlue/cows-onePage). That is a one page website implemented with coServ. You'll find how easily a RWD website can be built using coServ.
+The easiest way is probably to try the [one page demo](https://github.com/benlue/cows-onePage). You'll find how easily a one page RWD website can be built using coServ.
 
 ## What's new
 Below are highlights of recent releases. More details in [release notes](https://github.com/coimotion/coServ/blob/master/ReleaseNote.md).
