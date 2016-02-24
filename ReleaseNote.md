@@ -7,7 +7,7 @@
 0.10.2
 ------
 + The server core has been shrunk to run even faster.
-+ Creating a new website with the design console can be properly initiated without having to restart the coServ server.
++ When a new website is created with the design console, it can be properly initiated without having to restart the coServ server.
 + Fixed bugs when dynamically embedding blocks.
 + fixed bugs in creating new layouts (in the design console).
 

@@ -2,6 +2,7 @@ var  fs = require('fs'),
 	 path = require('path'),
 	 adm = require('adm-zip'),
 	 config,
+	 coServ,
 	 siteUtil = require('../util/siteUtil.js');
 
 exports.execute = function(ctx, inData, cb)  {
@@ -85,6 +86,11 @@ exports.execute = function(ctx, inData, cb)  {
 						// ok. clean up the mess
 						siteUtil.reloadSites( ctx );
 						fs.unlinkSync(path.join(siteWWW, 'mySite.json'));
+
+						// restart server to enable static file loading
+			            if (!coServ)
+			                coServ = require(path.join(ctx.basePath, 'server/main.js'));
+			            coServ.restart();
 
 						cb( {
 							errCode: 0,
