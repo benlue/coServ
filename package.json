@@ -1,9 +1,9 @@
 {
   "name": "coserv",
-  "version": "0.10.2",
+  "version": "0.10.3",
   "description": "A web framework helping developers to fully utilize HTML, CSS and Javascript.",
   "engines": "4.2.2",
-  "main": "coServ.js",
+  "main": "./lib/server/main.js",
   "scripts": {
     "start": "node coServ.js"
   },
@@ -13,10 +13,10 @@
   },
   "keywords": [
     "Node.js",
+    "api",
     "COIMOTION",
-    "single-page",
     "coserv",
-    "web-platform",
+    "framework",
     "SASS",
     "JASS"
   ],
@@ -33,7 +33,6 @@
     "connect-multiparty": "^2.0.0",
     "cookie-parser": "^1.4.0",
     "morgan": "^1.6.1",
-    "node-sass": "^3.4.2",
     "request": "^2.67.0",
     "serve-static": "^1.10.0",
     "xml2js": "^0.4.15"

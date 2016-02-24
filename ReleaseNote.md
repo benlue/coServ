@@ -1,3 +1,9 @@
+0.10.3
+------
++ Make coServ ready to deploy to Heroku right out of box.
++ The node-sass module is removed out of the default modules. If you want coServ to compile SASS automatically, you can install the node-sass module by yourself.
++ The "region" feature is officially removed.
+
 0.10.2
 ------
 + The server core has been shrunk to run even faster.

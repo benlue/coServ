@@ -36,6 +36,10 @@ function  findSite(sites, prop, caCode)  {
     var  data;
     
     for (var k in sites)  {
+        // skip non-active websites
+        if (k.substring(0, 2) === 'x-')
+            continue;
+
         var  siteInfo = sites[k];
         if (siteInfo[prop] === caCode)  {
             data = {

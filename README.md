@@ -14,6 +14,8 @@ With the arrival of HTML5, CSS3 and ES5/ES6, developers actually have enough fac
 ## The Latest Release
 Below are highlights of recent releases. More details in [release notes](https://github.com/coimotion/coServ/blob/master/ReleaseNote.md).
 
++ [v0.10.3] coServ now can be deployed to Heroku right out of box without any modifications required. The "region" feature is officially removed.
+
 + [v0.10.0] A new feature called **wcomp** was introduced (see [below](#wcomp) for more explanations). A more managable websit file structure was introduced and the design console can import &amp; export websites. Also the "region" feature is deprecated.
 
 + [v0.9.9] A web interface (coServ design console) has been added to manage & design websites running on a coServ server. For details, check the "Design Console" section below.
@@ -44,6 +46,8 @@ Below are highlights of recent releases. More details in [release notes](https:/
 Starting from the 0.9.9 release, a web interface called "design console" was added to the release bundle. The design console can help developers to easily manage or design websites. It's a great tool to get things started.
 
 To play with the design console, simply start coServ (node coServ) and point your browser to "localhost:8080". The website you're working on can be assigned to "127.0.0.1". That's a small trick to host two websites on your local machine.
+
+*Note*: the design console is only tested on chrome and safari. Sorry I don't have that much time to make it ready on all browsers.
 
 <a name="wcomp"></a>
 ## Wcomps

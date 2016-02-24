@@ -121,7 +121,7 @@ function  deleteSite(ctx, inData, cb)  {
 
             // restart server to stop static file loading of the removed website
             if (!coServ)
-                coServ = require(path.join(ctx.basePath, '../coServ.js'));
+                coServ = require(path.join(ctx.basePath, 'server/main.js'));
             coServ.restart();
 
     		cb({
@@ -252,7 +252,7 @@ function  createSite(ctx, inData, cb)  {
 
             // restart server to enable static file loading
             if (!coServ)
-                coServ = require(path.join(ctx.basePath, '../coServ.js'));
+                coServ = require(path.join(ctx.basePath, 'server/main.js'));
             coServ.restart();
 
 	    	cb({
