@@ -33,7 +33,7 @@ The easiest way is probably to try the [one page demo](https://github.com/benlue
 ## Issues about multiple websites
 If you run multiple websites on coServ, you may have problems of loading images from other websites. That's because the root path of static files (such as images) from various websites are all pointed to '/'. coServ has no way to know '/' is belonging to which website.
 
-v0.10.4 has a solution for this. If you're hosting multiple websites on coServ, you should refer to images (and other static files) with the '/**$website_theme**/cont/' prefix and that should solve the problem.
+v0.10.4 has a solution for this. If you're hosting multiple websites on coServ, you should refer to images (and other static files) with the '/**$website_code_name**/cont/' prefix and that should solve the problem.
 
 ## What's new
 Below are highlights of recent releases. More details in [release notes](https://github.com/coimotion/coServ/blob/master/ReleaseNote.md).
