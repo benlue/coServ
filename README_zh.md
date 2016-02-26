@@ -30,9 +30,9 @@
 要了解如何以 coServ 快速開發網站也許可以從這個「一頁式網站」(https://github.com/benlue/cows-onePage) 開始。這個範例教你如何在幾分鐘內完成一個響應式 (RWD) 的一頁式網站，而且你可以很容易的加以修改。
 
 ## 最新版本
-coServ 目前的最新版本是 0.10.3。以下是最近版本所提供的新功能或改進：
+coServ 目前的最新版本是 0.10.4。以下是最近版本所提供的新功能或改進：
 
-+ [v0.10.3] coServ 在可以直接佈署到 Heroku 上，不需要修改 coServ 的原始碼。另外「region」的功能已被正式移除。
++ [v0.10.3] coServ 現在可以直接佈署到 Heroku 上，只需要稍微調整設定。另外「region」的功能已被正式移除。
 
 + [v0.10.0] 新增了網頁元件 (wcomp) 的功能，細節請參考[網頁元件](#wcomp)一節。網站的檔案結構也做了調整，使多網站的管理更方便。另外透過管理工具，現在可以將整個網站匯入或匯出。另外「region」的功能已退役，不建議再使用。
 
@@ -68,4 +68,6 @@ coServ 許多先進的構想讓網站設計可以有效的化繁為簡。不過�
 
 ## 技術文件
 
-使用指南請參考[這裡](https://benlue.gitbooks.io/coserv-user-guide/content/)。相關的部落格文章請參考[這裡](http://www.coservjs.org/coserv/doc?_loc=zh)。
++ [The coServ User Guide](https://benlue.gitbooks.io/coserv-user-guide/content/)：適合第一次接觸 coServ 的使用者
++ [The coServ Block Programming Guide](https://benlue.gitbooks.io/the-coserv-programming-guide/content/)：關於區塊的完整資料
++ 還有一些額外的[文章](http://www.coservjs.org/coserv/doc) 可以參考，不過內容可能有些過期。

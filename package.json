@@ -1,6 +1,6 @@
 {
   "name": "coserv",
-  "version": "0.10.3",
+  "version": "0.10.4",
   "description": "A web framework helping developers to fully utilize HTML, CSS and Javascript.",
   "engines": "4.2.2",
   "main": "./lib/server/main.js",
@@ -14,10 +14,9 @@
   "keywords": [
     "Node.js",
     "api",
+    "framework",
     "COIMOTION",
     "coserv",
-    "framework",
-    "SASS",
     "JASS"
   ],
   "author": {

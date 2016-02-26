@@ -1,3 +1,8 @@
+0.10.4
+------
++ If you run multiple websites on coServ, static files (such as images) of the same name from different websites can get confused. Now you can prepend '/$website_code_name/cont' to the file path to distinguish them.
++ Fixed an obvious bug in coServ.js which cause coServ failed to start.
+
 0.10.3
 ------
 + Make coServ ready to deploy to Heroku right out of box.
