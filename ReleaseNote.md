@@ -1,6 +1,6 @@
 0.10.4
 ------
-+ If you run multiple websites on coServ, static files (such as images) of the same name from different websites can get confused. Now you can prepend '/$website_code_name/cont' to the file path to distinguish them.
++ If you run multiple websites on coServ, static files (such as images) of the same name from different websites can get confused. Now you can prepend '/$website_theme/cont' to the file path to distinguish them.
 + wFront.js is the main (front-end) controller. This file can be updated with new coServ release, so it's better to be served from coServ than from websites (which may use older versions). This is enforced in this release.
 + Fixed an obvious bug in coServ.js which cause coServ failed to start.
 
