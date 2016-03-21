@@ -34,10 +34,6 @@ To install
 
 The easiest way is to get started is probably to try the [one page demo](https://github.com/benlue/cows-onePage). You can build a one page RWD website in minutes.
 
-## Issues about multiple websites
-If you run multiple websites on coServ, you may have problems of loading images from other websites. That's because the root path of static files (such as images) from various websites are all pointed to '/'. coServ has no way to know '/' is belonging to which website.
-
-v0.10.4 has a solution for this. If you're hosting multiple websites on coServ, you should refer to images (and other static files) with the '/**$website_code_name**/cont/' prefix and that should solve the problem.
 
 ## What's new
 Below are highlights of recent releases. More details in [release notes](https://github.com/coimotion/coServ/blob/master/ReleaseNote.md).
@@ -69,6 +65,12 @@ To play with the design console, simply start coServ (node coServ) and point you
 A new concept called **wcomp** was introduced in v0.10.0. With **wcomps**, you can package sophisticated UI designs into a component which is ready to be re-used anywhere in your websites.
 
 Conceptually, wcomps are very similar to [web components](http://webcomponents.org/) except that wcomps do not use shadow DOM and do not require polyfill or native support from browsers. Wcomps are also similar to blocks. The main difference between **wcomps** and **blocks** is that wcomps are not bound to any specific contents.
+
+
+## Issues about multiple websites
+If you run multiple websites on coServ, you may have problems of loading images from other websites. That's because the root path of static files (such as images) from various websites are all pointed to '/'. coServ has no way to know '/' is belonging to which website.
+
+v0.10.4 has a solution for this. If you're hosting multiple websites on coServ, you should refer to images (and other static files) with the '/**$website_code_name**/cont/' prefix and that should solve the problem.
 
 
 ## Documentation
