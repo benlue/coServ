@@ -9,7 +9,7 @@ With the arrival of HTML5, CSS3 and ES5/ES6, developers actually have enough fac
 
 + Helping developers not to repeat themselves.
 
-+ Helping developers to fully utilize HTML, CSS and Javascript. Besides those, there is nothing to learn (well, before the next exciting technologies coming out).
++ Helping developers to fully utilize HTML, CSS and Javascript. Besides those, there is nothing to learn (well, before the next exciting technologies coming out XD).
 
 ##  Features
 
