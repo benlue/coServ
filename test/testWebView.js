@@ -2,17 +2,38 @@
  * coServ
  * authors: Ben Lue
  * license: MIT
- * Copyright(c) 2015 Gocharm Inc.
+ * Copyright(c) 2014 ~ 2016 Gocharm Inc.
  */
-var  assert = require('assert'),
-     cheerio = require('cheerio'),
+var  cheerio = require('cheerio'),
+     config = require('../lib/server/config.js'),
 	 path = require('path'),
-	 webSite = require('../lib/base/webSite.js'),
-	 webView = require('../lib/base/webView.js');
+	 webSite,
+	 webView;
 
-var  resMocker;
+var  resMocker,
+     simpleSiteInfo = {
+        caCode: "simple",
+        theme: "basic",
+        title: 'HOME',
+        sitePath: "./simple"
+     };
 
-before(function()  {
+(function()  {
+    var  option = {
+            "apiEngine": {
+                "host": "coimapi.net",
+                "port": 80,
+                "method": "POST"
+            },
+            "server": {
+                "wwwPath": path.join(__dirname, 'case')
+            }
+         };
+
+    config.init( option );
+    webSite = require('../lib/base/webSite.js');
+    webView = require('../lib/base/webView.js');
+
 	resMocker  = {
 		setHeader: function(key, value)  {},
 		end: function(s)  {
@@ -23,226 +44,229 @@ before(function()  {
 			return  this.result;
 		}
 	};
-});
+})();
+
+module.exports = {
+    'missing HTML': noHtmlTest,
+    'HTML fragment': HtmlFragTest,
+    'simple HTML': SimpleHtmlTest,
+    'no such page': noSuchTest,
+    'page title': pageTitleTest,
+    'page description': pageDescTest,
+    'dynamic content': dynamicContentTest,
+    'embed block': embedBlockTest,
+    'text output': textOutTest
+}
 
 
-describe('[coServ/rendering]...', function() {
-    /*
-    it('Missing the HTML file', function(done)  {
-    	var  themePath = path.join(__dirname, "./case/simple/themes"),
-    		 siteInfo = {
-		 		caCode: "foo",
-		 		theme: "basic"
-    		 },
-    		 site = new webSite(siteInfo, themePath);
+/**
+ * Page title is specified in the siteURI.json file.
+ */
+function  pageTitleTest(beforeExit, assert)  {
+    var  site = new webSite(simpleSiteInfo),
+         parsedURL = {
+            pathname: '/index'
+         },
+         req = {
+            method: 'GET',
+            url: "http://www.foo.com" + parsedURL.pathname,
+            parsedURL: parsedURL,
+            headers: {},
+            cookies: {}
+         };
 
-    	var  req = {
-    			method: 'GET',
-    			url: "http://www.foo.com/noHTML.hf",
-    			headers: {
-
-    			},
-    			cookies: {}
-    		 };
-
-    	site.run(req, resMocker, function()  {
-    		var  result = resMocker.getResult();
-    		//console.log( result );
-    	assert.equal(result, '<div class="_xsError">Missing the block view directory for the /views/noHTML block.</div>', 'Show warning.');
-    		done();
-    	});
-    });
-
-    it('Simeple fragment. HTML only', function(done)  {
-    	var  themePath = path.join(__dirname, "./case/simple/themes"),
-    		 siteInfo = {
-		 		caCode: "foo",
-		 		theme: "basic"
-    		 },
-    		 site = new webSite(siteInfo, themePath);
-
-    	var  req = {
-    			method: 'GET',
-    			url: "http://www.foo.com/index.hf",
-    			headers: {
-
-    			},
-    			cookies: {}
-    		 };
-
-    	site.run(req, resMocker, function(isStream, result)  {
-            console.log( result.body );
-            //assert.equal(result, '<div>Hello!</div>', 'Show hello.');
-            done();
-        });
-    });
-
-    it('Simeple. HTML only', function(done)  {
-    	var  themePath = path.join(__dirname, "./case/simple/themes"),
-    		 siteInfo = {
-		 		caCode: "foo",
-		 		theme: "basic"
-    		 },
-    		 site = new webSite(siteInfo, themePath);
-
-    	var  req = {
-    			method: 'GET',
-    			url: "http://www.foo.com/index",
-    			headers: {
-
-    			},
-    			cookies: {}
-    		 };
-
-    	site.run(req, resMocker, function(isStream, result)  {
-    		console.log( result.body );
-    		//assert.equal(result, '<div>Hello!</div>', 'Show hello.');
-    		done();
-    	});
-    });
-
-    it('Not recognized path', function(done)  {
-    	var  themePath = path.join(__dirname, "./case/simple/themes"),
-    		 siteInfo = {
-		 		caCode: "foo",
-		 		theme: "basic"
-    		 },
-    		 site = new webSite(siteInfo, themePath);
-
-    	var  req = {
-    			method: 'GET',
-    			url: "http://www.foo.com/noSuchPage",
-    			headers: {
-
-    			},
-    			cookies: {}
-    		 };
-
-    	site.run(req, resMocker, function()  {
-    		var  result = resMocker.getResult();
-    		console.log( result );
-    		//assert.equal(result, '<div>Hello!</div>', 'Show hello.');
-    		done();
-    	});
-    });
-    */
-    it('page title', function(done)  {
-        var  themePath = path.join(__dirname, "./case/simple/themes"),
-             siteInfo = {
-                caCode: "foo",
-                theme: "basic",
-                title: 'HOME'
-             },
-             site = new webSite(siteInfo, themePath);
-
-        var  req = {
-                method: 'GET',
-                url: "http://www.foo.com/index",
-                headers: {},
-                cookies: {}
-             };
-
-        site.run(req, resMocker, function(isStream, result)  {
-            //console.log( "------\n" + result.body );
+    site.run(req, resMocker, function(isStream, result)  {
+        //console.log( "------\n" + result.body );
+        beforeExit(function() {
             var  $ = cheerio.load( result.body );
-            assert.equal($('head title').text(), 'HOME', 'title is HOME');
-            done();
+            assert.equal($('head title').text(), 'HOME');
         });
     });
+}
 
-    it('page description', function(done)  {
-        var  themePath = path.join(__dirname, "./case/simple/themes"),
-             siteInfo = {
-                caCode: "foo",
-                theme: "basic"
-             },
-             site = new webSite(siteInfo, themePath);
 
-        var  req = {
-                method: 'GET',
-                url: "http://www.foo.com/index",
-                headers: {},
-                cookies: {}
-             };
+/**
+ * Page description is specified in the siteURI.json file.
+ */
+function  pageDescTest(beforeExit, assert)  {
+    var  site = new webSite(simpleSiteInfo),
+         parsedURL = {
+            pathname: '/index'
+         },
+         req = {
+            method: 'GET',
+            url: "http://www.foo.com" + parsedURL.pathname,
+            parsedURL: parsedURL,
+            headers: {},
+            cookies: {}
+         };
 
-        site.run(req, resMocker, function(isStream, result)  {
-            //console.log( "------\n" + result.body );
+    site.run(req, resMocker, function(isStream, result)  {
+        //console.log( "------\n" + result.body );
+        beforeExit(function() {
             var  $ = cheerio.load( result.body );
-            //console.log( $('head meta[name=description]').attr('content') );
-            assert.equal($('head meta[name=description]').attr('content'), 'This is my page.', 'Wrong description.');
-            done();
+            assert.equal($('head meta[name=description]').attr('content'), 'This is my page.');
         });
     });
+}
 
-    it('dynamic content', function(done)  {
-        var  themePath = path.join(__dirname, "./case/simple/themes"),
-             siteInfo = {
-                caCode: "foo",
-                theme: "basic"
-             },
-             site = new webSite(siteInfo, themePath);
 
-        var  req = {
-                method: 'GET',
-                url: "http://www.foo.com/tempCase1",
-                headers: {},
-                cookies: {}
-             };
+function  dynamicContentTest(beforeExit, assert)  {
+    var  site = new webSite(simpleSiteInfo),
+         parsedURL = {
+            pathname: '/tempCase1'
+         },
+         req = {
+            method: 'GET',
+            url: "http://www.foo.com" + parsedURL.pathname,
+            parsedURL: parsedURL,
+            headers: {},
+            cookies: {}
+         };
 
-        site.run(req, resMocker, function(isStream, result)  {
-            //console.log( "------\n" + result.body );
+    site.run(req, resMocker, function(isStream, result)  {
+        //console.log( "------\n" + result.body );
+        beforeExit(function() {
             var  $ = cheerio.load( result.body );
-            assert.equal($('div.TempCase1 li').length, 10, '10 list items');
-            done();
+            assert.equal($('div.TempCase1 li').length, 10);
         });
     });
-    /*
-    it('embed block', function(done)  {
-        var  themePath = path.join(__dirname, "./case/simple/themes"),
-             siteInfo = {
-                caCode: "foo",
-                theme: "basic"
-             },
-             site = new webSite(siteInfo, themePath);
+}
 
-        var  req = {
-                method: 'GET',
-                url: "http://www.foo.com/case1.hf",
-                headers: {
 
-                },
-                cookies: {}
-             };
+function  embedBlockTest(beforeExit, assert)  {
+    var  site = new webSite(simpleSiteInfo),
+         parsedURL = {
+            pathname: '/case1.hf'
+         },
+         req = {
+            method: 'GET',
+            url: "http://www.foo.com" + parsedURL.pathname,
+            parsedURL: parsedURL,
+            headers: {},
+            cookies: {}
+         };
 
-        site.run(req, resMocker, function(isStream, result)  {
-            console.log( "------\n" + result.body );
-            //assert.equal(result, '<div>Hello!</div>', 'Show hello.');
-            done();
+    site.run(req, resMocker, function(isStream, result)  {
+        beforeExit(function() {
+            var  $ = cheerio.load( result.body );
+            assert.equal($('#answer').text().trim(), 'x is 5');
         });
     });
+}
 
-    it('text output', function(done)  {
-        var  themePath = path.join(__dirname, "./case/simple/themes"),
-             siteInfo = {
-                caCode: "foo",
-                theme: "basic"
-             },
-             site = new webSite(siteInfo, themePath);
 
-        var  req = {
-                method: 'GET',
-                url: "http://www.foo.com/txCase1.txt",
-                headers: {
+/**
+ * Plain text output should be generated from a local server module. No template will be referenced.
+ */
+function  textOutTest(beforeExit, assert)  {
+    var  site = new webSite(simpleSiteInfo),
+         parsedURL = {
+            pathname: '/txCase1.txt'
+         },
+         req = {
+            method: 'GET',
+            url: "http://www.foo.com" + parsedURL.pathname,
+            parsedURL: parsedURL,
+            headers: {},
+            cookies: {}
+         };
 
-                },
-                cookies: {}
-             };
-
-        site.run(req, resMocker, function(isStream, result)  {
-            //console.log( "------\n" + JSON.stringify(result.body, null, 4) );
-            assert.equal(result.body, 'hello', 'Show hello.');
-            done();
+    site.run(req, resMocker, function(isStream, result)  {
+        beforeExit(function() {
+            assert.equal(result.body, 'hello');
         });
     });
-    */
-});
+}
+
+
+function  noHtmlTest(beforeExit, assert)  {
+    var  site = new webSite(simpleSiteInfo),
+         parsedURL = {
+            pathname: '/noHTML.hf'
+         },
+         req = {
+            method: 'GET',
+            url: "http://www.foo.com" + parsedURL.pathname,
+            parsedURL: parsedURL,
+            headers: {},
+            cookies: {}
+         };
+
+    site.run(req, resMocker, function(isStream, result)  {
+        //console.log( "------\n" + result.body );
+        beforeExit(function() {
+            var  $ = cheerio.load( result.body );
+            assert.equal($('._xsError').text(), 'Missing the block view directory for the /noHTML block.');
+        });
+    });
+}
+
+
+function  HtmlFragTest(beforeExit, assert)  {
+    var  site = new webSite(simpleSiteInfo),
+         parsedURL = {
+            pathname: '/index.hf'
+         },
+         req = {
+            method: 'GET',
+            url: "http://www.foo.com" + parsedURL.pathname,
+            parsedURL: parsedURL,
+            headers: {},
+            cookies: {}
+         };
+
+    site.run(req, resMocker, function(isStream, result)  {
+        //console.log( "------\n" + result.body );
+        beforeExit(function() {
+            var  $ = cheerio.load( result.body );
+            assert.equal($('.Index').text(), 'Hello!');
+        });
+    });
+}
+
+
+function  SimpleHtmlTest(beforeExit, assert)  {
+    var  site = new webSite(simpleSiteInfo),
+         parsedURL = {
+            pathname: '/index'
+         },
+         req = {
+            method: 'GET',
+            url: "http://www.foo.com" + parsedURL.pathname,
+            parsedURL: parsedURL,
+            headers: {},
+            cookies: {}
+         };
+
+    site.run(req, resMocker, function(isStream, result)  {
+        //console.log( "------\n" + result.body );
+        beforeExit(function() {
+            var  $ = cheerio.load( result.body );
+            assert.equal($('.Index').text(), 'Hello!');
+        });
+    });
+}
+
+
+function  noSuchTest(beforeExit, assert)  {
+    var  site = new webSite(simpleSiteInfo),
+         parsedURL = {
+            pathname: '/noSuchPage'
+         },
+         req = {
+            method: 'GET',
+            url: "http://www.foo.com" + parsedURL.pathname,
+            parsedURL: parsedURL,
+            headers: {},
+            cookies: {}
+         };
+
+    site.run(req, resMocker, function(isStream, result)  {
+        //console.log( "------\n" + result.body );
+        beforeExit(function() {
+            var  $ = cheerio.load( result.body );
+            assert.equal($('._xsError').text(), 'Oops! The block [/noSuchPage] is not found.');
+        });
+    });
+}
