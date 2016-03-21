@@ -1,15 +1,15 @@
 # coServ
 
 ## Why coServ
-Offering smooth user experiences is becoming the norm of web applications. However, it's not a simple task. Compounded with the problems that today's web applications are much more complicated than they used to be, web developers need better web platforms to meet the challenge. Many platforms have been developed for the quest. Unfortunately, most platforms present more problems than solving them.
+Offering smooth user experiences is becoming the norm of web applications. However, it's not a simple task. Many platforms have been developed for the quest. Unfortunately, most platforms present more problems than solving them.
 
-With the arrival of HTML5, CSS3 and ES5/ES6, developers actually have enough facilities to tackle the problems. The focus should not be on creating yet another web design technology, but on effectively utilizing those three fundamental facilities. We've seen many web platforms inventing new syntax or extensions on top of those standards, but do little to help developers fully utilize them. That does not seem to be the right direction, so we decided to show an alternative. Below are the major design guidelines of **coServ**:
+With the arrival of HTML5, CSS3 and ES5/ES6, developers actually have enough facilities to tackle the problems. All we need is probably just a neat and clean platform to fully utilize those three fundamental technologies. So here comes **coServ**, with the following design guidelines in mind:
 
 + Developers should spend time on designing/coding rather than learning or harnessing the platform itself.
 
-+ Help developers not to repeat themselves.
++ Helping developers not to repeat themselves.
 
-+ Help developers to fully utilize HTML, CSS and Javascript. Besides HTML, CSS and Javascript, developers don't have to learn anything more.
++ Helping developers to fully utilize HTML, CSS and Javascript. Besides those, there is nothing to learn (well, before the next exciting technologies coming out).
 
 ##  Features
 
@@ -28,7 +28,11 @@ With the arrival of HTML5, CSS3 and ES5/ES6, developers actually have enough fac
 + Support a very powerful CSS preprocessor called JASS.
 
 ## Get started
-The easiest way is probably to try the [one page demo](https://github.com/benlue/cows-onePage). You can build a one page RWD website in minutes.
+To install
+
+	npm install coserv
+
+The easiest way is to get started is probably to try the [one page demo](https://github.com/benlue/cows-onePage). You can build a one page RWD website in minutes.
 
 ## Issues about multiple websites
 If you run multiple websites on coServ, you may have problems of loading images from other websites. That's because the root path of static files (such as images) from various websites are all pointed to '/'. coServ has no way to know '/' is belonging to which website.
