@@ -3,6 +3,7 @@
 + Added an access protection scheme. You can easily protect the whole or part of the website from unauthorized access.
 + The block controller gets a new function: getParent() which can be used to get the controller of the parent block.
 + A "noWrapper" option is supported to display a wcomp without the additional wrapper.
++ Properly handling JSON inputs (when using the HTTP POST).
 
 0.10.6
 ------

@@ -30,7 +30,11 @@
 要了解如何以 coServ 快速開發網站也許可以從這個「一頁式網站」(https://github.com/benlue/cows-onePage) 開始。這個範例教你如何在幾分鐘內完成一個響應式 (RWD) 的一頁式網站，而且你可以很容易的加以修改。
 
 ## 最新版本
-coServ 目前的最新版本是 0.10.5。以下是最近版本所提供的新功能或改進：
+coServ 目前的最新版本是 0.10.7。以下是最近版本所提供的新功能或改進：
+
++ [v0.10.7] 快速簡易的方式讓訪客（未登入者）不能存取受保護的網頁. 詳情請參考 [此處](https://benlue.gitbooks.io/coserv-user-guide/content/scenario#accProt) 的說明.
+
++ [v0.10.7] 現在可以取消網頁元件在顯示時所額外包覆的 &lgt;div&gt; 層. 詳情請參考 [此處](https://benlue.gitbooks.io/coserv-user-guide/content/chap5/chapter5.html#dspNoWrapper) 的說明.
 
 + [v0.10.3] coServ 現在可以直接佈署到 Heroku 上，只需要稍微調整設定。另外「region」的功能已被正式移除。
 
