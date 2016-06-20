@@ -1,7 +1,8 @@
 {
 	"/index": {
 		"id": "no",
-		"description": "This is my page."
+		"description": "This is my page.",
+		"ignorePostfix": true
 	},
 	"/noHTML": {
 		"id": "no"

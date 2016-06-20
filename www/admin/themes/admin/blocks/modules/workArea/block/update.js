@@ -46,7 +46,7 @@ exports.execute = function(ctx, inData, cb)  {
                         bkInfo.title = inData.title;
                     if (inData.desc)
                         bkInfo.description = inData.desc;
-                    if (inData.service)
+                    if (inData.service || inData.service === '')
                         bkInfo.service = inData.service;
                     bkInfo.id = inData.id;
 

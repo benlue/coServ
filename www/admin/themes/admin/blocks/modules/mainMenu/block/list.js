@@ -18,14 +18,29 @@ exports.execute = function(ctx, inData, cb)  {
 			else
 				try  {
 					var  siteInfo = JSON.parse(data),
-						 list = [];
+						 list = [],
+                         bk = inData.bk;
 
-					for (var key in siteInfo)  {
-						list.push({
-							title: key,
-							arg: key
-						});
-					}
+                    if (bk)  {
+                        if (bk.charAt(0) != '/')
+                            bk = '/' + bk;
+                        
+                        for (var key in siteInfo)  {
+                            if (key.indexOf(bk) === 0)
+                                list.push({
+                                    title: key,
+                                    arg: key
+                                });
+                        }
+                    }
+                    else  {
+                        for (var key in siteInfo)  {
+                            list.push({
+                                title: key,
+                                arg: key
+                            });
+                        }
+                    }
 					
 					list.sort(function(a, b) {
 						if (a.title < b.title)

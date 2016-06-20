@@ -38,15 +38,17 @@ The easiest way is to get started is probably to try the [one page demo](https:/
 ## What's new
 Below are highlights of recent releases. More details in [release notes](https://github.com/coimotion/coServ/blob/master/ReleaseNote.md).
 
++ [v0.10.7] You can easily protect the whole or part of the website from unauthorized access. Check [here](https://benlue.gitbooks.io/coserv-user-guide/content/scenario#accProt) for details.
+
++ [v0.10.7] A wcomp can be displayed without the additional wrapper. Check [here](https://benlue.gitbooks.io/coserv-user-guide/content/chap5/chapter5.html#dspNoWrapper) for details.
+
 + [v0.10.4] wFront.js is the main (front-end) controller. This file can be updated with new coServ release, so it's better to be served from coServ than from websites (which may use older versions). This is enforced in v0.10.4.
 
-+ [v0.10.3] coServ now can be deployed to Heroku right with minor modifications. The "region" feature is officially removed.
++ [v0.10.3] coServ now can be [deployed to Heroku](https://benlue.gitbooks.io/coserv-user-guide/content/chap6/chapter6.html) with almost no modifications needed.
 
 + [v0.10.0] A new feature called **wcomp** was introduced (see [below](#wcomp) for more explanations). A more managable websit file structure was introduced and the design console can import &amp; export websites. Also the "region" feature is deprecated.
 
 + [v0.9.9] A web interface (coServ design console) has been added to manage & design websites running on a coServ server. For details, check the "Design Console" section below.
-
-+ [v0.9.8] wFront.js was updated (wFront.js is the main controller of coServ on the client side). If you do not use the default web directory ('/www'), remember to copy the wFront.js file to your custom web directory (/www/cont/shared/js/wFront.js).
 
 + [v0.9.6] It's now possible to do server side redirect. This is how: create a block (without view) and make a customized module for the block. In the customized module, simply return {"_httpCode": 302, "_httpHeaders": {Location: 'the redirect URL'}} in the callback.
 

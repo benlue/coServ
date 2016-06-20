@@ -10,14 +10,23 @@ ctrl.startup = function() {
 			idxCtrl.dispatch('block', bkName);
 		});
 	}
+    
+    var  bk = '<%=bi.query.bk%>';
+    if (bk)  {
+        var  pos = bk.length * 2;
+        ctrl.sel('#bkFilter').focus()[0].setSelectionRange(pos, pos);
+    }
 }
 
 
-ctrl.refresh = function(itemName)  {
+ctrl.refresh = function(itemName, bkName)  {
 	var  menuCtrl = __.getCtrl('pgMainMenu'),
 		 params = {
 			caCode: menuCtrl.getCurrentSite()
 		 };
+    
+    if (bkName)
+        params.bk = bkName;
 
 	ctrl.reload({params: params}, function()  {
 		if (itemName)  {
@@ -30,14 +39,10 @@ ctrl.refresh = function(itemName)  {
 }
 
 
-/*
-ctrl.newBlock = function() {
-	var  idxCtrl = __.getCtrl('workArea');
-	idxCtrl.dispatch('block', '_+_');
+/**
+ * Trim down the blocks shown
+ */
+ctrl.filterBlock = function(inbox)  {
+    var  bkName = $(inbox).val();
+    ctrl.refresh(null, bkName);
 }
-
-
-ctrl.getTheme = function() {
-    return  ctrl.sel('#themeField').val();
-}
-*/

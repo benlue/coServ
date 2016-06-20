@@ -1,3 +1,14 @@
+0.10.7
+------
++ Added an access protection scheme. You can easily protect the whole or part of the website from unauthorized access.
++ The block controller gets a new function: getParent() which can be used to get the controller of the parent block.
++ A "noWrapper" option is supported to display a wcomp without the additional wrapper.
+
+0.10.6
+------
++ Fixed a bug in multi-lingual support.
++ Fixed a bug in creating a new layout using the design console.
+
 0.10.5
 ------
 + Minor bug fixes.

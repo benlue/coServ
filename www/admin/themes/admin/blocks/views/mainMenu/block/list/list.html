@@ -1,6 +1,36 @@
+<form class="form-inline">
+    <div class="form-group">
+        <div class="input-group">
+      		<div class="input-group-addon">
+                <span class="glyphicon glyphicon-filter" aria-hidden="true"></span>
+            </div>
+      		<input type="text" id="bkFilter" class="form-control" id="exampleInputAmount"
+                   value="<%=bi.query.bk || '' %>" placeholder="Enter block path..."
+                   onkeyup="<%=ctrl%>.filterBlock(this);">
+        </div>
+    </div>
+</form>
 <%
+    var  list = value.list;
+    /*
+	if (bi.query.bk)  {
+   		var  shortList = [],
+   			 bk = bi.query.bk;
+   
+   		if (bk.charAt(0) != '/')
+   			bk = '/' + bk;
+   
+   		for (var i in list)  {
+   			var  item = list[i];
+   			if (item.title.indexOf(bk) === 0)
+   				shortList.push( item );
+   		}
+   		list = shortList;
+    }
+    */
+   
 	wcomp('blockList', '/bs/pills', {
 		isVertical: true,
-		list: value.list
+		list: list
 	});
 %>
