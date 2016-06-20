@@ -20,6 +20,10 @@
       <en>API Service</en>
       <zh>API 服務網址</zh>
     </ph>
+    <ph id="isProtected">
+      <en>Is Protected</en>
+      <zh>存取保護</zh>
+    </ph>
   	<ph id="delete">
       <en>Delete</en>
       <zh>刪除區塊</zh>

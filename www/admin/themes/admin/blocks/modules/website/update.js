@@ -49,6 +49,8 @@ function  updateSite(ctx, inData, cb)  {
                     siteInfo.locale = inData.locale;
                 if (inData.homePage)
                     siteInfo.home = inData.homePage;
+                if (inData.hasOwnProperty('isProtected'))
+                    siteInfo.isProtected = inData.isProtected;
 
                 return  fs.writeFile( sitesFile, JSON.stringify(sites, null, 4), function(err) {
                     if (err)

@@ -48,6 +48,8 @@ exports.execute = function(ctx, inData, cb)  {
                         bkInfo.description = inData.desc;
                     if (inData.service || inData.service === '')
                         bkInfo.service = inData.service;
+                    if (inData.hasOwnProperty('isProtected'))
+                        bkInfo.isProtected = inData.isProtected;
                     bkInfo.id = inData.id;
 
                     fs.writeFile( viewPath, JSON.stringify(siteInfo, null, 4), function(err) {

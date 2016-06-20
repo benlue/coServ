@@ -120,12 +120,21 @@ ctrl.save = function()  {
             caCode: ctrl.sel('#wsApp').val(),
             title: ctrl.sel('#wsTitle').val(),
             locale: ctrl.sel('#wsLocale').val(),
-            homePage: ctrl.sel('#wsHome').val()
+            homePage: ctrl.sel('#wsHome').val(),
+            isProtected: ctrl.sel('#wsProtect').is(':checked')
          };
 
-    $.post('/website/update.wsj', pdata, function(result) {
+    $.ajax({
+        url: '/website/update.wsj',
+        contentType: 'application/json',
+        data: JSON.stringify(pdata),
+        processData: false,
+        dataType: 'json',
+        type: 'POST'
+    })
+    .done(function(result)  {
         alert( result.message );
-    }, 'json');
+    });
 }
 
 

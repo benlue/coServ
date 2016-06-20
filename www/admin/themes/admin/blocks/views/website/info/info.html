@@ -40,6 +40,12 @@
         <input type="text" class="form-control" id="wsHome" 
                value="<%=value.home || bi.query.homePage || ''%>" placeholder="<%=ph.homeHolder%>">
     </div>
+
+    <div class="checkbox">
+        <label>
+            <input id="wsProtect" type="checkbox"<%= value.isProtected ? ' checked': ''%>> <%= ph.isProtected %>
+        </label>
+    </div>
 </form>
 
 <div class="flexContainer" style="margin-left: 0px;">

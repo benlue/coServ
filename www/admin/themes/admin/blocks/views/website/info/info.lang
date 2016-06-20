@@ -24,6 +24,10 @@
         <en>Default Page</en>
         <zh>預設首頁</zh>
     </ph>
+    <ph id="isProtected">
+      <en>Is Protected</en>
+      <zh>存取保護</zh>
+    </ph>
     <ph id="importLabel">
         <en>Importing a website</en>
         <zh>匯入網站</zh>

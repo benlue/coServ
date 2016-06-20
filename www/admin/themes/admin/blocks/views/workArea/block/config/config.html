@@ -29,6 +29,12 @@
 		<input id="blockAPI" class="form-control" value="<%=value.service || ''%>">
 	</div>
 
+	<div class="checkbox">
+	    <label>
+	      <input id="bkProtect" type="checkbox"<%= value.isProtected ? ' checked': ''%>> <%= ph.isProtected %>
+	    </label>
+  	</div>
+
 	<div style="text-align:right;">
         <% if (bi.query.bkName) { %>
 		<button class="btn btn-danger" onclick="<%=ctrl%>.deleteBlock('<%= bi.query.bkName %>');"><%=ph.delete%></button>

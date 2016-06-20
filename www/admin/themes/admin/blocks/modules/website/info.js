@@ -48,7 +48,8 @@ function  findSite(sites, prop, caCode)  {
                 sitePath: siteInfo.sitePath,
                 title: siteInfo.title,
                 locale: siteInfo.locale || 'en',
-                home: siteInfo.home
+                home: siteInfo.home,
+                isProtected: siteInfo.isProtected || false
             };
             
             break;

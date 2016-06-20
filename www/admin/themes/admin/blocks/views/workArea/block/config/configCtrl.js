@@ -17,10 +17,19 @@ ctrl.updateConfig = function(isUpdate)  {
             title: ctrl.sel('#blockTitle').val(),
             desc: ctrl.sel('#blockDesc').val(),
             service: ctrl.sel('#blockAPI').val(),
-            id: ctrl.sel('#hasID option:selected').val()
+            id: ctrl.sel('#hasID option:selected').val(),
+            isProtected: ctrl.sel('#bkProtect').is(':checked')
         };
 
-    $.post('/workArea/block/update.wsj', bkData, function(result) {
+    $.ajax({
+        url: '/workArea/block/update.wsj',
+        contentType: 'application/json',
+        data: JSON.stringify(bkData),
+        processData: false,
+        dataType: 'json',
+        type: 'POST'
+    })
+    .done(function(result)  {
         if (result.errCode)
             alert( result.message );
         else  {
@@ -31,7 +40,7 @@ ctrl.updateConfig = function(isUpdate)  {
                 blkCtrl.refresh(bkURL);
             }
         }
-    }, 'json');
+    });
 }
 
 
