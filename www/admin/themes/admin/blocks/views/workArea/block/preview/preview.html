@@ -1,0 +1,23 @@
+<div id="previewBlk">
+    <div id="btnBar">
+        <button type="button" class="btn btn-default pull-right" data-toggle="popover"
+                onclick="<%=ctrl%>.refreshBlock();"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button>
+        <div class="input-group" style="padding-right: 5px;">
+            <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></span>
+            <input type="text" class="form-control" value="<%=bi.query.url%>" disabled>
+        </div>
+    </div>
+    
+    <div style="display:flex;">
+        <div id="paramContainer">
+        </div>
+        <div style="flex-grow: 1">
+            <div id="previewPane">
+                <iframe width="100%" height="100%" frameborder=0
+                        name="pvFrame">
+            </div>
+        </div>
+            
+        
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phrases>
+    <ph id="model">
+      <en>model</en>
+      <zh>資料模型</zh>
+    </ph>
+    <ph id="config">
+      <en>Config</en>
+      <zh>設定</zh>
+    </ph>
+    <ph id="preview">
+      <en>Preview</en>
+      <zh>預覽</zh>
+    </ph>
+</phrases>

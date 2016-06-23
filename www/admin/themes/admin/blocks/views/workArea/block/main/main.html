@@ -1,13 +1,18 @@
 <div style="padding: 5px 0px;">
     <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active"><a href="#0" onclick="<%=ctrl%>.clickTab(this);">HTML</a></li>
-        <li role="presentation"><a href="#0" onclick="<%=ctrl%>.clickTab(this);">CSS</a></li>
-        <li role="presentation"><a href="#0" onclick="<%=ctrl%>.clickTab(this);">JS</a></li>
-        <li role="presentation"><a href="#0" onclick="<%=ctrl%>.clickTab(this);">Language</a></li>
-        <li role="presentation"><a href="#0" onclick="<%=ctrl%>.clickTab(this);">Model</a></li>
+        <li role="presentation" class="active"><a href="#0" onclick="<%=ctrl%>.clickTab(this, 'html');">HTML</a></li>
+        <li role="presentation"><a href="#0" onclick="<%=ctrl%>.clickTab(this, 'css');">CSS</a></li>
+        <li role="presentation"><a href="#0" onclick="<%=ctrl%>.clickTab(this, 'js');">JS</a></li>
+        <li role="presentation"><a href="#0" onclick="<%=ctrl%>.clickTab(this, 'lang');">Language</a></li>
+        <li role="presentation"><a href="#0" onclick="<%=ctrl%>.clickTab(this, 'model');"><%=ph.model%></a></li>
         <li role="presentation">
             <a href="#0" onclick="<%=ctrl%>.config(this);">
-                <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Config
+                <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> <%=ph.config%>
+            </a>
+        </li>
+        <li role="presentation">
+            <a href="#0" onclick="<%=ctrl%>.preview(this);">
+                <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> <%=ph.preview%>
             </a>
         </li>
     </ul>

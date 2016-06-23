@@ -1,0 +1,15 @@
+<div id="paramPane">
+    <form id="bkParamForm">
+        <%
+        for (var k in value) {
+        %>
+        <div class="form-group">
+            <label><%= k %></label>
+            <input type="text" class="form-control" name="<%= k %>">
+        </div>
+        <% } %>
+    </form>
+    <div>
+        <button class="btn btn-default pull-right" onclick="<%=ctrl%>.runBlock();"><%=ph.execute%></button>
+    </div>
+</div>

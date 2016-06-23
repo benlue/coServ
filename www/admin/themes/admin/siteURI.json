@@ -101,5 +101,22 @@
     },
     "/website/showTemplates": {
         "id": "no"
+    },
+    "/workArea/block/preview": {
+        "service": "",
+        "isProtected": false,
+        "id": "no",
+        "query": {
+            "caCode": {},
+            "url": {}
+        }
+    },
+    "/workArea/block/param": {
+        "service": "",
+        "id": "no",
+        "query": {
+            "caCode": {},
+            "bk": {}
+        }
     }
 }

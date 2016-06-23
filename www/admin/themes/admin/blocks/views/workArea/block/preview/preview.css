@@ -1,0 +1,18 @@
+#previewBlk {
+	margin-top: 10px;
+}
+
+#previewPane {
+	padding: 5px;
+	margin-top: 5px;
+	background: #ccc;
+    border-radius: 5px;
+}
+
+#paramContainer {
+	flex-basis: 400;
+	margin-top: 5px;
+	margin-right: 5px;
+	border: 1px solid #ccc;
+    border-radius: 5px;
+}

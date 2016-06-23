@@ -5,31 +5,30 @@ ctrl.startup = function() {
 }
 
 
-ctrl.clickTab = function(link)  {
+ctrl.clickTab = function(link, target)  {
 	ctrl.sel('.nav li').removeClass('active');
 	$(link).parent().addClass('active');
 
-	var  target = $(link).text(),
-		 mode = "html";
+	var  mode = "html";
 
 	switch (target)  {
-		case 'HTML':
+		case 'html':
 			mode = "html";
 			break;
 
-		case 'CSS':
+		case 'css':
 			mode = "css";
 			break;
 
-		case 'JS':
+		case 'js':
 			mode = "js";
 			break;
 
-		case 'Language':
+		case 'lang':
 			mode = "lang";
 			break;
 
-		case 'Model':
+		case 'model':
 			mode = "model";
 			break;
 	}
@@ -48,7 +47,21 @@ ctrl.config = function(link)  {
 			bkName: bkName
 		 };
 
-	ctrl.embed('#editBody', '/workArea/block/config', {params: params});
+	ctrl.embed('#editBody', '/workArea/block/config', params);
+}
+
+
+ctrl.preview = function(link)  {
+    ctrl.sel('.nav li').removeClass('active');
+	$(link).parent().addClass('active');
+    
+    var  menuCtrl = __.getCtrl('pgMainMenu'),
+		 params = {
+			caCode: menuCtrl.getCurrentSite(),
+			url: bkName
+		 };
+    
+    ctrl.embed('#editBody', '/workArea/block/preview', params);
 }
 
 
@@ -57,5 +70,5 @@ function  embedEditor(bkType) {
 		bkName: bkName,
 		bkType: bkType
 	}
-	ctrl.embed('#editBody', '/workArea/block/edit', {params: params});
+	ctrl.embed('#editBody', '/workArea/block/edit', params);
 }
