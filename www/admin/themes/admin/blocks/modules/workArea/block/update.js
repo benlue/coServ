@@ -56,9 +56,15 @@ exports.execute = function(ctx, inData, cb)  {
                         bkInfo.service = inData.service;
                     else
                         delete  bkInfo.service;
-                    
+
+                    if (inData.query)
+                        bkInfo.query = inData.query;
+                    else
+                        delete  bkInfo.query;
+
                     if (inData.hasOwnProperty('isProtected'))
                         bkInfo.isProtected = inData.isProtected;
+
                     bkInfo.id = inData.id;
 
                     fs.writeFile( viewPath, JSON.stringify(siteInfo, null, 4), function(err) {

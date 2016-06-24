@@ -1,46 +1,64 @@
-<form style="padding-top: 20px;">
-	<div class="form-group">
-		<label for="blockURL" class="text-danger"><%=ph.url%></label>
-		<input id="blockURL" class="form-control"
-               value="<%=value.url || ''%>" <%=bi.query.bkName  ?  'disabled' : ''%>>
-	</div>
-        
-    <div class="form-group">
-		<label for="blockTitle"><%=ph.title%></label>
-		<input id="blockTitle" class="form-control" value="<%=value.title || ''%>">
-	</div>
+<table>
+	<tr>
+		<td width="50%" valign="top">
+			<form style="padding-top: 20px; padding-right:25px;">
+				<div class="form-group">
+					<label for="blockURL" class="text-danger"><%=ph.url%></label>
+					<input id="blockURL" class="form-control"
+			               value="<%=value.url || ''%>" <%=bi.query.bkName  ?  'disabled' : ''%>>
+				</div>
+			        
+			    <div class="form-group">
+					<label for="blockTitle"><%=ph.title%></label>
+					<input id="blockTitle" class="form-control" value="<%=value.title || ''%>">
+				</div>
 
-	<div class="form-group">
-		<label for="blockDesc"><%=ph.description%></label>
-		<input id="blockDesc" class="form-control" value="<%=value.description || ''%>">
-	</div>
+				<div class="form-group">
+					<label for="blockDesc"><%=ph.description%></label>
+					<input id="blockDesc" class="form-control" value="<%=value.description || ''%>">
+				</div>
 
-	<div class="form-group">
-		<label><%=ph.hasID%></label>
-		<select id="hasID" class="form-control">
-			<option value="no"<%= value.id === 'no'  ?  ' selected' : ''%>>No</option>
-			<option value="maybe"<%= value.id === 'maybe'  ?  ' selected' : ''%>>Maybe</option>
-			<option value="yes"<%= value.id === 'yes'  ?  ' selected' : ''%>>Yes</option>
-		</select>
-	</div>
+				<div class="form-group">
+					<label><%=ph.hasID%></label>
+					<select id="hasID" class="form-control">
+						<option value="no"<%= value.id === 'no'  ?  ' selected' : ''%>>No</option>
+						<option value="maybe"<%= value.id === 'maybe'  ?  ' selected' : ''%>>Maybe</option>
+						<option value="yes"<%= value.id === 'yes'  ?  ' selected' : ''%>>Yes</option>
+					</select>
+				</div>
 
-	<div class="form-group">
-		<label for="blockAPI"><%=ph.apiService%></label>
-		<input id="blockAPI" class="form-control" value="<%=value.service || ''%>">
-	</div>
+				<div class="form-group">
+					<label for="blockAPI"><%=ph.apiService%></label>
+					<input id="blockAPI" class="form-control" value="<%=value.service || ''%>">
+				</div>
 
-	<div class="checkbox">
-	    <label>
-	      <input id="bkProtect" type="checkbox"<%= value.isProtected ? ' checked': ''%>> <%= ph.isProtected %>
-	    </label>
-  	</div>
+				<div class="checkbox">
+				    <label>
+				      <input id="bkProtect" type="checkbox"<%= value.isProtected ? ' checked': ''%>> <%= ph.isProtected %>
+				    </label>
+			  	</div>
+			</form>
+		</td>
+		<td width="50%" valign="top">
+			<div style="padding-top: 10px;">
+			<%
+				var  param = {
+						caCode: bi.query.caCode,
+						bk: bi.query.bkName,
+						mode: 'edit'
+					 };
+				block('configParam', '/workArea/block/param', param);
+			%>
+			</div>
+		</td>
+	</tr>
+</table>
 
-	<div style="text-align:right;">
-        <% if (bi.query.bkName) { %>
-		<button class="btn btn-danger" onclick="<%=ctrl%>.deleteBlock('<%= bi.query.bkName %>');"><%=ph.delete%></button>
-        <% } %>
-		<button class="btn btn-primary" onclick="<%=ctrl%>.updateConfig('<%= bi.query.bkName || ''%>');">
-            <%=bi.query.bkName  ?  ph.save : ph.create%>
-        </button>
-	</div>
-</form>
+<div style="text-align:right;">
+    <% if (bi.query.bkName) { %>
+	<button class="btn btn-danger" onclick="<%=ctrl%>.deleteBlock('<%= bi.query.bkName %>');"><%=ph.delete%></button>
+    <% } %>
+	<button class="btn btn-primary" onclick="<%=ctrl%>.updateConfig('<%= bi.query.bkName || ''%>');">
+        <%=bi.query.bkName  ?  ph.save : ph.create%>
+    </button>
+</div>

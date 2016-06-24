@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phrases>
+    <ph id="paramTitle">
+      <en>Input to the block</en>
+      <zh>區塊的輸入參數</zh>
+    </ph>
     <ph id="execute">
       <en>Execut</en>
       <zh>執行</zh>
@@ -19,5 +23,25 @@
     <ph id="default">
       <en>Default</en>
       <zh>預設值</zh>
+    </ph>
+    <ph id="defaultValue">
+      <en>default value</en>
+      <zh>預設值</zh>
+    </ph>
+    <ph id="modalTitle">
+        <en>Add An New Input Parameter</en>
+        <zh>新增輸入變數</zh>
+    </ph>
+    <ph id="modalVarName">
+        <en>Variable name</en>
+        <zh>變數名稱</zh>
+    </ph>
+    <ph id="modalConfirm">
+        <en>Add</en>
+        <zh>確定</zh>
+    </ph>
+    <ph id="js_remove">
+        <en>Are you sure to remove this input parameter?</en>
+        <zh>確定要移除這個輸入參數嗎？</zh>
     </ph>
 </phrases>

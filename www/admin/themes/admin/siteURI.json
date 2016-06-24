@@ -103,21 +103,35 @@
         "id": "no"
     },
     "/workArea/block/preview": {
-        "service": "",
         "isProtected": false,
         "id": "no",
         "query": {
-            "caCode": {},
-            "url": {}
+            "caCode": {
+                "required": true,
+                "type": "string"
+            },
+            "url": {
+                "required": true,
+                "type": "string"
+            }
         }
     },
     "/workArea/block/param": {
-        "service": "",
         "id": "no",
         "query": {
-            "caCode": {},
-            "bk": {},
-            "mode": {}
-        }
+            "caCode": {
+                "required": true,
+                "type": "string"
+            },
+            "bk": {
+                "required": true,
+                "type": "string"
+            },
+            "mode": {
+                "required": false,
+                "type": "string"
+            }
+        },
+        "isProtected": false
     }
 }

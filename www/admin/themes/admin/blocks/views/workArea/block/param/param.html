@@ -1,32 +1,70 @@
 <%
 if (bi.query.mode === 'edit')  {
 %>
-<table class="table">
+<button class="btn btn-primary pull-right" onclick="<%=ctrl%>.showParamModel();"> + </button>
+<h5><%=ph.paramTitle%></h5>
+<table id="varTable" class="table" style="width:100%; margin-top: 25px; clear: both;">
     <tr>
         <th><%= ph.input%></th>
         <th><%= ph.required%></th>
         <th><%= ph.dataType%></th>
         <th><%= ph.default%></th>
+        <th></th>
     </tr>
     <%
     for (var k in value) {
         var  vv = value[k];
     %>
+    <tbody>
     <tr>
-        <td><%=k%></td>
-        <td><%= vv.required  ?  'v' : ''%></td>
+        <td><label><%=k%></label></td>
         <td>
-            <select class="form-control">
-                <option value="num">Number</option>
-                <option value="string">String</option>
-                <option value="bool">Boolean</option>
-                <option value="object">Object</option>
+            <input class="reqVar" type="checkbox"<%= vv.required  ?  ' checked' : ''%> >
+        </td>
+        <td>
+            <select id="sel<%=k%>" class="form-control" onchange="<%=ctrl%>.chooseType(this);">
+                <option value="num"<%= vv.type==='num' ? ' selected="selected"' : ''%>>Number</option>
+                <option value="string"<%= vv.type==='string' ? ' selected="selected"' : ''%>>String</option>
+                <option value="bool"<%= vv.type==='bool' ? ' selected="selected"' : ''%>>Boolean</option>
+                <option value="object"<%= vv.type==='object' ? ' selected="selected"' : ''%>>Object</option>
             </select>
         </td>
-        <td><%= vv.default || %></td>
+        <td>
+            <input id="dft<%=k%>" type="text" class="form-control" value="<%= vv.default || ''%>" placeholder="<%=ph.defaultValue%>">
+        </td>
+        <td>
+            <button type="button" class="btn btn-default" onclick="<%=ctrl%>.delParam(this);">
+                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+            </button>
+        </td>
     </tr>
+    </tbody>
     <% } %>
 </table>
+
+<!-- a modal dialog to add a new parameter -->
+<div id="paramModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"><%=ph.modalTitle%></h4>
+            </div>
+
+            <div class="modal-body">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1"><%=ph.modalVarName%></span>
+                    <input id="newVarName" type="text" class="form-control" aria-describedby="basic-addon1">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button" onclick="<%=ctrl%>.addParameter();">
+                            <%=ph.modalConfirm%>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
     
 <% } else { %>
 <div id="paramPane">
@@ -36,7 +74,7 @@ if (bi.query.mode === 'edit')  {
         %>
         <div class="form-group">
             <label><%= k %></label>
-            <input type="text" class="form-control" name="<%= k %>">
+            <input type="text" class="form-control" name="<%= k %>" value="<%= value[k].default || ''%>">
         </div>
         <% } %>
     </form>

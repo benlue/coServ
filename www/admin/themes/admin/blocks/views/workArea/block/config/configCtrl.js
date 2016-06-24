@@ -10,16 +10,22 @@ ctrl.updateConfig = function(isUpdate)  {
     if (bkURL.charAt(0) != '/')
         bkURL = '/' + bkURL;
     
-    var  menuCtrl = __.getCtrl('pgMainMenu'),
-         bkData = {
+    var  bkData = {
             url: bkURL,
-            caCode: menuCtrl.getCurrentSite(),
+            id: ctrl.sel('#hasID option:selected').val(),
+            caCode: '<%= bi.query.caCode %>',
             title: ctrl.sel('#blockTitle').val(),
             desc: ctrl.sel('#blockDesc').val(),
             service: ctrl.sel('#blockAPI').val(),
-            id: ctrl.sel('#hasID option:selected').val(),
             isProtected: ctrl.sel('#bkProtect').is(':checked')
         };
+
+    var  paraCtrl = __.getCtrl('configParam'),
+         blkParms = paraCtrl.getParameters();
+
+    //console.log('blkParms length: %d\n%s', blkParms.length, JSON.stringify(blkParms, null, 4));
+    if (Object.getOwnPropertyNames(blkParms).length)
+        bkData.query = blkParms;
 
     $.ajax({
         url: '/workArea/block/update.wsj',
@@ -48,10 +54,9 @@ ctrl.deleteBlock = function(bkName)  {
     event.preventDefault();
 
     if (confirm('<%=ph.js_confirm%>'))  {
-        var  menuCtrl = __.getCtrl('pgMainMenu'),
-             bkData = {
+        var  bkData = {
                 url: ctrl.sel('#blockURL').val(),
-                caCode: menuCtrl.getCurrentSite(),
+                caCode: '<%= bi.query.caCode %>',
                 doDelete: true
             };
 
