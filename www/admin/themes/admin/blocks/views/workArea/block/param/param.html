@@ -1,3 +1,34 @@
+<%
+if (bi.query.mode === 'edit')  {
+%>
+<table class="table">
+    <tr>
+        <th><%= ph.input%></th>
+        <th><%= ph.required%></th>
+        <th><%= ph.dataType%></th>
+        <th><%= ph.default%></th>
+    </tr>
+    <%
+    for (var k in value) {
+        var  vv = value[k];
+    %>
+    <tr>
+        <td><%=k%></td>
+        <td><%= vv.required  ?  'v' : ''%></td>
+        <td>
+            <select class="form-control">
+                <option value="num">Number</option>
+                <option value="string">String</option>
+                <option value="bool">Boolean</option>
+                <option value="object">Object</option>
+            </select>
+        </td>
+        <td><%= vv.default || %></td>
+    </tr>
+    <% } %>
+</table>
+    
+<% } else { %>
 <div id="paramPane">
     <form id="bkParamForm">
         <%
@@ -13,3 +44,4 @@
         <button class="btn btn-default pull-right" onclick="<%=ctrl%>.runBlock();"><%=ph.execute%></button>
     </div>
 </div>
+<% } %>

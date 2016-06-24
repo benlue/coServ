@@ -44,10 +44,19 @@ exports.execute = function(ctx, inData, cb)  {
 
                     if (inData.title)
                         bkInfo.title = inData.title;
+                    else
+                        delete  bkInfo.title;
+
                     if (inData.desc)
                         bkInfo.description = inData.desc;
-                    if (inData.service || inData.service === '')
+                    else
+                        delete  bkInfo.description;
+
+                    if (inData.service)
                         bkInfo.service = inData.service;
+                    else
+                        delete  bkInfo.service;
+                    
                     if (inData.hasOwnProperty('isProtected'))
                         bkInfo.isProtected = inData.isProtected;
                     bkInfo.id = inData.id;

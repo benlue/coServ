@@ -4,4 +4,20 @@
       <en>Execut</en>
       <zh>執行</zh>
     </ph>
+    <ph id="input">
+      <en>Input</en>
+      <zh>輸入參數</zh>
+    </ph>
+    <ph id="required">
+      <en>Required</en>
+      <zh>必要</zh>
+    </ph>
+    <ph id="dataType">
+      <en>Type</en>
+      <zh>型別</zh>
+    </ph>
+    <ph id="default">
+      <en>Default</en>
+      <zh>預設值</zh>
+    </ph>
 </phrases>
