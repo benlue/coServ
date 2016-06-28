@@ -1,3 +1,9 @@
+0.11.0
+------
++ Simplified the syntax to invoke block or wcomp.
++ Allowing input parameters to a block to be explicitly specified. This will make block programming more managable.
++ The design console has been enhanced.
+
 0.10.7
 ------
 + Added an access protection scheme. You can easily protect the whole or part of the website from unauthorized access.

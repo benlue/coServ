@@ -11,17 +11,8 @@ ctrl.startup = function()  {
 
     var  blkCtrl = __.getCtrl('mainMenuBlockList');
     blkCtrl.addHandler('blkSelected', function(bkName)  {
-    	console.log('block selected: ' + bkName);
         ctrl.callHandler('blkSelected', bkName);
     });
-    /*
-    blkCtrl.reload(param, function(bkCtrl) {
-        //idxCtrl.adjustHeight();
-        bkCtrl.addHandler('blkSelected', function(bkName)  {
-            ctrl.callHandler('blkSelected', bkName);
-        });
-    });
-    */
 
     var  compCtrl = __.getCtrl('mainMenuWcompList');
     compCtrl.reload(param, function() {

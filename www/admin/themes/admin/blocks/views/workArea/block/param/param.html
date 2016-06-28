@@ -76,13 +76,15 @@ if (bi.query.mode === 'edit')  {
         %>
         <div class="form-group<%= value[k].required ? ' has-error' : ''%>">
             <label class="control-label"><%= k %></label>
-            <input type="text" class="form-control" name="<%= k %>" value="<%= value[k].default || ''%>">
+            <input type="text" class="form-control input-sm" name="<%= k %>" value="<%= value[k].default || ''%>">
         </div>
         <% } %>
     </form>
+    <!--
     <div>
         <button class="btn btn-default pull-right" onclick="<%=ctrl%>.runBlock();"><%=ph.execute%></button>
     </div>
+	-->
 </div>
 <%
    }

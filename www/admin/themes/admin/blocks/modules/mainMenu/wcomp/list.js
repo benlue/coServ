@@ -12,6 +12,12 @@ exports.execute = function(ctx, inData, cb)  {
 
 		walkPath(wcompPath, '/', wcompList, function(err)  {
 			//console.log('wcomp list:\n' + JSON.stringify(wcompList, null, 4));
+            wcompList.sort(function(a, b) {
+                if (a.title < b.title)
+                    return  -1;
+                return a.title === b.title  ?  0 : 1;
+            });
+            
 			cb({
 				errCode: 0,
 				message: 'Ok',
