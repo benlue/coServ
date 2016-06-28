@@ -4,16 +4,4 @@
       <en>Website : </en>
       <zh>網站： </zh>
     </ph>
-    <ph id="layouts">
-      <en>Layouts</en>
-      <zh>網版</zh>
-    </ph>
-    <ph id="blocks">
-        <en>Blocks</en>
-        <zh>區塊</zh>
-    </ph>
-    <ph id="wcomps">
-        <en>WComps</en>
-        <zh>網頁元件</zh>
-    </ph>
 </phrases>

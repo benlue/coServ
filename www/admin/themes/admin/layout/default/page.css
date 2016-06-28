@@ -7,10 +7,10 @@
 }
 
 #pgLeft {
-	flex-basis: 280px;
-	padding-top: 5px;
-	padding-left: 20px;
-	background-color: #f8f8f8;
+	flex-basis: 320px;
+	/* padding-top: 5px;
+	padding-left: 5px; */
+	background-color: #272E41;
 	border-right: solid 1px #e7e7e7;
 }
 

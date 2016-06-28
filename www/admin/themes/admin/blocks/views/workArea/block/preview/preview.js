@@ -31,7 +31,8 @@ ctrl.refreshBlock = function() {
 
 
 function  refreshIframe(params)  {
-    var  url = 'http://<%=value.domain%>:<%=value.port%><%=bi.query.url%>.hf?_dev=1';
+    var  port = ctrl.sel('#portNo').val() || '8080',
+         url = 'http://<%=value.domain%>:' + port + '<%=bi.query.url%>.hf?_dev=1';
 
     $('body').append('<form action="' + url + '" method="post" target="pvFrame" id="postToIframe"></form>');
     $.each(params,function(n,v){

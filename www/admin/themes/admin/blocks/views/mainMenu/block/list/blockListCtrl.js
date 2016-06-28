@@ -4,18 +4,21 @@ ctrl.startup = function() {
 	if (!blkCtrl)  {
 		// don't register handler twice
 		blkCtrl = __.getCtrl('blockList');
-
 		blkCtrl.addHandler('pillItemChosen', function(bkName) {
-			var  idxCtrl = __.getCtrl('workArea');
-			idxCtrl.dispatch('block', bkName);
+            ctrl.callHandler('blkSelected', bkName);
 		});
 	}
     
-    var  bk = '<%=bi.query.bk%>';
+    var  bk = '<%=bi.query.bk || ''%>';
     if (bk)  {
         var  pos = bk.length * 2;
         ctrl.sel('#bkFilter').focus()[0].setSelectionRange(pos, pos);
     }
+}
+
+
+ctrl.getBlockList = function()  {
+    return  <%= JSON.stringify(value.list); %>;
 }
 
 

@@ -13,6 +13,19 @@
 	flex-basis: 400;
 	margin-top: 5px;
 	margin-right: 5px;
+	/*
 	border: 1px solid #ccc;
     border-radius: 5px;
+    */
+}
+
+.input-group {
+    display: inline-table;
+    vertical-align: middle;
+
+    .input-group-addon,
+    .input-group-btn,
+    .form-control {
+        width: auto !important;
+    }
 }

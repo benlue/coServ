@@ -20,12 +20,14 @@ ctrl.updateConfig = function(isUpdate)  {
             isProtected: ctrl.sel('#bkProtect').is(':checked')
         };
 
+    <% if (bi.query.bkName)  { %>
     var  paraCtrl = __.getCtrl('configParam'),
          blkParms = paraCtrl.getParameters();
 
     //console.log('blkParms length: %d\n%s', blkParms.length, JSON.stringify(blkParms, null, 4));
     if (Object.getOwnPropertyNames(blkParms).length)
         bkData.query = blkParms;
+    <% } %>
 
     $.ajax({
         url: '/workArea/block/update.wsj',

@@ -66,6 +66,8 @@ exports.execute = function(ctx, inData, cb)  {
                         bkInfo.isProtected = inData.isProtected;
 
                     bkInfo.id = inData.id;
+                    console.log('create a block? ' + doCreate);
+                    console.log('block info\n' + JSON.stringify(bkInfo, null, 4));
 
                     fs.writeFile( viewPath, JSON.stringify(siteInfo, null, 4), function(err) {
                         if (err)

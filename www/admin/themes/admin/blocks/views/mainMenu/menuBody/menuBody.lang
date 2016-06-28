@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phrases>
+    <ph id="layouts">
+      <en>Layouts</en>
+      <zh>網版</zh>
+    </ph>
+    <ph id="blocks">
+        <en>Blocks</en>
+        <zh>區塊</zh>
+    </ph>
+    <ph id="wcomps">
+        <en>WComps</en>
+        <zh>網頁元件</zh>
+    </ph>
+</phrases>

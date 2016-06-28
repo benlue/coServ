@@ -4,6 +4,7 @@
 /codeMirror/theme/vibrant-ink.css
 /js/lib/jquery-2.1.4.min.js
 /js/lib/bootstrap/js/bootstrap.min.js
+/js/lib/bootstrap/js/typeahead.js
 /codeMirror/lib/codemirror.js
 /codeMirror/addon/edit/matchbrackets.js
 /codeMirror/addon/scroll/simplescrollbars.js

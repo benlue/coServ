@@ -9,7 +9,18 @@
         "id": "no"
     },
     "/mainMenu/block/list": {
-        "id": "no"
+        "id": "no",
+        "query": {
+            "caCode": {
+                "required": true,
+                "type": "string"
+            },
+            "bk": {
+                "required": true,
+                "type": "string"
+            }
+        },
+        "isProtected": false
     },
     "/mainMenu/website/list": {
         "id": "no"
@@ -133,5 +144,37 @@
             }
         },
         "isProtected": false
+    },
+    "/mainMenu/menuBody": {
+        "isProtected": false,
+        "id": "no"
+    },
+    "/mainMenu/blockInfo": {
+        "isProtected": false,
+        "id": "no",
+        "query": {
+            "caCode": {
+                "required": true,
+                "type": "string"
+            },
+            "bk": {
+                "required": true,
+                "type": "string"
+            },
+            "autoList": {
+                "required": false,
+                "type": "object"
+            }
+        }
+    },
+    "/mainMenu/block/info": {
+        "isProtected": false,
+        "id": "no",
+        "query": {
+            "bk": {
+                "required": true,
+                "type": "string"
+            }
+        }
     }
 }

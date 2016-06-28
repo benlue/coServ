@@ -8,6 +8,7 @@ exports.execute = function(ctx, inData, cb)  {
 	if (caCode)  {
 		var  viewPath = path.join(siteUtil.getRootWWW(ctx, caCode), 'siteURI.json');
 		//console.log('view path: ' + viewPath);
+		//console.log('bk is ' + inData.bk);
 
 		fs.readFile(viewPath, 'utf8', function(err, data) {
 			if (err)
@@ -47,6 +48,7 @@ exports.execute = function(ctx, inData, cb)  {
 							return  -1;
 						return a.title === b.title  ?  0 : 1;
 					});
+					//console.log("block list:\n" + JSON.stringify(list, null, 4));
 
 					cb({
 						errCode: 0,

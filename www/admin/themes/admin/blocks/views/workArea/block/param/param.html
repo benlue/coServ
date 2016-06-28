@@ -66,14 +66,16 @@ if (bi.query.mode === 'edit')  {
     </div>
 </div>
     
-<% } else { %>
+<% } else { 
+   if (Object.getOwnPropertyNames(value).length)  {
+%>
 <div id="paramPane">
     <form id="bkParamForm">
         <%
         for (var k in value) {
         %>
-        <div class="form-group">
-            <label><%= k %></label>
+        <div class="form-group<%= value[k].required ? ' has-error' : ''%>">
+            <label class="control-label"><%= k %></label>
             <input type="text" class="form-control" name="<%= k %>" value="<%= value[k].default || ''%>">
         </div>
         <% } %>
@@ -82,4 +84,7 @@ if (bi.query.mode === 'edit')  {
         <button class="btn btn-default pull-right" onclick="<%=ctrl%>.runBlock();"><%=ph.execute%></button>
     </div>
 </div>
-<% } %>
+<%
+   }
+}
+%>

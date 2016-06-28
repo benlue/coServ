@@ -2,8 +2,7 @@
 $(window).resize(adjustHeight);
 
 var  curCaCode,
-	 _newObj = false,
-	 collapseID;
+     curBlk = '';
 
 /*
 var  curDevice,
@@ -18,64 +17,15 @@ ctrl.startup = function()  {
 	var  dropCtrl = __.getCtrl('websiteList');
 
 	dropCtrl.addHandler('itemChosen', function(caCode) {
-        
-		ctrl.sel('#wsConfigBtn').show();
-		ctrl.sel('#menuPane').show();
-
-		curCaCode = caCode;
-		
-		var  label = '<%=ph.websiteLabel%> [<b>' + curCaCode + '</b>] ';
+        curCaCode = caCode;
+        var  label = '<%=ph.websiteLabel%> [<b>' + curCaCode + '</b>] ';
 		dropCtrl.setLabel( label );
+
+		ctrl.sel('#wsConfigBtn').show();
+		ctrl.switchMainList();
 
 		var  idxCtrl = __.getCtrl('workArea');
 		idxCtrl.dispatch('home');
-
-		var  layCtrl = __.getCtrl('mainMenuLayoutList');
-		layCtrl.reload({params: {caCode: curCaCode}});
-
-		var  blkCtrl = __.getCtrl('mainMenuBlockList');
-		blkCtrl.reload({params: {caCode: curCaCode}}, function() {
-			idxCtrl.adjustHeight();
-		});
-
-		var  compCtrl = __.getCtrl('mainMenuWcompList');
-		compCtrl.reload({params: {caCode: curCaCode}}, function() {
-			idxCtrl.adjustHeight();
-		});
-	});
-
-	/*
-	// here we set up the device selector
-	var  ddCtrl = __.getCtrl('deviceDD');
-	ddCtrl.addHandler('itemChosen', function(device)  {
-		curDevice = device;
-
-		var  label = '<img class="deviceGglyph" src="' + deviceIcon[device] + '"> ';
-		ddCtrl.setLabel( label );
-	});
-	*/
-	
-	ctrl.sel('#menuPane').on('hidden.bs.collapse', function (event) {
-		// clear up display when users switch panel
-		clearMenuList();
-		
-		if (_newObj)  {
-			/*
-			if ($(event.target).attr('id') === collapseID)
-				$(event.target).addClass('in');
-			*/
-
-			_newObj = false;
-		}
-		else  {
-			var  idxCtrl = __.getCtrl('workArea');
-			idxCtrl.dispatch('home');
-		}
-	});
-
-	ctrl.sel('#menuPane').on('shown.bs.collapse', function (event) {
-		var  idxCtrl = __.getCtrl('workArea');
-		idxCtrl.adjustHeight();
 	});
 
 	adjustHeight();
@@ -83,38 +33,55 @@ ctrl.startup = function()  {
 
 
 ctrl.webSettings = function()  {
-	var  idxCtrl = __.getCtrl('workArea');
-		 //blkCtrl = __.getCtrl('mainMenuBlockList');
+	var  wsCtrl = __.getCtrl('websiteMenu');
+	wsCtrl.clearMenu();
 
-	clearMenuList();
+	var  idxCtrl = __.getCtrl('workArea');
 	idxCtrl.dispatch('website', ctrl.getCurrentSite());
 }
 
 
-ctrl.newLayout = function() {
-	_newObj = true;
-	collapseID = 'collapseOne';
+/**
+ * Switch the menu pane to the main website work menu.
+ */
+ctrl.switchMainList = function()  {
+	ctrl.sel('#taskBar button').removeClass('btn-primary').addClass('btn-default');
+	ctrl.sel('#taskBar button span').removeClass('activeBtn');
 
-	var  idxCtrl = __.getCtrl('workArea');
-	idxCtrl.dispatch('layout', '_+_');
+	ctrl.sel('#mainTask').addClass('btn-primary');
+	ctrl.sel('#mainTask span').addClass('activeBtn');
+
+	var  pdata = {
+			knownAs: 'websiteMenu',
+			params: {caCode: curCaCode}
+		 };
+	ctrl.embed('#switchPane', '/mainMenu/menuBody', pdata, function(mbodyCtrl) {
+        mbodyCtrl.addHandler('blkSelected', function(bkName)  {
+            var  idxCtrl = __.getCtrl('workArea');
+            idxCtrl.dispatch('block', curBlk = bkName);
+        });
+    });
 }
 
 
-ctrl.newBlock = function() {
-	_newObj = true;
-	collapseID = 'collapseTwo';
-	
-	var  idxCtrl = __.getCtrl('workArea');
-	idxCtrl.dispatch('block', '_+_');
-}
+/**
+ * Switch the menu pane to the block info pane.
+ */
+ctrl.switchBlockInfo = function()  {
+	ctrl.sel('#taskBar button').removeClass('btn-primary').addClass('btn-default');
+	ctrl.sel('#taskBar button span').removeClass('activeBtn');
 
-
-ctrl.newWComp = function() {
-	_newObj = true;
-	collapseID = 'collapseThree';
-	
-	var  idxCtrl = __.getCtrl('workArea');
-	idxCtrl.dispatch('wcomp', '_+_');
+	ctrl.sel('#blockTask').addClass('btn-primary');
+	ctrl.sel('#blockTask span').addClass('activeBtn');
+    
+    var  blkCtrl = __.getCtrl('mainMenuBlockList'),
+         blkList = blkCtrl.getBlockList(),
+         pdata = {
+             caCode: curCaCode,
+             bk: curBlk,
+             autoList: blkList
+         };
+	ctrl.embed('#switchPane', '/mainMenu/blockInfo', pdata);
 }
 
 
@@ -123,17 +90,9 @@ ctrl.getCurrentSite = function()  {
 }
 
 
-/**
- * (Visually) unselect active menu items.
- */
-function  clearMenuList()  {
-	ctrl.sel('.panel-body li').removeClass('active');
-}
-
-
 function  adjustHeight()  {
 	var  h = window.innerHeight
-			 - 65
+			 - 56
 			 //- $('#pgFooter').outerHeight(true)
 			 - ctrl.sel('#websiteDropdown').outerHeight(true);
 

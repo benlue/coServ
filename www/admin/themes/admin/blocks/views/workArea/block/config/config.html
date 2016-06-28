@@ -1,6 +1,6 @@
-<table>
+<table width="100%">
 	<tr>
-		<td width="50%" valign="top">
+		<td width="45%" valign="top">
 			<form style="padding-top: 20px; padding-right:25px;">
 				<div class="form-group">
 					<label for="blockURL" class="text-danger"><%=ph.url%></label>
@@ -39,15 +39,18 @@
 			  	</div>
 			</form>
 		</td>
-		<td width="50%" valign="top">
+		<td width="55%" valign="top">
 			<div style="padding-top: 10px;">
 			<%
-				var  param = {
-						caCode: bi.query.caCode,
-						bk: bi.query.bkName,
-						mode: 'edit'
-					 };
-				block('configParam', '/workArea/block/param', param);
+				// do not show the parameter block if this view is shown for creating a block.
+				if (bi.query.bkName)  {
+					var  param = {
+							caCode: bi.query.caCode,
+							bk: bi.query.bkName,
+							mode: 'edit'
+						 };
+					block('configParam', '/workArea/block/param', param);
+				}
 			%>
 			</div>
 		</td>

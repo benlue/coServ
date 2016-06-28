@@ -1,0 +1,63 @@
+<div id="menuPane">
+    <div class="panel-group" id="leftMainMenu" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+            <button class="btn btn-xs btn-default pull-right"
+                    style="margin-top: 8px; margin-right: 10px;"
+                    onclick="<%=ctrl%>.newLayout();">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </button>
+            <div class="panel-heading" role="tab" id="layoutHeading">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#leftMainMenu" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <span class="text-primary"><%=ph.layouts%></span>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="layoutHeading">
+                <div class="panel-body">
+                    <% block('mainMenuLayoutList', '/mainMenu/layout/list'); %>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <button class="btn btn-xs btn-default pull-right"
+                    style="margin-top: 8px; margin-right: 10px;"
+                    onclick="<%=ctrl%>.newBlock();">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </button>
+            <div class="panel-heading" role="tab" id="blockHeading">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#leftMainMenu" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                        <span class="text-primary"><%=ph.blocks%></span>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="blockHeading">
+                <div class="panel-body">
+                    <% block('mainMenuBlockList', '/mainMenu/block/list', {caCode: bi.query.caCode}); %>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <button class="btn btn-xs btn-default pull-right"
+                    style="margin-top: 8px; margin-right: 10px;"
+                    onclick="<%=ctrl%>.newWComp();">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </button>
+            <div class="panel-heading" role="tab" id="wcompHeading">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#leftMainMenu" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                        <span class="text-primary"><%=ph.wcomps%></span>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="wcompHeading">
+                <div class="panel-body">
+                    <% block('mainMenuWcompList', '/mainMenu/wcomp/list'); %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

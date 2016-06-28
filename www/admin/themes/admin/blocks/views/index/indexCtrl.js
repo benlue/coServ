@@ -24,9 +24,12 @@ ctrl.dispatch = function(design, target) {
 		ctrl.embed('#bodyArea', '/website/info', params);
 	}
 	else  if (design === 'block')  {
+		var  menuCtrl = __.getCtrl('pgMainMenu'),
+		 	 caCode = menuCtrl.getCurrentSite();
+
 		if (target === '_+_')  {
 			// create a new block
-			ctrl.embed('#bodyArea', '/workArea/block/config');
+			ctrl.embed('#bodyArea', '/workArea/block/config', {caCode: caCode});
 		}
 		else  {
 			var  params = {
