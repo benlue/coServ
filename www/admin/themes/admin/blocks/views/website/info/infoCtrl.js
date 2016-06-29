@@ -35,6 +35,7 @@ ctrl.nextStep = function()  {
             title: ctrl.sel('#wsTitle').val(),
             locale: ctrl.sel('#wsLocale').val(),
             homePage: ctrl.sel('#wsHome').val(),
+        	loginPage: ctrl.sel('#wsLogin').val(),
             doCreate: true
          };
 
@@ -121,6 +122,7 @@ ctrl.save = function()  {
             title: ctrl.sel('#wsTitle').val(),
             locale: ctrl.sel('#wsLocale').val(),
             homePage: ctrl.sel('#wsHome').val(),
+        	loginPage: ctrl.sel('#wsLogin').val(),
             isProtected: ctrl.sel('#wsProtect').is(':checked')
          };
 

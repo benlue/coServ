@@ -24,6 +24,10 @@
         <en>Default Page</en>
         <zh>預設首頁</zh>
     </ph>
+    <ph id="loginLabel">
+        <en>Login Page</en>
+        <zh>預設登入頁</zh>
+    </ph>
     <ph id="isProtected">
       <en>Is Protected</en>
       <zh>存取保護</zh>
@@ -53,8 +57,12 @@
       <zh>例：en, zh等。</zh>
     </ph>
     <ph id="homeHolder">
-      <en>Default page of this website</en>
-      <zh>請輸入網站的預設首頁</zh>
+      	<en>Default page of this website</en>
+      	<zh>請輸入網站的預設首頁</zh>
+    </ph>
+    <ph id="loginHolder">
+      	<en>Default login page of this website</en>
+      	<zh>請輸入網站的預設登入頁</zh>
     </ph>
     <ph id="exportLabel">
       <en>Enter the export directory:</en>

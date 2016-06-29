@@ -43,12 +43,22 @@ function  updateSite(ctx, inData, cb)  {
 
                 if (inData.sitePath)
                     siteInfo.sitePath = inData.sitePath;
+                else
+                    delete  siteInfo.sitePath;
                 if (inData.title)
                     siteInfo.title = inData.title;
+                else
+                    delte  siteInfo.title;
                 if (inData.locale)
                     siteInfo.locale = inData.locale;
                 if (inData.homePage)
                     siteInfo.home = inData.homePage;
+                else
+                    delete  siteInfo.home;
+                if (inData.loginPage)
+                    siteInfo.login = inData.loginPage;
+                else
+                    delete  siteInfo.login;
                 if (inData.hasOwnProperty('isProtected'))
                     siteInfo.isProtected = inData.isProtected;
 
@@ -198,6 +208,8 @@ function  createSite(ctx, inData, cb)  {
 
 				if (inData.homePage)
 					siteConfig.home = inData.homePage;
+                if (inData.loginPage)
+					siteConfig.login = inData.loginPage;
 
 				sites[domain] = siteConfig;
 

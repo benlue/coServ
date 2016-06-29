@@ -40,6 +40,12 @@
         <input type="text" class="form-control" id="wsHome" 
                value="<%=value.home || bi.query.homePage || ''%>" placeholder="<%=ph.homeHolder%>">
     </div>
+        
+    <div class="form-group manualMode">
+        <label for="wsLogin"><%=ph.loginLabel%></label>
+        <input type="text" class="form-control" id="wsLogin" 
+               value="<%=value.login || bi.query.loginPage || ''%>" placeholder="<%=ph.loginHolder%>">
+    </div>
 
     <div class="checkbox">
         <label>
