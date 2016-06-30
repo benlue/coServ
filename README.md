@@ -38,6 +38,8 @@ The easiest way is to get started is probably to try the [one page demo](https:/
 ## What's new
 Below are highlights of recent releases. More details in [release notes](https://github.com/coimotion/coServ/blob/master/ReleaseNote.md).
 
++ [v0.11.0] Input parameters to a block can be explicitly specified. More details can be found [here](#blkInput).
+
 + [v0.10.7] You can easily protect the whole or part of the website from unauthorized access. Check [here](https://benlue.gitbooks.io/coserv-user-guide/content/scenario#accProt) for details.
 
 + [v0.10.7] A wcomp can be displayed without the additional wrapper. Check [here](https://benlue.gitbooks.io/coserv-user-guide/content/chap5/chapter5.html#dspNoWrapper) for details.
@@ -60,7 +62,11 @@ Starting from the 0.9.9 release, a web interface called "design console" was add
 
 To play with the design console, simply start coServ (node coServ) and point your browser to "localhost:8080". The website you're working on can be assigned to "127.0.0.1". That's a small trick to host two websites on your local machine.
 
-**Note**: the design console is only tested on chrome and safari. Sorry I don't have that much time to make it ready on all browsers.
+**Note**: the design console is only tested on chrome and safari.
+
+<a name="blkInput"></a>
+## Specifying block input
+Unlike most programming languages, HTML does not have a way to specify input to a page (well, HTML was invented to present static contents rather than dynamic apps. No reason to blame HTML for that.) In the latest release of coServ, you can specify input parameters to a block. That can be done by manually edit the "siteURI.json" file or using the design console. Now with HTML refactoring and explicit input specification, the methodology we adopt in programming can be applied to HTML as well.
 
 <a name="wcomp"></a>
 ## Wcomps

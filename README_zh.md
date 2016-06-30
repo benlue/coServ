@@ -30,9 +30,11 @@
 要了解如何以 coServ 快速開發網站也許可以從這個「一頁式網站」(https://github.com/benlue/cows-onePage) 開始。這個範例教你如何在幾分鐘內完成一個響應式 (RWD) 的一頁式網站，而且你可以很容易的加以修改。
 
 ## 最新版本
-coServ 目前的最新版本是 0.10.7。以下是最近版本所提供的新功能或改進：
+coServ 目前的最新版本是 0.11.0。以下是最近版本所提供的新功能或改進：
 
-+ [v0.10.7] 快速簡易的方式讓訪客（未登入者）不能存取受保護的網頁. 詳情請參考 [此處](https://benlue.gitbooks.io/coserv-user-guide/content/scenario#accProt) 的說明.
++ [v0.11.0] 這個版本最明顯的改變，就是讓開發者可以明確的定義每個區塊的輸入參數。詳見[輸入參數標示](#blkInput)一節。
+
++ [v0.10.7] 提供快速簡易的方式讓訪客（未登入者）不能存取受保護的網頁. 詳情請參考 [此處](https://benlue.gitbooks.io/coserv-user-guide/content/scenario#accProt) 的說明.
 
 + [v0.10.7] 現在可以取消網頁元件在顯示時所額外包覆的 &lgt;div&gt; 層. 詳情請參考 [此處](https://benlue.gitbooks.io/coserv-user-guide/content/chap5/chapter5.html#dspNoWrapper) 的說明.
 
@@ -52,6 +54,7 @@ coServ 目前的最新版本是 0.10.7。以下是最近版本所提供的新功
 
 更多版本更新資訊請參考 [ReleaseNote](https://github.com/coimotion/coServ/blob/master/ReleaseNote.md)。
 
+<a name="devConsole"></a>
 ## 管理工具
 coServ 許多先進的構想讓網站設計可以有效的化繁為簡。不過因為 coServ 的觀念新穎，有些開發者一開始上手時不易了解或駕馭這個新的概念。從 0.9.9 版起，一個網頁介面的管理工具被創造出來，協助開發者更有效率的使用 coServ 去建置網站。
 
@@ -63,6 +66,10 @@ coServ 許多先進的構想讓網站設計可以有效的化繁為簡。不過�
 就可以開始使用管理工具的各項功能。
 
 **註明：** 管理工具目前只在 safari 和 chrome 瀏覽器上測試過。
+
+<a name="blkInput"></a>
+## 輸入參數標示
+與多數的程式語言不同的是，HTML 沒有一個明確的方式來描述網頁的輸入參數。當網頁數目增多時，這就會造成開發者的困擾。最新版的 coSerev 為開發者解決了這個問題。coServ 鼓勵開發者將每個區塊所需的參數明確的描述出來，就像我們在其他的程式語言中定義函數時一樣。你可以手動編輯 siteURI.json 檔，或是借助[管理工具](#devConsole)來描述區塊參數。透過 coServ 對 HTML 的重構 (HTML refactoring) 以及輸入參數的描述，我們可以把 HTML 轉化成和其他的程式語言一樣，變得比較容易編程和管理。
 
 <a name="wcomp"></a>
 ## 網頁元件
