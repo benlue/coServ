@@ -66,7 +66,7 @@ To play with the design console, simply start coServ (node coServ) and point you
 
 <a name="blkInput"></a>
 ## Specifying block input
-Unlike most programming languages, HTML does not have a way to specify input to a page (well, HTML was invented to present static contents rather than dynamic apps. No reason to blame HTML for that.) In the latest release of coServ, you can specify input parameters to a block. That can be done by manually edit the "siteURI.json" file or using the design console. Now with HTML refactoring and explicit input specification, the methodology we adopt in programming can be applied to HTML as well.
+Unlike most programming languages, HTML does not have a way to specify input to a page (well, HTML was invented to present static contents rather than dynamic apps. No reason to blame HTML for that.) In the latest release of coServ, we have a solution for that. You can specify input parameters to a block. That can be done by manually edit the "siteURI.json" file or using the design console. Now with HTML refactoring and explicit input specification, the methodology we adopt in software development can be applied to HTML as well.
 
 <a name="wcomp"></a>
 ## Wcomps
