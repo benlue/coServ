@@ -16,7 +16,6 @@
                 "type": "string"
             },
             "bk": {
-                "required": true,
                 "type": "string"
             }
         },

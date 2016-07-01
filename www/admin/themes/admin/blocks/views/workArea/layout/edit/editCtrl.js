@@ -51,11 +51,15 @@ ctrl.saveDoc = function()  {
 
 function  adjustHeight()  {
 	if (editor)  {
+        /*
 		// adjH is really a patch
 		var  h = ctrl.sel('#editPane').height() - ctrl.sel('.flexContainer').outerHeight(true),
 			 adjH = $('#bodyArea').height() - $('.WorkAreaLayoutMain').height();
 
 		editor.setSize(null, h + adjH);
+        */
+        var  h = $('#bodyArea').height() - $('.nav-tabs').outerHeight(true) - ctrl.sel('.flexContainer').outerHeight(true);
+		editor.setSize(null, h - 10);
 	}
 }
 

@@ -13,6 +13,7 @@ ctrl.getParameters = function()  {
 
 <% if (bi.query.mode === 'edit') { %>
 ctrl.showParamModel = function()  {
+    ctrl.sel('#newVarName').val('');
 	ctrl.sel('#paramModal').modal('show');
 }
 

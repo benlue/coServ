@@ -6,7 +6,7 @@ exports.execute = function(ctx, inData, cb)  {
 	var  caCode = inData.caCode,
 		 bkName = ctx.bi.query.bkName,
 		 bkType = ctx.bi.query.bkType;
-	//console.log('bkName is %s, bkType is %s', bkName, bkType);
+	//console.log('caCode: %s, bkName is %s, bkType is %s', caCode, bkName, bkType);
 
 	if (bkType === 'model')  {
 		var  modelRoot = path.join(siteUtil.getRootWWW(ctx, caCode), './blocks/modules'),
