@@ -5,7 +5,7 @@ Offering smooth user experiences is becoming the norm of web applications. Howev
 
 With the arrival of HTML5, CSS3 and ES5/ES6, developers actually have enough facilities to tackle the problems. All we need is just a neat and clean platform to fully utilize those essential technologies. So here comes **coServ**, with the following amazing features:
 
-+ HTML refactoring &amp; reuse
++ **HTML refactoring** &amp; reuse
 
 + Transparent CSS encapsulation. It's automatic and you don't have to do anything to make that happens.
 
