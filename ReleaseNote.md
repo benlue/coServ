@@ -1,3 +1,8 @@
+0.11.1
+------
++ A new print() function to print out HTML codes from Javascript.
++ Input parameters to blocks are now verified.
+
 0.11.0
 ------
 + Simplified the syntax to invoke block or wcomp.

@@ -20,6 +20,7 @@ ctrl.showParamModel = function()  {
 
 ctrl.addParameter = function()  {
 	var  varName = ctrl.sel('#newVarName').val();
+    console.log('var name is: ' + varName);
 
 	if (varName)  {
 		var  table = ctrl.sel('#varTable'),

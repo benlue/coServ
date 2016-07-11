@@ -134,7 +134,7 @@
                 "type": "string"
             },
             "bk": {
-                "required": true,
+                "required": false,
                 "type": "string"
             },
             "mode": {
@@ -157,7 +157,7 @@
                 "type": "string"
             },
             "bk": {
-                "required": true,
+                "required": false,
                 "type": "string"
             },
             "autoList": {
@@ -170,7 +170,11 @@
         "isProtected": false,
         "id": "no",
         "query": {
-            "bk": {
+            "caCode": {
+                "required": true,
+                "type": "string"
+            },
+            "bkName": {
                 "required": true,
                 "type": "string"
             }
