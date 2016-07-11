@@ -25,6 +25,12 @@ To install
 
 The easiest way is to get started is probably to try the [one page demo](https://github.com/benlue/cows-onePage). You can build a one page RWD website in minutes.
 
+## Documentation
+
++ [The coServ User Guide](https://benlue.gitbooks.io/coserv-user-guide/content/): good for first time users or beginners.
++ [The coServ Block Programming Guide](https://benlue.gitbooks.io/the-coserv-programming-guide/content/): can be used as a reference for coding blocks.
++ Some [articles](http://www.coservjs.org/coserv/doc). These could be out of dated, though.
+
 
 ## What's new
 Below are highlights of recent releases. More details in [release notes](https://github.com/coimotion/coServ/blob/master/ReleaseNote.md).
@@ -71,9 +77,3 @@ If you run multiple websites on coServ, you may have problems of loading images 
 
 v0.10.4 has a solution for this. If you're hosting multiple websites on coServ, you should refer to images (and other static files) with the '/**$website_code_name**/cont/' prefix and that should solve the problem.
 
-
-## Documentation
-
-+ [The coServ User Guide](https://benlue.gitbooks.io/coserv-user-guide/content/): good for first time users or beginners.
-+ [The coServ Block Programming Guide](https://benlue.gitbooks.io/the-coserv-programming-guide/content/): can be used as a reference for coding blocks.
-+ Some [articles](http://www.coservjs.org/coserv/doc). These could be out of dated, though.
