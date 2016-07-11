@@ -7,7 +7,7 @@ With the arrival of HTML5, CSS3 and ES5/ES6, developers actually have enough fac
 
 + **HTML refactoring** &amp; reuse
 
-+ Transparent CSS encapsulation. It's automatic and you don't have to do anything to make that happens.
++ **Transparent CSS encapsulation**. It's automatic and you don't have to do anything to make that happens.
 
 + Regardless it's backend or front-end, use one single language (Javascript) to do them all.
 
