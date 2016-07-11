@@ -15,7 +15,7 @@ With the arrival of HTML5, CSS3 and ES5/ES6, developers actually have enough fac
 
 + Support a very powerful CSS preprocessor called JASS.
 
-In the end, there is one thing that matters most. With coServ, developers can focus on coding and have fun instead of spending hours to learn and harness a platform itself just to get things going.
+In the end, there is really only one thing that matters. With coServ, developers can focus on coding and have fun instead of spending hours to learn and harness a platform itself just to get things going.
 
 
 ## Get started
