@@ -11,7 +11,7 @@ With the arrival of HTML5, CSS3 and ES5/ES6, developers actually have enough fac
 
 + Regardless it's backend or front-end, use one single language (Javascript) to do them all.
 
-+ HTML, CSS and JS can all be formulated as templates, and you have the full power of Javascript instead of just a limited subset when working on templates.
++ HTML, CSS and JS can all be formulated as templates, and you have the full power of Javascript when working on templates instead of just a very limited subset.
 
 + Support a very powerful CSS preprocessor called JASS.
 
