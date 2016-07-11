@@ -3,29 +3,20 @@
 ## Why coServ
 Offering smooth user experiences is becoming the norm of web applications. However, it's not a simple task. Many platforms have been developed for the quest. Unfortunately, most platforms present more problems than solving them.
 
-With the arrival of HTML5, CSS3 and ES5/ES6, developers actually have enough facilities to tackle the problems. All we need is probably just a neat and clean platform to fully utilize those three fundamental technologies. So here comes **coServ**, with the following design guidelines in mind:
+With the arrival of HTML5, CSS3 and ES5/ES6, developers actually have enough facilities to tackle the problems. All we need is just a neat and clean platform to fully utilize those essential technologies. So here comes **coServ**, with the following amazing features:
 
-+ Developers should spend time on designing/coding rather than learning or harnessing the platform itself.
++ HTML refactoring &amp; reuse
 
-+ Helping developers not to repeat themselves.
++ Transparent CSS encapsulation. It's automatic and you don't have to do anything to make that happens.
 
-+ Helping developers to fully utilize HTML, CSS and Javascript. Besides those, there is nothing to learn (well, before the next exciting technologies coming out XD).
++ Regardless it's backend or front-end, use one single language (Javascript) to do them all.
 
-##  Features
-
-+ Regardless it's backend or front-end, developers can use one single language (Javascript) to do them all.
-
-+ Help developers to divide web pages into smaller blocks and wcomps, so ti's easier to work on (the **divide and conquer** strategy).
-
-+ HTML refactoring &amp; reuse + CSS encapsulation.
-
-+ HTML, CSS and JS can all be formulated as templates.
-
-+ An extremely easy and elegant way to provide multi-lingual support.
-
-+ A single coServ server can host multiple websites, and it's very easy to manage them.
++ HTML, CSS and JS can all be formulated as templates, and you have the full power of Javascript instead of just a limited subset when working on templates.
 
 + Support a very powerful CSS preprocessor called JASS.
+
+In the end, there is one thing that matters most. With coServ, developers can focus on coding and have fun instead of spending hours to learn and harness a platform itself just to get things going.
+
 
 ## Get started
 To install
@@ -38,13 +29,13 @@ The easiest way is to get started is probably to try the [one page demo](https:/
 ## What's new
 Below are highlights of recent releases. More details in [release notes](https://github.com/coimotion/coServ/blob/master/ReleaseNote.md).
 
++ [v0.11.1] A print() function is supported to make HTML template much more concise and easier to read. For deatils, check [here](https://benlue.gitbooks.io/the-coserv-programming-guide/content/chap1/chapter1.html#print)
+
 + [v0.11.0] Input parameters to a block can be explicitly specified. More details can be found [here](#blkInput).
 
 + [v0.10.7] You can easily protect the whole or part of the website from unauthorized access. Check [here](https://benlue.gitbooks.io/coserv-user-guide/content/scenario#accProt) for details.
 
 + [v0.10.7] A wcomp can be displayed without the additional wrapper. Check [here](https://benlue.gitbooks.io/coserv-user-guide/content/chap5/chapter5.html#dspNoWrapper) for details.
-
-+ [v0.10.4] wFront.js is the main (front-end) controller. This file can be updated with new coServ release, so it's better to be served from coServ than from websites (which may use older versions). This is enforced in v0.10.4.
 
 + [v0.10.3] coServ now can be [deployed to Heroku](https://benlue.gitbooks.io/coserv-user-guide/content/chap6/chapter6.html) with almost no modifications needed.
 
