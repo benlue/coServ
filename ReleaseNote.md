@@ -1,6 +1,10 @@
+0.11.2
+------
++ Minor bug fix in the Design Console (failed to create a new website).
+
 0.11.1
 ------
-+ A new print() function to print out HTML codes from Javascript.
++ A new print() function to print out HTML codes inside templates.
 + Input parameters to blocks are now verified.
 
 0.11.0

@@ -21,7 +21,7 @@
 要了解如何以 coServ 快速開發網站也許可以從這個「一頁式網站」(https://github.com/benlue/cows-onePage) 開始。這個範例教你如何在幾分鐘內完成一個響應式 (RWD) 的一頁式網站，而且你可以很容易的加以修改。
 
 ## 最新版本
-coServ 目前的最新版本是 0.11.1。以下是最近版本所提供的新功能或改進：
+coServ 目前的最新版本是 0.11.2。以下是最近版本所提供的新功能或改進：
 
 + [v0.11.1] 新增了 print() 函式讓 HTML 樣板更簡潔和更具可讀性。詳情請參考 [此處](https://benlue.gitbooks.io/the-coserv-programming-guide/content/chap1/chapter1.html#print)。
 

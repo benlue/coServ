@@ -48,7 +48,7 @@ function  updateSite(ctx, inData, cb)  {
                 if (inData.title)
                     siteInfo.title = inData.title;
                 else
-                    delte  siteInfo.title;
+                    delete  siteInfo.title;
                 if (inData.locale)
                     siteInfo.locale = inData.locale;
                 if (inData.homePage)
