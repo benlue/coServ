@@ -1,3 +1,7 @@
+0.11.3
+------
++ Just keeping dependencies up to date.
+
 0.11.2
 ------
 + Minor bug fix in the Design Console (failed to create a new website).

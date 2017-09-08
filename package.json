@@ -1,8 +1,8 @@
 {
   "name": "coserv",
-  "version": "0.11.2",
+  "version": "0.11.3",
   "description": "A web framework helping developers to fully utilize HTML, CSS and Javascript.",
-  "engines": "4.2.2",
+  "engines": "5.11.0",
   "main": "./lib/server/main.js",
   "scripts": {
     "start": "node coServ.js",
@@ -33,14 +33,15 @@
     "connect": "^3.6.3",
     "connect-multiparty": "^2.0.0",
     "cookie-parser": "^1.4.3",
-    "morgan": "^1.6.1",
+    "morgan": "^1.8.2",
     "request": "^2.81.0",
-    "serve-static": "^1.10.0",
-    "xml2js": "^0.4.15"
+    "serve-static": "^1.12.4",
+    "server-static": "^2.0.5",
+    "xml2js": "^0.4.19"
   },
   "devDependencies": {
-    "browser-sync": "^1.8.0",
-    "cheerio": "^0.19.0",
-    "gulp": "^3.8.10"
+    "browser-sync": "^2.18.13",
+    "cheerio": "^1.0.0-rc.2",
+    "gulp": "^3.9.1"
   }
 }
