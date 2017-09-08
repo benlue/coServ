@@ -1,11 +1,28 @@
 {
+    "x-apiEngine": {
+        "host": "127.0.0.1",
+        "port": 4000,
+        "method": "POST",
+        "version": "v2"
+    },
     "apiEngine": {
-        "host": "coimapi.tw",
+        "host": "coimapi.net",
         "port": 80,
-        "method": "POST"
+        "method": "POST",
+        "version": "v2"
+    },
+    "orig-server": {
+        "wwwPath": "",
+        "port": 8080,
+        "maxSockets": 20
     },
     "server": {
-        "wwwPath": "",
+        "wwwPath": "/Users/ben/proj/yr105/testWWW",
+        "port": 8080,
+        "maxSockets": 20
+    },
+    "x-server": {
+        "wwwPath": "/Users/ben/proj/yr105/coWWW",
         "port": 8080,
         "maxSockets": 20
     }
