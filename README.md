@@ -35,13 +35,13 @@ The easiest way is to get started is probably to try the [one page demo](https:/
 ## What's new
 Below are highlights of recent releases. More details in [release notes](https://github.com/coimotion/coServ/blob/master/ReleaseNote.md).
 
++ [v0.12.0] Markdown can be displayed directly. It's supported as the first class content annotation tool just like HTML.
+
 + [v0.11.1] A print() function is supported to make HTML template much more concise and easier to read. For deatils, check [here](https://benlue.gitbooks.io/the-coserv-programming-guide/content/chap1/chapter1.html#print)
 
 + [v0.11.0] Input parameters to a block can be explicitly specified. More details can be found [here](#blkInput).
 
 + [v0.10.7] You can easily protect the whole or part of the website from unauthorized access. Check [here](https://benlue.gitbooks.io/coserv-user-guide/content/scenario#accProt) for details.
-
-+ [v0.10.7] A wcomp can be displayed without the additional wrapper. Check [here](https://benlue.gitbooks.io/coserv-user-guide/content/chap5/chapter5.html#dspNoWrapper) for details.
 
 + [v0.10.3] coServ now can be [deployed to Heroku](https://benlue.gitbooks.io/coserv-user-guide/content/chap6/chapter6.html) with almost no modifications needed.
 

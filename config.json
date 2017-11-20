@@ -11,18 +11,8 @@
         "method": "POST",
         "version": "v2"
     },
-    "orig-server": {
-        "wwwPath": "",
-        "port": 8080,
-        "maxSockets": 20
-    },
     "server": {
-        "wwwPath": "/Users/ben/proj/yr105/testWWW",
-        "port": 8080,
-        "maxSockets": 20
-    },
-    "x-server": {
-        "wwwPath": "/Users/ben/proj/yr105/coWWW",
+        "wwwPath": "",
         "port": 8080,
         "maxSockets": 20
     }

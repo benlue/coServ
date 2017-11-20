@@ -1,3 +1,9 @@
+0.12.0
+------
++ For a HTML block, a HTML file (or fragment) was needed to markup the contents. In this release, a markdown file can be used instead of a HTML file for the same purpose.
+
++ A trial implementation of Server-Sent Events (SSE) was provided.
+
 0.11.3
 ------
 + Just keeping dependencies up to date.
