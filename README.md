@@ -1,21 +1,21 @@
 # coServ
 
 ## Why coServ
-Offering smooth user experiences is becoming the norm of web applications. However, it's not a simple task. Many platforms have been developed for the quest. Unfortunately, most platforms present more problems than solving them.
+Offering smooth user experiences is becoming the norm of web applications. However, it's not a simple task. Many platforms have been developed for the quest. Unfortunately, most platforms seem to present more problems than solving them.
 
 With the arrival of HTML5, CSS3 and ES5/ES6, developers actually have enough facilities to tackle the problems. All we need is just a neat and clean platform to fully utilize those essential technologies. So here comes **coServ**, with the following amazing features:
 
 + **HTML refactoring** &amp; reuse
 
-+ **Transparent CSS encapsulation**. It's automatic and you don't have to do anything to make that happens.
++ **Transparent CSS encapsulation**. It's automatic and you don't have to do anything to make that happen.
 
 + Regardless it's backend or front-end, use one single language (Javascript) to do them all.
 
-+ HTML, CSS and JS can all be formulated as templates, and you have the full power of Javascript to work with templates rather than just having access to a very limited subset of JS.
++ HTML, CSS and JS can all be formulated as templates, and you have the full power of Javascript to work with templates rather than just a very limited subset.
 
 + Support a very powerful CSS preprocessor called JASS.
 
-In the end, you may find there is really only one thing that matters: you can focus on coding and have fun. Why spending numerous hours to learn and harness a platform just to get things going?
+In the end, you may find there is really just one thing that matters: be able to focus on coding and have fun. So why spending numerous hours to learn to harness a platform just to get things going? Be simple and be coServ!
 
 
 ## Get started
