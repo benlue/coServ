@@ -35,7 +35,7 @@ The easiest way is to get started is probably to try the [one page demo](https:/
 ## What's new
 Below are highlights of recent releases. More details in [release notes](https://github.com/coimotion/coServ/blob/master/ReleaseNote.md).
 
-+ [v0.12.1] Improved the SSE implementation.
++ [v0.12.2] Improved the SSE implementation.
 
 + [v0.12.0] Markdown can be displayed directly. It's supported as the first class content annotation tool just like HTML.
 
