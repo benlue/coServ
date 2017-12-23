@@ -23,6 +23,8 @@
 ## 最新版本
 coServ 目前的最新版本是 0.11.2。以下是最近版本所提供的新功能或改進：
 
++ [v0.12.1] 本版本支援了 Server Sent Event (SSE) 的功能。
+
 + [v0.12.0] 本版本支援了 markdown 的顯示。
 
 + [v0.11.1] 新增了 print() 函式讓 HTML 樣板更簡潔和更具可讀性。詳情請參考 [此處](https://benlue.gitbooks.io/the-coserv-programming-guide/content/chap1/chapter1.html#print)。

@@ -1,3 +1,7 @@
+0.12.1
+------
++ Improved the SSE implementation.
+
 0.12.0
 ------
 + For a HTML block, a HTML file (or fragment) was needed to markup the contents. In this release, a markdown file can be used instead of a HTML file for the same purpose.
