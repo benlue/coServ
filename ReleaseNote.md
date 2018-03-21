@@ -1,3 +1,7 @@
+0.12.3
+------
++ allow web page path to include uni-code characters.
+
 0.12.2
 ------
 + Improved the SSE implementation.
