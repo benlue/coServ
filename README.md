@@ -3,7 +3,7 @@
 ## Why coServ
 Offering smooth user experiences is becoming the norm of web applications. However, it's not a simple task. Many platforms have been developed for the quest. Unfortunately, most platforms seem to present more problems than solving them.
 
-With the arrival of HTML5, CSS3 and ES5/ES6, developers actually have enough facilities to tackle the problems. All we need is just a neat and clean platform to fully utilize those essential technologies. So here comes **coServ**, with the following amazing features:
+With the arrival of HTML5, CSS3 and ES5/ES6, developers actually have enough facilities to tackle the problems. All we need is just a neat and clean platform to fully utilize those key technologies. So here comes **coServ**, with the following amazing features:
 
 + **HTML refactoring** &amp; reuse
 
@@ -15,7 +15,7 @@ With the arrival of HTML5, CSS3 and ES5/ES6, developers actually have enough fac
 
 + Support a very powerful CSS preprocessor called JASS.
 
-In the end, you may find there is really just one thing that matters: be able to focus on coding and have fun. So why spending numerous hours to learn to harness a platform just to get things going? Be simple and be coServ!
+In the end, you may find there is really just one thing that matters: being able to focus on coding and having fun. So why spending numerous hours to learn how to harness a platform just to get things going? Be simple and be coServ!
 
 
 ## Get started

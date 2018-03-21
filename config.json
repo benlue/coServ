@@ -1,19 +1,13 @@
 {
-    "x-apiEngine": {
-        "host": "127.0.0.1",
-        "port": 4000,
-        "method": "POST",
-        "version": "v2"
+    "server": {
+        "wwwPath": "",
+        "port": 8080,
+        "maxSockets": 200
     },
     "apiEngine": {
         "host": "coimapi.net",
         "port": 80,
         "method": "POST",
         "version": "v2"
-    },
-    "server": {
-        "wwwPath": "",
-        "port": 8080,
-        "maxSockets": 20
     }
 }
