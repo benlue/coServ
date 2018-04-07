@@ -28,7 +28,9 @@
         "id": "no"
     },
     "/workArea/block/config": {
-        "id": "no"
+        "id": "no",
+        "description": "Configure a block.",
+        "isProtected": false
     },
     "/workArea/block/edit": {
         "id": "no"
