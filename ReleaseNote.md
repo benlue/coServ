@@ -1,3 +1,8 @@
+0.12.4
+------
++ allow the main block to has its own id, and to become searchable.
++ continuing code clean up.
+
 0.12.3
 ------
 + allow web page path to include uni-code characters.
