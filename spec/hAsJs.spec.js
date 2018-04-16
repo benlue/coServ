@@ -1,4 +1,5 @@
-const  hajs = require('../lib/wcomp/hAsJs');
+const  hajs = require('../lib/wcomp/hAsJs'),
+       jsonh = require('../lib/wcomp/jsonh');
 
 const  html = hajs.html,
        toHTML = hajs.toHTML,
@@ -12,7 +13,8 @@ describe("HTML as JSON", function() {
         //console.log(JSON.stringify(hr, null, 4));
 
         //console.log(toHTML(hr));
-        expect(toHTML(hr)).toBe('<hr>');
+        //expect(toHTML(hr)).toBe('<hr>');
+        expect(hr.toHTML()).toBe('<hr>');
     });
 
     it("singleton tag with attributes", function() {
@@ -20,25 +22,25 @@ describe("HTML as JSON", function() {
         //console.log(JSON.stringify(hr, null, 4));
 
         //console.log(toHTML(hr));
-        expect(toHTML(hr)).toBe('<hr align="center" color="gray">');
+        expect(hr.toHTML()).toBe('<hr align="center" color="gray">');
     });
 
     it("simple tag with text", function() {
         let  li = html('li', 'a list');
         //console.log(JSON.stringify(li, null, 4));
-        expect(li.c[0]).toBe('a list');
+        //expect(li.c[0]).toBe('a list');
 
         //console.log(toHTML(li));
-        expect(toHTML(li)).toBe('<li>a list</li>');
+        expect(li.toHTML()).toBe('<li>a list</li>');
     });
 
     it("simple tag with text and attributes", function() {
         let  li = html('li', {hight:200, width:100}, 'a list');
         //console.log(JSON.stringify(li, null, 4));
-        expect(li.c[0]).toBe('a list');
+        //expect(li.c[0]).toBe('a list');
 
         //console.log(toHTML(li));
-        expect(toHTML(li)).toBe('<li hight="200" width="100">a list</li>');
+        expect(li.toHTML()).toBe('<li hight="200" width="100">a list</li>');
     });
 
     it("tag with multiple children", function() {
@@ -50,10 +52,10 @@ describe("HTML as JSON", function() {
 
         let  ul = html('ul', c);
         //console.log(JSON.stringify(ul, null, 4));
-        expect(ul.c[0].t).toBe('li');
+        //expect(ul.c[0].t).toBe('li');
 
         //console.log(toHTML(ul));
-        expect(toHTML(ul)).toBe('<ul><li>item #0</li><li>item #1</li><li>item #2</li></ul>');
+        expect(ul.toHTML()).toBe('<ul><li>item #0</li><li>item #1</li><li>item #2</li></ul>');
     });
 });
 
@@ -63,32 +65,32 @@ describe("Prettify JSON to HTML output", function() {
         let  hr = html('hr');
 
         //console.log(toHTML(hr, 4));
-        expect(toHTML(hr, 4)).toBe('<hr>');
+        expect(hr.toHTML(4)).toBe('<hr>');
     });
 
     it("singleton tag with attributes", function() {
         let  hr = html('hr', {align: 'center', color: 'gray'});
 
         //console.log(toHTML(hr));
-        expect(toHTML(hr, 4)).toBe('<hr align="center" color="gray">');
+        expect(hr.toHTML(4)).toBe('<hr align="center" color="gray">');
     });
 
     it("simple tag with text", function() {
         let  li = html('li', 'a list');
         //console.log(JSON.stringify(li, null, 4));
-        expect(li.c[0]).toBe('a list');
+        //expect(li.c[0]).toBe('a list');
 
         //console.log(toHTML(li));
-        expect(toHTML(li, 4)).toBe('<li>a list</li>');
+        expect(li.toHTML(4)).toBe('<li>a list</li>');
     });
 
     it("simple tag with text and attributes", function() {
         let  li = html('li', {hight:200, width:100}, 'a list');
         //console.log(JSON.stringify(li, null, 4));
-        expect(li.c[0]).toBe('a list');
+        //expect(li.c[0]).toBe('a list');
 
         //console.log(toHTML(li));
-        expect(toHTML(li, 4)).toBe('<li hight="200" width="100">a list</li>');
+        expect(li.toHTML(4)).toBe('<li hight="200" width="100">a list</li>');
     });
 
     it("tag with multiple children", function() {
@@ -100,10 +102,10 @@ describe("Prettify JSON to HTML output", function() {
 
         let  ul = html('ul', c);
         //console.log(JSON.stringify(ul, null, 4));
-        expect(ul.c[0].t).toBe('li');
+        //expect(ul.c[0].t).toBe('li');
 
         //console.log(toHTML(ul, 4));
-        expect(toHTML(ul, 2)).toBe('<ul>\n  <li>item #0</li>\n  <li>item #1</li>\n  <li>item #2</li>\n</ul>');
+        expect(ul.toHTML(2)).toBe('<ul>\n  <li>item #0</li>\n  <li>item #1</li>\n  <li>item #2</li>\n</ul>');
     });
 });
 
@@ -114,10 +116,10 @@ describe("HTML as JSON -- mixin", function() {
              width = 100,
              li = html('li', {hight:height, width:width}, 'a list');
         //console.log(JSON.stringify(li, null, 4));
-        expect(li.c[0]).toBe('a list');
+       // expect(li.c[0]).toBe('a list');
 
         //console.log(toHTML(li));
-        expect(toHTML(li)).toBe('<li hight="200" width="100">a list</li>');
+        expect(li.toHTML()).toBe('<li hight="200" width="100">a list</li>');
     });
 });
 
@@ -206,11 +208,11 @@ describe("Prettify CSS as JSON", function() {
 });
 
 
-describe("Embedding blocks", function() {
+xdescribe("Embedding blocks", function() {
     it("a simple block", function() {
         let  elm = html('div', [
                         html('h1', 'Header'),
-                        block('myID', 'test/foo')
+                        block('myID', '/foo/bar')
                    ]);
 
         console.log( toHTML(elm) );
