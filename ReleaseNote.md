@@ -1,3 +1,8 @@
+2.0.0
+------
++ introduced the XS block.
++ a block can be accessible without being specified in the siteURI.json file
+
 0.12.4
 ------
 + allow the main block to has its own id, and to become searchable.
