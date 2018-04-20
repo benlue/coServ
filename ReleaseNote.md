@@ -1,3 +1,7 @@
+0.12.3
+------
++ Fixed a bug which would cause problems when paring URIs with ID.
+
 0.12.4
 ------
 + allow the main block to has its own id, and to become searchable.

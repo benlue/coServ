@@ -1,6 +1,6 @@
 {
   "name": "coserv",
-  "version": "0.12.4",
+  "version": "0.12.5",
   "description": "A web framework helping developers to fully utilize HTML, CSS and Javascript.",
   "engines": "5.11.0",
   "main": "./lib/server/main.js",
