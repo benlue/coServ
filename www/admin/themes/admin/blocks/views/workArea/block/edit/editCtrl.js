@@ -5,6 +5,16 @@ $(window).resize( function() {
 var  editor;
 
 ctrl.startup = function()  { 
+	editor = CodeMirror.fromTextArea( ctrl.sel('#codeEditor')[0], {
+		ineNumbers: true,
+		  indentUnit: 4,
+		scrollbarStyle: "simple",
+		matchBrackets: true,
+		mode: toEditMode('<%=bi.query.bkType%>')
+	});
+	editor.setOption("theme", "vibrant-ink");
+	editor.on('change', handleDocChange);
+
 	var  menuCtrl = __.getCtrl('pgMainMenu'),
 		 pdata = {
 		 	caCode: menuCtrl.getCurrentSite(),
@@ -13,6 +23,7 @@ ctrl.startup = function()  {
 		 };
 
 	$.post('/workArea/block/source.txt', pdata, function(data) {
+		/*
 		editor = CodeMirror.fromTextArea( ctrl.sel('#codeEditor')[0], {
 			ineNumbers: true,
 	      	indentUnit: 4,
@@ -21,10 +32,11 @@ ctrl.startup = function()  {
 			mode: toEditMode('<%=bi.query.bkType%>')
 		});
 
-	    editor.setOption("theme", "vibrant-ink");
+		editor.setOption("theme", "vibrant-ink");
+		*/
 	    if (data)
 			editor.setValue( data );
-		editor.on('change', handleDocChange);
+		//editor.on('change', handleDocChange);
 
 		adjustHeight();
 	});
@@ -79,6 +91,8 @@ function  toEditMode(bkType)  {
 			mode = "text/css";
 			break;
 
+		case 'xs':
+		case 'phs':
 		case 'js':
 		case 'model':
 			mode = "javascript";

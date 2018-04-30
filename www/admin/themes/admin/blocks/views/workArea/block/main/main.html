@@ -1,9 +1,14 @@
 <div style="padding: 5px 0px;">
     <ul class="nav nav-tabs" role="tablist">
+    <% if (value.isXS)  { %>
+        <li role="presentation" class="active"><a href="#0" onclick="<%=ctrl%>.clickTab(this, 'xs');">XS</a></li>
+        <li role="presentation"><a href="#0" onclick="<%=ctrl%>.clickTab(this, 'phs');">Language</a></li>
+    <% } else  { %>
         <li role="presentation" class="active"><a href="#0" onclick="<%=ctrl%>.clickTab(this, 'html');">HTML</a></li>
         <li role="presentation"><a href="#0" onclick="<%=ctrl%>.clickTab(this, 'css');">CSS</a></li>
         <li role="presentation"><a href="#0" onclick="<%=ctrl%>.clickTab(this, 'js');">JS</a></li>
         <li role="presentation"><a href="#0" onclick="<%=ctrl%>.clickTab(this, 'lang');">Language</a></li>
+    <% } %>
         <li role="presentation"><a href="#0" onclick="<%=ctrl%>.clickTab(this, 'model');"><%=ph.model%></a></li>
         <li role="presentation">
             <a href="#0" onclick="<%=ctrl%>.config(this);">

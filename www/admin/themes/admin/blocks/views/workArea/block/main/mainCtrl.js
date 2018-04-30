@@ -1,7 +1,11 @@
 var  bkName = '<%=bi.query.bkName%>';
 
 ctrl.startup = function() {
+	<% if (value.isXS)  { %>
+	embedEditor('xs');
+	<% } else  { %>
 	embedEditor('html');
+	<% } %>
 }
 
 
@@ -12,6 +16,14 @@ ctrl.clickTab = function(link, target)  {
 	var  mode = "html";
 
 	switch (target)  {
+		case 'xs':
+			mode = "xs";
+			break;
+
+		case 'phs':
+			mode = "phs";
+			break;
+
 		case 'html':
 			mode = "html";
 			break;
@@ -69,6 +81,7 @@ function  embedEditor(bkType) {
 	var  params = {
 		bkName: bkName,
 		bkType: bkType
-	}
+	};
+
 	ctrl.embed('#editBody', '/workArea/block/edit', params);
 }

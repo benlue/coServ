@@ -1,7 +1,11 @@
 var  wcomp = '<%=bi.query.wcomp%>';
 
 ctrl.startup = function() {
+	<% if (value.isXS)  { %>
+	embedEditor('xs');
+	<% } else  { %>
 	embedEditor('html');
+	<% } %>
 }
 
 
@@ -13,6 +17,10 @@ ctrl.clickTab = function(link)  {
 		 mode = "html";
 
 	switch (target)  {
+		case 'XS':
+			mode = "xs";
+			break;
+
 		case 'HTML':
 			mode = "html";
 			break;

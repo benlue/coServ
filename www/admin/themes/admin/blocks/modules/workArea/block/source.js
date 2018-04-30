@@ -12,25 +12,18 @@ exports.execute = function(ctx, inData, cb)  {
 		var  modelRoot = path.join(siteUtil.getRootWWW(ctx, caCode), './blocks/modules'),
 			 modelPath = path.join(modelRoot, bkName + '.js');
 
-		fs.readFile( modelPath, {encoding: 'utf8'}, function(err, data) {
-			if (err)
-				return  cb({
-					errCode: 10,
-					message: 'No such model',
-					value: ''
-				});
+		readFile(modelPath, cb);
+	}
+	else  if (bkType === 'xs' || bkType === 'phs')  {
+		let  blockRoot = path.join(siteUtil.getRootWWW(ctx, caCode), './blocks/views'),
+			 bkPath = path.join(blockRoot, bkName + '.' + bkType);
 
-			return  cb({
-				errCode: 0,
-				message: 'Ok',
-				value: data
-			});
-		});
+		readFile(bkPath, cb);
 	}
 	else  {
 		var  blockRoot = path.join(siteUtil.getRootWWW(ctx, caCode), './blocks/views'),
 			 bkPath = path.join(blockRoot, bkName);
-		
+
 		fs.readdir(bkPath, function(err, files) {
 			if (err)
 				return  cb({
@@ -48,22 +41,8 @@ exports.execute = function(ctx, inData, cb)  {
 				}
 			}
 
-			if (filePath)  {
-				fs.readFile( filePath, {encoding: 'utf8'}, function(err, data) {
-					if (err)
-						return cb({
-							errCode: 2,
-							message: 'Cannot read the block file',
-							value: ''
-						});
-
-					return  cb({
-						errCode: 0,
-						message: 'Ok',
-						value:  data
-					});
-				});
-			}
+			if (filePath)
+				readFile(filePath, cb);
 			else
 				cb({
 					errCode: 3,
@@ -72,4 +51,22 @@ exports.execute = function(ctx, inData, cb)  {
 				});
 		});
 	}
+}
+
+
+function  readFile(fname, cb)  {
+	fs.readFile( fname, {encoding: 'utf8'}, function(err, data) {
+		if (err)
+			cb({
+				errCode: 2,
+				message: 'Cannot read the block file',
+				value: ''
+			});
+		else
+			cb({
+				errCode: 0,
+				message: 'Ok',
+				value:  data
+			});
+	});
 }

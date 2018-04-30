@@ -33,6 +33,7 @@ ctrl.dispatch = function(design, target) {
 		}
 		else  {
 			var  params = {
+				caCode: menuCtrl.getCurrentSite(),
 				bkName: target
 			};
 
@@ -58,9 +59,11 @@ ctrl.dispatch = function(design, target) {
 			ctrl.embed('#bodyArea', '/workArea/wcomp/config');
 		}
 		else  if (target !== 'no-op')  {
-			var  params = {
-				wcomp: target
-			};
+			var  menuCtrl = __.getCtrl('pgMainMenu'),
+				 params = {
+					caCode: menuCtrl.getCurrentSite(),
+					wcomp: target
+				 };
 
 			ctrl.embed('#bodyArea', '/workArea/wcomp/main', {params: params});
 		}

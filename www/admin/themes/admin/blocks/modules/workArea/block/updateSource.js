@@ -24,19 +24,8 @@ exports.execute = function(ctx, inData, cb)  {
 	                fs.mkdirSync(modPath);
 	        }
 
-	        var  modFile = path.join(modPath, modName + '.js');
-	        fs.writeFile( modFile, data, function(err) {
-				if (err)
-					return  cb({
-						errCode: 10,
-						message: 'Failed to write to the model.'
-					});
-
-				return  cb({
-					errCode: 0,
-					message: 'Ok'
-				});
-			});
+			var  modFile = path.join(modPath, modName + '.js');
+			writeToFile(modFile, data, cb);
 	    }
 	    catch (e)  {
 	        cb({
@@ -44,6 +33,12 @@ exports.execute = function(ctx, inData, cb)  {
 	            message: 'Unable to create the model directory.'
 	        });
 	    }
+	}
+	else  if (bkType === 'xs' || bkType === 'phs')  {
+		let  blockRoot = path.join(siteUtil.getRootWWW(ctx, caCode), './blocks/views'),
+			 bkPath = path.join(blockRoot, bkName + '.' + bkType);
+
+			 writeToFile(bkPath, data, cb);
 	}
 	else  {
 		var  blockRoot = path.join(siteUtil.getRootWWW(ctx, caCode), './blocks/views'),
@@ -72,18 +67,23 @@ exports.execute = function(ctx, inData, cb)  {
 			}
 			//console.log('filePath: ' + filePath);
 
-			fs.writeFile( filePath, data, function(err) {
-				if (err)
-					return cb({
-						errCode: 2,
-						message: 'Cannot write to the block file.'
-					});
-
-				return  cb({
-					errCode: 0,
-					message: 'Ok'
-				});
-			});
+			writeToFile(filePath, data, cb);
 		});
 	}
+}
+
+
+function  writeToFile(fname, data, cb)  {
+	fs.writeFile( fname, data, function(err) {
+		if (err)
+			cb({
+				errCode: 10,
+				message: 'Failed to write to the model.'
+			});
+		else
+			cb({
+				errCode: 0,
+				message: 'Ok'
+			});
+	});
 }

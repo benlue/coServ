@@ -50,13 +50,21 @@ function  walkPath(baseDir, curDir, plist, cb)  {
 			 isComp = !flist.length && curDir !== '/';
 
 		for (var i in flist)  {
-			var  f = flist[i],
-				 stats = fs.statSync( path.join(workPath, f) );
+			let  f = flist[i],
+				 compName = curDir;
 
-			if (stats.isDirectory())
-				subList.push( path.join(curDir, f).replace(/\\/g, '/') );
-			else
-				isComp = isComp || stats.isFile();
+			if (f.slice(-3) === '.xs')  {
+				compName = curDir + '/' + f.slice(0, -3);
+				plist.push( {title: compName, arg: compName} );
+			}
+			else  {
+				let  stats = fs.statSync( path.join(workPath, f) );
+
+				if (stats.isDirectory())
+					subList.push( path.join(curDir, f).replace(/\\/g, '/') );
+				else
+					isComp = isComp || stats.isFile();
+			}
 		}
 
 		if (isComp)

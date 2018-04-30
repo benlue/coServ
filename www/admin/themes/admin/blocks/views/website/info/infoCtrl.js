@@ -140,6 +140,14 @@ ctrl.save = function()  {
 }
 
 
+/**
+ * Users click on the "is protected" checkbox
+ */
+ctrl.clickProtect = function()  {
+    ctrl.sel('#loginURI').collapse('toggle');
+}
+
+
 function  issueWarning(cssID)  {
     ctrl.sel('.form-group').removeClass('has-error');
     ctrl.sel(cssID).focus().parent().addClass('has-error');

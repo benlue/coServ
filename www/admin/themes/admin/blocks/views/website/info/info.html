@@ -41,18 +41,23 @@
                value="<%=value.home || bi.query.homePage || ''%>" placeholder="<%=ph.homeHolder%>">
     </div>
         
-    <div class="form-group manualMode">
-        <label for="wsLogin"><%=ph.loginLabel%></label>
-        <input type="text" class="form-control" id="wsLogin" 
-               value="<%=value.login || bi.query.loginPage || ''%>" placeholder="<%=ph.loginHolder%>">
-    </div>
-
     <div class="checkbox">
         <label>
-            <input id="wsProtect" type="checkbox"<%= value.isProtected ? ' checked': ''%>> <%= ph.isProtected %>
+            <input id="wsProtect" type="checkbox"<%= value.isProtected ? ' checked': ''%>
+                   onchange="<%=ctrl%>.clickProtect()"> <%= ph.isProtected %>
         </label>
     </div>
+
+    <div id="loginURI" class="<%=value.login  ?  'collapse.in' : 'collapse'%>">
+        <div class="form-group manualMode">
+            <label for="wsLogin"><%=ph.loginLabel%></label>
+            <input type="text" class="form-control" id="wsLogin" 
+                value="<%=value.login || bi.query.loginPage || ''%>" placeholder="<%=ph.loginHolder%>">
+        </div>
+    </div>
 </form>
+
+<hr>
 
 <div class="flexContainer" style="margin-left: 0px;">
     <div style="flex-grow:1;">
