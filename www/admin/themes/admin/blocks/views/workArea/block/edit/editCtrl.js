@@ -5,9 +5,10 @@ $(window).resize( function() {
 var  editor;
 
 ctrl.startup = function()  { 
-	editor = CodeMirror.fromTextArea( ctrl.sel('#codeEditor')[0], {
+	//editor = CodeMirror.fromTextArea( ctrl.sel('#codeEditor')[0], {
+	editor = CodeMirror.fromTextArea( $('#codeEditor')[0], {
 		ineNumbers: true,
-		  indentUnit: 4,
+		indentUnit: 4,
 		scrollbarStyle: "simple",
 		matchBrackets: true,
 		mode: toEditMode('<%=bi.query.bkType%>')

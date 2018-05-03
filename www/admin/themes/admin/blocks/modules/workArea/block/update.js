@@ -2,11 +2,12 @@ var  fs = require('fs'),
      path = require('path'),
      siteUtil = require('../../util/siteUtil.js');
 
+const  xsTemplate = "exports.make = function(params) {\n\tlet  root = xs.uic('div');\n\treturn  root;\n}\n";
+
 exports.execute = function(ctx, inData, cb)  {
 	var  caCode = inData.caCode,
          bkName = inData.url,
          viewPath = path.join(siteUtil.getRootWWW(ctx, caCode), 'siteURI.json');
-    //console.log('theme: %s, bkName: %s', theme, bkName);
   
   	fs.readFile(viewPath, 'utf8', function(err, data) {
       	if (err)
@@ -67,7 +68,7 @@ exports.execute = function(ctx, inData, cb)  {
 
                     bkInfo.id = inData.id;
                     //console.log('create a block? ' + doCreate);
-                    //console.log('block info\n' + JSON.stringify(bkInfo, null, 4));
+                    console.log('block info\n' + JSON.stringify(bkInfo, null, 4));
 
                     fs.writeFile( viewPath, JSON.stringify(siteInfo, null, 4), function(err) {
                         if (err)
@@ -77,7 +78,7 @@ exports.execute = function(ctx, inData, cb)  {
                             });
 
                         if (doCreate)
-                            createBlock( ctx, caCode, viewPath, bkName, cb );
+                            createXSBlock( ctx, caCode, viewPath, bkName, cb );
                         else
                             cb({
                                 errCode: 0,
@@ -93,6 +94,42 @@ exports.execute = function(ctx, inData, cb)  {
                 });
             }
     });
+}
+
+
+function  createXSBlock(ctx, theme, viewPath, bkName, cb)  {
+    var  bkPath = path.join(viewPath, '../blocks/views'),
+         nameParts = bkName.split('/'),
+         fpath = nameParts.slice(1, -1),
+         name = nameParts.slice(-1)[0];
+    //console.log('path: ' + JSON.stringify(fpath))
+    
+    try  {
+        for (var i in fpath)  {
+            bkPath += '/' + fpath[i];
+            //console.log('bk path is ' + bkPath);
+            if (!fs.existsSync(bkPath))
+                fs.mkdirSync(bkPath);
+        }
+
+        let  xsPath = path.join( bkPath, name + '.xs' );
+        fs.writeFileSync( xsPath, xsTemplate );
+        
+        siteUtil.resetBlockMap(ctx, theme);
+        
+        cb({
+            errCode: 0,
+            message: 'Ok'
+        });
+    }
+    catch (e)  {
+        console.log( e.stack );
+        
+        cb({
+            errCode: 10,
+            message: 'Unable to create the block directory.'
+        });
+    }
 }
 
 

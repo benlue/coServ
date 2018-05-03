@@ -6,7 +6,7 @@
   "main": "./lib/server/main.js",
   "scripts": {
     "start": "node coServ.js",
-    "test": {"test": "jasmine"}
+    "test": "jasmine"
   },
   "repository": {
     "type": "git",
@@ -34,6 +34,7 @@
     "connect-multiparty": "^2.0.0",
     "cookie-parser": "^1.4.3",
     "markdown-it": "^8.4.0",
+    "moment": "^2.22.1",
     "morgan": "^1.8.2",
     "request": "^2.81.0",
     "serve-static": "^1.10.0",

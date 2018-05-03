@@ -24,8 +24,9 @@ function  updateSite(ctx, inData, cb)  {
          caCode = inData.caCode,
          wwwRoot = getWWWRoot(ctx, caCode),
          sitesFile = siteUtil.getSitesJSON(ctx);
+    //console.log('site file: ' + sitesFile);
 
-    fs.readFile(sitesFile, function(err, data) {
+    fs.readFile(sitesFile, {encoding: 'utf8'}, function(err, data) {
         if (err)
             return  cb({
                 errCode: 1,
