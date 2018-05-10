@@ -9,10 +9,10 @@ ctrl.startup = function()  {
     var  layCtrl = __.getCtrl('mainMenuLayoutList');
     layCtrl.reload(param);
 
-    var  blkCtrl = __.getCtrl('mainMenuBlockList');
+	var  blkCtrl = __.getCtrl('mainMenuBlockList');
     blkCtrl.addHandler('blkSelected', function(bkName)  {
         ctrl.callHandler('blkSelected', bkName);
-    });
+	});
 
     var  compCtrl = __.getCtrl('mainMenuWcompList');
     compCtrl.reload(param, function() {
