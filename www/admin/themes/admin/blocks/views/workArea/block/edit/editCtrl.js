@@ -5,8 +5,9 @@ $(window).resize( function() {
 var  editor;
 
 ctrl.startup = function()  { 
-	//editor = CodeMirror.fromTextArea( ctrl.sel('#codeEditor')[0], {
-	editor = CodeMirror.fromTextArea( $('#codeEditor')[0], {
+	/*
+	editor = CodeMirror.fromTextArea( ctrl.sel('#codeEditor')[0], {
+	//editor = CodeMirror.fromTextArea( $('#codeEditor')[0], {
 		ineNumbers: true,
 		indentUnit: 4,
 		scrollbarStyle: "simple",
@@ -15,6 +16,7 @@ ctrl.startup = function()  {
 	});
 	editor.setOption("theme", "vibrant-ink");
 	editor.on('change', handleDocChange);
+	*/
 
 	var  menuCtrl = __.getCtrl('pgMainMenu'),
 		 pdata = {
@@ -24,7 +26,6 @@ ctrl.startup = function()  {
 		 };
 
 	$.post('/workArea/block/source.txt', pdata, function(data) {
-		/*
 		editor = CodeMirror.fromTextArea( ctrl.sel('#codeEditor')[0], {
 			ineNumbers: true,
 	      	indentUnit: 4,
@@ -34,10 +35,10 @@ ctrl.startup = function()  {
 		});
 
 		editor.setOption("theme", "vibrant-ink");
-		*/
+
 	    if (data)
 			editor.setValue( data );
-		//editor.on('change', handleDocChange);
+		editor.on('change', handleDocChange);
 
 		adjustHeight();
 	});
