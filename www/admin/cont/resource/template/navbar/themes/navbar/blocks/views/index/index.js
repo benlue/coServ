@@ -1,3 +1,0 @@
-ctrl.startup = function () {
-	
-};

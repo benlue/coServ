@@ -1,5 +1,4 @@
-const  fs = require('fs'),
-       path = require('path');
+var  path = require('path');
 
 // first dealing with the www directory
 var  wwwPath,
@@ -36,23 +35,4 @@ exports.getServer = function()  {
 
 exports.getRPC = function()  {
     return  coServOption.rpc;
-}
-
-exports.getSecureOption = function()  {
-    let  option,
-         certPath = coServOption.server.certPath;
-    if (certPath)  {
-        let  ca = [];
-        ['primary.cer', 'secondary.cer'].forEach(file => {
-            ca.push( fs.readFileSync( path.join(certPath, file) ) );
-        });
-
-        option = {
-            ca: ca,
-            key: fs.readFileSync( path.join(certPath, 'privateKey.key') ),
-            cert: fs.readFileSync( path.join(certPath, 'primary.cer') )
-        };
-    }
-
-    return  option;
 }

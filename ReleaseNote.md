@@ -1,3 +1,10 @@
+1.0.0
+-----
++ The first official release.
++ The core engine has been completely written.
++ HTML code generation has been switched from string templates to node.js modules.
++ NOT backward compatible with previous versions.
+
 0.12.3
 ------
 + Fixed a bug which would cause problems when paring URIs with ID.
