@@ -1,0 +1,6 @@
+{
+    "server": {
+        "wwwPath": "./www",
+        "port": 8080
+    }
+}
