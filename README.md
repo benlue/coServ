@@ -1,7 +1,7 @@
 # coServ
 
 ## Why coServ
-Web applications are getting complicated day by day. Without a proper platofrm, web app developement could be a very time consuming task. So choosing the "right" plaftorm may be the #1 issue before you even start any coding efforts. If you're not satisfied with the existing platforms, you may be looking for a web platform like coServ.
+Web applications are getting complicated day by day. Without a proper platofrm, web app developement could be a very time consuming task. So choosing the "right" plaftorm may be the #1 issue before you even start any coding efforts. If you're not satisfied with the existing platforms, maybe you're looking for a web platform like coServ.
 
 coServ intends to minimize any programming overhead by reducing repetition, removing extra rounds of code generation or compilation, and shortening the development pipeline. Every development construct is intutive and requires skills nohting more than HTML, CSS or Javascript.
 

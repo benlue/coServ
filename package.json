@@ -1,6 +1,6 @@
 {
   "name": "coserv",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A web framework helping developers to fully utilize HTML, CSS and Javascript.",
   "engines": {
     "nodes": ">=8.10.0"
@@ -41,7 +41,6 @@
     "mime-types": "^2.1.18",
     "moment": "^2.22.1",
     "morgan": "^1.9.1",
-    "server-static": "^2.0.5",
     "simple-git": "^1.96.0"
   },
   "devDependencies": {

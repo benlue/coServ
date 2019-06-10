@@ -1,3 +1,7 @@
+1.0.4
+-----
++ npm is complaining about the security vulnerabilities regarding the 'server-static' module. Rewrite some code to avoid using that module.
+
 1.0.0
 -----
 + The first official release.
