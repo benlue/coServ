@@ -3,11 +3,11 @@
 ## Why coServ
 Web applications are getting complicated day by day. Without a proper platofrm, web app developement could be a very time consuming task. So choosing the "right" plaftorm may be the #1 issue before you even start any coding efforts. If you're not satisfied with the existing platforms, maybe you're looking for a web platform like coServ.
 
-coServ intends to minimize any programming overhead by reducing repetition, removing extra rounds of code generation or compilation, and shortening the development pipeline. Every development construct is intutive and requires skills nohting more than HTML, CSS or Javascript.
+coServ intends to minimize any programming overhead by reducing repetition, removing extra rounds of code generation or compilation, and shortening the development pipeline. Every development construct is intutive and requires skills no more than HTML, CSS or Javascript.
 
 coServ offers the following features that could be good for developer's health:
 
-* The practice of HTML codeing becomes the same as node.js coding. Developers use modules, libraries or functions to render HTML codes.
+* The practice of HTML coding becomes the same as node.js coding. Developers use modules, libraries or functions to render HTML codes.
 
 * Web pages are divided into smaller HTML fragments rendered by special node.js modules call palets.
 
@@ -44,7 +44,7 @@ Below are highlights of the major differences:
 
 * coServ divides up a web page to smaller fragments. Earlier versions call those HTML fragments as "blocks" while the official release calls it "palet".
 
-* "Blocks" are made up of at most four files (HTML, CSS, Javascript and a language resource file), while a palet is defined by a single node.js program (module).
+* A "block" can be composed of up to four files (HTML, CSS, Javascript and a language resource file), while a palet is defined by a single node.js program (module).
 
 * A new application construct UIC (UI Components) is introduced to further facilitate HTML componentization and refactoring.
 
