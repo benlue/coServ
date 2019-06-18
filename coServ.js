@@ -1,7 +1,7 @@
 /*!
 * coServ
 * authors: Ben Lue
-* license: MIT
+* license: GPLv2
 * Copyright(c) 2016 ~ 2019 Gocharm Inc.
 */
 const  fs = require('fs'),

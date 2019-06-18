@@ -1,3 +1,7 @@
+1.1.0
+-----
++ A new feature to extend existing CSS classes.
+
 1.0.4
 -----
 + github is complaining about the security vulnerabilities regarding the 'server-static' module. Rewrite some code to avoid using that module.
