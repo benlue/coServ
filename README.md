@@ -27,17 +27,22 @@ To install
 
 	npm install coserv
 
-A three parts tutorial using a TODO list web app can quickly get you started.
+Once installed, you'll need some help to know the basics of writing web apps on coServ. Below are some articles which can be helpful:
 
-* Part I: [Using a command line tool to quickly create web apps](https://medium.com/@benlue3/coserv-tutorial-part-i-5b4f76c016f3).
+* [Tips for jump start programming on coServ](https://medium.com/@benlue3/how-coserv-can-help-to-apply-the-separation-of-concerns-principle-9b17c055cbab)
 
-* Part II: [Adding the controller and re-using palets](https://medium.com/@benlue3/coserv-tutorial-part-ii-979418449a9)
+* A short article explaining [how to transform the programming space from HTML to JS](https://bit.ly/2WLWJpl).
 
-* Part III: [How MVC is implemented in coServ](https://medium.com/@benlue3/coserv-tutorial-part-iii-6801635285ab)
+* Another short article to explain [how coServ can help to apply the separation of concerns principle](https://t.co/hpxSvEVu5F).
 
-A short article explaining [how to transform the programming space from HTML to JS](https://bit.ly/2WLWJpl).
+* A three parts tutorial using a TODO list web app as an example.
 
-Another short article to explain [how coServ can help to apply the separation of concerns principle](https://t.co/hpxSvEVu5F).
+  1. Part I: [Using a command line tool to quickly create web apps](https://medium.com/@benlue3/coserv-tutorial-part-i-5b4f76c016f3).
+
+  2.  Part II: [Adding the controller and re-using palets](https://medium.com/@benlue3/coserv-tutorial-part-ii-979418449a9)
+
+  3. Part III: [How MVC is implemented in coServ](https://medium.com/@benlue3/coserv-tutorial-part-iii-6801635285ab)
+
 
 ## Differences between the current and earlier releases
 For those who have been the users of the ealier versions of coServ, you'll notice that this official release (v1.0) is not compatible with the older versions. However, the core concepts and principles of how a web app is constructed and organized remain the same.
