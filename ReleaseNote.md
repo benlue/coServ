@@ -1,3 +1,7 @@
+1.1.1
+-----
++ Fixed a bug when a palet with endpoint ID is reloaded from the client side.
+
 1.1.0
 -----
 + A new feature to extend existing CSS classes.
