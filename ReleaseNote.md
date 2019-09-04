@@ -1,3 +1,8 @@
+1.1.2 (09/04/2019)
+-----
++ Fixed a bug when the client side embeded a palet whose endpoint ID can't be properly recognized.
++ Improved error handling
+
 1.1.1
 -----
 + Fixed a bug when a palet with endpoint ID is reloaded from the client side.

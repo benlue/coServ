@@ -27,7 +27,7 @@ To install
 
 	npm install coserv
 
-Once installed, you'll need some help to know the basics of writing web apps on coServ. Below are some articles which can be helpful:
+Once you've installed coServ, there are several articles to help you start writing interesting web apps. Becasue coServ organizes the web developing tasks in a unique while effective way (which could be unheard of for the first time users), it would be helpful to scan through the following articles to get some interesting insights:
 
 * [Tips for jump start programming on coServ](https://medium.com/@benlue3/how-coserv-can-help-to-apply-the-separation-of-concerns-principle-9b17c055cbab)
 
