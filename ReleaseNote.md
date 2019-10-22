@@ -1,3 +1,7 @@
+1.1.3 (10/22/2019)
+-----
++ Minor bug fixes on palet reload -- palet states should not be cached.
+
 1.1.2 (09/04/2019)
 -----
 + Fixed a bug when the client side embeded a palet whose endpoint ID can't be properly recognized.
