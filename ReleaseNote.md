@@ -1,3 +1,7 @@
+1.1.4 (12/10/2019)
+-----
+* Bump the lodash version to 4.17.15 to eliminate vulnerabilities.
+
 1.1.3 (10/22/2019)
 -----
 + Minor bug fixes on palet reload -- palet states should not be cached.
