@@ -28,7 +28,7 @@
   "license": "GPLv2",
   "readmeFilename": "README.md",
   "dependencies": {
-    "async": "^2.6.0",
+    "async": "^3.2.2",
     "bluebird": "^3.5.0",
     "body-parser": "^1.17.2",
     "connect": "^3.6.3",
